@@ -12,23 +12,23 @@ export class PropertyDefinitionCodec {
     const json = JSON.parse(value);
 
     const def = new PropertyDefinition();
-    def.type = PropertyType.valueOf(json.getString(Spec.TYPE, ''));
-    def.description = json.getString(Spec.DESCRIPTION, '');
-    def.format = DataFormatFromString(json.getString(Spec.FORMAT, ''));
-    def.access = Access.create(json.get(Spec.ACCESS, ''));
+    def.type = PropertyType.valueOf(json[Spec.TYPE]);
+    def.description = json[Spec.DESCRIPTION];
+    def.format = DataFormatFromString(json[Spec.FORMAT]);
+    def.access = Access.create(json[Spec.ACCESS]);
     def.constraintValue = null;
-    def.unit = UnitFromString(json.getString(Spec.UNIT, ''));
+    def.unit = UnitFromString(json[Spec.UNIT]);
 
     if (json.hasOwnProperty(Spec.VALUE_LIST) && json.hasOwnProperty(Spec.VALUE_RANGE)) {
       throw new Error('value-list & value-range both exist!');
     }
 
     if (json.hasOwnProperty(Spec.VALUE_LIST)) {
-      def.constraintValue = DefinitionCodec.decodeValueList(def.format, json.get(Spec.VALUE_LIST));
+      def.constraintValue = DefinitionCodec.decodeValueList(def.format, json[Spec.VALUE_LIST]);
     }
 
     if (json.hasOwnProperty(Spec.VALUE_RANGE)) {
-      def.constraintValue = DefinitionCodec.decodeValueRange(def.format, json.get(Spec.VALUE_RANGE));
+      def.constraintValue = DefinitionCodec.decodeValueRange(def.format, json[Spec.VALUE_RANGE]);
     }
 
     return def;

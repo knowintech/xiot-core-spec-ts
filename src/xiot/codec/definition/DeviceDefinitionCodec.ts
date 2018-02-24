@@ -9,10 +9,10 @@ export class DeviceDefinitionCodec {
     const json = JSON.parse(value);
 
     const def = new DeviceDefinition();
-    def.type = DeviceType.valueOf(json.getString(Spec.TYPE, ''));
-    def.description = json.getString(Spec.DESCRIPTION, '');
-    def.requiredServices = DefinitionCodec.decodeServices(json.get(Spec.REQUIRED_SERVICES));
-    def.optionalServices = DefinitionCodec.decodeServices(json.get(Spec.OPTIONAL_SERVICES));
+    def.type = DeviceType.valueOf(json[Spec.TYPE]);
+    def.description = json[Spec.DESCRIPTION];
+    def.requiredServices = DefinitionCodec.decodeServices(json[Spec.REQUIRED_SERVICES]);
+    def.optionalServices = DefinitionCodec.decodeServices(json[Spec.OPTIONAL_SERVICES]);
     return def;
   }
 

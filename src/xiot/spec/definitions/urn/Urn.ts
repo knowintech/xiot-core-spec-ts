@@ -1,72 +1,81 @@
-import {UrnType, UrnTypeFromString} from './UrnType';
+import {UrnType, UrnTypeFromString, UrnTypeToString} from './UrnType';
 
 export class Urn {
-  private ns: string;
-  private type: UrnType;
-  private name: string;
-  private value: number;
-  private isModified: boolean;
-  private modified: string;
+    private ns: string;
+    private type: UrnType;
+    private name: string;
+    private value: number;
+    private isModified: boolean;
+    private modified: string;
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  // constructor(namespace: string,
-  //             type: UrnType,
-  //             name: string,
-  //             value: string) {
-  //   this.ns = namespace;
-  //   this.type = type;
-  //   this.name = name;
-  //   this.value = Number.parseInt(value, 16);
-  //   this.isModified = false;
-  // }
-  //
-  // constructor(ns: string,
-  //             type: UrnType,
-  //             name: string,
-  //             value: number) {
-  //   this.ns = ns;
-  //   this.type = type;
-  //   this.name = name;
-  //   this.value = value;
-  //   this.isModified = false;
-  // }
+    // constructor(namespace: string,
+    //             type: UrnType,
+    //             name: string,
+    //             value: string) {
+    //   this.ns = namespace;
+    //   this.type = type;
+    //   this.name = name;
+    //   this.value = Number.parseInt(value, 16);
+    //   this.isModified = false;
+    // }
+    //
+    // constructor(ns: string,
+    //             type: UrnType,
+    //             name: string,
+    //             value: number) {
+    //   this.ns = ns;
+    //   this.type = type;
+    //   this.name = name;
+    //   this.value = value;
+    //   this.isModified = false;
+    // }
 
-  parseString(string: string): boolean {
-    let ret: boolean;
+    parseString(string: string): boolean {
+        let ret: boolean;
 
-    do {
-      const a = string.split(':');
-      if (a.length !== 5 && a.length !== 6) {
-        break;
-      }
+        do {
+            const a = string.split(':');
+            if (a.length !== 5 && a.length !== 6) {
+                break;
+            }
 
-      if (a[0] !== 'urn') {
-        break;
-      }
+            if (a[0] !== 'urn') {
+                break;
+            }
 
-      this.ns = a[1];
-      this.type = UrnTypeFromString(a[2]);
-      this.name = a[3];
-      this.value = Number.parseInt(a[4], 16);
-      this.isModified = (a.length === 6);
+            this.ns = a[1];
+            this.type = UrnTypeFromString(a[2]);
+            this.name = a[3];
+            this.value = Number.parseInt(a[4], 16);
+            this.isModified = (a.length === 6);
 
-      if (this.isModified) {
-        this.modified = a[5];
-      }
+            if (this.isModified) {
+                this.modified = a[5];
+            }
 
-      ret = true;
-    } while (false);
+            ret = true;
+        } while (false);
 
-    return ret;
-  }
+        return ret;
+    }
 
-  parse(theType: UrnType, string: string): boolean {
-    return this.parseString(string) && this.validateType(theType);
-  }
+    parse(theType: UrnType, string: string): boolean {
+        return this.parseString(string) && this.validateType(theType);
+    }
 
-  validateType(theType: UrnType): boolean {
-    return (this.type === theType);
-  }
+    validateType(theType: UrnType): boolean {
+        return (this.type === theType);
+    }
+
+    toString(): string {
+        let s = "urn:miot-spec:" + UrnTypeToString(this.type) + ":" + this.name + ":" + this.value.toString(16);
+        if (this.isModified) {
+            s = s + ":" + this.modified;
+        }
+
+        return s;
+    }
 }
