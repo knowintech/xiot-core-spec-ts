@@ -5,13 +5,11 @@ import {EventDefinition} from '../../spec/definitions/EventDefinition';
 
 export class EventDefinitionCodec {
 
-  static decode(value: string): EventDefinition {
-    const json = JSON.parse(value);
-
+  static decode(json: Object): EventDefinition {
     const def = new EventDefinition();
-    def.type = ActionType.valueOf(json.getString(Spec.TYPE, ''));
-    def.description = json.getString(Spec.DESCRIPTION, '');
-    def.arguments = DefinitionCodec.decodeProperties(json.get(Spec.ARGUMENTS));
+    def.type = ActionType.valueOf(json[Spec.TYPE]);
+    def.description = json[Spec.DESCRIPTION];
+    def.arguments = DefinitionCodec.decodeProperties(json[Spec.ARGUMENTS]);
     return def;
   }
 

@@ -5,9 +5,7 @@ import {ServiceType} from '../../spec/definitions/urn/ServiceType';
 
 export class ServiceDefinitionCodec {
 
-  static decode(value: string): ServiceDefinition {
-    const json = JSON.parse(value);
-
+  static decode(json: Object): ServiceDefinition {
     const def = new ServiceDefinition();
     def.type = ServiceType.valueOf(json[Spec.TYPE]);
     def.description = json[Spec.DESCRIPTION];

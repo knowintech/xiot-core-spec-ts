@@ -99,7 +99,7 @@
                     "description": "Filter Max Life Expectancy",
                     "format": "uint32",
                     "access": ["read"],
-                    "unit": "HOURS"
+                    "unit": "hours"
                 }
             ]
         },
@@ -123,7 +123,7 @@
                     "description": "Filter Max Life Expectancy",
                     "format": "uint32",
                     "access": ["read"],
-                    "unit": "HOURS"
+                    "unit": "hours"
                 }
             ]
         },
@@ -147,7 +147,7 @@
                     "description": "Filter Max Life Expectancy",
                     "format": "uint32",
                     "access": ["read"],
-                    "unit": "HOURS"
+                    "unit": "hours"
                 }
             ]
         },
@@ -171,7 +171,7 @@
                     "description": "Filter Max Life Expectancy",
                     "format": "uint32",
                     "access": ["read"],
-                    "unit": "HOURS"
+                    "unit": "hours"
                 }
             ]
         }

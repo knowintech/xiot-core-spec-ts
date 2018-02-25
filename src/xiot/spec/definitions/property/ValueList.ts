@@ -1,6 +1,7 @@
 import {ConstraintValue} from './ConstraintValue';
 import {ValueDefinition} from './ValueDefinition';
 import {DataValue} from './data/DataValue';
+import {Spec} from "../../constant/Spec";
 
 export class ValueList implements ConstraintValue {
 
@@ -18,5 +19,18 @@ export class ValueList implements ConstraintValue {
     }
 
     return false;
+  }
+
+  toJsonArray(): Array<Object> {
+      const array = [];
+
+      for (const v of this.values) {
+          const o = {};
+          o[Spec.VALUE] = v.value.getObjectValue();
+          o[Spec.DESCRIPTION] = v.description;
+          array.push(o);
+      }
+
+      return array;
   }
 }

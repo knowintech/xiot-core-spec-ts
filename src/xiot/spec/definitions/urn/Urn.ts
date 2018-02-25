@@ -71,7 +71,14 @@ export class Urn {
     }
 
     toString(): string {
-        let s = "urn:miot-spec:" + UrnTypeToString(this.type) + ":" + this.name + ":" + this.value.toString(16);
+        const uuid = this.value.toString(16).toUpperCase();
+        const length = 8 - uuid.length;
+        let prefix = '';
+        for (let i = 0; i < length; ++i) {
+            prefix += '0';
+        }
+
+        let s = "urn:miot-spec:" + UrnTypeToString(this.type) + ":" + this.name + ":" + prefix + uuid;
         if (this.isModified) {
             s = s + ":" + this.modified;
         }

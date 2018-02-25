@@ -76,4 +76,16 @@ export class DefinitionCodec {
 
     return list;
   }
+
+  static encodeProperties(array: Array<PropertyType>): Array<string> {
+      const list = [];
+
+      if (array != null) {
+          for (const v of array) {
+              list.push(v.toString());
+          }
+      }
+
+      return list;
+  }
 }

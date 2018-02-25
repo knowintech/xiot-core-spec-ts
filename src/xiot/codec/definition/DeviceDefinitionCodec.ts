@@ -5,9 +5,7 @@ import {DeviceType} from '../../spec/definitions/urn/DeviceType';
 
 export class DeviceDefinitionCodec {
 
-  static decode(value: string): DeviceDefinition {
-    const json = JSON.parse(value);
-
+  static decode(json: Object): DeviceDefinition {
     const def = new DeviceDefinition();
     def.type = DeviceType.valueOf(json[Spec.TYPE]);
     def.description = json[Spec.DESCRIPTION];

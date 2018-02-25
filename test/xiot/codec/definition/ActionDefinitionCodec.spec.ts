@@ -15,10 +15,9 @@ describe('ActionDefinitionCodec', async () => {
     for (const file of dir) {
         it('decode: ' + file, async () => {
             let a = await fs.readFile(folder + file);
-            const def = ActionDefinitionCodec.decode(a.toString());
-            // console.log("a => ", a.toString());
-            // console.log("b => ", def.toJSON());
-            expect(true).to.equal(true);
+            const json = JSON.parse(a.toString());
+            const def = ActionDefinitionCodec.decode(json);
+            expect(JSON.stringify(json)).to.equal(JSON.stringify(ActionDefinitionCodec.encode(def)));
         });
     }
 });

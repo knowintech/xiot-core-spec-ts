@@ -2,11 +2,9 @@ import {ActionDefinition} from '../../spec/definitions/ActionDefinition';
 import {Spec} from '../../spec/constant/Spec';
 import {ActionType} from '../../spec/definitions/urn/ActionType';
 import {DefinitionCodec} from './DefinitionCodec';
-
 export class ActionDefinitionCodec {
 
-    static decode(value: string): ActionDefinition {
-        const json = JSON.parse(value);
+    static decode(json: Object): ActionDefinition {
         const def = new ActionDefinition();
         def.type = ActionType.valueOf(json[Spec.TYPE]);
         def.description = json[Spec.DESCRIPTION];
@@ -16,6 +14,19 @@ export class ActionDefinitionCodec {
     }
 
     static encode(def: ActionDefinition): Object {
-        return def.toJSON();
+        const object = Object.assign({
+            type: def.type.toString(),
+            description: def.description,
+        });
+
+        if (def.in.length > 0) {
+            object[Spec.IN] = DefinitionCodec.encodeProperties(def.in);
+        }
+
+        if (def.out.length > 0) {
+            object[Spec.OUT] = DefinitionCodec.encodeProperties(def.out);
+        }
+
+        return object;
     }
 }

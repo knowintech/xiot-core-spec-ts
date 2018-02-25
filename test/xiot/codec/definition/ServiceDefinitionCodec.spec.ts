@@ -15,7 +15,8 @@ describe('ServiceDefinitionCodec', async () => {
     for (const file of dir) {
         it('decode: ' + file, async () => {
             let a = await fs.readFile(folder + file);
-            const def = ServiceDefinitionCodec.decode(a.toString());
+            const json = JSON.parse(a.toString());
+            const def = ServiceDefinitionCodec.decode(json);
             // console.log("a: ", a.toString());
             expect(true).to.equal(true);
         });

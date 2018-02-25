@@ -1,6 +1,7 @@
 import {ServiceType} from '../definitions/urn/ServiceType';
 import {Property} from './Property';
 import {Action} from './Action';
+import {Event} from './Event';
 
 export class Service {
   public iid: number;
