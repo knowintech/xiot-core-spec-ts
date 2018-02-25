@@ -58,4 +58,14 @@ export class PropertyDefinitionCodec {
 
         return object;
     }
+
+    static encodeArray(properties: Array<PropertyType>): Array<Object> {
+        const array = [];
+
+        properties.forEach((type) => {
+            array.push(type.toString());
+        });
+
+        return array;
+    }
 }

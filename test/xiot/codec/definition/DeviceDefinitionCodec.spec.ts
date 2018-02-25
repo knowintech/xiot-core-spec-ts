@@ -17,8 +17,7 @@ describe('DeviceDefinitionCodec', async () => {
             let a = await fs.readFile(folder + file);
             const json = JSON.parse(a.toString());
             const def = DeviceDefinitionCodec.decode(json);
-            // console.log("a: ", a.toString());
-            expect(true).to.equal(true);
+            expect(JSON.stringify(json)).to.equal(JSON.stringify(DeviceDefinitionCodec.encode(def)));
         });
     }
 });

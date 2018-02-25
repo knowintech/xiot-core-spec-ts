@@ -29,4 +29,14 @@ export class ActionDefinitionCodec {
 
         return object;
     }
+
+    static encodeArray(actions: Array<ActionType>): Array<Object> {
+        const array = [];
+
+        actions.forEach((type) => {
+            array.push(type.toString());
+        });
+
+        return array;
+    }
 }

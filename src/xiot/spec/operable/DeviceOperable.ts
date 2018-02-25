@@ -1,5 +1,5 @@
 import {Device} from '../instance/Device';
-import {DeviceSummary} from '../operation/DeviceSummary';
+import {DeviceSummary} from '../summary/DeviceSummary';
 import {PropertyOperation} from '../operation/PropertyOperation';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';

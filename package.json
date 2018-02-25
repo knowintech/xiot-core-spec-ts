@@ -4,7 +4,7 @@
   "description": "XIOT Specification Codec",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p src",
     "clean": "rm -fr dist",
     "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register test/**/*.spec.ts"
   },
