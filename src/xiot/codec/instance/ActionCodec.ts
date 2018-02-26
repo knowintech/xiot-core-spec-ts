@@ -1,8 +1,7 @@
-import {Action} from "../../spec/instance/Action";
-import {Spec} from "../../spec/constant/Spec";
-import {ActionOperable} from "../../spec/operable/ActionOperable";
-import {ActionType} from "../../spec/definitions/urn/ActionType";
-import {PropertyCodec} from "./PropertyCodec";
+import {Action} from '../../spec/instance/Action';
+import {Spec} from '../../spec/constant/Spec';
+import {ActionOperable} from '../../spec/operable/ActionOperable';
+import {ActionType} from '../../spec/definitions/urn/ActionType';
 
 export class ActionCodec {
 

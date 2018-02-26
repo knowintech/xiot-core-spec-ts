@@ -52,7 +52,7 @@ export function UnitToString(type: Unit): string {
 
 export function UnitFromString(type: string): Unit {
     if (type != null) {
-        let v = type.toLowerCase();
+        const v = type.toLowerCase();
         for (const t of _UnitMapping) {
             if (t[1] === v) {
                 return t[0];

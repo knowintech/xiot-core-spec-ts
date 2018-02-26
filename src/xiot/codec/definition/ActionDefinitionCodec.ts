@@ -2,6 +2,7 @@ import {ActionDefinition} from '../../spec/definitions/ActionDefinition';
 import {Spec} from '../../spec/constant/Spec';
 import {ActionType} from '../../spec/definitions/urn/ActionType';
 import {DefinitionCodec} from './DefinitionCodec';
+
 export class ActionDefinitionCodec {
 
     static decode(json: Object): ActionDefinition {

@@ -2,9 +2,9 @@ import {Spec} from '../../spec/constant/Spec';
 import {DefinitionCodec} from './DefinitionCodec';
 import {ServiceDefinition} from '../../spec/definitions/ServiceDefinition';
 import {ServiceType} from '../../spec/definitions/urn/ServiceType';
-import {PropertyDefinitionCodec} from "./PropertyDefinitionCodec";
-import {ActionDefinitionCodec} from "./ActionDefinitionCodec";
-import {EventDefinitionCodec} from "./EventDefinitionCodec";
+import {PropertyDefinitionCodec} from './PropertyDefinitionCodec';
+import {ActionDefinitionCodec} from './ActionDefinitionCodec';
+import {EventDefinitionCodec} from './EventDefinitionCodec';
 
 export class ServiceDefinitionCodec {
 

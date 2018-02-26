@@ -1,6 +1,6 @@
-import {Event} from "../../spec/instance/Event";
-import {Spec} from "../../spec/constant/Spec";
-import {EventType} from "../../spec/definitions/urn/EventType";
+import {Event} from '../../spec/instance/Event';
+import {Spec} from '../../spec/constant/Spec';
+import {EventType} from '../../spec/definitions/urn/EventType';
 
 export class EventCodec {
 

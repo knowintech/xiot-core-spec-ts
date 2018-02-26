@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p src",
     "clean": "rm -fr dist",
-    "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register test/**/*.spec.ts"
+    "test": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register test/**/*.spec.ts",
+    "lint": "tslint"
   },
   "repository": {
     "type": "git",

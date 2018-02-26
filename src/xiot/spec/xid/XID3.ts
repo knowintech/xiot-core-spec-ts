@@ -5,11 +5,11 @@ export class XID3 {
     public value: string;
 
     static parseString(value: string): XID3 {
-        let xid = new XID3();
+        const xid = new XID3();
         xid.value = value;
 
-        let id = value.split('.');
-        if (id.length == 3) {
+        const id = value.split('.');
+        if (id.length === 3) {
             xid.did = id[0];
             xid.siid = Number.parseInt(id[1], 10);
             xid.iid = Number.parseInt(id[2], 10);

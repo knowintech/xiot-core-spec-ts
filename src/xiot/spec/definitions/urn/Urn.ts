@@ -78,9 +78,9 @@ export class Urn {
             prefix += '0';
         }
 
-        let s = "urn:miot-spec:" + UrnTypeToString(this.type) + ":" + this.name + ":" + prefix + uuid;
+        let s = 'urn:miot-spec:' + UrnTypeToString(this.type) + ':' + this.name + ':' + prefix + uuid;
         if (this.isModified) {
-            s = s + ":" + this.modified;
+            s = s + ':' + this.modified;
         }
 
         return s;

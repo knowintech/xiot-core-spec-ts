@@ -5,8 +5,8 @@ import {DataFormatFromString, DataFormatToString} from '../../spec/definitions/p
 import {Access} from '../../spec/definitions/property/Access';
 import {DefinitionCodec} from './DefinitionCodec';
 import {Unit, UnitFromString, UnitToString} from '../../spec/definitions/property/Unit';
-import {ValueList} from "../../spec/definitions/property/ValueList";
-import {ValueRange} from "../../spec/definitions/property/ValueRange";
+import {ValueList} from '../../spec/definitions/property/ValueList';
+import {ValueRange} from '../../spec/definitions/property/ValueRange';
 
 export class PropertyDefinitionCodec {
 
@@ -52,7 +52,7 @@ export class PropertyDefinitionCodec {
             }
         }
 
-        if (def.unit != Unit.NONE) {
+        if (def.unit !== Unit.NONE) {
             object[Spec.UNIT] = UnitToString(def.unit);
         }
 

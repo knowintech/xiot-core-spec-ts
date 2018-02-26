@@ -1,8 +1,8 @@
-import {Spec} from "../../spec/constant/Spec";
-import {Device} from "../../spec/instance/Device";
-import {DeviceOperable} from "../../spec/operable/DeviceOperable";
-import {DeviceType} from "../../spec/definitions/urn/DeviceType";
-import {ServiceCodec} from "./ServiceCodec";
+import {Spec} from '../../spec/constant/Spec';
+import {Device} from '../../spec/instance/Device';
+import {DeviceOperable} from '../../spec/operable/DeviceOperable';
+import {DeviceType} from '../../spec/definitions/urn/DeviceType';
+import {ServiceCodec} from './ServiceCodec';
 
 export class DeviceCodec {
 

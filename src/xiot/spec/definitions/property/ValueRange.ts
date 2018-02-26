@@ -2,7 +2,6 @@ import {ConstraintValue} from './ConstraintValue';
 import {DataFormat} from './data/DataFormat';
 import {DataValue} from './data/DataValue';
 import {DataValueFactory} from './data/DataValueFactory';
-import {Spec} from "../../constant/Spec";
 
 export class ValueRange implements ConstraintValue {
     public format: DataFormat;

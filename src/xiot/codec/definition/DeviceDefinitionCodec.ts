@@ -2,7 +2,7 @@ import {Spec} from '../../spec/constant/Spec';
 import {DefinitionCodec} from './DefinitionCodec';
 import {DeviceDefinition} from '../../spec/definitions/DeviceDefinition';
 import {DeviceType} from '../../spec/definitions/urn/DeviceType';
-import {ServiceDefinitionCodec} from "./ServiceDefinitionCodec";
+import {ServiceDefinitionCodec} from './ServiceDefinitionCodec';
 
 export class DeviceDefinitionCodec {
 

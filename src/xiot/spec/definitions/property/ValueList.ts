@@ -1,7 +1,7 @@
 import {ConstraintValue} from './ConstraintValue';
 import {ValueDefinition} from './ValueDefinition';
 import {DataValue} from './data/DataValue';
-import {Spec} from "../../constant/Spec";
+import {Spec} from '../../constant/Spec';
 
 export class ValueList implements ConstraintValue {
 

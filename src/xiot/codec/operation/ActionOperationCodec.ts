@@ -1,6 +1,6 @@
-import {ActionOperation} from "../../spec/operation/ActionOperation";
-import {AID} from "../../spec/xid/AID";
-import {Spec} from "../../spec/constant/Spec";
+import {ActionOperation} from '../../spec/operation/ActionOperation';
+import {AID} from '../../spec/xid/AID';
+import {Spec} from '../../spec/constant/Spec';
 
 export class ActionOperationCodec {
 
@@ -16,10 +16,9 @@ export class ActionOperationCodec {
         o.aid = AID.parseString(result[Spec.AID]);
         o.oid = result[Spec.OID];
         o.status = result[Spec.STATUS];
-        if (o.status == 0) {
+        if (o.status === 0) {
             o.out = result[Spec.OUT];
-        }
-        else {
+        } else {
             o.description = result[Spec.DESCRIPTION];
         }
 
@@ -40,10 +39,9 @@ export class ActionOperationCodec {
             status: action.status
         });
 
-        if (action.status == 0) {
+        if (action.status === 0) {
             object[Spec.OUT] = action.out;
-        }
-        else {
+        } else {
             object[Spec.DESCRIPTION] = action.description;
         }
 

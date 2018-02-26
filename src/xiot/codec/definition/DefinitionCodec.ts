@@ -6,7 +6,7 @@ import {ServiceType} from '../../spec/definitions/urn/ServiceType';
 import {ActionType} from '../../spec/definitions/urn/ActionType';
 import {EventType} from '../../spec/definitions/urn/EventType';
 import {ValueDefinition} from '../../spec/definitions/property/ValueDefinition';
-import {Spec} from "../../spec/constant/Spec";
+import {Spec} from '../../spec/constant/Spec';
 
 export class DefinitionCodec {
 

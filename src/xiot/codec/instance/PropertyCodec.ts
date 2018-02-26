@@ -1,11 +1,11 @@
-import {Property} from "../../spec/instance/Property";
-import {PropertyOperable} from "../../spec/operable/PropertyOperable";
-import {Spec} from "../../spec/constant/Spec";
-import {PropertyDefinitionCodec} from "../definition/PropertyDefinitionCodec";
-import {DataFormatToString} from "../../spec/definitions/property/data/DataFormat";
-import {ValueList} from "../../spec/definitions/property/ValueList";
-import {ValueRange} from "../../spec/definitions/property/ValueRange";
-import {Unit, UnitToString} from "../../spec/definitions/property/Unit";
+import {Property} from '../../spec/instance/Property';
+import {PropertyOperable} from '../../spec/operable/PropertyOperable';
+import {Spec} from '../../spec/constant/Spec';
+import {PropertyDefinitionCodec} from '../definition/PropertyDefinitionCodec';
+import {DataFormatToString} from '../../spec/definitions/property/data/DataFormat';
+import {ValueList} from '../../spec/definitions/property/ValueList';
+import {ValueRange} from '../../spec/definitions/property/ValueRange';
+import {Unit, UnitToString} from '../../spec/definitions/property/Unit';
 
 export class PropertyCodec {
 
@@ -58,7 +58,7 @@ export class PropertyCodec {
             }
         }
 
-        if (property.definition.unit != Unit.NONE) {
+        if (property.definition.unit !== Unit.NONE) {
             object[Spec.UNIT] = UnitToString(property.definition.unit);
         }
 

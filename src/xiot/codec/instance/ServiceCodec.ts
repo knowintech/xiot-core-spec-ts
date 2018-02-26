@@ -1,10 +1,10 @@
-import {Spec} from "../../spec/constant/Spec";
-import {Service} from "../../spec/instance/Service";
-import {ServiceType} from "../../spec/definitions/urn/ServiceType";
-import {PropertyCodec} from "./PropertyCodec";
-import {ActionCodec} from "./ActionCodec";
-import {EventCodec} from "./EventCodec";
-import {ServiceOperable} from "../../spec/operable/ServiceOperable";
+import {Spec} from '../../spec/constant/Spec';
+import {Service} from '../../spec/instance/Service';
+import {ServiceType} from '../../spec/definitions/urn/ServiceType';
+import {PropertyCodec} from './PropertyCodec';
+import {ActionCodec} from './ActionCodec';
+import {EventCodec} from './EventCodec';
+import {ServiceOperable} from '../../spec/operable/ServiceOperable';
 
 export class ServiceCodec {
 

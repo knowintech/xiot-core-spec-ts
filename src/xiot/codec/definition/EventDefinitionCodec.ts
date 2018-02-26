@@ -2,7 +2,7 @@ import {Spec} from '../../spec/constant/Spec';
 import {ActionType} from '../../spec/definitions/urn/ActionType';
 import {DefinitionCodec} from './DefinitionCodec';
 import {EventDefinition} from '../../spec/definitions/EventDefinition';
-import {EventType} from "../../spec/definitions/urn/EventType";
+import {EventType} from '../../spec/definitions/urn/EventType';
 
 export class EventDefinitionCodec {
 
