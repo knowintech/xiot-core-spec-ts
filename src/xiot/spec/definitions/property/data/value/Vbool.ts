@@ -18,7 +18,21 @@ export class Vbool implements DataValue {
       return v;
     }
 
-    throw new Error('invalid value: ' + value);
+    throw new Error('invalid value: ' + value + ' type: ' + typeof value);
+  }
+
+  static fromString(value: string): Vbool {
+    if (value === 'true') {
+      const v = new Vbool();
+      v.value = true;
+      return v;
+    } else if (value === 'false') {
+      const v = new Vbool();
+      v.value = false;
+      return v;
+    }
+
+    throw new Error('Vbool invalid value: ' + value);
   }
 
   lessEquals(maxValue: DataValue): boolean {

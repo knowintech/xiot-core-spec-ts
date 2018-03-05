@@ -15,6 +15,12 @@ export class Vuint8 implements DataValue {
       throw new Error('invalid value: ' + value);
     }
 
+    static fromString(value: string): Vuint8 {
+        const v = new Vuint8();
+        v.value = Number.parseInt(value);
+        return v;
+    }
+
     lessEquals(max: DataValue): boolean {
       if (!(max instanceof Vuint8)) {
         return false;
@@ -60,4 +66,4 @@ export class Vuint8 implements DataValue {
     getFormat(): DataFormat {
       return DataFormat.UINT8;
     }
-  }
+}

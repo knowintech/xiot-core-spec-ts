@@ -1,15 +1,15 @@
 export enum DataFormat {
-  UNKNOWN,
-  BOOL,
-  UINT8,
-  UINT16,
-  UINT32,
-  INT8,
-  INT16,
-  INT32,
-  INT64,
-  FLOAT,
-  STRING,
+  UNKNOWN = 0,
+  BOOL = 1,
+  UINT8 = 2,
+  UINT16 = 3,
+  UINT32 = 4,
+  INT8 = 5,
+  INT16 = 6,
+  INT32 = 7,
+  INT64 = 8,
+  FLOAT = 9,
+  STRING = 10,
 }
 
 const _DataFormatMapping: [DataFormat, string][] = [

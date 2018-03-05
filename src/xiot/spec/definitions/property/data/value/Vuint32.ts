@@ -1,5 +1,6 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
+import {Vuint16} from './Vuint16';
 
 export class Vuint32 implements DataValue {
 
@@ -13,6 +14,12 @@ export class Vuint32 implements DataValue {
       }
 
       throw new Error('invalid value: ' + value);
+    }
+
+    static fromString(value: string): Vuint32 {
+        const v = new Vuint32();
+        v.value = Number.parseInt(value);
+        return v;
     }
 
     lessEquals(max: DataValue): boolean {

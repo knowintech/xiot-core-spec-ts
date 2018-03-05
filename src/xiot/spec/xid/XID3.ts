@@ -4,8 +4,14 @@ export class XID3 {
     public did: string;
     public value: string;
 
+    constructor(did: string, siid: number, iid: number) {
+        this.did = did;
+        this.siid = siid;
+        this.iid = iid;
+    }
+
     static parseString(value: string): XID3 {
-        const xid = new XID3();
+        const xid = new XID3('', 0, 0);
         xid.value = value;
 
         const id = value.split('.');

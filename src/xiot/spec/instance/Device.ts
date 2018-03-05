@@ -10,4 +10,8 @@ export class Device {
   constructor() {
     this.services = new Map<Number, Service>();
   }
+
+  getServices(): Array<Service> {
+    return Array.from(this.services.values());
+  }
 }

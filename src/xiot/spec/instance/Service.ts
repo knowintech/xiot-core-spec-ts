@@ -16,4 +16,16 @@ export class Service {
     this.actions = new Map<Number, Action>();
     this.events = new Map<Number, Event>();
   }
+
+  getProperties(): Array<Property> {
+    return Array.from(this.properties.values());
+  }
+
+  getActions(): Array<Action> {
+    return Array.from(this.actions.values());
+  }
+
+  getEvents(): Array<Event> {
+    return Array.from(this.events.values());
+  }
 }

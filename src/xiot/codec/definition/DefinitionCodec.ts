@@ -16,8 +16,7 @@ export class DefinitionCodec {
       if (array != null) {
           for (const v of array) {
               if (v.hasOwnProperty('value') && v.hasOwnProperty('description')) {
-                  const def = new ValueDefinition(format, v[Spec.VALUE], v[Spec.DESCRIPTION]);
-                  list.values.push(def);
+                  list.values.push(new ValueDefinition(format, v[Spec.VALUE], v[Spec.DESCRIPTION]));
               }
           }
       }

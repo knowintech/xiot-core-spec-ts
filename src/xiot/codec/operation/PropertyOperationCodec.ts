@@ -32,37 +32,67 @@ export class PropertyOperationCodec {
         return array;
     }
 
-    static decodeValues(values: Array<Object>): Array<PropertyOperation> {
+    static decodeValues(json: Object): Array<PropertyOperation> {
+      const array = [];
+
+      const properties = json['properties'];
+      if (properties != null) {
+        if (properties instanceof Array) {
+          properties.forEach(value => {
+            const o = new PropertyOperation();
+            o.pid = PID.parseString(value[Spec.PID]);
+            o.status = value[Spec.STATUS];
+            if (o.status == null) {
+              o.status = 0;
+            }
+
+            if (o.status === 0) {
+              o.value = value[Spec.VALUE];
+            } else {
+              o.description = value[Spec.DESCRIPTION];
+            }
+
+            array.push(o);
+          });
+        }
+      }
+
+      return array;
+    }
+
+    // static decodeValuesByArray(values: Array<Object>): Array<PropertyOperation> {
+    //     const array = [];
+    //
+    //     if (values != null) {
+    //         values.forEach(value => {
+    //             const o = new PropertyOperation();
+    //             o.pid = PID.parseString(o[Spec.PID]);
+    //             o.status = o[Spec.STATUS];
+    //             if (o.status === 0) {
+    //                 o.value = o[Spec.VALUE];
+    //             } else {
+    //                 o.description = o[Spec.DESCRIPTION];
+    //             }
+    //
+    //             array.push(o);
+    //         });
+    //     }
+    //
+    //     return array;
+    // }
+
+    static decodeStatus(json: Object): Array<PropertyOperation> {
         const array = [];
 
-        if (values != null) {
-            values.forEach(value => {
+        const properties = json['properties'];
+
+        if (properties != null) {
+          properties.forEach(value => {
                 const o = new PropertyOperation();
-                o.pid = PID.parseString(o[Spec.PID]);
-                o.status = o[Spec.STATUS];
-                if (o.status === 0) {
-                    o.value = o[Spec.VALUE];
-                } else {
-                    o.description = o[Spec.DESCRIPTION];
-                }
-
-                array.push(o);
-            });
-        }
-
-        return array;
-    }
-
-    static decodeStatus(values: Array<Object>): Array<PropertyOperation> {
-        const array = [];
-
-        if (values != null) {
-            values.forEach(value => {
-              const o = new PropertyOperation();
-                o.pid = PID.parseString(o[Spec.PID]);
-                o.status = o[Spec.STATUS];
+                o.pid = PID.parseString(value[Spec.PID]);
+                o.status = value[Spec.STATUS];
                 if (o.status !== 0) {
-                    o.description = o[Spec.DESCRIPTION];
+                    o.description = value[Spec.DESCRIPTION];
                 }
 
                 array.push(o);
@@ -71,6 +101,25 @@ export class PropertyOperationCodec {
 
         return array;
     }
+
+    // static decodeStatusByArray(values: Array<Object>): Array<PropertyOperation> {
+    //     const array = [];
+    //
+    //     if (values != null) {
+    //         values.forEach(value => {
+    //           const o = new PropertyOperation();
+    //             o.pid = PID.parseString(o[Spec.PID]);
+    //             o.status = o[Spec.STATUS];
+    //             if (o.status !== 0) {
+    //                 o.description = o[Spec.DESCRIPTION];
+    //             }
+    //
+    //             array.push(o);
+    //         });
+    //     }
+    //
+    //     return array;
+    // }
 
     static encodeQueryGETtoString(list: Array<PropertyOperation>): string {
         return list.map(p => p.pid.toString()).join(',');
@@ -97,10 +146,10 @@ export class PropertyOperationCodec {
         });
     }
 
-    static encodeQuerySET(list: Array<PropertyOperation>): Array<Object> {
-        return list
-            .filter(p => p.status === 0)
-            .map(p => Object.assign({pid: p.pid.toString(), value: p.value}));
+    static encodeQuerySET(list: Array<PropertyOperation>): Object {
+        return Object.assign({properties:
+            list.filter(p => p.status === 0)
+                .map(p => Object.assign({pid: p.pid.toString(), value: p.value}))});
     }
 
     static encodeResultSET(list: Array<PropertyOperation>): Array<Object> {

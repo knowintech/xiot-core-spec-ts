@@ -48,4 +48,40 @@ export class DataValueFactory {
 
     throw new Error('format invalid: ' + format);
   }
+
+  static createFromString(format: DataFormat, value: string): DataValue {
+    switch (format) {
+      case DataFormat.BOOL:
+        return Vbool.fromString(value);
+
+      case DataFormat.STRING:
+        return Vstring.create(value);
+
+      case DataFormat.FLOAT:
+        return Vfloat.fromString(value);
+
+      case DataFormat.UINT8:
+        return Vuint8.fromString(value);
+
+      case DataFormat.UINT16:
+        return Vuint16.fromString(value);
+
+      case DataFormat.UINT32:
+        return Vuint32.fromString(value);
+
+      case DataFormat.INT8:
+        return Vint8.fromString(value);
+
+      case DataFormat.INT16:
+        return Vint16.fromString(value);
+
+      case DataFormat.INT32:
+        return Vint32.fromString(value);
+
+      case DataFormat.INT64:
+        return Vint64.fromString(value);
+    }
+
+    throw new Error('format invalid: ' + format);
+  }
 }

@@ -1,5 +1,6 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
+import {Vint8} from './Vint8';
 
 export class Vint16 implements DataValue {
 
@@ -13,6 +14,12 @@ export class Vint16 implements DataValue {
       }
 
       throw new Error('invalid value: ' + value);
+    }
+
+    static fromString(value: string): Vint16 {
+        const v = new Vint16();
+        v.value = Number.parseInt(value);
+        return v;
     }
 
     lessEquals(max: DataValue): boolean {

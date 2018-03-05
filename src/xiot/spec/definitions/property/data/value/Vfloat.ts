@@ -14,6 +14,12 @@ export class Vfloat implements DataValue {
       throw new Error('invalid value: ' + value);
     }
 
+    static fromString(value: string): Vfloat {
+      const v = new Vfloat();
+      v.value = Number.parseFloat(value);
+      return v;
+    }
+
     lessEquals(max: DataValue): boolean {
       if (!(max instanceof Vfloat)) {
         return false;
@@ -59,4 +65,4 @@ export class Vfloat implements DataValue {
     getFormat(): DataFormat {
       return DataFormat.FLOAT;
     }
-  }
+}
