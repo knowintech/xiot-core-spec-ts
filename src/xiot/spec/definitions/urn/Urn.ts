@@ -7,6 +7,7 @@ export class Urn {
     private value: number;
     private isModified: boolean;
     private modified: string;
+    private version: number;
 
     constructor() {
     }
@@ -38,7 +39,7 @@ export class Urn {
 
         do {
             const a = string.split(':');
-            if (a.length !== 5 && a.length !== 6) {
+            if (a.length !== 5 && a.length !== 6 && a.length !== 7) {
                 break;
             }
 
@@ -51,9 +52,14 @@ export class Urn {
             this.name = a[3];
             this.value = Number.parseInt(a[4], 16);
             this.isModified = (a.length === 6);
+            this.version = 0;
 
             if (this.isModified) {
                 this.modified = a[5];
+            }
+
+            if (a.length === 7) {
+                this.version = Number.parseInt(a[6], 10);
             }
 
             ret = true;
@@ -78,9 +84,13 @@ export class Urn {
             prefix += '0';
         }
 
-        let s = 'urn:miot-spec:' + UrnTypeToString(this.type) + ':' + this.name + ':' + prefix + uuid;
+        let s = 'urn:' + this.ns + ':' + UrnTypeToString(this.type) + ':' + this.name + ':' + prefix + uuid;
         if (this.isModified) {
             s = s + ':' + this.modified;
+        }
+
+        if (this.version !== 0) {
+            s = s + ':' + this.version;
         }
 
         return s;
