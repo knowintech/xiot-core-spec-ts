@@ -4,28 +4,22 @@ import {Action} from './Action';
 import {Event} from './Event';
 
 export class Service {
-  public iid: number;
-  public type: ServiceType;
-  public description: string;
-  public properties: Map<Number, Property>;
-  public actions: Map<Number, Action>;
-  public events: Map<Number, Event>;
+  public iid: number = 0;
+  public type: ServiceType | null = null;
+  public description: string = '';
+  public properties: Map<Number, Property> = new Map<Number, Property>();
+  public actions: Map<Number, Action> = new Map<Number, Action>();
+  public events: Map<Number, Event> = new Map<Number, Event>();
 
-  constructor() {
-    this.properties = new Map<Number, Property>();
-    this.actions = new Map<Number, Action>();
-    this.events = new Map<Number, Event>();
-  }
-
-  getProperties(): Array<Property> {
+  getProperties(): Property[] {
     return Array.from(this.properties.values());
   }
 
-  getActions(): Array<Action> {
+  getActions(): Action[] {
     return Array.from(this.actions.values());
   }
 
-  getEvents(): Array<Event> {
+  getEvents(): Event[] {
     return Array.from(this.events.values());
   }
 }

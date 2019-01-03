@@ -1,10 +1,10 @@
 import {DeviceType} from '../definitions/urn/DeviceType';
 
 export class DeviceDetail {
-  public did: string;
-  public type: DeviceType;
-  public name: string;
-  public serialNumber: string;
-  public online: boolean;
-  public roomId: string;
+  public did: string = '';
+  public type: DeviceType | null = null;
+  public name: string = '';
+  public serialNumber: string = '';
+  public online: boolean = false;
+  public roomId: string = '';
 }

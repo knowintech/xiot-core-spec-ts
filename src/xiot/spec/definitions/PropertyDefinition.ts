@@ -7,12 +7,12 @@ import {DataValue} from './property/data/DataValue';
 import {ValueList} from './property/ValueList';
 
 export class PropertyDefinition {
-  public type: ServiceType;
-  public description: string;
-  public format: DataFormat;
-  public access: Access;
-  public constraintValue: ConstraintValue;
-  public unit: Unit;
+  public type: ServiceType | null = null;
+  public description: string = '';
+  public format: DataFormat = DataFormat.BOOL;
+  public access: Access = new Access();
+  public constraintValue: ConstraintValue | null = null;
+  public unit: Unit = Unit.NONE;
 
   validate(value: DataValue): boolean {
     if (value == null) {
@@ -70,7 +70,7 @@ export class PropertyDefinition {
     return true;
   }
 
-  valueList(): ValueList {
+  valueList(): ValueList | null {
     if (this.constraintValue !== null) {
       if (this.constraintValue instanceof ValueList) {
         return this.constraintValue;

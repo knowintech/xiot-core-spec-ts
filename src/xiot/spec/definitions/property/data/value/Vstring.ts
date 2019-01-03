@@ -3,7 +3,7 @@ import {DataFormat} from '../DataFormat';
 
 export class Vstring implements DataValue {
 
-    private value: string;
+    private value: string = '';
 
     static create(value: Object): Vstring {
       if (typeof(value) === 'string') {
@@ -16,15 +16,15 @@ export class Vstring implements DataValue {
     }
 
     lessEquals(maxValue: DataValue): boolean {
-      return undefined;
+      return false;
     }
 
     validate(min: DataValue, max: DataValue): boolean {
-      return undefined;
+      return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue): boolean {
-      return undefined;
+    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+      return false;
     }
 
     getObjectValue(): Object {

@@ -1,13 +1,13 @@
 import {UrnType, UrnTypeFromString, UrnTypeToString} from './UrnType';
 
 export class Urn {
-    private ns: string;
-    private type: UrnType;
-    private name: string;
-    private value: number;
-    private isModified: boolean;
-    private modified: string;
-    private version: number;
+    private ns: string = '';
+    private type: UrnType = UrnType.UNDEFINED;
+    private name: string = '';
+    private value: number = 0;
+    private isModified: boolean = false;
+    private modified: string = '';
+    private version: number = 0;
 
     constructor() {
     }
@@ -35,7 +35,7 @@ export class Urn {
     // }
 
     parseString(string: string): boolean {
-        let ret: boolean;
+        let ret: boolean = false;
 
         do {
             const a = string.split(':');

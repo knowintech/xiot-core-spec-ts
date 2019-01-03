@@ -5,11 +5,7 @@ import {Spec} from '../../constant/Spec';
 
 export class ValueList implements ConstraintValue {
 
-  public values: Array<ValueDefinition>;
-
-  constructor() {
-    this.values = [];
-  }
+  public values: ValueDefinition[] = [];
 
   validate(value: DataValue): boolean {
     for (const v of this.values) {
@@ -21,11 +17,11 @@ export class ValueList implements ConstraintValue {
     return false;
   }
 
-  toJsonArray(): Array<Object> {
-      const array = [];
+  toJsonArray(): any[] {
+      const array: any[] = [];
 
       for (const v of this.values) {
-          const o = {};
+          const o: any = {};
           o[Spec.VALUE] = v.value.getObjectValue();
           o[Spec.DESCRIPTION] = v.description;
           array.push(o);

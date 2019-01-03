@@ -10,13 +10,12 @@ import {ValueRange} from '../../spec/definitions/property/ValueRange';
 
 export class PropertyDefinitionCodec {
 
-    static decode(json: Object): PropertyDefinition {
+    static decode(json: any): PropertyDefinition {
         const def = new PropertyDefinition();
         def.type = PropertyType.valueOf(json[Spec.TYPE]);
         def.description = json[Spec.DESCRIPTION];
         def.format = DataFormatFromString(json[Spec.FORMAT]);
         def.access = Access.create(json[Spec.ACCESS]);
-        def.constraintValue = null;
         def.unit = UnitFromString(json[Spec.UNIT]);
 
         if (json.hasOwnProperty(Spec.VALUE_LIST) && json.hasOwnProperty(Spec.VALUE_RANGE)) {
@@ -34,13 +33,13 @@ export class PropertyDefinitionCodec {
         return def;
     }
 
-    static encode(def: PropertyDefinition): Object {
-        const object = Object.assign({
-            type: def.type.toString(),
+    static encode(def: PropertyDefinition): any {
+        const object: any = {
+            type: def.type != null ? def.type.toString() : '',
             description: def.description,
             format: DataFormatToString(def.format),
             access: def.access.toList(),
-        });
+        };
 
         if (def.constraintValue != null) {
             if (def.constraintValue instanceof ValueList) {
@@ -59,8 +58,8 @@ export class PropertyDefinitionCodec {
         return object;
     }
 
-    static encodeArray(properties: Array<PropertyType>): Array<Object> {
-        const array = [];
+    static encodeArray(properties: PropertyType[]): any[] {
+        const array: any[] = [];
 
         properties.forEach((type) => {
             array.push(type.toString());

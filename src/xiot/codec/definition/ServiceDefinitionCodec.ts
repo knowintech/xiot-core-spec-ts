@@ -8,7 +8,7 @@ import {EventDefinitionCodec} from './EventDefinitionCodec';
 
 export class ServiceDefinitionCodec {
 
-    static decode(json: Object): ServiceDefinition {
+    static decode(json: any): ServiceDefinition {
         const def = new ServiceDefinition();
         def.type = ServiceType.valueOf(json[Spec.TYPE]);
         def.description = json[Spec.DESCRIPTION];
@@ -21,11 +21,11 @@ export class ServiceDefinitionCodec {
         return def;
     }
 
-    static encode(def: ServiceDefinition): Object {
-        const object = Object.assign({
-            type: def.type.toString(),
+    static encode(def: ServiceDefinition): any {
+        const object: any = {
+            type: def.type != null ? def.type.toString() : '',
             description: def.description
-        });
+        };
 
         if (def.requiredProperties.length > 0) {
             object[Spec.REQUIRED_PROPERTIES] = PropertyDefinitionCodec.encodeArray(def.requiredProperties);
@@ -54,8 +54,8 @@ export class ServiceDefinitionCodec {
         return object;
     }
 
-    static encodeArray(services: Array<ServiceType>): Array<Object> {
-        const array = [];
+    static encodeArray(services: ServiceType[]): any[] {
+        const array: any[] = [];
 
         services.forEach((type) => {
             array.push(type.toString());

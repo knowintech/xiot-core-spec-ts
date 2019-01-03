@@ -3,10 +3,10 @@ import {DataValue} from '../definitions/property/data/DataValue';
 
 export class PropertyValue {
 
-  public format: DataFormat;
-  public isChanged: boolean;
-  public oldValue: DataValue;
-  public currentValue: DataValue;
+  public format: DataFormat = DataFormat.BOOL;
+  public isChanged: boolean = false;
+  public oldValue: DataValue | null = null;
+  public currentValue: DataValue | null = null;
 
   static create(format: DataFormat): PropertyValue {
     const v = new PropertyValue();

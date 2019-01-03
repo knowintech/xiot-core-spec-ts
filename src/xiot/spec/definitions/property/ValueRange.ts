@@ -4,13 +4,13 @@ import {DataValue} from './data/DataValue';
 import {DataValueFactory} from './data/DataValueFactory';
 
 export class ValueRange implements ConstraintValue {
-    public format: DataFormat;
-    public minValue: DataValue;
-    public maxValue: DataValue;
-    public stepValue: DataValue;
-    public hasStep: boolean;
+    public format: DataFormat | null = null;
+    public minValue: DataValue | null = null;
+    public maxValue: DataValue | null = null;
+    public stepValue: DataValue | null = null;
+    public hasStep: boolean = false;
 
-    constructor(format: DataFormat, list: Array<Object>) {
+    constructor(format: DataFormat, list: any[]) {
         if (list.length === 2) {
             this.init(format, list[0], list[1], null);
         } else if (list.length === 3) {
@@ -20,8 +20,7 @@ export class ValueRange implements ConstraintValue {
         }
     }
 
-    private init(format: DataFormat, min: Object, max: Object, step: Object) {
-        this.format = format;
+    private init(format: DataFormat, min: any, max: any, step: any | null) {
         this.minValue = DataValueFactory.create(format, min);
         this.maxValue = DataValueFactory.create(format, max);
 
@@ -30,7 +29,6 @@ export class ValueRange implements ConstraintValue {
             this.hasStep = true;
         } else {
             this.stepValue = null;
-            this.hasStep = false;
         }
 
         if (!this.minValue.lessEquals(this.maxValue)) {
@@ -39,15 +37,23 @@ export class ValueRange implements ConstraintValue {
     }
 
     validate(value: DataValue): boolean {
-        if (this.hasStep) {
+        if (this.minValue == null || this.maxValue == null) {
+            return false;
+        }
+
+        if (this.stepValue != null) {
             return value.validateStep(this.minValue, this.maxValue, this.stepValue);
         }
 
         return value.validate(this.minValue, this.maxValue);
     }
 
-    toJsonArray(): Array<Object> {
-        if (this.hasStep) {
+    toJsonArray(): any[] {
+        if (this.minValue == null || this.maxValue == null) {
+            return [];
+        }
+
+        if (this.stepValue != null) {
             return [this.minValue.getObjectValue(), this.maxValue.getObjectValue(), this.stepValue.getObjectValue()];
         } else {
             return [this.minValue.getObjectValue(), this.maxValue.getObjectValue()];

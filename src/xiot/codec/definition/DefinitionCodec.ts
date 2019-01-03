@@ -10,7 +10,7 @@ import {Spec} from '../../spec/constant/Spec';
 
 export class DefinitionCodec {
 
-  static decodeValueList(format: DataFormat, array: Array<Object>): ValueList {
+  static decodeValueList(format: DataFormat, array: any[]): ValueList {
     const list = new ValueList();
 
       if (array != null) {
@@ -24,59 +24,71 @@ export class DefinitionCodec {
     return list;
   }
 
-  static decodeValueRange(format: DataFormat, range: Array<Object>): ValueRange {
+  static decodeValueRange(format: DataFormat, range: any[]): ValueRange {
     return new ValueRange(format, range);
   }
 
-  static decodeProperties(array: Array<string>): Array<PropertyType> {
-    const list = [];
+  static decodeProperties(array: string[]): PropertyType[] {
+    const list: PropertyType[] = [];
 
     if (array != null) {
         for (const v of array) {
-            list.push(PropertyType.valueOf(v));
+            const t = PropertyType.valueOf(v);
+            if (t != null) {
+                list.push();
+            }
         }
     }
 
     return list;
   }
 
-  static decodeServices(array: Array<string>): Array<ServiceType> {
-    const list = [];
+  static decodeServices(array: string[]): ServiceType[] {
+    const list: ServiceType[] = [];
 
     if (array != null) {
         for (const v of array) {
-            list.push(ServiceType.valueOf(v));
+            const t = ServiceType.valueOf(v);
+            if (t != null) {
+                list.push(t);
+            }
         }
     }
 
     return list;
   }
 
-  static decodeActions(array: Array<string>): Array<ActionType> {
-    const list = [];
+  static decodeActions(array: string[]): ActionType[] {
+    const list: ActionType[] = [];
 
       if (array != null) {
           for (const v of array) {
-              list.push(ActionType.valueOf(v));
+            const t = ActionType.valueOf(v);
+            if (t != null) {
+                list.push();
+            }
           }
       }
 
     return list;
   }
 
-  static decodeEvents(array: Array<string>): Array<EventType> {
-    const list = [];
+  static decodeEvents(array: string[]): EventType[] {
+    const list: EventType[] = [];
 
       if (array != null) {
           for (const v of array) {
-              list.push(EventType.valueOf(v));
+              const t = EventType.valueOf(v);
+              if (t != null) {
+                list.push();
+              }
           }
       }
 
     return list;
   }
 
-  static encodeProperties(array: Array<PropertyType>): Array<string> {
+  static encodeProperties(array: PropertyType[]): string[] {
       const list = [];
 
       if (array != null) {

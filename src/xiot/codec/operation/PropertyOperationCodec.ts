@@ -4,8 +4,8 @@ import {Spec} from '../../spec/constant/Spec';
 
 export class PropertyOperationCodec {
 
-    static decodePIDs(pids: string): Array<PropertyOperation> {
-        const array = [];
+    static decodePIDs(pids: string): PropertyOperation[] {
+        const array: PropertyOperation[] = [];
 
         if (pids != null) {
             pids.split(',').forEach(pid => {
@@ -18,8 +18,8 @@ export class PropertyOperationCodec {
         return array;
     }
 
-    static decodePIDArray(pids: Array<string>): Array<PropertyOperation> {
-        const array = [];
+    static decodePIDArray(pids: string[]): PropertyOperation[] {
+        const array: PropertyOperation[] = [];
 
         if (pids != null) {
             pids.forEach(pid => {
@@ -32,8 +32,8 @@ export class PropertyOperationCodec {
         return array;
     }
 
-    static decodeValues(json: Object): Array<PropertyOperation> {
-      const array = [];
+    static decodeValues(json: any): PropertyOperation[] {
+      const array: PropertyOperation[] = [];
 
       const properties = json['properties'];
       if (properties != null) {
@@ -81,10 +81,10 @@ export class PropertyOperationCodec {
     //     return array;
     // }
 
-    static decodeStatus(json: Object): Array<PropertyOperation> {
-        const array = [];
+    static decodeStatus(json: any): PropertyOperation[] {
+        const array: PropertyOperation[] = [];
 
-        const properties = json['properties'];
+        const properties: any[] = json['properties'];
 
         if (properties != null) {
           properties.forEach(value => {
@@ -122,19 +122,19 @@ export class PropertyOperationCodec {
     // }
 
     static encodeQueryGETtoString(list: Array<PropertyOperation>): string {
-        return list.map(p => p.pid.toString()).join(',');
+        return list.map(p => p.pid != null ? p.pid.toString() : '').join(',');
     }
 
-    static encodeQueryGETtoArray(list: Array<PropertyOperation>): Array<Object> {
-        return list.map(p => p.pid.toString());
+    static encodeQueryGETtoArray(list: Array<PropertyOperation>): any[] {
+        return list.map(p => p.pid != null ? p.pid.toString() : '');
     }
 
-    static encodeResultGET(list: Array<PropertyOperation>): Array<Object> {
+    static encodeResultGET(list: Array<PropertyOperation>): any[] {
         return list.map(p => {
-            const object = Object.assign({
-                pid: p.pid.toString(),
+            const object: any = {
+                pid: p.pid != null ? p.pid.toString() : '',
                 status: p.status
-            });
+            };
 
             if (p.status === 0) {
                 object[Spec.VALUE] = p.value;
@@ -146,18 +146,20 @@ export class PropertyOperationCodec {
         });
     }
 
-    static encodeQuerySET(list: Array<PropertyOperation>): Object {
-        return Object.assign({properties:
-            list.filter(p => p.status === 0)
-                .map(p => Object.assign({pid: p.pid.toString(), value: p.value}))});
+    static encodeSetProperty(property: PropertyOperation): any {
+        return {pid: property.pid != null ? property.pid.toString() : '', value: property.value};
     }
 
-    static encodeResultSET(list: Array<PropertyOperation>): Array<Object> {
+    static encodeQuerySET(list: PropertyOperation[]): any {
+        return {properties: list.filter(p => p.status === 0).map(p => PropertyOperationCodec.encodeSetProperty(p))};
+    }
+
+    static encodeResultSET(list: PropertyOperation[]): any[] {
         return list.map(p => {
-            const object = Object.assign({
-                pid: p.pid.toString(),
+            const object: any = {
+                pid: p.pid != null ? p.pid.toString() : '',
                 status: p.status
-            });
+            };
 
             if (p.status !== 0) {
                 object[Spec.DESCRIPTION] = p.description;

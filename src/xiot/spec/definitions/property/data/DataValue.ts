@@ -6,7 +6,7 @@ export interface DataValue {
 
   validate(min: DataValue, max: DataValue): boolean;
 
-  validateStep(min: DataValue, max: DataValue, step: DataValue): boolean;
+  validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean;
 
   getObjectValue(): Object;
 

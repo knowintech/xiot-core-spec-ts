@@ -2,7 +2,7 @@ import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
 export class Vfloat implements DataValue {
-    private value: number;
+    private value: number = 0;
 
     static create(value: Object): Vfloat {
       if (typeof(value) === 'number') {
@@ -40,7 +40,7 @@ export class Vfloat implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue): boolean {
+    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
       if (!(min instanceof Vfloat) || !(max instanceof Vfloat) || !(step instanceof Vfloat)) {
         return false;
       }

@@ -2,8 +2,8 @@ import {DeviceType} from './urn/DeviceType';
 import {ServiceType} from './urn/ServiceType';
 
 export class DeviceDefinition {
-  public type: DeviceType;
-  public description: string;
-  public requiredServices: Array<ServiceType>;
-  public optionalServices: Array<ServiceType>;
+  public type: DeviceType | null = null;
+  public description: string = '';
+  public requiredServices: ServiceType[] = [];
+  public optionalServices: ServiceType[] = [];
 }

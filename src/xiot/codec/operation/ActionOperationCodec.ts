@@ -4,14 +4,14 @@ import {Spec} from '../../spec/constant/Spec';
 
 export class ActionOperationCodec {
 
-    static decodeQuery(query: Object): ActionOperation {
+    static decodeQuery(query: any): ActionOperation {
         const o = new ActionOperation();
         o.aid = AID.parseString(query[Spec.AID]);
         o.in = query[Spec.IN];
         return o;
     }
 
-    static decodeResult(result: Object): ActionOperation {
+    static decodeResult(result: any): ActionOperation {
         const o = new ActionOperation();
         o.aid = AID.parseString(result[Spec.AID]);
         o.oid = result[Spec.OID];
@@ -25,19 +25,19 @@ export class ActionOperationCodec {
         return o;
     }
 
-    static encodeQuery(action: ActionOperation): Object {
-        return Object.assign({
-            aid: action.aid.toString(),
+    static encodeQuery(action: ActionOperation): any {
+        return {
+            aid: action.aid !=null ? action.aid.toString() : '',
             in: action.in
-        });
+        };
     }
 
-    static encodeResult(action: ActionOperation): Object {
-        const object = Object.assign({
-            aid: action.aid.toString(),
+    static encodeResult(action: ActionOperation): any {
+        const object: any = {
+            aid: action.aid != null ? action.aid.toString() : '',
             oid: action.oid,
             status: action.status
-        });
+        };
 
         if (action.status === 0) {
             object[Spec.OUT] = action.out;

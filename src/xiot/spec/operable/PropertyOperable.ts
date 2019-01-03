@@ -5,6 +5,10 @@ import {OperationStatus} from '../status/OperationStatus';
 export class PropertyOperable extends Property {
 
   tryRead(o: PropertyOperation) {
+    if (this.definition == null || this.value == null) {
+      return;
+    }
+
     if (this.definition.access.isReadable) {
       o.value = this.value.currentValue;
     } else {
@@ -13,6 +17,10 @@ export class PropertyOperable extends Property {
   }
 
   tryWrite(o: PropertyOperation, save: boolean) {
+    if (this.definition == null) {
+      return;
+    }
+
     if (this.definition.access.isWritable) {
       if (save) {
         this.update(o);
@@ -37,6 +45,10 @@ export class PropertyOperable extends Property {
   }
 
   onPropertiesChanged(o: PropertyOperation) {
+    if (this.definition == null) {
+      return;
+    }
+
     if (this.definition.access.isNotifiable) {
       this.update(o);
     } else {

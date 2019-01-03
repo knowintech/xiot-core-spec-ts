@@ -3,11 +3,11 @@ import {UrnType} from './UrnType';
 
 export class PropertyType extends Urn {
 
-  static valueOf(string: string): PropertyType {
+  static valueOf(string: string): PropertyType | null {
     let thiz = new PropertyType();
 
     if (!thiz.parse(UrnType.PROPERTY, string)) {
-      thiz = undefined;
+      return null;
     }
 
     return thiz;

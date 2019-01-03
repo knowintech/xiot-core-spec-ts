@@ -7,10 +7,18 @@ import {ServiceOperable} from './ServiceOperable';
 
 export class DeviceOperable extends Device {
 
-  public summary: DeviceSummary;
+  public summary: DeviceSummary | null = null;
 
   tryRead(list: Array<PropertyOperation>) {
+    if (this.summary == null) {
+      return;
+    }
+
     for (const o of list) {
+      if (o.pid == null) {
+        continue;
+      }
+
       if (this.summary.did === o.pid.did) {
         const s = this.services.get(o.pid.siid);
         if (s != null) {
@@ -29,7 +37,15 @@ export class DeviceOperable extends Device {
   }
 
   tryWrite(list: Array<PropertyOperation>, save: boolean) {
+    if (this.summary == null) {
+      return;
+    }
+
     for (const o of list) {
+      if (o.pid == null) {
+        continue;
+      }
+      
       if (this.summary.did === o.pid.did) {
         const s = this.services.get(o.pid.siid);
         if (s != null) {
@@ -48,6 +64,14 @@ export class DeviceOperable extends Device {
   }
 
   tryInvoke(o: ActionOperation) {
+    if (this.summary == null) {
+      return;
+    }
+
+    if (o.aid == null) {
+      return;
+    }
+
     if (this.summary.did === o.aid.did) {
       const s = this.services.get(o.aid.siid);
       if (s != null) {

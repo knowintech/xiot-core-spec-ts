@@ -3,13 +3,16 @@ import {PropertyValue} from './PropertyValue';
 import {DataValueFactory} from '../definitions/property/data/DataValueFactory';
 
 export class Property {
-
-  public iid: number;
-  public definition: PropertyDefinition;
-  public value: PropertyValue;
-  public valueToWrite: Object;
+  public iid: number = 0;
+  public definition: PropertyDefinition | null = null;
+  public value: PropertyValue | null = null;
+  public valueToWrite: any | null = null;
 
   trySetValue(value: Object): boolean {
+    if (this.definition == null) {
+      return false;
+    }
+
     if (this.value == null) {
       this.value = PropertyValue.create(this.definition.format);
     }
@@ -22,6 +25,10 @@ export class Property {
   }
 
   private setDataValue(newValue: Object, write: boolean): boolean {
+    if (this.definition == null) {
+      return false;
+    }
+
     if (newValue == null) {
       return false;
     }
@@ -29,6 +36,10 @@ export class Property {
     const v = DataValueFactory.create(this.definition.format, newValue);
 
     if (! this.definition.validate(v)) {
+      return false;
+    }
+
+    if (this.value == null) {
       return false;
     }
 

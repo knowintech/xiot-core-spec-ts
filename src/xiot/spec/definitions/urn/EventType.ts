@@ -3,11 +3,11 @@ import {UrnType} from './UrnType';
 
 export class EventType extends Urn {
 
-    static valueOf(string: string): EventType {
+    static valueOf(string: string): EventType | null {
       let thiz = new EventType();
 
       if (!thiz.parse(UrnType.EVENT, string)) {
-        thiz = undefined;
+        return null;
       }
 
       return thiz;

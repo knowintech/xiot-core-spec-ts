@@ -2,7 +2,7 @@ import {DeviceDetail} from '../../spec/summary/DeviceDetail';
 
 export class DeviceDetailCodec {
 
-  static decode(json: Object): Array<DeviceDetail> {
+  static decode(json: any): DeviceDetail[] {
     const array = [];
 
     const devices = json['device-information'];
@@ -23,20 +23,20 @@ export class DeviceDetailCodec {
     return array;
   }
 
-  static encode(detail: DeviceDetail): Object {
-    return Object.assign({
+  static encode(detail: DeviceDetail): any {
+    return {
       id: detail.did,
-      type: detail.type.toString(),
+      type: detail.type != null ? detail.type.toString() : '',
       online: detail.online,
       name: detail.name,
       serialNumber: detail.serialNumber,
       rid: detail.roomId
-    });
+    };
   }
 
-  static encodeArray(summaries: Array<DeviceDetail>): Object {
-    return Object.assign({
+  static encodeArray(summaries: DeviceDetail[]): any {
+    return {
       'device-information': (summaries != null) ? summaries.map(s => DeviceDetailCodec.encode(s)) : []
-    });
+    };
   }
 }

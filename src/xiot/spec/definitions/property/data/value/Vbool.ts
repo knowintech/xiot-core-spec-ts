@@ -3,7 +3,7 @@ import {DataFormat} from '../DataFormat';
 
 export class Vbool implements DataValue {
 
-  private value: boolean;
+  private value: boolean = false;
 
   static create(value: Object): Vbool {
     if (typeof(value) === 'boolean') {
@@ -36,15 +36,15 @@ export class Vbool implements DataValue {
   }
 
   lessEquals(maxValue: DataValue): boolean {
-    return undefined;
+    return false;
   }
 
   validate(min: DataValue, max: DataValue): boolean {
-    return undefined;
+    return false;
   }
 
-  validateStep(min: DataValue, max: DataValue, step: DataValue): boolean {
-    return undefined;
+  validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+    return false;
   }
 
   getObjectValue(): Object {

@@ -5,7 +5,7 @@ import {ActionType} from '../../spec/definitions/urn/ActionType';
 
 export class ActionCodec {
 
-    static decode(array: Array<Object>): Array<Action> {
+    static decode(array: any[]): Action[] {
         const list = [];
 
         if (array != null) {
@@ -23,7 +23,7 @@ export class ActionCodec {
         return list;
     }
 
-    static decodeOperable(array: Array<Object>): Array<ActionOperable> {
+    static decodeOperable(array: any[]): ActionOperable[] {
         const list = [];
 
         if (array != null) {
@@ -41,18 +41,18 @@ export class ActionCodec {
         return list;
     }
 
-    static encode(action: Action): Object {
-        return Object.assign({
+    static encode(action: Action): any {
+        return {
             iid: action.iid,
-            type: action.type.toString(),
+            type: action.type != null ? action.type.toString() : '',
             description: action.description,
             in: action.in,
             out: action.out
-        });
+        };
     }
 
-    static encodeArray(actions: Map<Number, Action>): Array<Object> {
-        const array = [];
+    static encodeArray(actions: Map<Number, Action>): any[] {
+        const array: any[] = [];
 
         actions.forEach((action) => {
             array.push(ActionCodec.encode(action));

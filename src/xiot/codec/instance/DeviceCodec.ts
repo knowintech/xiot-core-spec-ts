@@ -6,7 +6,7 @@ import {ServiceCodec} from './ServiceCodec';
 
 export class DeviceCodec {
 
-    static decode(json: Object): Device {
+    static decode(json: any): Device {
         const device = new Device();
         device.type = DeviceType.valueOf(json[Spec.TYPE]);
         device.description = json[Spec.DESCRIPTION];
@@ -18,7 +18,7 @@ export class DeviceCodec {
         return device;
     }
 
-    static decodeOperable(json: Object): DeviceOperable {
+    static decodeOperable(json: any): DeviceOperable {
         const device = new DeviceOperable();
         device.type = DeviceType.valueOf(json[Spec.TYPE]);
         device.description = json[Spec.DESCRIPTION];
@@ -30,11 +30,11 @@ export class DeviceCodec {
         return device;
     }
 
-    static encode(device: Device): Object {
-        return Object.assign({
-            type: device.type.toString(),
+    static encode(device: Device): any {
+        return {
+            type: device.type != null ? device.type.toString() : '',
             description: device.description,
             services: ServiceCodec.encodeArray(device.services)
-        });
+        };
     }
 }

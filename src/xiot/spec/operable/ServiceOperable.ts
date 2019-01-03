@@ -8,6 +8,10 @@ import {ActionOperable} from './ActionOperable';
 export class ServiceOperable extends Service {
 
   tryRead(o: PropertyOperation) {
+    if (o.pid == null) {
+      return;
+    }
+
      const p = this.properties.get(o.pid.iid);
      if (p != null) {
        if (p instanceof PropertyOperable) {
@@ -21,6 +25,10 @@ export class ServiceOperable extends Service {
   }
 
   tryWrite(o: PropertyOperation, save: boolean) {
+    if (o.pid == null) {
+      return;
+    }
+
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
       if (p instanceof PropertyOperable) {
@@ -34,6 +42,10 @@ export class ServiceOperable extends Service {
   }
 
   tryInvoke(o: ActionOperation) {
+    if (o.aid == null) {
+      return;
+    }
+
     const a = this.actions.get(o.aid.iid);
     if (a != null) {
       if (a instanceof ActionOperable) {
@@ -47,6 +59,10 @@ export class ServiceOperable extends Service {
   }
 
   update(o: PropertyOperation) {
+    if (o.pid == null) {
+      return;
+    }
+
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
       if (p instanceof PropertyOperable) {
@@ -60,6 +76,10 @@ export class ServiceOperable extends Service {
   }
 
   onPropertiesChanged(o: PropertyOperation) {
+    if (o.pid == null) {
+      return;
+    }
+
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
       if (p instanceof PropertyOperable) {

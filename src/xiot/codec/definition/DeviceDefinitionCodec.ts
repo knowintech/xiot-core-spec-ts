@@ -6,7 +6,7 @@ import {ServiceDefinitionCodec} from './ServiceDefinitionCodec';
 
 export class DeviceDefinitionCodec {
 
-    static decode(json: Object): DeviceDefinition {
+    static decode(json: any): DeviceDefinition {
         const def = new DeviceDefinition();
         def.type = DeviceType.valueOf(json[Spec.TYPE]);
         def.description = json[Spec.DESCRIPTION];
@@ -15,11 +15,11 @@ export class DeviceDefinitionCodec {
         return def;
     }
 
-    static encode(def: DeviceDefinition): Object {
-        const object = Object.assign({
-            type: def.type.toString(),
+    static encode(def: DeviceDefinition): any {
+        const object: any = {
+            type: def.type != null ? def.type.toString() : '',
             description: def.description
-        });
+        };
 
         if (def.requiredServices.length > 0) {
             object[Spec.REQUIRED_SERVICES] = ServiceDefinitionCodec.encodeArray(def.requiredServices);

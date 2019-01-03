@@ -4,7 +4,7 @@ import {Vuint8} from './Vuint8';
 
 export class Vuint16 implements DataValue {
 
-    private value: number;
+    private value: number = 0;
 
     static create(value: Object): Vuint16 {
       if (typeof(value) === 'number') {
@@ -42,7 +42,7 @@ export class Vuint16 implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue): boolean {
+    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
       if (!(min instanceof Vuint16) || !(max instanceof Vuint16) || !(step instanceof Vuint16)) {
         return false;
       }

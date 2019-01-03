@@ -4,7 +4,7 @@ import {Vint16} from './Vint16';
 
 export class Vint32 implements DataValue {
 
-    private value: number;
+    private value: number = 0;
 
     static create(value: Object): Vint32 {
       if (typeof(value) === 'number') {
@@ -42,7 +42,7 @@ export class Vint32 implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue): boolean {
+    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
       if (!(min instanceof Vint32) || !(max instanceof Vint32) || !(step instanceof Vint32)) {
         return false;
       }

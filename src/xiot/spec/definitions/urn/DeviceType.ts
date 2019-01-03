@@ -3,11 +3,11 @@ import {UrnType} from './UrnType';
 
 export class DeviceType extends Urn {
 
-    static valueOf(string: string): DeviceType {
+    static valueOf(string: string): DeviceType | null {
       let thiz = new DeviceType();
 
       if (!thiz.parse(UrnType.DEVICE, string)) {
-        thiz = undefined;
+        return null;
       }
 
       return thiz;

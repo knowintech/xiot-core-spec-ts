@@ -9,7 +9,7 @@ import {Unit, UnitToString} from '../../spec/definitions/property/Unit';
 
 export class PropertyCodec {
 
-    static decode(array: Array<Object>): Array<Property> {
+    static decode(array: any[]): Array<Property> {
         const list = [];
 
         if (array != null) {
@@ -24,7 +24,7 @@ export class PropertyCodec {
         return list;
     }
 
-    static decodeOperable(array: Array<Object>): Array<PropertyOperable> {
+    static decodeOperable(array: any[]): Array<PropertyOperable> {
         const list = [];
 
         if (array != null) {
@@ -40,33 +40,35 @@ export class PropertyCodec {
     }
 
     static encode(property: Property): Object {
-        const object = Object.assign({
+        const object: any = {
             iid: property.iid,
-            type: property.definition.type.toString(),
-            description: property.definition.description,
-            format: DataFormatToString(property.definition.format),
-            access: property.definition.access.toList()
-        });
+            type: (property.definition != null) ? (property.definition.type != null ? property.definition.type.toString() : '') : '',
+            description: (property.definition != null) ? property.definition.description : '',
+            format: (property.definition != null) ? DataFormatToString(property.definition.format) : '',
+            access: (property.definition != null) ? property.definition.access.toList() : []
+        };
 
-        if (property.definition.constraintValue != null) {
-            if (property.definition.constraintValue instanceof ValueList) {
-                object[Spec.VALUE_LIST] = property.definition.constraintValue.toJsonArray();
+        if (property.definition != null) {
+            if (property.definition.constraintValue != null) {
+                if (property.definition.constraintValue instanceof ValueList) {
+                    object[Spec.VALUE_LIST] = property.definition.constraintValue.toJsonArray();
+                }
+    
+                if (property.definition.constraintValue instanceof ValueRange) {
+                    object[Spec.VALUE_RANGE] = property.definition.constraintValue.toJsonArray();
+                }
             }
-
-            if (property.definition.constraintValue instanceof ValueRange) {
-                object[Spec.VALUE_RANGE] = property.definition.constraintValue.toJsonArray();
-            }
-        }
-
-        if (property.definition.unit !== Unit.NONE) {
-            object[Spec.UNIT] = UnitToString(property.definition.unit);
+    
+            if (property.definition.unit !== Unit.NONE) {
+                object[Spec.UNIT] = UnitToString(property.definition.unit);
+            }    
         }
 
         return object;
     }
 
     static encodeArray(properties: Map<Number, Property>): Array<Object> {
-        const array = [];
+        const array: any[] = [];
 
         properties.forEach((property) => {
             array.push(PropertyCodec.encode(property));

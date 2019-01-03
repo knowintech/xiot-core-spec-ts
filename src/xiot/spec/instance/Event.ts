@@ -1,13 +1,8 @@
 import {EventType} from '../definitions/urn/EventType';
 
 export class Event {
-
-  public iid: number;
-  public type: EventType;
-  public description: string;
-  public arguments: Array<Number>;
-
-  constructor() {
-    this.arguments = [];
-  }
+  public iid: number = 0;
+  public type: EventType | null = null;
+  public description: string = '';
+  public arguments: Number[] = [];
 }

@@ -3,11 +3,11 @@ import {UrnType} from './UrnType';
 
 export class ServiceType extends Urn {
 
-  static valueOf(string: string): ServiceType {
+  static valueOf(string: string): ServiceType | null {
     let thiz = new ServiceType();
 
     if (!thiz.parse(UrnType.SERVICE, string)) {
-      thiz = undefined;
+      return null;
     }
 
     return thiz;

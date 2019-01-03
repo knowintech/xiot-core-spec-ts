@@ -8,7 +8,7 @@ import {ServiceOperable} from '../../spec/operable/ServiceOperable';
 
 export class ServiceCodec {
 
-    static decode(array: Array<Object>): Array<Service> {
+    static decode(array: any[]): Service[] {
         const list = [];
 
         if (array != null) {
@@ -40,7 +40,7 @@ export class ServiceCodec {
         return list;
     }
 
-    static decodeOperable(array: Array<Object>): Array<ServiceOperable> {
+    static decodeOperable(array: any[]): ServiceOperable[] {
         const list = [];
 
         if (array != null) {
@@ -72,12 +72,12 @@ export class ServiceCodec {
         return list;
     }
 
-    static encode(service: Service): Object {
-        const object = Object.assign({
+    static encode(service: Service): any {
+        const object: any = {
             iid: service.iid,
-            type: service.type.toString(),
+            type: service.type != null ? service.type.toString() : '',
             description: service.description,
-        });
+        };
 
         if (service.properties.size > 0) {
             object[Spec.PROPERTIES] = PropertyCodec.encodeArray(service.properties);
@@ -94,8 +94,8 @@ export class ServiceCodec {
         return object;
     }
 
-    static encodeArray(services: Map<Number, Service>): Array<Object> {
-        const array = [];
+    static encodeArray(services: Map<Number, Service>): any[] {
+        const array: any[] = [];
 
         services.forEach((service) => {
             array.push(ServiceCodec.encode(service));

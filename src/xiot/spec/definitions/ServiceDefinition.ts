@@ -4,12 +4,12 @@ import {ActionType} from './urn/ActionType';
 import {EventType} from './urn/EventType';
 
 export class ServiceDefinition {
-  public type: ServiceType;
-  public description: string;
-  public requiredProperties: Array<PropertyType>;
-  public optionalProperties: Array<PropertyType>;
-  public requiredActions: Array<ActionType>;
-  public optionalActions: Array<ActionType>;
-  public requiredEvents: Array<EventType>;
-  public optionalEvents: Array<EventType>;
+  public type: ServiceType | null = null;
+  public description: string = '';
+  public requiredProperties: PropertyType[] = [];
+  public optionalProperties: PropertyType[] = [];
+  public requiredActions: ActionType[] = [];
+  public optionalActions: ActionType[] = [];
+  public requiredEvents: EventType[] = [];
+  public optionalEvents: EventType[] = [];
 }

@@ -1,10 +1,6 @@
 
 export class AbstractOperation {
-  public status: number;
-  public description: string;
-  public oid: string;
-
-  constructor() {
-    this.status = 0;
-  }
+  public status: number = 0;
+  public description: string = '';
+  public oid: string = '';
 }

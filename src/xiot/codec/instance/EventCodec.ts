@@ -4,7 +4,7 @@ import {EventType} from '../../spec/definitions/urn/EventType';
 
 export class EventCodec {
 
-    static decode(array: Array<Object>): Array<Event> {
+    static decode(array: Array<any>): Array<Event> {
         const list = [];
 
         if (array != null) {
@@ -21,17 +21,17 @@ export class EventCodec {
         return list;
     }
 
-    static encode(event: Event): Object {
-        return Object.assign({
+    static encode(event: Event): any {
+        return {
             iid: event.iid,
-            type: event.type.toString(),
+            type: event.type != null ? event.type.toString() : '',
             description: event.description,
             in: event.arguments
-        });
+        };
     }
 
-    static encodeArray(events: Map<Number, Event>): Array<Object> {
-        const array = [];
+    static encodeArray(events: Map<Number, Event>): any[] {
+        const array: any[] = [];
 
         events.forEach((event) => {
             array.push(EventCodec.encode(event));
