@@ -59,4 +59,22 @@ export class ValueRange implements ConstraintValue {
             return [this.minValue.getObjectValue(), this.maxValue.getObjectValue()];
         }
     }
+
+    toString(): string {
+        const array = [];
+    
+        if (this.minValue != null) {
+            array.push(this.minValue.getObjectValue());
+        }
+        
+        if (this.maxValue != null) {
+            array.push(this.maxValue.getObjectValue());
+        }
+
+        if (this.stepValue != null) {
+          array.push(this.stepValue.getObjectValue());
+        }
+    
+        return JSON.stringify(array);
+      }
 }

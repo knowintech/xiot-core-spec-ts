@@ -47,7 +47,7 @@ export function UnitToString(type: Unit): string {
         }
     }
 
-    return 'none';
+    return '';
 }
 
 export function UnitFromString(type: string): Unit {

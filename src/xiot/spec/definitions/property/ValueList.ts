@@ -29,4 +29,14 @@ export class ValueList implements ConstraintValue {
 
       return array;
   }
+
+  toString(): string {
+    const array = [];
+
+    for (const v of this.values) {
+      array.push(v.value.getObjectValue());
+    }
+
+    return array.join(' ');
+  }
 }

@@ -1,13 +1,7 @@
 export class Access {
-  public isReadable: boolean;
-  public isWritable: boolean;
-  public isNotifiable: boolean;
-
-  constructor() {
-    this.isReadable = false;
-    this.isWritable = false;
-    this.isNotifiable = false;
-  }
+  public isReadable: boolean = false;
+  public isWritable: boolean = false;
+  public isNotifiable: boolean = false;
 
   static create(access: Array<String>): Access {
     const thiz = new Access();
@@ -47,5 +41,23 @@ export class Access {
     }
 
     return array;
+  }
+
+  toString(): string {
+    const array = [];
+
+    if (this.isReadable) {
+      array.push('R');
+    }
+
+    if (this.isWritable) {
+      array.push('W');
+    }
+
+    if (this.isNotifiable) {
+      array.push('N');
+    }
+
+    return array.join(' ');
   }
 }

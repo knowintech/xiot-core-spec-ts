@@ -1,71 +1,109 @@
 import {UrnType, UrnTypeFromString, UrnTypeToString} from './UrnType';
+import {Extendable} from './Extendable';
+import {UrnStyle} from './UrnStyle';
 
-export class Urn {
-    private ns: string = '';
-    private type: UrnType = UrnType.UNDEFINED;
-    private name: string = '';
-    private value: number = 0;
-    private isModified: boolean = false;
-    private modified: string = '';
-    private version: number = 0;
+export class Urn extends Extendable {
+    
+    public ns: string = '';
+    public type: UrnType = UrnType.UNDEFINED;
+    public name: string = '';
+    public value: number = 0;
+    public groupId: string = '';
+    public model: string = '';
+    public version: number = 0;
 
     constructor() {
+        super();
     }
-
-    // constructor(namespace: string,
-    //             type: UrnType,
-    //             name: string,
-    //             value: string) {
-    //   this.ns = namespace;
-    //   this.type = type;
-    //   this.name = name;
-    //   this.value = Number.parseInt(value, 16);
-    //   this.isModified = false;
-    // }
-    //
-    // constructor(ns: string,
-    //             type: UrnType,
-    //             name: string,
-    //             value: number) {
-    //   this.ns = ns;
-    //   this.type = type;
-    //   this.name = name;
-    //   this.value = value;
-    //   this.isModified = false;
-    // }
 
     parseString(string: string): boolean {
         let ret: boolean = false;
 
         do {
             const a = string.split(':');
-            if (a.length !== 5 && a.length !== 6 && a.length !== 7) {
+
+            if (a.length < 5) {
                 break;
             }
 
-            if (a[0] !== 'urn') {
+            if (! this.init(a[0], a[1], a[2], a[3], a[4])) {
                 break;
             }
 
-            this.ns = a[1];
-            this.type = UrnTypeFromString(a[2]);
-            this.name = a[3];
-            this.value = Number.parseInt(a[4], 16);
-            this.isModified = (a.length === 6);
-            this.version = 0;
+            switch (a.length) {
+                // specification type: urn:homekit-spec:device:fan:00000000
+                case 5:
+                    this.set('style', UrnStyle.SPEC);
+                    ret = true;
+                    break;
 
-            if (this.isModified) {
-                this.modified = a[5];
+                // v1 instance type => urn:xxx-spec:device:fan:00000000:geek-fff
+                case 6:
+                    this.set('style', UrnStyle.V1);
+                    ret = this.initGroupModelVersion(a[5]);
+                    break;
+
+                // v2 instance type style => urn:xxx-spec:device:fan:00000000:geek-fff:1
+                case 7:
+                    this.set('style', UrnStyle.V2);
+                    ret = this.initGroupModelVersion2(a[5], a[6]);
+                    break;
+
+                // xiot instance type style => urn:homekit-spec:device:fan:00000000:geek:fff:1
+                case 8:
+                    this.set('style', UrnStyle.XIOT);
+                    ret = this.initGroupModelVersion3(a[5], a[6], a[7]);
+                    break;
+
+                default:
+                    break;
             }
 
-            if (a.length === 7) {
-                this.version = Number.parseInt(a[6], 10);
-            }
-
-            ret = true;
         } while (false);
 
         return ret;
+    }
+
+    private init(magic: string, ns: string, type: string, name: string, value: string): boolean {
+        if (magic !== 'urn') {
+            return false;
+        }
+
+        this.ns = ns;
+        this.type = UrnTypeFromString(type);
+        this.name = name;
+        this.value =  Number.parseInt(value, 16);
+
+        if (this.type === UrnType.UNDEFINED) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private initGroupModelVersion(groupIdAndModel: string): boolean {
+        const a = groupIdAndModel.split('-');
+        if (a.length != 2) {
+            return false;
+        }
+
+        return this.initGroupModelVersion3(a[0], a[1], '0');
+    }
+
+    private initGroupModelVersion2(groupIdAndModel: string, version: string): boolean  {
+        const a = groupIdAndModel.split('-');
+        if (a.length != 2) {
+            return false;
+        }
+        this.set('style', 'v2');
+        return this.initGroupModelVersion3(a[0], a[1], version);
+    }
+
+    private initGroupModelVersion3(groupId: string, model: string, version: string): boolean  {
+        this.groupId = groupId;
+        this.model = model;
+        this.version = Number.parseInt(version, 10);
+        return true;
     }
 
     parse(theType: UrnType, string: string): boolean {
@@ -74,6 +112,17 @@ export class Urn {
 
     validateType(theType: UrnType): boolean {
         return (this.type === theType);
+    }
+
+    shortUUID(): string {
+        const uuid = this.value.toString(16).toUpperCase();
+        const length = 8 - uuid.length;
+        let prefix = '';
+        for (let i = 0; i < length; ++i) {
+          prefix += '0';
+        }
+    
+        return prefix + uuid;
     }
 
     toString(): string {
@@ -85,12 +134,21 @@ export class Urn {
         }
 
         let s = 'urn:' + this.ns + ':' + UrnTypeToString(this.type) + ':' + this.name + ':' + prefix + uuid;
-        if (this.isModified) {
-            s = s + ':' + this.modified;
-        }
 
-        if (this.version !== 0) {
-            s = s + ':' + this.version;
+        const style = this.get('style') ;
+
+        if (style == null || style == UrnStyle.XIOT) {
+            if (this.groupId !== '' && this.model !== '' && this.version != 0) {
+                s = s + ":" + this.groupId + ":" + this.model + ":" + this.version;
+            }
+        } else {
+            if (this.groupId !== '' && this.model !== '') {
+                if (this.version != 0) {
+                    s = s + ":" + this.groupId + "-" + this.model + ":" + this.version;
+                } else {
+                    s = s + ":" + this.groupId + "-" + this.model;
+                }
+            }
         }
 
         return s;

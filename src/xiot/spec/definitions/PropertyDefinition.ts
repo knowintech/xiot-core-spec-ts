@@ -1,10 +1,11 @@
 import {ServiceType} from './urn/ServiceType';
 import {DataFormat, DataFormatToString} from './property/data/DataFormat';
 import {Access} from './property/Access';
-import {Unit} from './property/Unit';
+import {Unit, UnitToString} from './property/Unit';
 import {ConstraintValue} from './property/ConstraintValue';
 import {DataValue} from './property/data/DataValue';
 import {ValueList} from './property/ValueList';
+import {ValueRange} from './property/ValueRange';
 
 export class PropertyDefinition {
   public type: ServiceType | null = null;
@@ -68,6 +69,50 @@ export class PropertyDefinition {
     }
 
     return true;
+  }
+
+  getUnitString(): string {
+    return UnitToString(this.unit);
+  }
+
+  hasConstraintValue(): boolean {
+    return (this.constraintValue != null);
+  }
+
+  hasValueRange(): boolean {
+    if (this.constraintValue == null) {
+      return false;
+    }
+
+    if (this.constraintValue instanceof ValueRange) {
+      return true;
+    }
+
+    return false;
+  }
+
+  hasValueList(): boolean {
+    if (this.constraintValue == null) {
+      return false;
+    }
+
+    if (this.constraintValue instanceof ValueList) {
+      return true;
+    }
+
+    return false;
+  }
+
+  valueRange(): ValueRange | null {
+    if (this.constraintValue == null) {
+      return null;
+    }
+
+    if (this.constraintValue instanceof ValueRange) {
+      return this.constraintValue;
+    }
+
+    return null;
   }
 
   valueList(): ValueList | null {

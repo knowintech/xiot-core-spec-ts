@@ -5,7 +5,7 @@ import {EventDefinitionCodec} from "../../../../src/xiot/codec/definition/EventD
 
 describe('EventDefinitionCodec', async () => {
 
-    let folder = './resources/spec/miot/definition/events/';
+    let folder = './resources/spec/xiot/definition/events/';
 
     // let dir = await fs.readdir(folder);
     //
