@@ -18,6 +18,28 @@ export class ServiceCodec {
                 a.type = ServiceType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
 
+                if (a.type != null) {
+                    if (o['x-name'] != null) {
+                        a.type.set('name', o['x-name']);
+                    }
+
+                    if (o['x-optional'] != null) {
+                        a.type.set('optional', o['x-optional']);
+                    }
+
+                    if (o['x-property-addable']) {
+                        a.type.set('property-addable', true);
+                    }
+
+                    if (o['x-action-addable']) {
+                        a.type.set('action-addable', true);
+                    }
+
+                    if (o['x-event-addable']) {
+                        a.type.set('event-addable', true);
+                    }
+                }
+
                 const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
                 for (const property of properties) {
                     a.properties.set(property.iid, property);

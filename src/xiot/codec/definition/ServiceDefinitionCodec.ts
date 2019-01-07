@@ -8,6 +8,16 @@ import {EventDefinitionCodec} from './EventDefinitionCodec';
 
 export class ServiceDefinitionCodec {
 
+    static decodeArray(list: any[]): ServiceDefinition[] {
+        const array: ServiceDefinition[] = [];
+
+        list.forEach(json => {
+            array.push(ServiceDefinitionCodec.decode(json));
+        });
+
+        return array;
+    }
+
     static decode(json: any): ServiceDefinition {
         const def = new ServiceDefinition();
         def.type = ServiceType.valueOf(json[Spec.TYPE]);

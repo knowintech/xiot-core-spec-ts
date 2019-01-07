@@ -125,6 +125,15 @@ export class Urn extends Extendable {
         return prefix + uuid;
     }
 
+    displayName(): string {
+        const n: string = this.get('name');
+        if (n != null) {
+            return n;
+        }
+
+        return this.name;
+    }
+
     toString(): string {
         const uuid = this.value.toString(16).toUpperCase();
         const length = 8 - uuid.length;

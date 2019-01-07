@@ -10,6 +10,16 @@ import {ValueRange} from '../../spec/definitions/property/ValueRange';
 
 export class PropertyDefinitionCodec {
 
+    static decodeArray(list: any[]): PropertyDefinition[] {
+        const array: PropertyDefinition[] = [];
+
+        list.forEach(json => {
+            array.push(PropertyDefinitionCodec.decode(json));
+        });
+
+        return array;
+    }
+
     static decode(json: any): PropertyDefinition {
         const def = new PropertyDefinition();
         def.type = PropertyType.valueOf(json[Spec.TYPE]);
@@ -17,6 +27,16 @@ export class PropertyDefinitionCodec {
         def.format = DataFormatFromString(json[Spec.FORMAT]);
         def.access = Access.create(json[Spec.ACCESS]);
         def.unit = UnitFromString(json[Spec.UNIT]);
+
+        if (def.type != null) {
+            if (json['x-name'] != null) {
+                def.type.set('name', json['x-name']);
+            }
+
+            if (json['x-optional'] != null) {
+                def.type.set('optional', json['x-optional']);
+            }
+        }
 
         if (json.hasOwnProperty(Spec.VALUE_LIST) && json.hasOwnProperty(Spec.VALUE_RANGE)) {
             throw new Error('value-list & value-range both exist!');

@@ -5,6 +5,16 @@ import {DefinitionCodec} from './DefinitionCodec';
 
 export class ActionDefinitionCodec {
 
+    static decodeArray(list: any[]): ActionDefinition[] {
+        const array: ActionDefinition[] = [];
+
+        list.forEach(json => {
+            array.push(ActionDefinitionCodec.decode(json));
+        });
+
+        return array;
+    }
+
     static decode(json: any): ActionDefinition {
         const def = new ActionDefinition();
         def.type = ActionType.valueOf(json[Spec.TYPE]);

@@ -32,6 +32,7 @@ export class PropertyCodec {
                 const p = new PropertyOperable();
                 p.iid = o[Spec.IID];
                 p.definition = PropertyDefinitionCodec.decode(o);
+
                 list.push(p);
             }
         }

@@ -6,6 +6,16 @@ import {ServiceDefinitionCodec} from './ServiceDefinitionCodec';
 
 export class DeviceDefinitionCodec {
 
+    static decodeArray(list: any[]): DeviceDefinition[] {
+        const array: DeviceDefinition[] = [];
+
+        list.forEach(json => {
+            array.push(DeviceDefinitionCodec.decode(json));
+        });
+
+        return array;
+    }
+
     static decode(json: any): DeviceDefinition {
         const def = new DeviceDefinition();
         def.type = DeviceType.valueOf(json[Spec.TYPE]);

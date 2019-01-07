@@ -6,6 +6,16 @@ import {EventType} from '../../spec/definitions/urn/EventType';
 
 export class EventDefinitionCodec {
 
+    static decodeArray(list: any[]): EventDefinition[] {
+        const array: EventDefinition[] = [];
+
+        list.forEach(json => {
+            array.push(EventDefinitionCodec.decode(json));
+        });
+
+        return array;
+    }
+
     static decode(json: any): EventDefinition {
         const def = new EventDefinition();
         def.type = ActionType.valueOf(json[Spec.TYPE]);
