@@ -95,25 +95,47 @@ export class ServiceCodec {
     }
 
     static encode(service: Service): any {
-        const object: any = {
+        const o: any = {
             iid: service.iid,
             type: service.type != null ? service.type.toString() : '',
             description: service.description,
         };
 
         if (service.properties.size > 0) {
-            object[Spec.PROPERTIES] = PropertyCodec.encodeArray(service.properties);
+            o[Spec.PROPERTIES] = PropertyCodec.encodeArray(service.properties);
         }
 
         if (service.actions.size > 0) {
-            object[Spec.ACTIONS] = ActionCodec.encodeArray(service.actions);
+            o[Spec.ACTIONS] = ActionCodec.encodeArray(service.actions);
         }
 
         if (service.events.size > 0) {
-            object[Spec.EVENTS] = EventCodec.encodeArray(service.events);
+            o[Spec.EVENTS] = EventCodec.encodeArray(service.events);
         }
 
-        return object;
+        if (service.type != null) {
+            if (service.type.get('name') != null) {
+                o['x-name'] = service.type.get('name');
+            }
+
+            if (service.type.get('optional') != null) {
+                o['x-optional'] = service.type.get('optional');
+            }
+
+            if (service.type.get('property-addable') != null) {
+                o['x-property-addable'] = service.type.get('property-addable');
+            }
+
+            if (service.type.get('action-addable') != null) {
+                o['x-action-addable'] = service.type.get('action-addable');
+            }
+
+            if (service.type.get('event-addable') != null) {
+                o['x-event-addable'] = service.type.get('event-addable');
+            }
+        }
+
+        return o;
     }
 
     static encodeArray(services: Map<Number, Service>): any[] {

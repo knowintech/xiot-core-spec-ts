@@ -16,6 +16,17 @@ export class ActionCodec {
                 a.description = o[Spec.DESCRIPTION];
                 a.in = o[Spec.IN];
                 a.out = o[Spec.OUT];
+
+                if (a.type != null) {
+                    if (o['x-name'] != null) {
+                        a.type.set('name', o['x-name']);
+                    }
+
+                    if (o['x-optional'] != null) {
+                        a.type.set('optional', o['x-optional']);
+                    }
+                }
+
                 list.push(a);
             }
         }
@@ -42,13 +53,25 @@ export class ActionCodec {
     }
 
     static encode(action: Action): any {
-        return {
+        const o: any = {
             iid: action.iid,
             type: action.type != null ? action.type.toString() : '',
             description: action.description,
             in: action.in,
             out: action.out
         };
+
+        if (action.type != null) {
+            if (action.type.get('name') != null) {
+                o['x-name'] = action.type.get('name');
+            }
+
+            if (action.type.get('optional') != null) {
+                o['x-optional'] = action.type.get('optional');
+            }
+        }
+
+        return o;
     }
 
     static encodeArray(actions: Map<Number, Action>): any[] {
