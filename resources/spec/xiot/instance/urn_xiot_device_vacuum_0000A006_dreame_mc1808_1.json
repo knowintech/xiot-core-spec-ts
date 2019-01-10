@@ -1,0 +1,646 @@
+{
+  "type" : "urn:xiot:device:vacuum:0000A006:dreame:mc1808:1",
+  "description" : "Robot Cleaner",
+  "services" : [ {
+    "iid" : 1,
+    "type" : "urn:xiot:service:device-information:00007801:dreame:mc1808:1",
+    "description" : "Device Information",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:manufacturer:00000001:dreame:mc1808:1",
+      "description" : "Device Manufacturer",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:model:00000002:dreame:mc1808:1",
+      "description" : "Device Model",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:serial-number:00000003:dreame:mc1808:1",
+      "description" : "Device Serial Number",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:firmware-revision:00000005:dreame:mc1808:1",
+      "description" : "Current Firmware Version",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ]
+  }, {
+    "iid" : 2,
+    "type" : "urn:xiot:service:battery:00007805:dreame:mc1808:1",
+    "description" : "Battery",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:battery-level:00000014:dreame:mc1808:1",
+      "description" : "Battery Level",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:charging-state:00000015:dreame:mc1808:1",
+      "description" : "Charging State",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-list" : [ {
+        "value" : 1,
+        "description" : "Charging"
+      }, {
+        "value" : 2,
+        "description" : "Not charging"
+      }, {
+        "value" : 3,
+        "description" : "Not chargeable"
+      }, {
+        "value" : 4,
+        "description" : "done"
+      } ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:start-charge:00002802:dreame:mc1808:1",
+      "description" : "Start Charge",
+      "in" : [ ],
+      "out" : [ ]
+    } ],
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:low-battery:00005003:dreame:mc1808:1",
+      "description" : "Low Battery",
+      "arguments" : [ ]
+    } ]
+  }, {
+    "iid" : 3,
+    "type" : "urn:xiot:service:vacuum:00007810:dreame:mc1808:1",
+    "description" : "Robot Cleaner",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:fault:00000009:dreame:mc1808:1",
+      "description" : "Device Fault",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "No faults"
+      } ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:status:00000007:dreame:mc1808:1",
+      "description" : "Status",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-list" : [ {
+        "value" : 1,
+        "description" : "Idle"
+      }, {
+        "value" : 2,
+        "description" : "Busy"
+      } ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:mode:00000008:dreame:mc1808:1",
+      "description" : "Mode",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "Auto"
+      } ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:property:on:00000006:dreame:mc1808:1",
+      "description" : "Switch Status",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    }, {
+      "iid" : 6,
+      "type" : "urn:xiot:property:speed-level:00000023:dreame:mc1808:1",
+      "description" : "Speed Level",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-list" : [ {
+        "value" : 1,
+        "description" : "Level1"
+      } ]
+    }, {
+      "iid" : 7,
+      "type" : "urn:xiot:property:uv:00000029:dreame:mc1808:1",
+      "description" : "UV",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    }, {
+      "iid" : 8,
+      "type" : "urn:xiot:property:fan-level:00000016:dreame:mc1808:1",
+      "description" : "Fan Level",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "Auto"
+      }, {
+        "value" : 1,
+        "description" : "Level1"
+      } ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:start-sweep:00002804:dreame:mc1808:1",
+      "description" : "Start Sweep",
+      "in" : [ ],
+      "out" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:action:stop-sweeping:00002805:dreame:mc1808:1",
+      "description" : "Stop Sweeping",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 4,
+    "type" : "urn:xiot:service:speaker:0000781C:dreame:mc1808:1",
+    "description" : "Speaker",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:volume:00000013:dreame:mc1808:1",
+      "description" : "Volume",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:mute:00000040:dreame:mc1808:1",
+      "description" : "Mute",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    } ]
+  }, {
+    "iid" : 5,
+    "type" : "urn:xiot:service:time:00000001:dreame:mc1808:1",
+    "description" : "time",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:timezone:00000002:dreame:mc1808:1",
+      "description" : "timezone",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:time:0000000A:dreame:mc1808:1",
+      "description" : "time",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    } ]
+  }, {
+    "iid" : 6,
+    "type" : "urn:xiot:service:clean:00000003:dreame:mc1808:1",
+    "description" : "clean",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:status:00000004:dreame:mc1808:1",
+      "description" : "clean status",
+      "format" : "int32",
+      "access" : [ "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "stop"
+      }, {
+        "value" : 1,
+        "description" : "start"
+      } ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:time-duration:00000005:dreame:mc1808:1",
+      "description" : "time-duration",
+      "format" : "int32",
+      "access" : [ "notify" ],
+      "value-range" : [ 0, 32767, 1 ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:size:00000006:dreame:mc1808:1",
+      "description" : "clean size",
+      "format" : "string",
+      "access" : [ "notify" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:area:00000007:dreame:mc1808:1",
+      "description" : "area",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:property:timer:00000008:dreame:mc1808:1",
+      "description" : "clean timer",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 6,
+      "type" : "urn:xiot:property:mode:00000009:dreame:mc1808:1",
+      "description" : "clean_mode",
+      "format" : "int32",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 128, 1 ]
+    }, {
+      "iid" : 7,
+      "type" : "urn:xiot:property:mop:0000001B:dreame:mc1808:1",
+      "description" : "mop",
+      "format" : "int32",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 16, 1 ]
+    }, {
+      "iid" : 8,
+      "type" : "urn:xiot:property:delete-timer:00000049:dreame:mc1808:1",
+      "description" : "delete-timer",
+      "format" : "string",
+      "access" : [ "write" ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:start-clean:00000040:dreame:mc1808:1",
+      "description" : "start-clean",
+      "in" : [ ],
+      "out" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:action:stop-clean:00000048:dreame:mc1808:1",
+      "description" : "stop-clean",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 7,
+    "type" : "urn:xiot:service:firmware:0000000B:dreame:mc1808:1",
+    "description" : "firmware",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:version:0000000C:dreame:mc1808:1",
+      "description" : "firmware version",
+      "format" : "string",
+      "access" : [ "read", "notify" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:ota-status:0000000D:dreame:mc1808:1",
+      "description" : "ota-status",
+      "format" : "int32",
+      "access" : [ "read", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "idle"
+      }, {
+        "value" : 1,
+        "description" : "downloading"
+      }, {
+        "value" : 2,
+        "description" : "dowloaded"
+      }, {
+        "value" : 3,
+        "description" : "installing"
+      }, {
+        "value" : 4,
+        "description" : "wait-install"
+      }, {
+        "value" : 5,
+        "description" : "installed"
+      }, {
+        "value" : 6,
+        "description" : "failed"
+      }, {
+        "value" : 7,
+        "description" : "busy"
+      } ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:ota-control:0000000E:dreame:mc1808:1",
+      "description" : "ota-start",
+      "format" : "string",
+      "access" : [ "write" ]
+    } ]
+  }, {
+    "iid" : 8,
+    "type" : "urn:xiot:service:network:0000000F:dreame:mc1808:1",
+    "description" : "network",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:network-info:0000003F:dreame:mc1808:1",
+      "description" : "network-info",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ]
+  }, {
+    "iid" : 9,
+    "type" : "urn:xiot:service:consumable:00000010:dreame:mc1808:1",
+    "description" : "consumable",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:life-sieve:00000011:dreame:mc1808:1",
+      "description" : "life-sieve",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:life-brush-side:00000012:dreame:mc1808:1",
+      "description" : "life-brush-side",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:life-brush-main:00000013:dreame:mc1808:1",
+      "description" : "life-brush-main",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:life-sensor:00000014:dreame:mc1808:1",
+      "description" : "life-sensor",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:property:life-duster:00000015:dreame:mc1808:1",
+      "description" : "life-duster",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    } ],
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:warn-sieve:00000016:dreame:mc1808:1",
+      "description" : "warn-sieve",
+      "arguments" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:event:warn-brush-side:00000017:dreame:mc1808:1",
+      "description" : "warn-brush-side",
+      "arguments" : [ ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:event:warn-brush-main:00000018:dreame:mc1808:1",
+      "description" : "warn-brush-main",
+      "arguments" : [ ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:event:warn-sensor:00000019:dreame:mc1808:1",
+      "description" : "warn-sensor",
+      "arguments" : [ ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:event:warn-duster:0000001A:dreame:mc1808:1",
+      "description" : "warn-duster",
+      "arguments" : [ ]
+    } ]
+  }, {
+    "iid" : 10,
+    "type" : "urn:xiot:service:annoy:0000001C:dreame:mc1808:1",
+    "description" : "annoy",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:enable:0000001D:dreame:mc1808:1",
+      "description" : "enable",
+      "format" : "bool",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:start-time:0000001E:dreame:mc1808:1",
+      "description" : "start-time",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:stop-time:0000001F:dreame:mc1808:1",
+      "description" : "stop-time",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    } ]
+  }, {
+    "iid" : 11,
+    "type" : "urn:xiot:service:general-setup:00000021:dreame:mc1808:1",
+    "description" : "general-setup",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:name:00000022:dreame:mc1808:1",
+      "description" : "name",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:site:00000023:dreame:mc1808:1",
+      "description" : "site",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:delete-device:0000003C:dreame:mc1808:1",
+      "description" : "delete-device",
+      "in" : [ 1 ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 12,
+    "type" : "urn:xiot:service:remote-control:00000024:dreame:mc1808:1",
+    "description" : "remote-control",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:move-direction:00000025:dreame:mc1808:1",
+      "description" : "move-direction",
+      "format" : "int32",
+      "access" : [ "write" ],
+      "value-range" : [ 0, 32767, 1 ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:clean-mode:00000026:dreame:mc1808:1",
+      "description" : "clean-mode",
+      "format" : "int32",
+      "access" : [ "write" ],
+      "value-range" : [ 0, 32767, 1 ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:go-charging:00000027:dreame:mc1808:1",
+      "description" : "go-charging",
+      "format" : "bool",
+      "access" : [ "write" ]
+    } ]
+  }, {
+    "iid" : 13,
+    "type" : "urn:xiot:service:warn:00000028:dreame:mc1808:1",
+    "description" : "warn",
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:machine-hang:00000029:dreame:mc1808:1",
+      "description" : "machine-hang",
+      "arguments" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:event:wheel-abnormal:0000002A:dreame:mc1808:1",
+      "description" : "wheel-error",
+      "arguments" : [ ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:event:machine-stuck:0000002B:dreame:mc1808:1",
+      "description" : "machine-stuck",
+      "arguments" : [ ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:event:side-brush-abnormal:0000002C:dreame:mc1808:1",
+      "description" : "side-brush-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:event:main-brush-abnormal:0000002D:dreame:mc1808:1",
+      "description" : "main-brush-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 6,
+      "type" : "urn:xiot:event:no-dust-box:0000002E:dreame:mc1808:1",
+      "description" : "no-dust-box",
+      "arguments" : [ ]
+    }, {
+      "iid" : 7,
+      "type" : "urn:xiot:event:bump-stuck:0000002F:dreame:mc1808:1",
+      "description" : "bump-stuck",
+      "arguments" : [ ]
+    }, {
+      "iid" : 8,
+      "type" : "urn:xiot:event:dust-box-full:00000030:dreame:mc1808:1",
+      "description" : "dust-box-full",
+      "arguments" : [ ]
+    }, {
+      "iid" : 9,
+      "type" : "urn:xiot:event:battery-abnormal:00000031:dreame:mc1808:1",
+      "description" : "battery-error",
+      "arguments" : [ ]
+    }, {
+      "iid" : 10,
+      "type" : "urn:xiot:event:forward-looking-abnormal:00000032:dreame:mc1808:1",
+      "description" : "forward-looking-error",
+      "arguments" : [ ]
+    }, {
+      "iid" : 11,
+      "type" : "urn:xiot:event:gyroscope-abnormal:00000033:dreame:mc1808:1",
+      "description" : "gyroscope-error",
+      "arguments" : [ ]
+    }, {
+      "iid" : 12,
+      "type" : "urn:xiot:event:fan-abnormal:00000034:dreame:mc1808:1",
+      "description" : "fan-error",
+      "arguments" : [ ]
+    }, {
+      "iid" : 13,
+      "type" : "urn:xiot:event:strainer-block:00000035:dreame:mc1808:1",
+      "description" : "strainer-block",
+      "arguments" : [ ]
+    }, {
+      "iid" : 14,
+      "type" : "urn:xiot:event:air-filter-uninstall:00000036:dreame:mc1808:1",
+      "description" : "air-filter-uninstall",
+      "arguments" : [ ]
+    }, {
+      "iid" : 15,
+      "type" : "urn:xiot:event:ultrasonic-abnormal:00000037:dreame:mc1808:1",
+      "description" : "ultrasonic-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 16,
+      "type" : "urn:xiot:event:down-sensor-dust:00000038:dreame:mc1808:1",
+      "description" : "down-sensor-dust",
+      "arguments" : [ ]
+    }, {
+      "iid" : 17,
+      "type" : "urn:xiot:event:camera-abnormal:00000039:dreame:mc1808:1",
+      "description" : "abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 18,
+      "type" : "urn:xiot:event:camera-shield:0000004A:dreame:mc1808:1",
+      "description" : "camera-shield",
+      "arguments" : [ ]
+    }, {
+      "iid" : 19,
+      "type" : "urn:xiot:event:right-wheel-abnormal:0000004B:dreame:mc1808:1",
+      "description" : "right-wheel-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 20,
+      "type" : "urn:xiot:event:left-wheel-abnormal:0000004C:dreame:mc1808:1",
+      "description" : "left-wheel-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 21,
+      "type" : "urn:xiot:event:water-low:0000004D:dreame:mc1808:1",
+      "description" : "water-low",
+      "arguments" : [ ]
+    }, {
+      "iid" : 22,
+      "type" : "urn:xiot:event:move-to-clean-area:0000004E:dreame:mc1808:1",
+      "description" : "move-to-clean-area",
+      "arguments" : [ ]
+    }, {
+      "iid" : 23,
+      "type" : "urn:xiot:event:poweroff-abnormal:0000004F:dreame:mc1808:1",
+      "description" : "poweroff-abnormal",
+      "arguments" : [ ]
+    }, {
+      "iid" : 24,
+      "type" : "urn:xiot:event:no-water-box:00000050:dreame:mc1808:1",
+      "description" : "no-water-box",
+      "arguments" : [ ]
+    } ]
+  }, {
+    "iid" : 14,
+    "type" : "urn:xiot:service:map:0000003B:dreame:mc1808:1",
+    "description" : "map",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:directional:00000041:dreame:mc1808:1",
+      "description" : "directional",
+      "format" : "string",
+      "access" : [ "write" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:map-view:00000042:dreame:mc1808:1",
+      "description" : "map-view",
+      "format" : "string",
+      "access" : [ "read", "notify" ]
+    } ]
+  }, {
+    "iid" : 15,
+    "type" : "urn:xiot:service:message:0000003E:dreame:mc1808:1",
+    "description" : "message"
+  }, {
+    "iid" : 16,
+    "type" : "urn:xiot:service:audio:00000043:dreame:mc1808:1",
+    "description" : "audio",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:volume:00000045:dreame:mc1808:1",
+      "description" : "volume",
+      "format" : "int32",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 100, 1 ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:mute:00000046:dreame:mc1808:1",
+      "description" : "mute",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:voice-packets:00000047:dreame:mc1808:1",
+      "description" : "voice-packets",
+      "format" : "string",
+      "access" : [ "read", "write" ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:position:00000044:dreame:mc1808:1",
+      "description" : "position",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  } ]
+}

@@ -1,7 +1,7 @@
 import {Spec} from '../../spec/constant/Spec';
 import {Device} from '../../spec/instance/Device';
 import {DeviceOperable} from '../../spec/operable/DeviceOperable';
-import {DeviceType} from '../../spec/definitions/urn/DeviceType';
+import {DeviceType} from '../../spec/definition/urn/DeviceType';
 import {ServiceCodec} from './ServiceCodec';
 
 export class DeviceCodec {

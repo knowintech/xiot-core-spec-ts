@@ -1,0 +1,7 @@
+{
+  "type" : "urn:xiot:service:cooker:00007815",
+  "description" : "Cooker",
+  "required-properties" : [ "urn:xiot:property:status:00000007", "urn:xiot:property:fault:00000009", "urn:xiot:property:cook-mode:00000037", "urn:xiot:property:auto-keep-warm:0000002B" ],
+  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:temperature:00000020" ],
+  "required-actions" : [ "urn:xiot:action:start-cook:00002806", "urn:xiot:action:cancel-cooking:00002807" ]
+}

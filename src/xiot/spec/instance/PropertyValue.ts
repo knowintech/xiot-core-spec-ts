@@ -1,5 +1,5 @@
-import {DataFormat} from '../definitions/property/data/DataFormat';
-import {DataValue} from '../definitions/property/data/DataValue';
+import {DataFormat} from '../definition/property/data/DataFormat';
+import {DataValue} from '../definition/property/data/DataValue';
 
 export class PropertyValue {
 

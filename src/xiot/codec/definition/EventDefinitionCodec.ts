@@ -1,8 +1,8 @@
 import {Spec} from '../../spec/constant/Spec';
-import {ActionType} from '../../spec/definitions/urn/ActionType';
+import {ActionType} from '../../spec/definition/urn/ActionType';
 import {DefinitionCodec} from './DefinitionCodec';
-import {EventDefinition} from '../../spec/definitions/EventDefinition';
-import {EventType} from '../../spec/definitions/urn/EventType';
+import {EventDefinition} from '../../spec/definition/EventDefinition';
+import {EventType} from '../../spec/definition/urn/EventType';
 
 export class EventDefinitionCodec {
 
@@ -18,7 +18,7 @@ export class EventDefinitionCodec {
 
     static decode(json: any): EventDefinition {
         const def = new EventDefinition();
-        def.type = ActionType.valueOf(json[Spec.TYPE]);
+        def.type = EventType.valueOf(json[Spec.TYPE]);
         def.description = json[Spec.DESCRIPTION];
         def.arguments = DefinitionCodec.decodeProperties(json[Spec.ARGUMENTS]);
         return def;

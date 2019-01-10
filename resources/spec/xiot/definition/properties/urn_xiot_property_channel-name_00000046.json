@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:property:channel-name:00000046",
+  "description" : "Channel Name",
+  "format" : "string",
+  "access" : [ ]
+}

@@ -1,0 +1,165 @@
+{
+  "type" : "urn:xiot:device:light:0000A001:tuya02:tywl0:1",
+  "description" : "Light",
+  "services" : [ {
+    "iid" : 1,
+    "type" : "urn:xiot:service:device-information:00007801:tuya02:tywl0:1",
+    "description" : "Device Information",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:manufacturer:00000001:tuya02:tywl0:1",
+      "description" : "Device Manufacturer",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:model:00000002:tuya02:tywl0:1",
+      "description" : "Device Model",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:serial-number:00000003:tuya02:tywl0:1",
+      "description" : "Device Serial Number",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:firmware-revision:00000005:tuya02:tywl0:1",
+      "description" : "Current Firmware Version",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:identify:00002801:tuya02:tywl0:1",
+      "description" : "Identify",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 2,
+    "type" : "urn:xiot:service:light:00007802:tuya02:tywl0:1",
+    "description" : "Light",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:on:00000006:tuya02:tywl0:1",
+      "description" : "Switch Status",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:mode:00000008:tuya02:tywl0:1",
+      "description" : "Mode",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "Auto"
+      } ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:brightness:0000000D:tuya02:tywl0:1",
+      "description" : "Brightness",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:color:0000000E:tuya02:tywl0:1",
+      "description" : "Color",
+      "format" : "uint32",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 16777215, 1 ]
+    }, {
+      "iid" : 5,
+      "type" : "urn:xiot:property:color-temperature:0000000F:tuya02:tywl0:1",
+      "description" : "Color Temperature",
+      "format" : "uint32",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 1000, 10000, 1 ],
+      "unit" : "kelvin"
+    }, {
+      "iid" : 6,
+      "type" : "urn:xiot:property:flow:00000010:tuya02:tywl0:1",
+      "description" : "Flow",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-list" : [ {
+        "value" : 0,
+        "description" : "Auto"
+      } ]
+    }, {
+      "iid" : 7,
+      "type" : "urn:xiot:property:saturability:00000011:tuya02:tywl0:1",
+      "description" : "Saturability",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    } ]
+  }, {
+    "iid" : 3,
+    "type" : "urn:xiot:service:battery:00007805:tuya02:tywl0:1",
+    "description" : "Battery",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:battery-level:00000014:tuya02:tywl0:1",
+      "description" : "Battery Level",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:charging-state:00000015:tuya02:tywl0:1",
+      "description" : "Charging State",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-list" : [ {
+        "value" : 1,
+        "description" : "Charging"
+      }, {
+        "value" : 2,
+        "description" : "Not charging"
+      }, {
+        "value" : 3,
+        "description" : "Not chargeable"
+      } ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:start-charge:00002802:tuya02:tywl0:1",
+      "description" : "Start Charge",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 4,
+    "type" : "urn:xiot:service:ddd:00000001:tuya02:tywl0:1",
+    "description" : "test",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:test:00000002:tuya02:tywl0:1",
+      "description" : "sss sss",
+      "format" : "float",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0.1, 1.0, 0.1 ],
+      "unit" : "percentage"
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:m1:00000003:tuya02:tywl0:1",
+      "description" : "m1",
+      "in" : [ 1 ],
+      "out" : [ ]
+    } ],
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:e1:00000004:tuya02:tywl0:1",
+      "description" : "ee",
+      "arguments" : [ ]
+    } ]
+  } ]
+}

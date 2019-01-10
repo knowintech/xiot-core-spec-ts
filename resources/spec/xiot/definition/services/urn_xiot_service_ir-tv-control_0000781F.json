@@ -1,0 +1,5 @@
+{
+  "type" : "urn:xiot:service:ir-tv-control:0000781F",
+  "description" : "IR TV Control",
+  "optional-actions" : [ "urn:xiot:action:volume-up:00002812", "urn:xiot:action:volume-down:00002813", "urn:xiot:action:channel-up:00002815", "urn:xiot:action:channel-down:00002816", "urn:xiot:action:turn-on:00002808", "urn:xiot:action:turn-off:00002809", "urn:xiot:action:mute-on:00002819", "urn:xiot:action:mute-off:0000281A" ]
+}

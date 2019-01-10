@@ -1,0 +1,8 @@
+{
+  "type" : "urn:xiot:service:washer:00007834",
+  "description" : "Washer",
+  "required-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:fault:00000009" ],
+  "optional-properties" : [ "urn:xiot:property:left-time:0000003C", "urn:xiot:property:target-temperature:00000021", "urn:xiot:property:temperature:00000020", "urn:xiot:property:target-water-level:00000069", "urn:xiot:property:dryer:00000027", "urn:xiot:property:drying-level:0000003B", "urn:xiot:property:drying-time:0000006A", "urn:xiot:property:door-state:0000006B", "urn:xiot:property:soak-time:0000006C", "urn:xiot:property:wash-time:0000006D", "urn:xiot:property:rinsh-time:0000006E", "urn:xiot:property:rinsh-times:0000006F", "urn:xiot:property:spin-time:00000070", "urn:xiot:property:spin-speed:00000071" ],
+  "required-actions" : [ "urn:xiot:action:start-wash:00002824", "urn:xiot:action:pause:0000280C" ],
+  "optional-events" : [ "urn:xiot:event:wash-end:0000500B" ]
+}

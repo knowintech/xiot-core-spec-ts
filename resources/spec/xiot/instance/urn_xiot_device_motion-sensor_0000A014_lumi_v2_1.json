@@ -1,0 +1,59 @@
+{
+  "type" : "urn:xiot:device:motion-sensor:0000A014:lumi:v2:1",
+  "description" : "Motion Sensor",
+  "services" : [ {
+    "iid" : 1,
+    "type" : "urn:xiot:service:device-information:00007801:lumi:v2:1",
+    "description" : "Device Information",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:manufacturer:00000001:lumi:v2:1",
+      "description" : "Device Manufacturer",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:model:00000002:lumi:v2:1",
+      "description" : "Device Model",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:serial-number:00000003:lumi:v2:1",
+      "description" : "Device Serial Number",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:firmware-revision:00000005:lumi:v2:1",
+      "description" : "Current Firmware Version",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ]
+  }, {
+    "iid" : 2,
+    "type" : "urn:xiot:service:motion-sensor:00007825:lumi:v2:1",
+    "description" : "Motion Sensor",
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:motion-detected:00005001:lumi:v2:1",
+      "description" : "Motion Detected",
+      "arguments" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:event:no-motion:00005002:lumi:v2:1",
+      "description" : "No Motion for Some Time",
+      "arguments" : [ ]
+    } ]
+  }, {
+    "iid" : 3,
+    "type" : "urn:xiot:service:battery:00007805:lumi:v2:1",
+    "description" : "Battery",
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:low-battery:00005003:lumi:v2:1",
+      "description" : "Low Battery",
+      "arguments" : [ ]
+    } ]
+  } ]
+}

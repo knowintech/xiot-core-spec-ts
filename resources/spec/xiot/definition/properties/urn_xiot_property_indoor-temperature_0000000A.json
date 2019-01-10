@@ -1,0 +1,8 @@
+{
+  "type" : "urn:xiot:property:indoor-temperature:0000000A",
+  "description" : "Indoor Temperature",
+  "format" : "float",
+  "access" : [ "read", "notify" ],
+  "value-range" : [ -50.0, 50.0, 1.0 ],
+  "unit" : "celsius"
+}

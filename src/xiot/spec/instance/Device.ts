@@ -1,4 +1,4 @@
-import {DeviceType} from '../definitions/urn/DeviceType';
+import {DeviceType} from '../definition/urn/DeviceType';
 import {Service} from './Service';
 
 export class Device {

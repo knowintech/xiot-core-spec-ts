@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:device:temperature-humidity-sensor:0000A00A",
+  "description" : "Temperature Humidity Sensor",
+  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:temperature-humidity-sensor:00007814" ],
+  "optional-services" : [ "urn:xiot:service:battery:00007805" ]
+}

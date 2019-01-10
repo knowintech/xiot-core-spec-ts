@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:device:cooker:0000A00B",
+  "description" : "Cooker",
+  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:cooker:00007815" ],
+  "optional-services" : [ "urn:xiot:service:alarm:00007804" ]
+}

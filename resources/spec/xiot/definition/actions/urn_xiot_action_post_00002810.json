@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:action:post:00002810",
+  "description" : "Post",
+  "in" : [ "urn:xiot:property:request:00000043" ],
+  "out" : [ "urn:xiot:property:response:00000044" ]
+}

@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:service:curtain:00007816",
+  "description" : "Curtain",
+  "required-properties" : [ "urn:xiot:property:fault:00000009", "urn:xiot:property:motor-control:00000038" ],
+  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:current-position:00000039", "urn:xiot:property:target-position:0000003A" ]
+}

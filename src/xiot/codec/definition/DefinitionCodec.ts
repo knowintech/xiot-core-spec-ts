@@ -1,11 +1,11 @@
-import {DataFormat} from '../../spec/definitions/property/data/DataFormat';
-import {ValueList} from '../../spec/definitions/property/ValueList';
-import {ValueRange} from '../../spec/definitions/property/ValueRange';
-import {PropertyType} from '../../spec/definitions/urn/PropertyType';
-import {ServiceType} from '../../spec/definitions/urn/ServiceType';
-import {ActionType} from '../../spec/definitions/urn/ActionType';
-import {EventType} from '../../spec/definitions/urn/EventType';
-import {ValueDefinition} from '../../spec/definitions/property/ValueDefinition';
+import {DataFormat} from '../../spec/definition/property/data/DataFormat';
+import {ValueList} from '../../spec/definition/property/ValueList';
+import {ValueRange} from '../../spec/definition/property/ValueRange';
+import {PropertyType} from '../../spec/definition/urn/PropertyType';
+import {ServiceType} from '../../spec/definition/urn/ServiceType';
+import {ActionType} from '../../spec/definition/urn/ActionType';
+import {EventType} from '../../spec/definition/urn/EventType';
+import {ValueDefinition} from '../../spec/definition/property/ValueDefinition';
 import {Spec} from '../../spec/constant/Spec';
 
 export class DefinitionCodec {
@@ -35,7 +35,7 @@ export class DefinitionCodec {
         for (const v of array) {
             const t = PropertyType.valueOf(v);
             if (t != null) {
-                list.push();
+                list.push(t);
             }
         }
     }
@@ -65,7 +65,7 @@ export class DefinitionCodec {
           for (const v of array) {
             const t = ActionType.valueOf(v);
             if (t != null) {
-                list.push();
+                list.push(t);
             }
           }
       }
@@ -80,7 +80,7 @@ export class DefinitionCodec {
           for (const v of array) {
               const t = EventType.valueOf(v);
               if (t != null) {
-                list.push();
+                list.push(t);
               }
           }
       }

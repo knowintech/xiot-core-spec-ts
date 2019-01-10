@@ -7,22 +7,18 @@ describe('EventDefinitionCodec', async () => {
 
     let folder = './resources/spec/xiot/definition/events/';
 
-    // let dir = await fs.readdir(folder);
-    //
-    // it('reading events, folder: ' + folder, () => {
-    //     expect(true).to.equal(true);
-    // });
-    //
-    // for (const file of dir) {
-    //     it('decode: ' + file, async () => {
-    //         let a = await fs.readFile(folder + file);
-    //         const def = EventDefinitionCodec.decode(a.toString());
-    //         // console.log("a: ", a.toString());
-    //         expect(true).to.equal(true);
-    //     });
-    // }
-
+    let dir = await fs.readdir(folder);
+    
     it('reading events, folder: ' + folder, () => {
         expect(true).to.equal(true);
     });
+
+    for (const file of dir) {
+        it('  check: ' + file, async () => {
+            let a = await fs.readFile(folder + file);
+            const json = JSON.parse(a.toString());
+            const def = EventDefinitionCodec.decode(json);
+            expect(JSON.stringify(json)).to.equal(JSON.stringify(EventDefinitionCodec.encode(def)));
+        });
+    }
 });

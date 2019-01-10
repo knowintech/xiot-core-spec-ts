@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:device:humidifier:0000A00E",
+  "description" : "Humidifier",
+  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:humidifier:00007818" ],
+  "optional-services" : [ "urn:xiot:service:environment:0000780A", "urn:xiot:service:filter:0000780B" ]
+}

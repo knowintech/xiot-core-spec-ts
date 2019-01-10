@@ -6,22 +6,18 @@ import {DeviceCodec} from "../../../../src/xiot/codec/instance/DeviceCodec";
 describe('DeviceCodec', async () => {
 
     let folder = './resources/spec/xiot/instance/';
-    // let dir = await fs.readdir(folder);
+    let dir = await fs.readdir(folder);
 
-    // it('reading devices instance, folder: ' + folder, () => {
-    //     expect(true).to.equal(true);
-    // });
-
-    // for (const file of dir) {
-    //     it('decode: ' + file, async () => {
-    //         let a = await fs.readFile(folder + file);
-    //         const json = JSON.parse(a.toString());
-    //         const device = DeviceCodec.decode(json);
-    //         expect(JSON.stringify(json)).to.equal(JSON.stringify(DeviceCodec.encode(device)));
-    //     });
-    // }
-
-    it('reading instances, folder: ' + folder, () => {
+    it('reading devices instance, folder: ' + folder, () => {
         expect(true).to.equal(true);
     });
+
+    for (const file of dir) {
+        it('  check: ' + file, async () => {
+            let a = await fs.readFile(folder + file);
+            const json = JSON.parse(a.toString());
+            const device = DeviceCodec.decode(json);
+            expect(JSON.stringify(json)).to.equal(JSON.stringify(DeviceCodec.encode(device)));
+        });
+    }
 });

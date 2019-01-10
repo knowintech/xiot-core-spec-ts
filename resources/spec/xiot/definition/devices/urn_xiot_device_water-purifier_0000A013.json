@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:device:water-purifier:0000A013",
+  "description" : "Water Purifier",
+  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:water-purifier:00007821", "urn:xiot:service:filter:0000780B", "urn:xiot:service:tds-sensor:0000780D" ],
+  "optional-services" : [ "urn:xiot:service:physical-controls-locked:00007807", "urn:xiot:service:alarm:00007804" ]
+}

@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:service:water-purifier:00007821",
+  "description" : "Water Purifier",
+  "required-properties" : [ "urn:xiot:property:fault:00000009" ],
+  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:temperature:00000020" ]
+}

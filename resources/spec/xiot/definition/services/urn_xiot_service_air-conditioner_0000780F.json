@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:service:air-conditioner:0000780F",
+  "description" : "Air Conditioner",
+  "required-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:mode:00000008", "urn:xiot:property:fault:00000009", "urn:xiot:property:target-temperature:00000021" ],
+  "optional-properties" : [ "urn:xiot:property:status:00000007", "urn:xiot:property:target-humidity:00000022", "urn:xiot:property:eco:00000024", "urn:xiot:property:anion:00000025", "urn:xiot:property:heater:00000026", "urn:xiot:property:dryer:00000027", "urn:xiot:property:sleep-mode:00000028" ]
+}

@@ -1,2 +1,2 @@
 export * from './xiot/spec/constant/Spec';
-export * from './xiot/spec/definitions/urn/Extendable';
+export * from './xiot/spec/definition/urn/Extendable';

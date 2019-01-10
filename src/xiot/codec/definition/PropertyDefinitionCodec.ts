@@ -1,12 +1,12 @@
-import {PropertyDefinition} from '../../spec/definitions/PropertyDefinition';
+import {PropertyDefinition} from '../../spec/definition/PropertyDefinition';
 import {Spec} from '../../spec/constant/Spec';
-import {PropertyType} from '../../spec/definitions/urn/PropertyType';
-import {DataFormatFromString, DataFormatToString} from '../../spec/definitions/property/data/DataFormat';
-import {Access} from '../../spec/definitions/property/Access';
+import {PropertyType} from '../../spec/definition/urn/PropertyType';
+import {DataFormatFromString, DataFormatToString} from '../../spec/definition/property/data/DataFormat';
+import {Access} from '../../spec/definition/property/Access';
 import {DefinitionCodec} from './DefinitionCodec';
-import {Unit, UnitFromString, UnitToString} from '../../spec/definitions/property/Unit';
-import {ValueList} from '../../spec/definitions/property/ValueList';
-import {ValueRange} from '../../spec/definitions/property/ValueRange';
+import {Unit, UnitFromString, UnitToString} from '../../spec/definition/property/Unit';
+import {ValueList} from '../../spec/definition/property/ValueList';
+import {ValueRange} from '../../spec/definition/property/ValueRange';
 
 export class PropertyDefinitionCodec {
 

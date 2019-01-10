@@ -1,4 +1,4 @@
-import {DeviceType} from '../definitions/urn/DeviceType';
+import {DeviceType} from '../definition/urn/DeviceType';
 
 export class DeviceDetail {
   public did: string = '';

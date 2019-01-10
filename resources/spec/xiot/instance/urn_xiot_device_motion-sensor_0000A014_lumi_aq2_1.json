@@ -1,0 +1,76 @@
+{
+  "type" : "urn:xiot:device:motion-sensor:0000A014:lumi:aq2:1",
+  "description" : "Motion Sensor",
+  "services" : [ {
+    "iid" : 1,
+    "type" : "urn:xiot:service:device-information:00007801:lumi:aq2:1",
+    "description" : "Device Information",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:manufacturer:00000001:lumi:aq2:1",
+      "description" : "Device Manufacturer",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:model:00000002:lumi:aq2:1",
+      "description" : "Device Model",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:serial-number:00000003:lumi:aq2:1",
+      "description" : "Device Serial Number",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:firmware-revision:00000005:lumi:aq2:1",
+      "description" : "Current Firmware Version",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ]
+  }, {
+    "iid" : 2,
+    "type" : "urn:xiot:service:motion-sensor:00007825:lumi:aq2:1",
+    "description" : "Motion Sensor",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:illumination:0000004E:lumi:aq2:1",
+      "description" : "Illumination",
+      "format" : "float",
+      "access" : [ "read", "notify" ],
+      "value-range" : [ 0.0, 65535.0, 1.0 ]
+    } ],
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:motion-detected:00005001:lumi:aq2:1",
+      "description" : "Motion Detected",
+      "arguments" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:event:no-motion:00005002:lumi:aq2:1",
+      "description" : "No Motion for Some Time",
+      "arguments" : [ ]
+    } ]
+  }, {
+    "iid" : 3,
+    "type" : "urn:xiot:service:battery:00007805:lumi:aq2:1",
+    "description" : "Battery",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:battery-level:00000014:lumi:aq2:1",
+      "description" : "Battery Level",
+      "format" : "uint8",
+      "access" : [ "read", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    } ],
+    "events" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:event:low-battery:00005003:lumi:aq2:1",
+      "description" : "Low Battery",
+      "arguments" : [ ]
+    } ]
+  } ]
+}

@@ -1,0 +1,5 @@
+{
+  "type" : "urn:xiot:service:indicator-light:00007803",
+  "description" : "Indicator Light",
+  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:mode:00000008", "urn:xiot:property:brightness:0000000D", "urn:xiot:property:color:0000000E", "urn:xiot:property:color-temperature:0000000F", "urn:xiot:property:flow:00000010", "urn:xiot:property:saturability:00000011" ]
+}

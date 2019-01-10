@@ -1,4 +1,4 @@
-import {ActionType} from '../definitions/urn/ActionType';
+import {ActionType} from '../definition/urn/ActionType';
 
 export class Action {
   public iid: number = 0;

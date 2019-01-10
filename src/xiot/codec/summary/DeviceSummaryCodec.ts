@@ -1,4 +1,4 @@
-import {DeviceType} from '../../spec/definitions/urn/DeviceType';
+import {DeviceType} from '../../spec/definition/urn/DeviceType';
 import {DeviceSummary} from '../../spec/summary/DeviceSummary';
 
 export class DeviceSummaryCodec {

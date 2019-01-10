@@ -1,0 +1,6 @@
+{
+  "type" : "urn:xiot:service:speaker:0000781C",
+  "description" : "Speaker",
+  "required-properties" : [ "urn:xiot:property:volume:00000013" ],
+  "optional-properties" : [ "urn:xiot:property:mute:00000040" ]
+}

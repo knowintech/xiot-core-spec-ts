@@ -1,4 +1,4 @@
-import {ServiceType} from '../definitions/urn/ServiceType';
+import {ServiceType} from '../definition/urn/ServiceType';
 import {Property} from './Property';
 import {Action} from './Action';
 import {Event} from './Event';

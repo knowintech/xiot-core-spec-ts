@@ -2,10 +2,10 @@ import {Property} from '../../spec/instance/Property';
 import {PropertyOperable} from '../../spec/operable/PropertyOperable';
 import {Spec} from '../../spec/constant/Spec';
 import {PropertyDefinitionCodec} from '../definition/PropertyDefinitionCodec';
-import {DataFormatToString} from '../../spec/definitions/property/data/DataFormat';
-import {ValueList} from '../../spec/definitions/property/ValueList';
-import {ValueRange} from '../../spec/definitions/property/ValueRange';
-import {Unit, UnitToString} from '../../spec/definitions/property/Unit';
+import {DataFormatToString} from '../../spec/definition/property/data/DataFormat';
+import {ValueList} from '../../spec/definition/property/ValueList';
+import {ValueRange} from '../../spec/definition/property/ValueRange';
+import {Unit, UnitToString} from '../../spec/definition/property/Unit';
 
 export class PropertyCodec {
 

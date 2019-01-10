@@ -1,0 +1,5 @@
+{
+  "type" : "urn:xiot:service:countdown:0000782D",
+  "description" : "Countdown",
+  "required-properties" : [ "urn:xiot:property:countdown-time:00000055" ]
+}

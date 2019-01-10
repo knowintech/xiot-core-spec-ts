@@ -1,0 +1,5 @@
+{
+  "type" : "urn:xiot:action:set-channel-number:00002817",
+  "description" : "Set Channel Number",
+  "in" : [ "urn:xiot:property:channel-number:00000045" ]
+}

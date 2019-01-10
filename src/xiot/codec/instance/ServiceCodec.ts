@@ -1,6 +1,6 @@
 import {Spec} from '../../spec/constant/Spec';
 import {Service} from '../../spec/instance/Service';
-import {ServiceType} from '../../spec/definitions/urn/ServiceType';
+import {ServiceType} from '../../spec/definition/urn/ServiceType';
 import {PropertyCodec} from './PropertyCodec';
 import {ActionCodec} from './ActionCodec';
 import {EventCodec} from './EventCodec';

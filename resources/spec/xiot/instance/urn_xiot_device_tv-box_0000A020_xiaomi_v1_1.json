@@ -1,0 +1,111 @@
+{
+  "type" : "urn:xiot:device:tv-box:0000A020:xiaomi:v1:1",
+  "description" : "TV Box",
+  "services" : [ {
+    "iid" : 1,
+    "type" : "urn:xiot:service:device-information:00007801:xiaomi:v1:1",
+    "description" : "Device Information",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:manufacturer:00000001:xiaomi:v1:1",
+      "description" : "Device Manufacturer",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:model:00000002:xiaomi:v1:1",
+      "description" : "Device Model",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 3,
+      "type" : "urn:xiot:property:serial-number:00000003:xiaomi:v1:1",
+      "description" : "Device Serial Number",
+      "format" : "string",
+      "access" : [ "read" ]
+    }, {
+      "iid" : 4,
+      "type" : "urn:xiot:property:firmware-revision:00000005:xiaomi:v1:1",
+      "description" : "Current Firmware Version",
+      "format" : "string",
+      "access" : [ "read" ]
+    } ]
+  }, {
+    "iid" : 2,
+    "type" : "urn:xiot:service:tv-box:00007835:xiaomi:v1:1",
+    "description" : "TV Box",
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:turn-on:00002808:xiaomi:v1:1",
+      "description" : "Turn On",
+      "in" : [ ],
+      "out" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:action:turn-off:00002809:xiaomi:v1:1",
+      "description" : "Turn Off",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 3,
+    "type" : "urn:xiot:service:play-control:0000781D:xiaomi:v1:1",
+    "description" : "Play Control",
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:play:0000280B:xiaomi:v1:1",
+      "description" : "Play",
+      "in" : [ ],
+      "out" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:action:pause:0000280C:xiaomi:v1:1",
+      "description" : "Pause",
+      "in" : [ ],
+      "out" : [ ]
+    } ]
+  }, {
+    "iid" : 4,
+    "type" : "urn:xiot:service:speaker:0000781C:xiaomi:v1:1",
+    "description" : "Speaker",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:volume:00000013:xiaomi:v1:1",
+      "description" : "Volume",
+      "format" : "uint8",
+      "access" : [ "read", "write", "notify" ],
+      "value-range" : [ 0, 100, 1 ],
+      "unit" : "percentage"
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:mute:00000040:xiaomi:v1:1",
+      "description" : "Mute",
+      "format" : "bool",
+      "access" : [ "read", "write", "notify" ]
+    } ]
+  }, {
+    "iid" : 5,
+    "type" : "urn:xiot:service:message-router:0000781E:xiaomi:v1:1",
+    "description" : "Message Router",
+    "properties" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:property:request:00000043:xiaomi:v1:1",
+      "description" : "Request",
+      "format" : "string",
+      "access" : [ ]
+    }, {
+      "iid" : 2,
+      "type" : "urn:xiot:property:response:00000044:xiaomi:v1:1",
+      "description" : "Response",
+      "format" : "string",
+      "access" : [ ]
+    } ],
+    "actions" : [ {
+      "iid" : 1,
+      "type" : "urn:xiot:action:post:00002810:xiaomi:v1:1",
+      "description" : "Post",
+      "in" : [ 1 ],
+      "out" : [ 2 ]
+    } ]
+  } ]
+}

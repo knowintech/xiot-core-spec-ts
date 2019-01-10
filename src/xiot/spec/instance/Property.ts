@@ -1,6 +1,6 @@
-import {PropertyDefinition} from '../definitions/PropertyDefinition';
+import {PropertyDefinition} from '../definition/PropertyDefinition';
 import {PropertyValue} from './PropertyValue';
-import {DataValueFactory} from '../definitions/property/data/DataValueFactory';
+import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 
 export class Property {
   public iid: number = 0;

@@ -1,4 +1,4 @@
-import {EventType} from '../definitions/urn/EventType';
+import {EventType} from '../definition/urn/EventType';
 
 export class Event {
   public iid: number = 0;

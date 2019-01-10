@@ -1,6 +1,6 @@
-import {ActionDefinition} from '../../spec/definitions/ActionDefinition';
+import {ActionDefinition} from '../../spec/definition/ActionDefinition';
 import {Spec} from '../../spec/constant/Spec';
-import {ActionType} from '../../spec/definitions/urn/ActionType';
+import {ActionType} from '../../spec/definition/urn/ActionType';
 import {DefinitionCodec} from './DefinitionCodec';
 
 export class ActionDefinitionCodec {

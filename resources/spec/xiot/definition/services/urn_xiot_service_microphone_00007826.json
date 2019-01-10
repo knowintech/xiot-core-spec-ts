@@ -1,0 +1,5 @@
+{
+  "type" : "urn:xiot:service:microphone:00007826",
+  "description" : "Microphone",
+  "required-properties" : [ "urn:xiot:property:mute:00000040" ]
+}
