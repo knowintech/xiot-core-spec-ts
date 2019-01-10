@@ -75,6 +75,31 @@ export class PropertyDefinition {
     return UnitToString(this.unit);
   }
 
+  formatBoolean(): boolean {
+    return this.format === DataFormat.BOOL;
+  }
+
+  formatNumber(): boolean {
+    switch (this.format) {
+      case DataFormat.UINT8:
+      case DataFormat.UINT16:
+      case DataFormat.UINT32:
+      case DataFormat.INT8:
+      case DataFormat.INT16:
+      case DataFormat.INT32:
+      case DataFormat.INT64:
+      case DataFormat.FLOAT:
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  formatString(): boolean {
+    return this.format === DataFormat.STRING;
+  }
+
   hasConstraintValue(): boolean {
     return (this.constraintValue != null);
   }

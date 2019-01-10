@@ -8,9 +8,12 @@ export class Urn extends Extendable {
     public type: UrnType = UrnType.UNDEFINED;
     public name: string = '';
     public value: number = 0;
+
     public groupId: string = '';
     public model: string = '';
     public version: number = 0;
+    
+    public style: UrnStyle = UrnStyle.SPEC;
 
     constructor() {
         super();
@@ -33,25 +36,25 @@ export class Urn extends Extendable {
             switch (a.length) {
                 // specification type: urn:homekit-spec:device:fan:00000000
                 case 5:
-                    this.set('style', UrnStyle.SPEC);
+                    this.style = UrnStyle.SPEC;
                     ret = true;
                     break;
 
                 // v1 instance type => urn:xxx-spec:device:fan:00000000:geek-fff
                 case 6:
-                    this.set('style', UrnStyle.V1);
+                    this.style = UrnStyle.V1;
                     ret = this.initGroupModelVersion(a[5]);
                     break;
 
                 // v2 instance type style => urn:xxx-spec:device:fan:00000000:geek-fff:1
                 case 7:
-                    this.set('style', UrnStyle.V2);
+                    this.style = UrnStyle.V2;
                     ret = this.initGroupModelVersion2(a[5], a[6]);
                     break;
 
                 // xiot instance type style => urn:homekit-spec:device:fan:00000000:geek:fff:1
                 case 8:
-                    this.set('style', UrnStyle.XIOT);
+                    this.style = UrnStyle.XIOT;
                     ret = this.initGroupModelVersion3(a[5], a[6], a[7]);
                     break;
 
@@ -95,7 +98,7 @@ export class Urn extends Extendable {
         if (a.length != 2) {
             return false;
         }
-        this.set('style', 'v2');
+
         return this.initGroupModelVersion3(a[0], a[1], version);
     }
 
@@ -135,29 +138,23 @@ export class Urn extends Extendable {
     }
 
     toString(): string {
-        const uuid = this.value.toString(16).toUpperCase();
-        const length = 8 - uuid.length;
-        let prefix = '';
-        for (let i = 0; i < length; ++i) {
-            prefix += '0';
-        }
+        let s = 'urn:' + this.ns + ':' + UrnTypeToString(this.type) + ':' + this.name + ':' + this.shortUUID();
 
-        let s = 'urn:' + this.ns + ':' + UrnTypeToString(this.type) + ':' + this.name + ':' + prefix + uuid;
+        switch (this.style) {
+            case UrnStyle.SPEC:
+                break; 
 
-        const style = this.get('style') ;
+            case UrnStyle.V1:
+                s = s + ":" + this.groupId + "-" + this.model;
+                break; 
 
-        if (style == null || style == UrnStyle.XIOT) {
-            if (this.groupId !== '' && this.model !== '' && this.version != 0) {
+            case UrnStyle.V2:
+                s = s + ":" + this.groupId + "-" + this.model + ":" + this.version;
+                break; 
+
+            case UrnStyle.XIOT:
                 s = s + ":" + this.groupId + ":" + this.model + ":" + this.version;
-            }
-        } else {
-            if (this.groupId !== '' && this.model !== '') {
-                if (this.version != 0) {
-                    s = s + ":" + this.groupId + "-" + this.model + ":" + this.version;
-                } else {
-                    s = s + ":" + this.groupId + "-" + this.model;
-                }
-            }
+                break; 
         }
 
         return s;
