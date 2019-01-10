@@ -18,6 +18,7 @@ export enum Unit {
     MINUTES,
     HOURS,
     DAYS,
+    RGB,
 }
 
 const _UnitMapping: [Unit, string][] = [
@@ -38,6 +39,7 @@ const _UnitMapping: [Unit, string][] = [
     [Unit.MINUTES, 'minutes'],
     [Unit.HOURS, 'hours'],
     [Unit.DAYS, 'days'],
+    [Unit.RGB, 'rgb'],
 ];
 
 export function UnitToString(type: Unit): string {
