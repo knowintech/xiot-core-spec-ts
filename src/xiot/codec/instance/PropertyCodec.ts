@@ -17,6 +17,17 @@ export class PropertyCodec {
                 const p = new Property();
                 p.iid = o[Spec.IID] || 0;
                 p.definition = PropertyDefinitionCodec.decode(o);
+
+                if (p.definition.type != null) {
+                    if (o['x-name'] != null) {
+                        p.definition.type.set('name', o['x-name']);
+                    }
+
+                    if (o['x-optional'] != null) {
+                        p.definition.type.set('optional', o['x-optional']);
+                    }
+                }
+
                 list.push(p);
             }
         }

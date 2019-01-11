@@ -40,21 +40,11 @@ export class PropertyDefinitionCodec {
             def.constraintValue = DefinitionCodec.decodeValueRange(def.format, json[Spec.VALUE_RANGE]);
         }
 
-        if (def.type != null) {
-            if (json['x-name'] != null) {
-                def.type.set('name', json['x-name']);
-            }
-
-            if (json['x-optional'] != null) {
-                def.type.set('optional', json['x-optional']);
-            }
-        }
-
         return def;
     }
 
     static encode(def: PropertyDefinition): any {
-        const object: any = {
+        const o: any = {
             type: def.type != null ? def.type.toString() : '',
             description: def.description,
             format: DataFormatToString(def.format),
@@ -63,19 +53,19 @@ export class PropertyDefinitionCodec {
 
         if (def.constraintValue != null) {
             if (def.constraintValue instanceof ValueList) {
-                object[Spec.VALUE_LIST] = def.constraintValue.toJsonArray();
+                o[Spec.VALUE_LIST] = def.constraintValue.toJsonArray();
             }
 
             if (def.constraintValue instanceof ValueRange) {
-                object[Spec.VALUE_RANGE] = def.constraintValue.toJsonArray();
+                o[Spec.VALUE_RANGE] = def.constraintValue.toJsonArray();
             }
         }
 
         if (def.unit !== Unit.NONE) {
-            object[Spec.UNIT] = UnitToString(def.unit);
+            o[Spec.UNIT] = UnitToString(def.unit);
         }
 
-        return object;
+        return o;
     }
 
     static encodeArray(properties: PropertyType[]): any[] {
