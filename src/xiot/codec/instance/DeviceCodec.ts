@@ -17,7 +17,7 @@ export class DeviceCodec {
 
         if (device.type != null) {
             if (o[Spec.X_NAME] != null) {
-                device.type.set(Spec.X_NAME, o[Spec.X_NAME]);
+                device.type._name = o[Spec.X_NAME];
             }
         }
 
@@ -44,8 +44,8 @@ export class DeviceCodec {
         };
 
         if (device.type != null) {
-            if (device.type.get(Spec.X_NAME) != null) {
-                o[Spec.X_NAME] = device.type.get(Spec.X_NAME);
+            if (device.type._name != null) {
+                o[Spec.X_NAME] = device.type._name;
             }
         }
 

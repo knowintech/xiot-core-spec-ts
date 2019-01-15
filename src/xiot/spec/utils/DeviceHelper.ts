@@ -16,8 +16,8 @@ export class DeviceHelper {
       DeviceHelper.reconstructService(device, service);
 
         if (service.type != null) {
-            service.type.set('just-added', true);
-            service.type.set(Spec.X_OPTIONAL, true);
+            service.type._just_added = true;
+            service.type._optional = true;
         }
 
         device.services.set(service.iid, service);
@@ -32,8 +32,8 @@ export class DeviceHelper {
       
       if (property.definition != null) {
         if (property.definition.type != null) {
-          property.definition.type.set('just-added', true);
-          property.definition.type.set(Spec.X_OPTIONAL, true);
+          property.definition.type._just_added = true;
+          property.definition.type._optional = true;
         }
       }
 
@@ -51,8 +51,8 @@ export class DeviceHelper {
       DeviceHelper.reconstructAction(device, siid, action);
 
       if (action.type != null) {
-        action.type.set('just-added', true);
-        action.type.set(Spec.X_OPTIONAL, true);
+        action.type._just_added = true;
+        action.type._optional = true;
       }
 
       const s = device.services.get(siid);
@@ -69,8 +69,8 @@ export class DeviceHelper {
       DeviceHelper.reconstructEvent(device, siid, event);
 
       if (event.type != null) {
-        event.type.set('just-added', true);
-        event.type.set(Spec.X_OPTIONAL, true);
+        event.type._just_added = true;
+        event.type._optional = true;
       }
 
       const s = device.services.get(siid);
@@ -125,7 +125,7 @@ export class DeviceHelper {
         service.getProperties().forEach(p => {
           if (p.definition != null) {
             if (p.definition.type != null) {
-              p.definition.type.set('just-added', true);
+              p.definition.type._just_added = true;
             }
           }
 

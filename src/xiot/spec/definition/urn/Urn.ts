@@ -121,9 +121,8 @@ export class Urn extends Extendable {
     }
 
     displayName(): string {
-        const n: string = this.get(Spec.X_NAME);
-        if (n != null) {
-            return n;
+        if (this._name != null) {
+            return this._name;
         }
 
         return this.name;

@@ -20,23 +20,23 @@ export class ServiceCodec {
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
-                        a.type.set(Spec.X_NAME, o[Spec.X_NAME]);
+                        a.type._name = o[Spec.X_NAME];
                     }
 
                     if (o[Spec.X_OPTIONAL] != null) {
-                        a.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
+                        a.type._optional = o[Spec.X_OPTIONAL];
                     }
 
-                    if (o[Spec.X_PROPERTY_ADDABLE]) {
-                        a.type.set(Spec.X_PROPERTY_ADDABLE, true);
+                    if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+                        a.type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
                     }
 
-                    if (o[Spec.X_ACTION_ADDABLE]) {
-                        a.type.set(Spec.X_ACTION_ADDABLE, true);
+                    if (o[Spec.X_ACTION_ADDABLE] != null) {
+                        a.type._action_addable = o[Spec.X_ACTION_ADDABLE];
                     }
 
-                    if (o[Spec.X_EVENT_ADDABLE]) {
-                        a.type.set(Spec.X_EVENT_ADDABLE, true);
+                    if (o[Spec.X_EVENT_ADDABLE] != null) {
+                        a.type._event_addable = o[Spec.X_EVENT_ADDABLE];
                     }
                 }
 
@@ -114,24 +114,24 @@ export class ServiceCodec {
         }
 
         if (service.type != null) {
-            if (service.type.get(Spec.X_NAME) != null) {
-                o[Spec.X_NAME] = service.type.get(Spec.X_NAME);
+            if (service.type._name != null) {
+                o[Spec.X_NAME] = service.type._name;
             }
 
-            if (service.type.get(Spec.X_OPTIONAL) != null) {
-                o[Spec.X_OPTIONAL] = service.type.get(Spec.X_OPTIONAL);
+            if (service.type._optional) {
+                o[Spec.X_OPTIONAL] = true;
             }
 
-            if (service.type.get(Spec.X_PROPERTY_ADDABLE) != null) {
-                o[Spec.X_PROPERTY_ADDABLE] = service.type.get(Spec.X_PROPERTY_ADDABLE);
+            if (service.type._property_addable) {
+                o[Spec.X_PROPERTY_ADDABLE] = true;
             }
 
-            if (service.type.get(Spec.X_ACTION_ADDABLE) != null) {
-                o[Spec.X_ACTION_ADDABLE] = service.type.get(Spec.X_ACTION_ADDABLE);
+            if (service.type._action_addable) {
+                o[Spec.X_ACTION_ADDABLE] = true;
             }
 
-            if (service.type.get(Spec.X_EVENT_ADDABLE) != null) {
-                o[Spec.X_EVENT_ADDABLE] = service.type.get(Spec.X_EVENT_ADDABLE);
+            if (service.type._event_addable) {
+                o[Spec.X_EVENT_ADDABLE] = true;
             }
         }
 

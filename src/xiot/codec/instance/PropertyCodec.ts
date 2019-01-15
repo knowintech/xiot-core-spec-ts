@@ -20,11 +20,11 @@ export class PropertyCodec {
 
                 if (p.definition.type != null) {
                     if (o[Spec.X_NAME] != null) {
-                        p.definition.type.set(Spec.X_NAME, o[Spec.X_NAME]);
+                        p.definition.type._name = o[Spec.X_NAME];
                     }
 
                     if (o[Spec.X_OPTIONAL] != null) {
-                        p.definition.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
+                        p.definition.type._optional = o[Spec.X_OPTIONAL];
                     }
                 }
 
@@ -76,12 +76,12 @@ export class PropertyCodec {
             }
 
             if (property.definition.type != null) {
-                if (property.definition.type.get(Spec.X_NAME) != null) {
-                    object[Spec.X_NAME] = property.definition.type.get(Spec.X_NAME);
+                if (property.definition.type._name != null) {
+                    object[Spec.X_NAME] = property.definition.type._name;
                 }
 
-                if (property.definition.type.get(Spec.X_OPTIONAL) != null) {
-                    object[Spec.X_OPTIONAL] = property.definition.type.get(Spec.X_OPTIONAL);
+                if (property.definition.type._optional) {
+                    object[Spec.X_OPTIONAL] = true;
                 }
             }
         }

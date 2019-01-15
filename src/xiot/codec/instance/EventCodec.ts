@@ -17,11 +17,11 @@ export class EventCodec {
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
-                        a.type.set(Spec.X_NAME, o[Spec.X_NAME]);
+                        a.type._name = o[Spec.X_NAME];
                     }
 
                     if (o[Spec.X_OPTIONAL] != null) {
-                        a.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
+                        a.type._optional = o[Spec.X_OPTIONAL];
                     }
                 }
 
@@ -41,12 +41,12 @@ export class EventCodec {
         };
 
         if (event.type != null) {
-            if (event.type.get(Spec.X_NAME) != null) {
-                o[Spec.X_NAME] = event.type.get(Spec.X_NAME);
+            if (event.type._name != null) {
+                o[Spec.X_NAME] = event.type._name;
             }
 
-            if (event.type.get(Spec.X_OPTIONAL) != null) {
-                o[Spec.X_OPTIONAL] = event.type.get(Spec.X_OPTIONAL);
+            if (event.type._optional) {
+                o[Spec.X_OPTIONAL] = true;
             }
         }
 
