@@ -1,6 +1,7 @@
 import {UrnType, UrnTypeFromString, UrnTypeToString} from './UrnType';
 import {Extendable} from './Extendable';
 import {UrnStyle} from './UrnStyle';
+import {Spec} from '../../constant/Spec';
 
 export class Urn extends Extendable {
     
@@ -120,7 +121,7 @@ export class Urn extends Extendable {
     }
 
     displayName(): string {
-        const n: string = this.get('name');
+        const n: string = this.get(Spec.X_NAME);
         if (n != null) {
             return n;
         }

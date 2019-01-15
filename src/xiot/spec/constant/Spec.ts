@@ -34,4 +34,10 @@ export class Spec {
     public static OID = 'oid';
     public static EID = 'eid';
     public static STATUS = 'status';
+
+    public static X_NAME = 'x-name';
+    public static X_OPTIONAL = 'x-optional';
+    public static X_PROPERTY_ADDABLE = "x-property-addable";
+    public static X_ACTION_ADDABLE = "x-action-addable";
+    public static X_EVENT_ADDABLE = "x-event-addable";
 }

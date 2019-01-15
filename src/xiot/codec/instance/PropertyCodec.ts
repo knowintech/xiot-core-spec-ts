@@ -19,12 +19,12 @@ export class PropertyCodec {
                 p.definition = PropertyDefinitionCodec.decode(o);
 
                 if (p.definition.type != null) {
-                    if (o['x-name'] != null) {
-                        p.definition.type.set('name', o['x-name']);
+                    if (o[Spec.X_NAME] != null) {
+                        p.definition.type.set(Spec.X_NAME, o[Spec.X_NAME]);
                     }
 
-                    if (o['x-optional'] != null) {
-                        p.definition.type.set('optional', o['x-optional']);
+                    if (o[Spec.X_OPTIONAL] != null) {
+                        p.definition.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
                     }
                 }
 
@@ -76,12 +76,12 @@ export class PropertyCodec {
             }
 
             if (property.definition.type != null) {
-                if (property.definition.type.get('name') != null) {
-                    object['x-name'] = property.definition.type.get('name');
+                if (property.definition.type.get(Spec.X_NAME) != null) {
+                    object[Spec.X_NAME] = property.definition.type.get(Spec.X_NAME);
                 }
 
-                if (property.definition.type.get('optional') != null) {
-                    object['x-optional'] = property.definition.type.get('optional');
+                if (property.definition.type.get(Spec.X_OPTIONAL) != null) {
+                    object[Spec.X_OPTIONAL] = property.definition.type.get(Spec.X_OPTIONAL);
                 }
             }
         }

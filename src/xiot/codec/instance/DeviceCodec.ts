@@ -6,13 +6,19 @@ import {ServiceCodec} from './ServiceCodec';
 
 export class DeviceCodec {
 
-    static decode(json: any): Device {
+    static decode(o: any): Device {
         const device = new Device();
-        device.type = DeviceType.valueOf(json[Spec.TYPE]);
-        device.description = json[Spec.DESCRIPTION];
-        const services = ServiceCodec.decode(json[Spec.SERVICES]);
+        device.type = DeviceType.valueOf(o[Spec.TYPE]);
+        device.description = o[Spec.DESCRIPTION];
+        const services = ServiceCodec.decode(o[Spec.SERVICES]);
         for (const service of services) {
             device.services.set(service.iid, service);
+        }
+
+        if (device.type != null) {
+            if (o[Spec.X_NAME] != null) {
+                device.type.set(Spec.X_NAME, o[Spec.X_NAME]);
+            }
         }
 
         return device;
@@ -31,10 +37,18 @@ export class DeviceCodec {
     }
 
     static encode(device: Device): any {
-        return {
+        const o: any = {
             type: device.type != null ? device.type.toString() : '',
             description: device.description,
             services: ServiceCodec.encodeArray(device.services)
         };
+
+        if (device.type != null) {
+            if (device.type.get(Spec.X_NAME) != null) {
+                o[Spec.X_NAME] = device.type.get(Spec.X_NAME);
+            }
+        }
+
+        return o;
     }
 }

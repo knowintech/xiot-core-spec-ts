@@ -18,12 +18,12 @@ export class ActionCodec {
                 a.out = o[Spec.OUT];
 
                 if (a.type != null) {
-                    if (o['x-name'] != null) {
-                        a.type.set('name', o['x-name']);
+                    if (o[Spec.X_NAME] != null) {
+                        a.type.set(Spec.X_NAME, o[Spec.X_NAME]);
                     }
 
-                    if (o['x-optional'] != null) {
-                        a.type.set('optional', o['x-optional']);
+                    if (o[Spec.X_OPTIONAL] != null) {
+                        a.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
                     }
                 }
 
@@ -62,12 +62,12 @@ export class ActionCodec {
         };
 
         if (action.type != null) {
-            if (action.type.get('name') != null) {
-                o['x-name'] = action.type.get('name');
+            if (action.type.get(Spec.X_NAME) != null) {
+                o[Spec.X_NAME] = action.type.get(Spec.X_NAME);
             }
 
-            if (action.type.get('optional') != null) {
-                o['x-optional'] = action.type.get('optional');
+            if (action.type.get(Spec.X_OPTIONAL) != null) {
+                o[Spec.X_OPTIONAL] = action.type.get(Spec.X_OPTIONAL);
             }
         }
 

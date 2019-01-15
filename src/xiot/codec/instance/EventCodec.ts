@@ -16,12 +16,12 @@ export class EventCodec {
                 a.arguments = o[Spec.ARGUMENTS];
 
                 if (a.type != null) {
-                    if (o['x-name'] != null) {
-                        a.type.set('name', o['x-name']);
+                    if (o[Spec.X_NAME] != null) {
+                        a.type.set(Spec.X_NAME, o[Spec.X_NAME]);
                     }
 
-                    if (o['x-optional'] != null) {
-                        a.type.set('optional', o['x-optional']);
+                    if (o[Spec.X_OPTIONAL] != null) {
+                        a.type.set(Spec.X_OPTIONAL, o[Spec.X_OPTIONAL]);
                     }
                 }
 
@@ -41,12 +41,12 @@ export class EventCodec {
         };
 
         if (event.type != null) {
-            if (event.type.get('name') != null) {
-                o['x-name'] = event.type.get('name');
+            if (event.type.get(Spec.X_NAME) != null) {
+                o[Spec.X_NAME] = event.type.get(Spec.X_NAME);
             }
 
-            if (event.type.get('optional') != null) {
-                o['x-optional'] = event.type.get('optional');
+            if (event.type.get(Spec.X_OPTIONAL) != null) {
+                o[Spec.X_OPTIONAL] = event.type.get(Spec.X_OPTIONAL);
             }
         }
 
