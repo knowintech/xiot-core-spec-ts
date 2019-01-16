@@ -36,6 +36,30 @@ export class ValueRange implements ConstraintValue {
         }
     }
 
+    public min(value: any): void {
+        if (this.format == null) {
+            return;
+        }
+
+        this.minValue = DataValueFactory.create(this.format, value);
+    }
+
+    public max(value: any): void {
+        if (this.format == null) {
+            return;
+        }
+
+        this.maxValue = DataValueFactory.create(this.format, value);
+    }
+
+    public step(value: any): void {
+        if (this.format == null) {
+            return;
+        }
+
+        this.stepValue = DataValueFactory.create(this.format, value);
+    }
+
     validate(value: DataValue): boolean {
         if (this.minValue == null || this.maxValue == null) {
             return false;

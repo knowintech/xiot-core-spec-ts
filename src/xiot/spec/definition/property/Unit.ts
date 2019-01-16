@@ -1,64 +1,48 @@
 
 export enum Unit {
-    NONE,
-    PERCENTAGE,
-    CELSIUS,
-    LUX,
-    UNITLESS,
-    SECONDS,
-    ARC_DEGREES,
-    PASCAL,
-    KELVIN,
-    WATT,
-    METER_PRE_SECOND,
-    KM_PER_HOUR,
-    STEP_PER_SECOND,
-    METER,
-    CAL,
-    MINUTES,
-    HOURS,
-    DAYS,
-    RGB,
+    NONE = 'none',
+    PERCENTAGE = 'percentage',
+    CELSIUS = 'celsius',
+    LUX = 'lux',
+    UNITLESS = 'unitless',
+    SECONDS = 'seconds',
+    ARC_DEGREES = 'arcdegrees',
+    PASCAL = 'pascal',
+    KELVIN = 'kelvin',
+    WATT = 'watt',
+    METER_PRE_SECOND = 'meter_per_second',
+    KM_PER_HOUR = 'km_per_hour',
+    STEP_PER_SECOND = 'step_per_second',
+    METER = 'meter',
+    CAL = 'cal',
+    MINUTES = 'minutes',
+    HOURS = 'hours',
+    DAYS = 'days',
+    RGB = 'rgb',
 }
 
-const _UnitMapping: [Unit, string][] = [
-    [Unit.PERCENTAGE, 'percentage'],
-    [Unit.CELSIUS, 'celsius'],
-    [Unit.LUX, 'lux'],
-    [Unit.UNITLESS, 'unitless'],
-    [Unit.SECONDS, 'seconds'],
-    [Unit.ARC_DEGREES, 'arcdegrees'],
-    [Unit.PASCAL, 'pascal'],
-    [Unit.KELVIN, 'kelvin'],
-    [Unit.WATT, 'watt'],
-    [Unit.METER_PRE_SECOND, 'meter_per_second'],
-    [Unit.KM_PER_HOUR, 'km_per_hour'],
-    [Unit.STEP_PER_SECOND, 'step_per_second'],
-    [Unit.METER, 'meter'],
-    [Unit.CAL, 'cal'],
-    [Unit.MINUTES, 'minutes'],
-    [Unit.HOURS, 'hours'],
-    [Unit.DAYS, 'days'],
-    [Unit.RGB, 'rgb'],
-];
-
 export function UnitToString(type: Unit): string {
-    for (const t of _UnitMapping) {
-        if (t[0] === type) {
-            return t[1];
-        }
+    return (type == Unit.NONE) ?  '' : type.toString();
+}
+
+export function getAllUnits(): Unit[] {
+    let list: Unit[] = [];
+
+    const keys: (keyof typeof Unit)[] = <(keyof typeof Unit)[]>Object.keys(Unit);
+    for (const key of keys) {
+        list.push(Unit[key]);
     }
 
-    return '';
+    return list;
 }
 
 export function UnitFromString(type: string): Unit {
-    if (type != null) {
-        const v = type.toLowerCase();
-        for (const t of _UnitMapping) {
-            if (t[1] === v) {
-                return t[0];
-            }
+    const keys: (keyof typeof Unit)[] = <(keyof typeof Unit)[]>Object.keys(Unit);
+
+    for (const key of keys) {
+        const s = UnitToString(Unit[key]);
+        if (s === type) {
+            return Unit[key];
         }
     }
 
