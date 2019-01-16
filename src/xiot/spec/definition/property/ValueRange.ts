@@ -21,6 +21,7 @@ export class ValueRange implements ConstraintValue {
     }
 
     private init(format: DataFormat, min: any, max: any, step: any | null) {
+        this.format = format;
         this.minValue = DataValueFactory.create(format, min);
         this.maxValue = DataValueFactory.create(format, max);
 
