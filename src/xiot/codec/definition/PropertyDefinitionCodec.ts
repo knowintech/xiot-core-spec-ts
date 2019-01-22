@@ -41,8 +41,8 @@ export class PropertyDefinitionCodec {
         }
 
         if (def.type != null) {
-            if (def.type._name != null) {
-                o[Spec.X_NAME] = def.type._name;
+            if (o[Spec.X_NAME] != null) {
+                def.type._name = o[Spec.X_NAME];
             }
         }
 
