@@ -20,24 +20,30 @@ export class PropertyDefinitionCodec {
         return array;
     }
 
-    static decode(json: any): PropertyDefinition {
+    static decode(o: any): PropertyDefinition {
         const def = new PropertyDefinition();
-        def.type = PropertyType.valueOf(json[Spec.TYPE]);
-        def.description = json[Spec.DESCRIPTION];
-        def.format = DataFormatFromString(json[Spec.FORMAT]);
-        def.access = Access.create(json[Spec.ACCESS]);
-        def.unit = UnitFromString(json[Spec.UNIT]);
+        def.type = PropertyType.valueOf(o[Spec.TYPE]);
+        def.description = o[Spec.DESCRIPTION];
+        def.format = DataFormatFromString(o[Spec.FORMAT]);
+        def.access = Access.create(o[Spec.ACCESS]);
+        def.unit = UnitFromString(o[Spec.UNIT]);
 
-        if (json.hasOwnProperty(Spec.VALUE_LIST) && json.hasOwnProperty(Spec.VALUE_RANGE)) {
+        if (o.hasOwnProperty(Spec.VALUE_LIST) && o.hasOwnProperty(Spec.VALUE_RANGE)) {
             throw new Error('value-list & value-range both exist!');
         }
 
-        if (json.hasOwnProperty(Spec.VALUE_LIST)) {
-            def.constraintValue = DefinitionCodec.decodeValueList(def.format, json[Spec.VALUE_LIST]);
+        if (o.hasOwnProperty(Spec.VALUE_LIST)) {
+            def.constraintValue = DefinitionCodec.decodeValueList(def.format, o[Spec.VALUE_LIST]);
         }
 
-        if (json.hasOwnProperty(Spec.VALUE_RANGE)) {
-            def.constraintValue = DefinitionCodec.decodeValueRange(def.format, json[Spec.VALUE_RANGE]);
+        if (o.hasOwnProperty(Spec.VALUE_RANGE)) {
+            def.constraintValue = DefinitionCodec.decodeValueRange(def.format, o[Spec.VALUE_RANGE]);
+        }
+
+        if (def.type != null) {
+            if (def.type._name != null) {
+                o[Spec.X_NAME] = def.type._name;
+            }
         }
 
         return def;
@@ -63,6 +69,12 @@ export class PropertyDefinitionCodec {
 
         if (def.unit !== Unit.NONE) {
             o[Spec.UNIT] = UnitToString(def.unit);
+        }
+
+        if (def.type != null) {
+            if (def.type._name != null) {
+                o[Spec.X_NAME] = def.type._name;
+            }
         }
 
         return o;

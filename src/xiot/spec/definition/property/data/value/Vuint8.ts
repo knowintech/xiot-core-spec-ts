@@ -1,7 +1,7 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
-export class Vuint8 implements DataValue {
+export class Vuint8 implements DataValue<number> {
 
     private value: number = 0;
 
@@ -21,7 +21,7 @@ export class Vuint8 implements DataValue {
         return v;
     }
 
-    lessEquals(max: DataValue): boolean {
+    lessEquals(max: DataValue<number>): boolean {
       if (!(max instanceof Vuint8)) {
         return false;
       }
@@ -29,7 +29,7 @@ export class Vuint8 implements DataValue {
       return this.value < (<Vuint8> max).value;
     }
 
-    validate(min: DataValue, max: DataValue): boolean {
+    validate(min: DataValue<number>, max: DataValue<number>): boolean {
       if (!(min instanceof Vuint8) || !(max instanceof Vuint8)) {
         return false;
       }
@@ -41,7 +41,7 @@ export class Vuint8 implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+    validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
       if (!(min instanceof Vuint8) || !(max instanceof Vuint8) || !(step instanceof Vuint8)) {
         return false;
       }
@@ -59,7 +59,7 @@ export class Vuint8 implements DataValue {
       return false;
     }
 
-    getObjectValue(): Object {
+    getObjectValue(): number {
       return this.value;
     }
 

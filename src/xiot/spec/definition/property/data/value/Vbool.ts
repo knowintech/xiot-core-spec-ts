@@ -1,7 +1,7 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
-export class Vbool implements DataValue {
+export class Vbool implements DataValue<Boolean> {
 
   private value: boolean = false;
 
@@ -35,19 +35,19 @@ export class Vbool implements DataValue {
     throw new Error('Vbool invalid value: ' + value);
   }
 
-  lessEquals(maxValue: DataValue): boolean {
+  lessEquals(maxValue: DataValue<Boolean>): boolean {
     return false;
   }
 
-  validate(min: DataValue, max: DataValue): boolean {
+  validate(min: DataValue<Boolean>, max: DataValue<Boolean>): boolean {
     return false;
   }
 
-  validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+  validateStep(min: DataValue<Boolean>, max: DataValue<Boolean>, step: DataValue<Boolean> | null): boolean {
     return false;
   }
 
-  getObjectValue(): Object {
+  getObjectValue(): Boolean {
     return this.value;
   }
 

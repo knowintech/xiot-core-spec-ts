@@ -15,7 +15,7 @@ export class PropertyDefinition {
   public constraintValue: ConstraintValue | null = null;
   public unit: Unit = Unit.NONE;
 
-  validate(value: DataValue): boolean {
+  validate(value: DataValue<any>): boolean {
     if (value == null) {
       return false;
     }

@@ -1,7 +1,7 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
-export class Vfloat implements DataValue {
+export class Vfloat implements DataValue<number> {
     private value: number = 0;
 
     static create(value: Object): Vfloat {
@@ -20,7 +20,7 @@ export class Vfloat implements DataValue {
       return v;
     }
 
-    lessEquals(max: DataValue): boolean {
+    lessEquals(max: DataValue<number>): boolean {
       if (!(max instanceof Vfloat)) {
         return false;
       }
@@ -28,7 +28,7 @@ export class Vfloat implements DataValue {
       return this.value < (<Vfloat> max).value;
     }
 
-    validate(min: DataValue, max: DataValue): boolean {
+    validate(min: DataValue<number>, max: DataValue<number>): boolean {
       if (!(min instanceof Vfloat) || !(max instanceof Vfloat)) {
         return false;
       }
@@ -40,7 +40,7 @@ export class Vfloat implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+    validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
       if (!(min instanceof Vfloat) || !(max instanceof Vfloat) || !(step instanceof Vfloat)) {
         return false;
       }
@@ -50,7 +50,7 @@ export class Vfloat implements DataValue {
       const stepValue = (<Vfloat> step).value;
 
       for (let v = minValue; v < maxValue; v += stepValue) {
-        if ((v - this.value) < 0.00000001) {
+        if ((v - this.value) < 0.00001) {
           return true;
         }
       }
@@ -58,7 +58,7 @@ export class Vfloat implements DataValue {
       return false;
     }
 
-    getObjectValue(): Object {
+    getObjectValue(): number {
       return this.value;
     }
 

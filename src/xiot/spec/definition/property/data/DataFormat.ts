@@ -44,3 +44,36 @@ export function DataFormatFromString(format: string): DataFormat {
 
   return DataFormat.UNKNOWN;
 }
+
+export function getValueRangeEnabled(format: DataFormat): boolean {
+  switch (format) {
+    case DataFormat.UINT8:
+    case DataFormat.UINT16:
+    case DataFormat.UINT32:
+    case DataFormat.INT8:
+    case DataFormat.INT16:
+    case DataFormat.INT32:
+    case DataFormat.INT64:
+    case DataFormat.FLOAT:
+      return true;
+
+    default:
+      return false;
+  }
+}
+
+export function getValueListEnabled(format: DataFormat): boolean {
+  switch (format) {
+    case DataFormat.UINT8:
+    case DataFormat.UINT16:
+    case DataFormat.UINT32:
+    case DataFormat.INT8:
+    case DataFormat.INT16:
+    case DataFormat.INT32:
+    case DataFormat.INT64:
+      return true;
+
+    default:
+      return false;
+  }
+}

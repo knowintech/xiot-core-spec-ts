@@ -1,14 +1,14 @@
 import {DataFormat} from './DataFormat';
 
-export interface DataValue {
+export interface DataValue<T> {
 
-  lessEquals(maxValue: DataValue): boolean;
+  lessEquals(maxValue: DataValue<T>): boolean;
 
-  validate(min: DataValue, max: DataValue): boolean;
+  validate(min: DataValue<T>, max: DataValue<T>): boolean;
 
-  validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean;
+  validateStep(min: DataValue<T>, max: DataValue<T>, step: DataValue<T> | null): boolean;
 
-  getObjectValue(): Object;
+  getObjectValue(): T;
 
   getFormat(): DataFormat;
 }

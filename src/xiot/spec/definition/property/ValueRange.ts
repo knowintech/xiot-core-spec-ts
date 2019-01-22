@@ -5,9 +5,9 @@ import {DataValueFactory} from './data/DataValueFactory';
 
 export class ValueRange implements ConstraintValue {
     public format: DataFormat | null = null;
-    public minValue: DataValue | null = null;
-    public maxValue: DataValue | null = null;
-    public stepValue: DataValue | null = null;
+    public minValue: DataValue<number> | null = null;
+    public maxValue: DataValue<number> | null = null;
+    public stepValue: DataValue<number> | null = null;
     public hasStep: boolean = false;
 
     constructor(format: DataFormat, list: any[]) {
@@ -30,6 +30,10 @@ export class ValueRange implements ConstraintValue {
             this.hasStep = true;
         } else {
             this.stepValue = null;
+        }
+
+        if (this.minValue == null || this.maxValue == null) {
+            throw new Error('invalid value: ' + min + ' & ' + max);
         }
 
         if (!this.minValue.lessEquals(this.maxValue)) {
@@ -61,7 +65,7 @@ export class ValueRange implements ConstraintValue {
         this.stepValue = DataValueFactory.create(this.format, value);
     }
 
-    validate(value: DataValue): boolean {
+    validate(value: DataValue<number>): boolean {
         if (this.minValue == null || this.maxValue == null) {
             return false;
         }

@@ -7,7 +7,7 @@ export class ValueList implements ConstraintValue {
 
   public values: ValueDefinition[] = [];
 
-  validate(value: DataValue): boolean {
+  validate(value: DataValue<number>): boolean {
     for (const v of this.values) {
       if (v.value === value) {
         return true;

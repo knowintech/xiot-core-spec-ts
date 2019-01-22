@@ -5,8 +5,8 @@ export class PropertyValue {
 
   public format: DataFormat = DataFormat.BOOL;
   public isChanged: boolean = false;
-  public oldValue: DataValue | null = null;
-  public currentValue: DataValue | null = null;
+  public oldValue: DataValue<any> | null = null;
+  public currentValue: DataValue<any> | null = null;
 
   static create(format: DataFormat): PropertyValue {
     const v = new PropertyValue();
@@ -17,7 +17,7 @@ export class PropertyValue {
     return v;
   }
 
-  update(newValue: DataValue) {
+  update(newValue: DataValue<any>) {
     if (newValue == null) {
       throw new Error('update failed: newValue is null');
     }

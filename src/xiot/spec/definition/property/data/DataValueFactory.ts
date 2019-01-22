@@ -13,7 +13,7 @@ import {Vint64} from './value/Vint64';
 
 export class DataValueFactory {
 
-  static create(format: DataFormat, value: Object): DataValue {
+  static create(format: DataFormat, value: Object): DataValue<any> {
     switch (format) {
       case DataFormat.BOOL:
         return Vbool.create(value);
@@ -49,7 +49,7 @@ export class DataValueFactory {
     throw new Error('format invalid: ' + format);
   }
 
-  static createFromString(format: DataFormat, value: string): DataValue {
+  static createFromString(format: DataFormat, value: string): DataValue<any> {
     switch (format) {
       case DataFormat.BOOL:
         return Vbool.fromString(value);

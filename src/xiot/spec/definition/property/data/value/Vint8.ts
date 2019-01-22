@@ -2,7 +2,7 @@ import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 import {Vuint32} from './Vuint32';
 
-export class Vint8 implements DataValue {
+export class Vint8 implements DataValue<number> {
 
     private value: number = 0;
 
@@ -22,7 +22,7 @@ export class Vint8 implements DataValue {
         return v;
     }
 
-    lessEquals(max: DataValue): boolean {
+    lessEquals(max: DataValue<number>): boolean {
       if (!(max instanceof Vint8)) {
         return false;
       }
@@ -30,7 +30,7 @@ export class Vint8 implements DataValue {
       return this.value < (<Vint8> max).value;
     }
 
-    validate(min: DataValue, max: DataValue): boolean {
+    validate(min: DataValue<number>, max: DataValue<number>): boolean {
       if (!(min instanceof Vint8) || !(max instanceof Vint8)) {
         return false;
       }
@@ -42,7 +42,7 @@ export class Vint8 implements DataValue {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+    validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
       if (!(min instanceof Vint8) || !(max instanceof Vint8) || !(step instanceof Vint8)) {
         return false;
       }
@@ -60,7 +60,7 @@ export class Vint8 implements DataValue {
       return false;
     }
 
-    getObjectValue(): Object {
+    getObjectValue(): number {
       return this.value;
     }
 

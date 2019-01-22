@@ -1,7 +1,7 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
-export class Vstring implements DataValue {
+export class Vstring implements DataValue<string> {
 
     private value: string = '';
 
@@ -15,19 +15,19 @@ export class Vstring implements DataValue {
       throw new Error('invalid value: ' + value);
     }
 
-    lessEquals(maxValue: DataValue): boolean {
+    lessEquals(maxValue: DataValue<string>): boolean {
       return false;
     }
 
-    validate(min: DataValue, max: DataValue): boolean {
+    validate(min: DataValue<string>, max: DataValue<string>): boolean {
       return false;
     }
 
-    validateStep(min: DataValue, max: DataValue, step: DataValue | null): boolean {
+    validateStep(min: DataValue<string>, max: DataValue<string>, step: DataValue<string> | null): boolean {
       return false;
     }
 
-    getObjectValue(): Object {
+    getObjectValue(): string {
       return this.value;
     }
 
