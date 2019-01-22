@@ -8,4 +8,5 @@ export class Extendable {
     public _event_addable: boolean = false;
     public _just_added: boolean = false;
     public _active: boolean = false;
+    public _checked: boolean = false;
 }
