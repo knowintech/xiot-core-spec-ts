@@ -1,9 +1,9 @@
 import {ActionType} from './urn/ActionType';
-import {PropertyType} from './urn/PropertyType';
+import {ArgumentDefinition} from './ArgumentDefinition';
 
 export class ActionDefinition {
     public type : ActionType | null = null;
     public description: string = '';
-    public in: PropertyType[] = [];
-    public out: PropertyType[] = [];
+    public in: ArgumentDefinition[] = [];
+    public out: ArgumentDefinition[] = [];
 }

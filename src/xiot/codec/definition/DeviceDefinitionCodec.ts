@@ -1,8 +1,7 @@
 import {Spec} from '../../spec/constant/Spec';
-import {DefinitionCodec} from './DefinitionCodec';
 import {DeviceDefinition} from '../../spec/definition/DeviceDefinition';
 import {DeviceType} from '../../spec/definition/urn/DeviceType';
-import {ServiceDefinitionCodec} from './ServiceDefinitionCodec';
+import {ServiceTypeCodec} from './type/ServiceTypeCodec';
 
 export class DeviceDefinitionCodec {
 
@@ -20,8 +19,8 @@ export class DeviceDefinitionCodec {
         const def = new DeviceDefinition();
         def.type = DeviceType.valueOf(o[Spec.TYPE]);
         def.description = o[Spec.DESCRIPTION];
-        def.requiredServices = DefinitionCodec.decodeServices(o[Spec.REQUIRED_SERVICES]);
-        def.optionalServices = DefinitionCodec.decodeServices(o[Spec.OPTIONAL_SERVICES]);
+        def.requiredServices = ServiceTypeCodec.decodeArray(o[Spec.REQUIRED_SERVICES]);
+        def.optionalServices = ServiceTypeCodec.decodeArray(o[Spec.OPTIONAL_SERVICES]);
 
         if (def.type != null) {
             if (o[Spec.X_NAME] != null) {
@@ -39,11 +38,11 @@ export class DeviceDefinitionCodec {
         };
 
         if (def.requiredServices.length > 0) {
-            o[Spec.REQUIRED_SERVICES] = ServiceDefinitionCodec.encodeArray(def.requiredServices);
+            o[Spec.REQUIRED_SERVICES] = ServiceTypeCodec.encodeArray(def.requiredServices);
         }
 
         if (def.optionalServices.length > 0) {
-            o[Spec.OPTIONAL_SERVICES] = ServiceDefinitionCodec.encodeArray(def.optionalServices);
+            o[Spec.OPTIONAL_SERVICES] = ServiceTypeCodec.encodeArray(def.optionalServices);
         }
 
         if (def.type != null) {
@@ -53,5 +52,9 @@ export class DeviceDefinitionCodec {
         }
 
         return o;
+    }
+
+    static encodeArray(list: DeviceDefinition[]): any[] {
+        return list.map(x => DeviceDefinitionCodec.encode(x));
     }
 }

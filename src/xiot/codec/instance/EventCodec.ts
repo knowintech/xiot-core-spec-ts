@@ -1,6 +1,7 @@
 import {Event} from '../../spec/instance/Event';
 import {Spec} from '../../spec/constant/Spec';
 import {EventType} from '../../spec/definition/urn/EventType';
+import {ArgumentCodec} from './ArgumentCodec';
 
 export class EventCodec {
 
@@ -13,7 +14,7 @@ export class EventCodec {
                 a.iid = o[Spec.IID];
                 a.type = EventType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.arguments = o[Spec.ARGUMENTS];
+                a.arguments = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
@@ -37,7 +38,7 @@ export class EventCodec {
             iid: event.iid,
             type: event.type != null ? event.type.toString() : '',
             description: event.description,
-            arguments: event.arguments,
+            arguments: ArgumentCodec.encodeArray(event.arguments),
         };
 
         if (event.type != null) {

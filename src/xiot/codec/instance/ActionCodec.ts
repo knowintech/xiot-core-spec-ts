@@ -2,6 +2,7 @@ import {Action} from '../../spec/instance/Action';
 import {Spec} from '../../spec/constant/Spec';
 import {ActionOperable} from '../../spec/operable/ActionOperable';
 import {ActionType} from '../../spec/definition/urn/ActionType';
+import {ArgumentCodec} from './ArgumentCodec';
 
 export class ActionCodec {
 
@@ -14,8 +15,8 @@ export class ActionCodec {
                 a.iid = o[Spec.IID];
                 a.type = ActionType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.in = o[Spec.IN];
-                a.out = o[Spec.OUT];
+                a.in = ArgumentCodec.decodeArray(o[Spec.IN]);
+                a.out = ArgumentCodec.decodeArray(o[Spec.OUT]);
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
@@ -43,8 +44,8 @@ export class ActionCodec {
                 a.iid = o[Spec.IID];
                 a.type = ActionType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.in = o[Spec.IN];
-                a.out = o[Spec.OUT];
+                a.in = ArgumentCodec.decodeArray(o[Spec.IN]);
+                a.out = ArgumentCodec.decodeArray(o[Spec.OUT]);
                 list.push(a);
             }
         }
@@ -57,8 +58,8 @@ export class ActionCodec {
             iid: action.iid,
             type: action.type != null ? action.type.toString() : '',
             description: action.description,
-            in: action.in,
-            out: action.out
+            in: ArgumentCodec.encodeArray(action.in),
+            out: ArgumentCodec.encodeArray(action.out)
         };
 
         if (action.type != null) {

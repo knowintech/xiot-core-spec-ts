@@ -3,10 +3,11 @@ import {Spec} from '../../spec/constant/Spec';
 import {PropertyType} from '../../spec/definition/urn/PropertyType';
 import {DataFormatFromString, DataFormatToString} from '../../spec/definition/property/data/DataFormat';
 import {Access} from '../../spec/definition/property/Access';
-import {DefinitionCodec} from './DefinitionCodec';
 import {Unit, UnitFromString, UnitToString} from '../../spec/definition/property/Unit';
 import {ValueList} from '../../spec/definition/property/ValueList';
 import {ValueRange} from '../../spec/definition/property/ValueRange';
+import {ValueListCodec} from './ValueListCodec';
+import {ValueRangeCodec} from './ValueRangeCodec';
 
 export class PropertyDefinitionCodec {
 
@@ -33,11 +34,11 @@ export class PropertyDefinitionCodec {
         }
 
         if (o.hasOwnProperty(Spec.VALUE_LIST)) {
-            def.constraintValue = DefinitionCodec.decodeValueList(def.format, o[Spec.VALUE_LIST]);
+            def.constraintValue = ValueListCodec.decode(def.format, o[Spec.VALUE_LIST]);
         }
 
         if (o.hasOwnProperty(Spec.VALUE_RANGE)) {
-            def.constraintValue = DefinitionCodec.decodeValueRange(def.format, o[Spec.VALUE_RANGE]);
+            def.constraintValue = ValueRangeCodec.decode(def.format, o[Spec.VALUE_RANGE]);
         }
 
         if (def.type != null) {
@@ -80,13 +81,7 @@ export class PropertyDefinitionCodec {
         return o;
     }
 
-    static encodeArray(properties: PropertyType[]): any[] {
-        const array: any[] = [];
-
-        properties.forEach((type) => {
-            array.push(type.toString());
-        });
-
-        return array;
+    static encodeArray(list: PropertyDefinition[]): any[] {
+        return list.map(x => PropertyDefinitionCodec.encode(x));
     }
 }

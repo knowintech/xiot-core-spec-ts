@@ -1,8 +1,7 @@
 import {Spec} from '../../spec/constant/Spec';
-import {ActionType} from '../../spec/definition/urn/ActionType';
-import {DefinitionCodec} from './DefinitionCodec';
 import {EventDefinition} from '../../spec/definition/EventDefinition';
 import {EventType} from '../../spec/definition/urn/EventType';
+import {ArgumentDefinitionCodec} from './ArgumentDefinitionCodec';
 
 export class EventDefinitionCodec {
 
@@ -20,7 +19,7 @@ export class EventDefinitionCodec {
         const def = new EventDefinition();
         def.type = EventType.valueOf(o[Spec.TYPE]);
         def.description = o[Spec.DESCRIPTION];
-        def.arguments = DefinitionCodec.decodeProperties(o[Spec.ARGUMENTS]);
+        def.arguments = ArgumentDefinitionCodec.decodeArray(o[Spec.ARGUMENTS]);
 
         if (def.type != null) {
             if (o[Spec.X_NAME] != null) {
@@ -38,7 +37,7 @@ export class EventDefinitionCodec {
         };
 
         if (def.arguments.length > 0) {
-            o[Spec.IN] = DefinitionCodec.encodeProperties(def.arguments);
+            o[Spec.IN] = ArgumentDefinitionCodec.encodeArray(def.arguments);
         }
 
         if (def.type != null) {
@@ -50,13 +49,7 @@ export class EventDefinitionCodec {
         return o;
     }
 
-    static encodeArray(events: EventType[]): any[] {
-        const array: any[] = [];
-
-        events.forEach((type) => {
-            array.push(type.toString());
-        });
-
-        return array;
+    static encodeArray(list: EventDefinition[]): any[] {
+        return list.map(x => EventDefinitionCodec.encode(x));
     }
 }

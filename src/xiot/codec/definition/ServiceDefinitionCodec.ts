@@ -1,10 +1,9 @@
 import {Spec} from '../../spec/constant/Spec';
-import {DefinitionCodec} from './DefinitionCodec';
 import {ServiceDefinition} from '../../spec/definition/ServiceDefinition';
 import {ServiceType} from '../../spec/definition/urn/ServiceType';
-import {PropertyDefinitionCodec} from './PropertyDefinitionCodec';
-import {ActionDefinitionCodec} from './ActionDefinitionCodec';
-import {EventDefinitionCodec} from './EventDefinitionCodec';
+import {ActionTypeCodec} from './type/ActionTypeCodec';
+import {PropertyTypeCodec} from './type/PropertyTypeCodec';
+import {EventTypeCodec} from './type/EventTypeCodec';
 
 export class ServiceDefinitionCodec {
 
@@ -22,12 +21,12 @@ export class ServiceDefinitionCodec {
         const def = new ServiceDefinition();
         def.type = ServiceType.valueOf(o[Spec.TYPE]);
         def.description = o[Spec.DESCRIPTION];
-        def.requiredProperties = DefinitionCodec.decodeProperties(o[Spec.REQUIRED_PROPERTIES]);
-        def.optionalProperties = DefinitionCodec.decodeProperties(o[Spec.OPTIONAL_PROPERTIES]);
-        def.requiredActions = DefinitionCodec.decodeActions(o[Spec.REQUIRED_ACTIONS]);
-        def.optionalActions = DefinitionCodec.decodeActions(o[Spec.OPTIONAL_ACTIONS]);
-        def.requiredEvents = DefinitionCodec.decodeEvents(o[Spec.REQUIRED_EVENTS]);
-        def.optionalEvents = DefinitionCodec.decodeEvents(o[Spec.OPTIONAL_EVENTS]);
+        def.requiredProperties = PropertyTypeCodec.decodeArray(o[Spec.REQUIRED_PROPERTIES]);
+        def.optionalProperties = PropertyTypeCodec.decodeArray(o[Spec.OPTIONAL_PROPERTIES]);
+        def.requiredActions = ActionTypeCodec.decodeArray(o[Spec.REQUIRED_ACTIONS]);
+        def.optionalActions = ActionTypeCodec.decodeArray(o[Spec.OPTIONAL_ACTIONS]);
+        def.requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
+        def.optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
 
         if (def.type != null) {
             if (o[Spec.X_NAME] != null) {
@@ -57,27 +56,27 @@ export class ServiceDefinitionCodec {
         };
 
         if (def.requiredProperties.length > 0) {
-            o[Spec.REQUIRED_PROPERTIES] = PropertyDefinitionCodec.encodeArray(def.requiredProperties);
+            o[Spec.REQUIRED_PROPERTIES] = PropertyTypeCodec.encodeArray(def.requiredProperties);
         }
 
         if (def.optionalProperties.length > 0) {
-            o[Spec.OPTIONAL_PROPERTIES] = PropertyDefinitionCodec.encodeArray(def.optionalProperties);
+            o[Spec.OPTIONAL_PROPERTIES] = PropertyTypeCodec.encodeArray(def.optionalProperties);
         }
 
         if (def.requiredActions.length > 0) {
-            o[Spec.REQUIRED_ACTIONS] = ActionDefinitionCodec.encodeArray(def.requiredActions);
+            o[Spec.REQUIRED_ACTIONS] = ActionTypeCodec.encodeArray(def.requiredActions);
         }
 
         if (def.optionalActions.length > 0) {
-            o[Spec.OPTIONAL_ACTIONS] = ActionDefinitionCodec.encodeArray(def.optionalActions);
+            o[Spec.OPTIONAL_ACTIONS] = ActionTypeCodec.encodeArray(def.optionalActions);
         }
 
         if (def.requiredEvents.length > 0) {
-            o[Spec.REQUIRED_EVENTS] = EventDefinitionCodec.encodeArray(def.requiredEvents);
+            o[Spec.REQUIRED_EVENTS] = EventTypeCodec.encodeArray(def.requiredEvents);
         }
 
         if (def.optionalEvents.length > 0) {
-            o[Spec.OPTIONAL_EVENTS] = EventDefinitionCodec.encodeArray(def.optionalEvents);
+            o[Spec.OPTIONAL_EVENTS] = EventTypeCodec.encodeArray(def.optionalEvents);
         }
 
         if (def.type != null) {
@@ -100,14 +99,8 @@ export class ServiceDefinitionCodec {
 
         return o;
     }
-
-    static encodeArray(services: ServiceType[]): any[] {
-        const array: any[] = [];
-
-        services.forEach((type) => {
-            array.push(type.toString());
-        });
-
-        return array;
+    
+    static encodeArray(list: ServiceDefinition[]): any[] {
+        return list.map(x => ServiceDefinitionCodec.encode(x));
     }
 }

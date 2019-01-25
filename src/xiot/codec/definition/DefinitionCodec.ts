@@ -1,10 +1,6 @@
 import {DataFormat} from '../../spec/definition/property/data/DataFormat';
 import {ValueList} from '../../spec/definition/property/ValueList';
 import {ValueRange} from '../../spec/definition/property/ValueRange';
-import {PropertyType} from '../../spec/definition/urn/PropertyType';
-import {ServiceType} from '../../spec/definition/urn/ServiceType';
-import {ActionType} from '../../spec/definition/urn/ActionType';
-import {EventType} from '../../spec/definition/urn/EventType';
 import {ValueDefinition} from '../../spec/definition/property/ValueDefinition';
 import {Spec} from '../../spec/constant/Spec';
 
@@ -28,75 +24,75 @@ export class DefinitionCodec {
     return new ValueRange(format, range);
   }
 
-  static decodeProperties(array: string[]): PropertyType[] {
-    const list: PropertyType[] = [];
+//   static decodeProperties(array: string[]): PropertyType[] {
+//     const list: PropertyType[] = [];
 
-    if (array != null) {
-        for (const v of array) {
-            const t = PropertyType.valueOf(v);
-            if (t != null) {
-                list.push(t);
-            }
-        }
-    }
+//     if (array != null) {
+//         for (const v of array) {
+//             const t = PropertyType.valueOf(v);
+//             if (t != null) {
+//                 list.push(t);
+//             }
+//         }
+//     }
 
-    return list;
-  }
+//     return list;
+//   }
 
-  static decodeServices(array: string[]): ServiceType[] {
-    const list: ServiceType[] = [];
+//   static decodeServices(array: string[]): ServiceType[] {
+//     const list: ServiceType[] = [];
 
-    if (array != null) {
-        for (const v of array) {
-            const t = ServiceType.valueOf(v);
-            if (t != null) {
-                list.push(t);
-            }
-        }
-    }
+//     if (array != null) {
+//         for (const v of array) {
+//             const t = ServiceType.valueOf(v);
+//             if (t != null) {
+//                 list.push(t);
+//             }
+//         }
+//     }
 
-    return list;
-  }
+//     return list;
+//   }
 
-  static decodeActions(array: string[]): ActionType[] {
-    const list: ActionType[] = [];
+//   static decodeActions(array: string[]): ActionType[] {
+//     const list: ActionType[] = [];
 
-      if (array != null) {
-          for (const v of array) {
-            const t = ActionType.valueOf(v);
-            if (t != null) {
-                list.push(t);
-            }
-          }
-      }
+//       if (array != null) {
+//           for (const v of array) {
+//             const t = ActionType.valueOf(v);
+//             if (t != null) {
+//                 list.push(t);
+//             }
+//           }
+//       }
 
-    return list;
-  }
+//     return list;
+//   }
 
-  static decodeEvents(array: string[]): EventType[] {
-    const list: EventType[] = [];
+//   static decodeEvents(array: string[]): EventType[] {
+//     const list: EventType[] = [];
 
-      if (array != null) {
-          for (const v of array) {
-              const t = EventType.valueOf(v);
-              if (t != null) {
-                list.push(t);
-              }
-          }
-      }
+//       if (array != null) {
+//           for (const v of array) {
+//               const t = EventType.valueOf(v);
+//               if (t != null) {
+//                 list.push(t);
+//               }
+//           }
+//       }
 
-    return list;
-  }
+//     return list;
+//   }
 
-  static encodeProperties(array: PropertyType[]): string[] {
-      const list = [];
+//   static encodeProperties(array: PropertyType[]): string[] {
+//       const list = [];
 
-      if (array != null) {
-          for (const v of array) {
-              list.push(v.toString());
-          }
-      }
+//       if (array != null) {
+//           for (const v of array) {
+//               list.push(v.toString());
+//           }
+//       }
 
-      return list;
-  }
+//       return list;
+//   }
 }

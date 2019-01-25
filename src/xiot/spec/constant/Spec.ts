@@ -1,6 +1,7 @@
 export class Spec {
 
     public static IID = 'iid';
+    public static PIID = 'piid';
     public static TYPE = 'type';
     public static DESCRIPTION = 'description';
     public static SERVICES = 'services';
@@ -16,6 +17,8 @@ export class Spec {
     public static ARGUMENTS = 'arguments';
     public static VALUE = 'value';
     public static UNIT = 'unit';
+    public static PROPERTY = 'property';
+    public static REPEAT = 'repeat';
 
     public static REQUIRED_SERVICES = 'required-services';
     public static OPTIONAL_SERVICES = 'optional-services';

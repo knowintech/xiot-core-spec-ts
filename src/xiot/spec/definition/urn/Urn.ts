@@ -1,10 +1,9 @@
 import {UrnType, UrnTypeFromString, UrnTypeToString} from './UrnType';
 import {Extendable} from './Extendable';
 import {UrnStyle} from './UrnStyle';
-import {Spec} from '../../constant/Spec';
 
 export class Urn extends Extendable {
-    
+
     public ns: string = '';
     public type: UrnType = UrnType.UNDEFINED;
     public name: string = '';

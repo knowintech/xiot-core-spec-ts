@@ -6,6 +6,7 @@ export class Property {
   public iid: number = 0;
   public definition: PropertyDefinition | null = null;
   public value: PropertyValue | null = null;
+
   public valueToWrite: any | null = null;
 
   trySetValue(value: Object): boolean {

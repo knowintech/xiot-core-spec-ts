@@ -1,7 +1,7 @@
 import {ActionDefinition} from '../../spec/definition/ActionDefinition';
 import {Spec} from '../../spec/constant/Spec';
 import {ActionType} from '../../spec/definition/urn/ActionType';
-import {DefinitionCodec} from './DefinitionCodec';
+import {ArgumentDefinitionCodec} from './ArgumentDefinitionCodec';
 
 export class ActionDefinitionCodec {
 
@@ -19,8 +19,8 @@ export class ActionDefinitionCodec {
         const def = new ActionDefinition();
         def.type = ActionType.valueOf(o[Spec.TYPE]);
         def.description = o[Spec.DESCRIPTION];
-        def.in = DefinitionCodec.decodeProperties(o[Spec.IN]);
-        def.out = DefinitionCodec.decodeProperties(o[Spec.OUT]);
+        def.in = ArgumentDefinitionCodec.decodeArray(o[Spec.IN]);
+        def.out = ArgumentDefinitionCodec.decodeArray(o[Spec.OUT]);
 
         if (def.type != null) {
             if (o[Spec.X_NAME] != null) {
@@ -38,11 +38,11 @@ export class ActionDefinitionCodec {
         };
 
         if (def.in.length > 0) {
-            o[Spec.IN] = DefinitionCodec.encodeProperties(def.in);
+            o[Spec.IN] = ArgumentDefinitionCodec.encodeArray(def.in);
         }
 
         if (def.out.length > 0) {
-            o[Spec.OUT] = DefinitionCodec.encodeProperties(def.out);
+            o[Spec.OUT] = ArgumentDefinitionCodec.encodeArray(def.out);
         }
 
         if (def.type != null) {
@@ -54,13 +54,7 @@ export class ActionDefinitionCodec {
         return o;
     }
 
-    static encodeArray(actions: ActionType[]): any[] {
-        const array: any[] = [];
-
-        actions.forEach((type) => {
-            array.push(type.toString());
-        });
-
-        return array;
+    static encodeArray(list: ActionDefinition[]): any[] {
+        return list.map(x => ActionDefinitionCodec.encode(x));
     }
 }
