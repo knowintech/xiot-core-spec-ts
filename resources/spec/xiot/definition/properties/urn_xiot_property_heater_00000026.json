@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:property:heater:00000026",
-  "description" : "Heater",
-  "format" : "bool",
-  "access" : [ "read", "write", "notify" ]
-}

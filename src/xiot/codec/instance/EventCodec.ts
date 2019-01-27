@@ -37,9 +37,12 @@ export class EventCodec {
         const o: any = {
             iid: event.iid,
             type: event.type != null ? event.type.toString() : '',
-            description: event.description,
-            arguments: ArgumentCodec.encodeArray(event.arguments),
+            description: event.description
         };
+
+        if (event.arguments.length > 0) {
+            o[Spec.ARGUMENTS] = ArgumentCodec.encodeArray(event.arguments);
+        }
 
         if (event.type != null) {
             if (event.type._name != null) {

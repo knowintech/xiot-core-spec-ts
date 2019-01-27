@@ -7,12 +7,14 @@ export class ArgumentDefinitionCodec {
     static decodeArray(list: any[]): ArgumentDefinition[] {
         const array: ArgumentDefinition[] = [];
 
-        list.forEach(o => {
-            let def = ArgumentDefinitionCodec.decode(o);
-            if (def != null) {
-                array.push();
-            }
-        });
+        if (list != null) {
+            list.forEach(o => {
+                let def = ArgumentDefinitionCodec.decode(o);
+                if (def != null) {
+                    array.push(def);
+                }
+            });    
+        }
 
         return array;
     }
@@ -36,7 +38,7 @@ export class ArgumentDefinitionCodec {
 
     static encode(def: ArgumentDefinition): any {
         return {
-            type: def.type.toString(),
+            property: def.type.toString(),
             repeat: [def.minRepeat, def.MaxRepeat]
         };
     }

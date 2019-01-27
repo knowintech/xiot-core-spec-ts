@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:service:airer:00007817",
-  "description" : "Airer",
-  "required-properties" : [ "urn:xiot:property:fault:00000009", "urn:xiot:property:motor-control:00000038" ],
-  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:target-position:0000003A", "urn:xiot:property:current-position:00000039", "urn:xiot:property:dryer:00000027", "urn:xiot:property:drying-level:0000003B", "urn:xiot:property:left-time:0000003C" ]
-}

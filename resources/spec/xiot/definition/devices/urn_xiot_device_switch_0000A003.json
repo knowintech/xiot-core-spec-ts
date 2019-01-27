@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:device:switch:0000A003",
-  "description" : "Switch",
-  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:switch:0000780C" ]
-}

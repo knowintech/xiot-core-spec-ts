@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:property:mute:00000040",
-  "description" : "Mute",
-  "format" : "bool",
-  "access" : [ "read", "write", "notify" ]
-}

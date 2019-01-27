@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:service:hood:0000782B",
-  "description" : "Hood",
-  "required-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:fault:00000009" ],
-  "optional-properties" : [ "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:off-delay:00000053", "urn:xiot:property:off-delay-time:00000054" ]
-}

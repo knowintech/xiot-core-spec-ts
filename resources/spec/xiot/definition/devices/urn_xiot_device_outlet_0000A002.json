@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:device:outlet:0000A002",
-  "description" : "Outlet",
-  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:switch:0000780C" ],
-  "optional-services" : [ "urn:xiot:service:indicator-light:00007803" ]
-}

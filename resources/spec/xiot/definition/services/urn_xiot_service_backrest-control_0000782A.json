@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:service:backrest-control:0000782A",
-  "description" : "Backrest Control",
-  "optional-properties" : [ "urn:xiot:property:backrest-angle:00000052", "urn:xiot:property:mode:00000008" ]
-}

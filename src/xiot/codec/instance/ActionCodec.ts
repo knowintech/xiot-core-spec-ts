@@ -57,9 +57,7 @@ export class ActionCodec {
         const o: any = {
             iid: action.iid,
             type: action.type != null ? action.type.toString() : '',
-            description: action.description,
-            in: ArgumentCodec.encodeArray(action.in),
-            out: ArgumentCodec.encodeArray(action.out)
+            description: action.description
         };
 
         if (action.type != null) {
@@ -70,6 +68,14 @@ export class ActionCodec {
             if (action.type._optional) {
                 o[Spec.X_OPTIONAL] = true;
             }
+        }
+
+        if (action.in.length > 0) {
+            o[Spec.IN] = ArgumentCodec.encodeArray(action.in);
+        }
+        
+        if (action.out.length > 0) {
+            o[Spec.OUT] = ArgumentCodec.encodeArray(action.out);
         }
 
         return o;

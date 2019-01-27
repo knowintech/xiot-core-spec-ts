@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:property:response:00000044",
-  "description" : "Response",
-  "format" : "string",
-  "access" : [ ]
-}

@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:service:tds-sensor:0000780D",
-  "description" : "Total Dissolved Solids Sensor",
-  "optional-properties" : [ "urn:xiot:property:tds-in:0000002C", "urn:xiot:property:tds-out:0000002D" ]
-}

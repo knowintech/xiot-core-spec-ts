@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:property:alarm:00000012",
-  "description" : "Alarm",
-  "format" : "bool",
-  "access" : [ "read", "write", "notify" ]
-}

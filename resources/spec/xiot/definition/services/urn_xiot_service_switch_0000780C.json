@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:service:switch:0000780C",
-  "description" : "Switch",
-  "required-properties" : [ "urn:xiot:property:on:00000006" ],
-  "optional-properties" : [ "urn:xiot:property:name:00000004", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:fault:00000009", "urn:xiot:property:temperature:00000020" ]
-}

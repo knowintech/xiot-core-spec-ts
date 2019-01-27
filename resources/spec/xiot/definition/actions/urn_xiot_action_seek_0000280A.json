@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:action:seek:0000280A",
-  "description" : "Seek",
-  "in" : [ "urn:xiot:property:seek-time:00000042" ]
-}

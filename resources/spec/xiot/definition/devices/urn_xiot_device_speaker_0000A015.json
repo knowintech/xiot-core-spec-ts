@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:device:speaker:0000A015",
-  "description" : "Speaker",
-  "required-services" : [ "urn:xiot:service:device-information:00007801", "urn:xiot:service:speaker:0000781C", "urn:xiot:service:play-control:0000781D" ],
-  "optional-services" : [ "urn:xiot:service:microphone:00007826" ]
-}

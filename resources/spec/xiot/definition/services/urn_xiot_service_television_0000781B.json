@@ -1,7 +1,0 @@
-{
-  "type" : "urn:xiot:service:television:0000781B",
-  "description" : "Television",
-  "optional-properties" : [ "urn:xiot:property:status:00000007", "urn:xiot:property:fault:00000009", "urn:xiot:property:mode:00000008", "urn:xiot:property:brightness:0000000D", "urn:xiot:property:input-control:0000003E", "urn:xiot:property:channel-control:0000003F" ],
-  "required-actions" : [ "urn:xiot:action:turn-off:00002809" ],
-  "optional-actions" : [ "urn:xiot:action:turn-on:00002808" ]
-}

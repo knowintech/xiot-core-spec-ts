@@ -1,8 +1,0 @@
-{
-  "type" : "urn:xiot:property:saturability:00000011",
-  "description" : "Saturability",
-  "format" : "uint8",
-  "access" : [ "read", "write", "notify" ],
-  "value-range" : [ 0, 100, 1 ],
-  "unit" : "percentage"
-}

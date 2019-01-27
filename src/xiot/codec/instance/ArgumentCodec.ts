@@ -6,12 +6,14 @@ export class ArgumentCodec {
     static decodeArray(list: any[]): Argument[] {
         const array: Argument[] = [];
 
-        list.forEach(o => {
-            let def = ArgumentCodec.decode(o);
-            if (def != null) {
-                array.push();
-            }
-        });
+        if (list != null) {
+            list.forEach(o => {
+                let a = ArgumentCodec.decode(o);
+                if (a != null) {
+                    array.push(a);
+                }
+            });    
+        }
 
         return array;
     }

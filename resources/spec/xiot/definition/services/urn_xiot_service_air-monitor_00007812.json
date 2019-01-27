@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:service:air-monitor:00007812",
-  "description" : "Air Monitor",
-  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:status:00000007", "urn:xiot:property:mode:00000008", "urn:xiot:property:fault:00000009" ]
-}

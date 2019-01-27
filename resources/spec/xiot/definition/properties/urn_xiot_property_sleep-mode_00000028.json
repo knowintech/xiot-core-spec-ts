@@ -1,6 +1,0 @@
-{
-  "type" : "urn:xiot:property:sleep-mode:00000028",
-  "description" : "Sleep Mode",
-  "format" : "bool",
-  "access" : [ "read", "write", "notify" ]
-}

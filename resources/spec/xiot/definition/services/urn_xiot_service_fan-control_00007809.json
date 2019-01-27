@@ -1,5 +1,0 @@
-{
-  "type" : "urn:xiot:service:fan-control:00007809",
-  "description" : "Fan Control",
-  "optional-properties" : [ "urn:xiot:property:on:00000006", "urn:xiot:property:fan-level:00000016", "urn:xiot:property:horizontal-swing:00000017", "urn:xiot:property:vertical-swing:00000018", "urn:xiot:property:horizontal-angle:00000019", "urn:xiot:property:vertical-angle:0000001A" ]
-}
