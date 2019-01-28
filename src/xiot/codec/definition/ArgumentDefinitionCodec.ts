@@ -30,7 +30,7 @@ export class ArgumentDefinitionCodec {
         let repeat = o[Spec.REPEAT];
         if (repeat != null) {
             def.minRepeat = repeat[0];
-            def.MaxRepeat = repeat[1];
+            def.maxRepeat = repeat[1];
         }
 
         return def;
@@ -39,7 +39,7 @@ export class ArgumentDefinitionCodec {
     static encode(def: ArgumentDefinition): any {
         return {
             property: def.type.toString(),
-            repeat: [def.minRepeat, def.MaxRepeat]
+            repeat: [def.minRepeat, def.maxRepeat]
         };
     }
 

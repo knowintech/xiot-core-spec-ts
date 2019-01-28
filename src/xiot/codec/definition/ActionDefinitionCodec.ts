@@ -37,9 +37,6 @@ export class ActionDefinitionCodec {
             description: def.description,
         };
 
-        // console.log('def.in.length: ', def.in.length);
-        // console.log('def.out.length: ', def.in.length);
-
         if (def.in.length > 0) {
             o[Spec.IN] = ArgumentDefinitionCodec.encodeArray(def.in);
         }
