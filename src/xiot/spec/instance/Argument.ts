@@ -1,9 +1,9 @@
 export class Argument {
-    public iid: number;
+    public piid: number;
     public minRepeat: number = 1;
     public maxRepeat: number = 1;
 
-    constructor(iid: number) {
-        this.iid = iid;
+    constructor(piid: number) {
+        this.piid = piid;
     }
 }

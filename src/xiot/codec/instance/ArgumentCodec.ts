@@ -34,7 +34,7 @@ export class ArgumentCodec {
 
     static encode(def: Argument): any {
         return {
-            piid: def.iid,
+            piid: def.piid,
             repeat: [def.minRepeat, def.maxRepeat]
         };
     }
