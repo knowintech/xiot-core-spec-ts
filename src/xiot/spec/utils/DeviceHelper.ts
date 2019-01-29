@@ -20,13 +20,11 @@ export class DeviceHelper {
     }
 
     static updateProperty(p: Property, groupId: string, model: string, version: number): void  {
-      if (p.definition != null) {
-        if (p.definition.type != null) {
-          p.definition.type.groupId = groupId;
-          p.definition.type.model = model;
-          p.definition.type.version = version;
-          p.definition.type.style = UrnStyle.XIOT;
-        }
+      if (p.type != null) {
+        p.type.groupId = groupId;
+        p.type.model = model;
+        p.type.version = version;
+        p.type.style = UrnStyle.XIOT;
       }
     }
 
@@ -59,11 +57,9 @@ export class DeviceHelper {
 
       for (let s of device.getServices()) {
         for (let p of s.getProperties()) {
-          if (p.definition != null) {
-            if (p.definition.type != null) {
-              if (p.definition.type._just_added) {
-                return true;
-              }
+          if (p.type != null) {
+            if (p.type._just_added) {
+              return true;
             }
           }
         }
@@ -99,11 +95,9 @@ export class DeviceHelper {
 
       for (let s of device.getServices()) {
         for (let p of s.getProperties()) {
-          if (p.definition != null) {
-            if (p.definition.type != null) {
-              if (p.definition.type._just_added || p.definition.type._changed) {
-                return true;
-              }
+          if (p.type != null) {
+            if (p.type._just_added || p.type._changed) {
+              return true;
             }
           }
         }
@@ -150,11 +144,9 @@ export class DeviceHelper {
     static addProperty(device: Device, siid: number, property: Property): void {
       DeviceHelper.reconstructProperty(device, siid, property);
       
-      if (property.definition != null) {
-        if (property.definition.type != null) {
-          property.definition.type._just_added = true;
-          property.definition.type._optional = true;
-        }
+      if (property.type != null) {
+        property.type._just_added = true;
+        property.type._optional = true;
       }
 
       const s = device.services.get(siid);
@@ -243,10 +235,8 @@ export class DeviceHelper {
         }
     
         service.getProperties().forEach(p => {
-          if (p.definition != null) {
-            if (p.definition.type != null) {
-              p.definition.type._just_added = true;
-            }
+          if (p.type != null) {
+            p.type._just_added = true;
           }
 
           p.iid = piid ++;

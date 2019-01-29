@@ -23,6 +23,11 @@ export class PropertyDefinitionCodec {
 
     static decode(o: any): PropertyDefinition {
         const def = new PropertyDefinition();
+        PropertyDefinitionCodec.decodeDefinition(def, o);
+        return def;
+    }
+
+    static decodeDefinition(def: PropertyDefinition, o: any) {
         def.type = PropertyType.valueOf(o[Spec.TYPE]);
         def.description = o[Spec.DESCRIPTION];
         def.format = DataFormatFromString(o[Spec.FORMAT]);

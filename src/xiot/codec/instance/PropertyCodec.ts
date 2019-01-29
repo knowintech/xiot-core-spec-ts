@@ -16,15 +16,15 @@ export class PropertyCodec {
             for (const o of array) {
                 const p = new Property();
                 p.iid = o[Spec.IID] || 0;
-                p.definition = PropertyDefinitionCodec.decode(o);
+                PropertyDefinitionCodec.decodeDefinition(p, o);
 
-                if (p.definition.type != null) {
+                if (p.type != null) {
                     if (o[Spec.X_NAME] != null) {
-                        p.definition.type._name = o[Spec.X_NAME];
+                        p.type._name = o[Spec.X_NAME];
                     }
 
                     if (o[Spec.X_OPTIONAL] != null) {
-                        p.definition.type._optional = o[Spec.X_OPTIONAL];
+                        p.type._optional = o[Spec.X_OPTIONAL];
                     }
                 }
 
@@ -42,7 +42,7 @@ export class PropertyCodec {
             for (const o of array) {
                 const p = new PropertyOperable();
                 p.iid = o[Spec.IID] || 0;
-                p.definition = PropertyDefinitionCodec.decode(o);
+                PropertyDefinitionCodec.decodeDefinition(p, o);
 
                 list.push(p);
             }
@@ -54,35 +54,33 @@ export class PropertyCodec {
     static encode(property: Property): Object {
         const object: any = {
             iid: property.iid,
-            type: (property.definition != null) ? (property.definition.type != null ? property.definition.type.toString() : '') : '',
-            description: (property.definition != null) ? property.definition.description : '',
-            format: (property.definition != null) ? DataFormatToString(property.definition.format) : '',
-            access: (property.definition != null) ? property.definition.access.toList() : []
+            type:  property.type != null ? property.type.toString() : '',
+            description: property.description,
+            format: DataFormatToString(property.format),
+            access: property.access.toList()
         };
 
-        if (property.definition != null) {
-            if (property.definition.constraintValue != null) {
-                if (property.definition.constraintValue instanceof ValueList) {
-                    object[Spec.VALUE_LIST] = property.definition.constraintValue.toJsonArray();
-                }
-    
-                if (property.definition.constraintValue instanceof ValueRange) {
-                    object[Spec.VALUE_RANGE] = property.definition.constraintValue.toJsonArray();
-                }
-            }
-    
-            if (property.definition.unit !== Unit.NONE) {
-                object[Spec.UNIT] = UnitToString(property.definition.unit);
+        if (property.constraintValue != null) {
+            if (property.constraintValue instanceof ValueList) {
+                object[Spec.VALUE_LIST] = property.constraintValue.toJsonArray();
             }
 
-            if (property.definition.type != null) {
-                if (property.definition.type._name != null) {
-                    object[Spec.X_NAME] = property.definition.type._name;
-                }
+            if (property.constraintValue instanceof ValueRange) {
+                object[Spec.VALUE_RANGE] = property.constraintValue.toJsonArray();
+            }
+        }
 
-                if (property.definition.type._optional) {
-                    object[Spec.X_OPTIONAL] = true;
-                }
+        if (property.unit !== Unit.NONE) {
+            object[Spec.UNIT] = UnitToString(property.unit);
+        }
+
+        if (property.type != null) {
+            if (property.type._name != null) {
+                object[Spec.X_NAME] = property.type._name;
+            }
+
+            if (property.type._optional) {
+                object[Spec.X_OPTIONAL] = true;
             }
         }
 

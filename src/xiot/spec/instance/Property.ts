@@ -2,20 +2,15 @@ import {PropertyDefinition} from '../definition/PropertyDefinition';
 import {PropertyValue} from './PropertyValue';
 import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 
-export class Property {
+export class Property extends PropertyDefinition {
   public iid: number = 0;
-  public definition: PropertyDefinition | null = null;
   public value: PropertyValue | null = null;
 
   public valueToWrite: any | null = null;
 
   trySetValue(value: Object): boolean {
-    if (this.definition == null) {
-      return false;
-    }
-
     if (this.value == null) {
-      this.value = PropertyValue.create(this.definition.format);
+      this.value = PropertyValue.create(this.format);
     }
 
     return this.setDataValue(value, false);
@@ -26,17 +21,13 @@ export class Property {
   }
 
   private setDataValue(newValue: Object, write: boolean): boolean {
-    if (this.definition == null) {
-      return false;
-    }
-
     if (newValue == null) {
       return false;
     }
 
-    const v = DataValueFactory.create(this.definition.format, newValue);
+    const v = DataValueFactory.create(this.format, newValue);
 
-    if (! this.definition.validate(v)) {
+    if (! this.validate(v)) {
       return false;
     }
 
