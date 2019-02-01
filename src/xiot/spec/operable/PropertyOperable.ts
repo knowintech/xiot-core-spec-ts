@@ -22,7 +22,7 @@ export class PropertyOperable extends Property {
         this.update(o);
       } else {
         if (super.trySetValue(o.value)) {
-          o.status = (<number>OperationStatus.OK);
+          o.status = (<number>OperationStatus.COMPLETED);
         } else {
           o.status = (<number>OperationStatus.PROPERTY_VALUE_INVALID);
         }
@@ -34,7 +34,7 @@ export class PropertyOperable extends Property {
 
   update(o: PropertyOperation) {
     if (this.setValue(o.value)) {
-      o.status = (<number>OperationStatus.OK);
+      o.status = (<number>OperationStatus.COMPLETED);
     } else {
       o.status = (<number>OperationStatus.PROPERTY_VALUE_INVALID);
     }

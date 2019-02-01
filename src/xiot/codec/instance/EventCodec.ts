@@ -14,7 +14,7 @@ export class EventCodec {
                 a.iid = o[Spec.IID];
                 a.type = EventType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.arguments = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
+                a.setArguments(ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]));
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
@@ -40,8 +40,8 @@ export class EventCodec {
             description: event.description
         };
 
-        if (event.arguments.length > 0) {
-            o[Spec.ARGUMENTS] = ArgumentCodec.encodeArray(event.arguments);
+        if (event.arguments.size > 0) {
+            o[Spec.ARGUMENTS] = ArgumentCodec.encodeArray(event.getArguments());
         }
 
         if (event.type != null) {

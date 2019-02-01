@@ -15,7 +15,16 @@ export class Property extends PropertyDefinition {
 
     return this.setDataValue(value, false);
   }
+  
+  trySetValues(values: any[]): boolean {
+    for (let o of values) {
+        if (! this.trySetValue(o)) {
+            return false;
+        }
+    }
 
+    return true;
+}
   setValue(value: Object): boolean {
     return this.setDataValue(value, true);
   }

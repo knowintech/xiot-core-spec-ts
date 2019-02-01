@@ -2,8 +2,16 @@ import {EventType} from '../definition/urn/EventType';
 import {Argument} from './Argument';
 
 export class Event {
-  public iid: number = 0;
-  public type: EventType | null = null;
-  public description: string = '';
-  public arguments: Argument[] = [];
+  iid: number = 0;
+  type: EventType | null = null;
+  description: string = '';
+  arguments: Map<Number, Argument> = new Map<Number, Argument>();
+
+  getArguments(): Argument[] {
+    return Array.from(this.arguments.values());
+  }
+
+  setArguments(list: Argument[]) {
+    list.forEach(x => this.arguments.set(x.piid, x));
+  }
 }

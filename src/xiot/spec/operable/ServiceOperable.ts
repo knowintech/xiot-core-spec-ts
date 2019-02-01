@@ -49,7 +49,7 @@ export class ServiceOperable extends Service {
     const a = this.actions.get(o.aid.iid);
     if (a != null) {
       if (a instanceof ActionOperable) {
-        a.tryInvoke(o);
+        a.tryInvoke(o, this.properties);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
       }

@@ -15,8 +15,8 @@ export class ActionCodec {
                 a.iid = o[Spec.IID];
                 a.type = ActionType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.in = ArgumentCodec.decodeArray(o[Spec.IN]);
-                a.out = ArgumentCodec.decodeArray(o[Spec.OUT]);
+                a.setArgumentsIn(ArgumentCodec.decodeArray(o[Spec.IN]));
+                a.setArgumentsOut(ArgumentCodec.decodeArray(o[Spec.OUT]));
 
                 if (a.type != null) {
                     if (o[Spec.X_NAME] != null) {
@@ -44,8 +44,8 @@ export class ActionCodec {
                 a.iid = o[Spec.IID];
                 a.type = ActionType.valueOf(o[Spec.TYPE]);
                 a.description = o[Spec.DESCRIPTION];
-                a.in = ArgumentCodec.decodeArray(o[Spec.IN]);
-                a.out = ArgumentCodec.decodeArray(o[Spec.OUT]);
+                a.setArgumentsIn(ArgumentCodec.decodeArray(o[Spec.IN]));
+                a.setArgumentsOut(ArgumentCodec.decodeArray(o[Spec.OUT]));
                 list.push(a);
             }
         }
@@ -70,12 +70,12 @@ export class ActionCodec {
             }
         }
 
-        if (action.in.length > 0) {
-            o[Spec.IN] = ArgumentCodec.encodeArray(action.in);
+        if (action.in.size > 0) {
+            o[Spec.IN] = ArgumentCodec.encodeArray(action.getArgumentsIn());
         }
         
-        if (action.out.length > 0) {
-            o[Spec.OUT] = ArgumentCodec.encodeArray(action.out);
+        if (action.out.size > 0) {
+            o[Spec.OUT] = ArgumentCodec.encodeArray(action.getArgumentsOut());
         }
 
         return o;
