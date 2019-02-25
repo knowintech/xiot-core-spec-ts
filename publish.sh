@@ -1,5 +1,4 @@
 #!/bin/sh
 
-tsc
-#npm login
+npm run build
 npm publish
