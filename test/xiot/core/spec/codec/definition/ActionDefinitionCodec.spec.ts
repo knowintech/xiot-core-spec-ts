@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import 'mocha';
+import {diff} from 'yajsondiff'
 import * as fs from 'async-file';
 import {ActionDefinitionCodec} from "../../../../../../src/xiot/core/spec/codec/definition/ActionDefinitionCodec";
 
@@ -18,7 +19,13 @@ describe('ActionDefinitionCodec', async () => {
             let a = await fs.readFile(folder + file);
             const json = JSON.parse(a.toString());
             const def = ActionDefinitionCodec.decode(json);
-            expect(JSON.stringify(json)).to.equal(JSON.stringify(ActionDefinitionCodec.encode(def)));
+
+            const differences = diff(json, ActionDefinitionCodec.encode(def));
+            if (differences == null) {
+                expect(true).to.equal(true);
+            } else {
+                expect(JSON.stringify(json)).to.equal(JSON.stringify(ActionDefinitionCodec.encode(def)));
+            }
         });
     }
 });
