@@ -37,7 +37,7 @@ export class EventDefinitionCodec {
         };
 
         if (def.arguments.length > 0) {
-            o[Spec.IN] = ArgumentDefinitionCodec.encodeArray(def.arguments);
+            o[Spec.ARGUMENTS] = ArgumentDefinitionCodec.encodeArray(def.arguments);
         }
 
         if (def.type != null) {
