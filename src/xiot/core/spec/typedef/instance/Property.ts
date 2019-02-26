@@ -1,16 +1,49 @@
 import {PropertyDefinition} from '../definition/PropertyDefinition';
 import {PropertyValue} from './PropertyValue';
 import {DataValueFactory} from '../definition/property/data/DataValueFactory';
+import {ValueDefinition} from '../definition/property/ValueDefinition';
 
 export class Property extends PropertyDefinition {
   public iid: number = 0;
-  public value: PropertyValue | null = null;
+  public value: PropertyValue;
+  public status: number = 0;
+  public description: string = '';
 
-  public valueToWrite: any | null = null;
+  constructor(def: PropertyDefinition, iid: number) {
+    super();
+    this.type = def.type;
+    this.format = def.format;
+    this.description = def.description;
+    this.access = def.access;
+    this.constraintValue = def.constraintValue;
+    this.unit = def.unit;
+    this.iid = iid;
+    this.value = new PropertyValue(this.format);
+    this.fixDefaultValue();
+  }
+
+  fixDefaultValue(): void {
+    if (this.hasConstraintValue()) {
+      let list = this.valueList();
+      let range = this.valueRange();
+
+      if (list != null) {
+        let v: ValueDefinition = list.values[0];
+        if (v != null) {
+          this.value.currentValue = v.value;
+        }
+      } else if (range != null) {
+        let v = range.minValue;
+        if (v != null) {
+          this.value.currentValue = v;
+        }
+      }
+    }
+  }
 
   trySetValue(value: Object): boolean {
     if (this.value == null) {
-      this.value = PropertyValue.create(this.format);
+      return false;
     }
 
     return this.setDataValue(value, false);

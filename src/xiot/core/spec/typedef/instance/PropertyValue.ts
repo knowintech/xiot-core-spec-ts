@@ -1,20 +1,19 @@
 import {DataFormat} from '../definition/property/data/DataFormat';
 import {DataValue} from '../definition/property/data/DataValue';
+import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 
 export class PropertyValue {
 
   public format: DataFormat = DataFormat.BOOL;
   public isChanged: boolean = false;
   public oldValue: DataValue<any> | null = null;
-  public currentValue: DataValue<any> | null = null;
+  public currentValue: DataValue<any>;
 
-  static create(format: DataFormat): PropertyValue {
-    const v = new PropertyValue();
-    v.format = format;
-    v.isChanged = false;
-    v.oldValue = null;
-    v.currentValue = null;
-    return v;
+  constructor(format: DataFormat) {
+    this.format = format;
+    this.isChanged = false;
+    this.oldValue = null;
+    this.currentValue = DataValueFactory.createDefaultValue(format);
   }
 
   update(newValue: DataValue<any>) {

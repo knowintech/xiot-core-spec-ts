@@ -14,9 +14,7 @@ export class PropertyCodec {
 
         if (array != null) {
             for (const o of array) {
-                const p = new Property();
-                p.iid = o[Spec.IID] || 0;
-                PropertyDefinitionCodec.decodeDefinition(p, o);
+                const p = new Property(PropertyDefinitionCodec.decode(o), o[Spec.IID] || 0);
 
                 if (p.type != null) {
                     if (o[Spec.X_NAME] != null) {
@@ -40,9 +38,7 @@ export class PropertyCodec {
 
         if (array != null) {
             for (const o of array) {
-                const p = new PropertyOperable();
-                p.iid = o[Spec.IID] || 0;
-                PropertyDefinitionCodec.decodeDefinition(p, o);
+                const p = new PropertyOperable(PropertyDefinitionCodec.decode(o), o[Spec.IID] || 0);
 
                 list.push(p);
             }

@@ -13,6 +13,42 @@ import {Vint64} from './value/Vint64';
 
 export class DataValueFactory {
 
+  static createDefaultValue(format: DataFormat): DataValue<any> {
+    switch (format) {
+      case DataFormat.BOOL:
+        return new Vbool();
+
+      case DataFormat.STRING:
+        return new Vstring();
+
+      case DataFormat.FLOAT:
+        return new Vfloat();
+
+      case DataFormat.UINT8:
+        return new Vuint8();
+
+      case DataFormat.UINT16:
+        return new Vuint16();
+
+      case DataFormat.UINT32:
+        return new Vuint32();
+
+      case DataFormat.INT8:
+        return new Vint8();
+
+      case DataFormat.INT16:
+        return new Vint16();
+
+      case DataFormat.INT32:
+        return new Vint32();
+
+      case DataFormat.INT64:
+        return new Vint64();
+    }
+
+    throw new Error('format invalid: ' + format);
+  }
+
   static create(format: DataFormat, value: Object): DataValue<any> {
     switch (format) {
       case DataFormat.BOOL:
