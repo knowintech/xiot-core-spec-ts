@@ -7,10 +7,7 @@ export class ServiceTypeCodec {
 
         if (array != null) {
             for (const v of array) {
-              const t = ServiceType.valueOf(v);
-              if (t != null) {
-                  list.push(t);
-              }
+                list.push(new ServiceType(v));
             }
         }
   

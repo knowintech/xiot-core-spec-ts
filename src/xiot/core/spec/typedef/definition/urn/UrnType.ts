@@ -1,35 +1,24 @@
 export enum UrnType {
-  UNDEFINED,
-  PROPERTY,
-  ACTION,
-  EVENT,
-  SERVICE,
-  DEVICE
+  UNDEFINED = 'undefined',
+  PROPERTY = 'property',
+  ACTION = 'action',
+  EVENT = 'event',
+  SERVICE = 'service',
+  DEVICE = 'device'
 }
 
-const _UrnTypeMapping: [UrnType, string][] = [
-  [UrnType.PROPERTY, 'property'],
-  [UrnType.ACTION, 'action'],
-  [UrnType.EVENT, 'event'],
-  [UrnType.SERVICE, 'service'],
-  [UrnType.DEVICE, 'device'],
-];
-
 export function UrnTypeToString(type: UrnType): string {
-  for (const t of _UrnTypeMapping) {
-    if (t[0] === type) {
-      return t[1];
-    }
-  }
-
-  return 'none';
+  return type.toString();
 }
 
 export function UrnTypeFromString(type: string): UrnType {
-  for (const t of _UrnTypeMapping) {
-    if (t[1] === type) {
-      return t[0];
-    }
+  const keys: (keyof typeof UrnType)[] = <(keyof typeof UrnType)[]>Object.keys(UrnType);
+
+  for (const key of keys) {
+      const s = UrnTypeToString(UrnType[key]);
+      if (s === type) {
+          return UrnType[key];
+      }
   }
 
   return UrnType.UNDEFINED;

@@ -4,10 +4,18 @@ import {PropertyOperation} from '../operation/PropertyOperation';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
 import {ServiceOperable} from './ServiceOperable';
+import {DeviceType} from '../definition/urn/DeviceType';
+import {Service} from '../instance/Service';
 
 export class DeviceOperable extends Device {
 
   public summary: DeviceSummary | null = null;
+
+  constructor(type: DeviceType,
+              description: Map<String, String>,
+              services: Service[]) {
+      super(type, description, services);
+  }
 
   tryRead(list: Array<PropertyOperation>) {
     if (this.summary == null) {

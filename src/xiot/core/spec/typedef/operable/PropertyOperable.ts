@@ -1,8 +1,13 @@
 import {Property} from '../instance/Property';
 import {PropertyOperation} from '../operation/PropertyOperation';
 import {OperationStatus} from '../status/OperationStatus';
+import {PropertyDefinition} from '../definition/PropertyDefinition';
 
 export class PropertyOperable extends Property {
+
+  constructor(iid: number, def: PropertyDefinition) {
+    super(iid, def);
+  }
 
   tryRead(o: PropertyOperation) {
     if (this.value == null) {

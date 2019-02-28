@@ -2,6 +2,7 @@ import {Spec} from '../../typedef/constant/Spec';
 import {EventDefinition} from '../../typedef/definition/EventDefinition';
 import {EventType} from '../../typedef/definition/urn/EventType';
 import {ArgumentDefinitionCodec} from './ArgumentDefinitionCodec';
+import {DescriptionCodec} from './DescriptionCodec';
 
 export class EventDefinitionCodec {
 
@@ -16,34 +17,20 @@ export class EventDefinitionCodec {
     }
 
     static decode(o: any): EventDefinition {
-        const def = new EventDefinition();
-        def.type = EventType.valueOf(o[Spec.TYPE]);
-        def.description = o[Spec.DESCRIPTION];
-        def.arguments = ArgumentDefinitionCodec.decodeArray(o[Spec.ARGUMENTS]);
-
-        if (def.type != null) {
-            if (o[Spec.X_NAME] != null) {
-                def.type._name = o[Spec.X_NAME];
-            }
-        }
-
-        return def;
+        let type = new EventType(o[Spec.TYPE]);
+        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        let list = ArgumentDefinitionCodec.decodeArray(o[Spec.ARGUMENTS]);
+        return new EventDefinition(type, description, list);
     }
 
     static encode(def: EventDefinition): any {
         const o: any = {
-            type: def.type != null ? def.type.toString() : '',
-            description: def.description,
+            type: def.type.toString(),
+            description: DescriptionCodec.encode(def.type.description),
         };
 
         if (def.arguments.length > 0) {
             o[Spec.ARGUMENTS] = ArgumentDefinitionCodec.encodeArray(def.arguments);
-        }
-
-        if (def.type != null) {
-            if (def.type._name != null) {
-                o[Spec.X_NAME] = def.type._name;
-            }
         }
 
         return o;

@@ -4,6 +4,7 @@ import {ServiceType} from '../../typedef/definition/urn/ServiceType';
 import {ActionTypeCodec} from './type/ActionTypeCodec';
 import {PropertyTypeCodec} from './type/PropertyTypeCodec';
 import {EventTypeCodec} from './type/EventTypeCodec';
+import {DescriptionCodec} from './DescriptionCodec';
 
 export class ServiceDefinitionCodec {
 
@@ -18,41 +19,35 @@ export class ServiceDefinitionCodec {
     }
 
     static decode(o: any): ServiceDefinition {
-        const def = new ServiceDefinition();
-        def.type = ServiceType.valueOf(o[Spec.TYPE]);
-        def.description = o[Spec.DESCRIPTION];
-        def.requiredProperties = PropertyTypeCodec.decodeArray(o[Spec.REQUIRED_PROPERTIES]);
-        def.optionalProperties = PropertyTypeCodec.decodeArray(o[Spec.OPTIONAL_PROPERTIES]);
-        def.requiredActions = ActionTypeCodec.decodeArray(o[Spec.REQUIRED_ACTIONS]);
-        def.optionalActions = ActionTypeCodec.decodeArray(o[Spec.OPTIONAL_ACTIONS]);
-        def.requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
-        def.optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
+        let type = new ServiceType(o[Spec.TYPE]);
+        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        let requiredProperties = PropertyTypeCodec.decodeArray(o[Spec.REQUIRED_PROPERTIES]);
+        let optionalProperties = PropertyTypeCodec.decodeArray(o[Spec.OPTIONAL_PROPERTIES]);
+        let requiredActions = ActionTypeCodec.decodeArray(o[Spec.REQUIRED_ACTIONS]);
+        let optionalActions = ActionTypeCodec.decodeArray(o[Spec.OPTIONAL_ACTIONS]);
+        let requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
+        let optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
 
-        if (def.type != null) {
-            if (o[Spec.X_NAME] != null) {
-                def.type._name = o[Spec.X_NAME];
-            }
-
-            if (o[Spec.X_PROPERTY_ADDABLE] != null) {
-                def.type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
-            }
-
-            if (o[Spec.X_ACTION_ADDABLE] != null) {
-                def.type._action_addable = o[Spec.X_ACTION_ADDABLE];
-            }
-
-            if (o[Spec.X_EVENT_ADDABLE] != null) {
-                def.type._event_addable = o[Spec.X_EVENT_ADDABLE];
-            }
+        if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+            type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
         }
 
-        return def;
+        if (o[Spec.X_ACTION_ADDABLE] != null) {
+            type._action_addable = o[Spec.X_ACTION_ADDABLE];
+        }
+
+        if (o[Spec.X_EVENT_ADDABLE] != null) {
+            type._event_addable = o[Spec.X_EVENT_ADDABLE];
+        }
+
+        return new ServiceDefinition(type, description, requiredProperties, optionalProperties,
+             requiredActions, optionalActions, requiredEvents, optionalEvents);
     }
 
     static encode(def: ServiceDefinition): any {
         const o: any = {
-            type: def.type != null ? def.type.toString() : '',
-            description: def.description
+            type: def.type.toString(),
+            description: DescriptionCodec.encode(def.type.description),
         };
 
         if (def.requiredProperties.length > 0) {
@@ -79,22 +74,16 @@ export class ServiceDefinitionCodec {
             o[Spec.OPTIONAL_EVENTS] = EventTypeCodec.encodeArray(def.optionalEvents);
         }
 
-        if (def.type != null) {
-            if (def.type._name != null) {
-                o[Spec.X_NAME] = def.type._name;
-            }
+        if (def.type._property_addable) {
+            o[Spec.X_PROPERTY_ADDABLE] = true;
+        }
 
-            if (def.type._property_addable) {
-                o[Spec.X_PROPERTY_ADDABLE] = true;
-            }
+        if (def.type._action_addable) {
+            o[Spec.X_ACTION_ADDABLE] = true;
+        }
 
-            if (def.type._action_addable) {
-                o[Spec.X_ACTION_ADDABLE] = true;
-            }
-
-            if (def.type._event_addable) {
-                o[Spec.X_EVENT_ADDABLE] = true;
-            }
+        if (def.type._event_addable) {
+            o[Spec.X_EVENT_ADDABLE] = true;
         }
 
         return o;

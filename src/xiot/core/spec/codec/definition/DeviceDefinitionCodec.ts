@@ -2,6 +2,7 @@ import {Spec} from '../../typedef/constant/Spec';
 import {DeviceDefinition} from '../../typedef/definition/DeviceDefinition';
 import {DeviceType} from '../../typedef/definition/urn/DeviceType';
 import {ServiceTypeCodec} from './type/ServiceTypeCodec';
+import {DescriptionCodec} from './DescriptionCodec';
 
 export class DeviceDefinitionCodec {
 
@@ -16,25 +17,17 @@ export class DeviceDefinitionCodec {
     }
 
     static decode(o: any): DeviceDefinition {
-        const def = new DeviceDefinition();
-        def.type = DeviceType.valueOf(o[Spec.TYPE]);
-        def.description = o[Spec.DESCRIPTION];
-        def.requiredServices = ServiceTypeCodec.decodeArray(o[Spec.REQUIRED_SERVICES]);
-        def.optionalServices = ServiceTypeCodec.decodeArray(o[Spec.OPTIONAL_SERVICES]);
-
-        if (def.type != null) {
-            if (o[Spec.X_NAME] != null) {
-                def.type._name = o[Spec.X_NAME];
-            }
-        }
-
-        return def;
+        let type = new DeviceType(o[Spec.TYPE]);
+        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        let requiredServices = ServiceTypeCodec.decodeArray(o[Spec.REQUIRED_SERVICES]);
+        let optionalServices = ServiceTypeCodec.decodeArray(o[Spec.OPTIONAL_SERVICES]);
+        return new DeviceDefinition(type, description, requiredServices, optionalServices);
     }
 
     static encode(def: DeviceDefinition): any {
         const o: any = {
-            type: def.type != null ? def.type.toString() : '',
-            description: def.description
+            type: def.type.toString(),
+            description: DescriptionCodec.encode(def.type.description),
         };
 
         if (def.requiredServices.length > 0) {
@@ -43,12 +36,6 @@ export class DeviceDefinitionCodec {
 
         if (def.optionalServices.length > 0) {
             o[Spec.OPTIONAL_SERVICES] = ServiceTypeCodec.encodeArray(def.optionalServices);
-        }
-
-        if (def.type != null) {
-            if (def.type._name != null) {
-                o[Spec.X_NAME] = def.type._name;
-            }
         }
 
         return o;

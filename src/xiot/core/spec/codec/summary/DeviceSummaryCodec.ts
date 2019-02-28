@@ -14,7 +14,7 @@ export class DeviceSummaryCodec {
           summary.did = device['did'];
           summary.category = device['category'];
           summary.name = device['name'];
-          summary.type = DeviceType.valueOf(device['type']);
+          summary.type = new DeviceType(device['type']);
           array.push(summary);
         }
       }

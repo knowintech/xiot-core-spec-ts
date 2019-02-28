@@ -2,8 +2,27 @@ import {DeviceType} from './urn/DeviceType';
 import {ServiceType} from './urn/ServiceType';
 
 export class DeviceDefinition {
-  public type: DeviceType | null = null;
-  public description: string = '';
-  public requiredServices: ServiceType[] = [];
-  public optionalServices: ServiceType[] = [];
+
+  type: DeviceType;
+  requiredServices: ServiceType[] = [];
+  optionalServices: ServiceType[] = [];
+
+  constructor(type: DeviceType,
+              description: Map<String, String>,
+              required: ServiceType[],
+              optional: ServiceType[]) {
+    this.type = type;
+
+    if (description != null) {
+      this.type.description = description;
+    }
+
+    if (required != null) {
+      this.requiredServices = required;
+    }
+    
+    if (optional != null) {
+      this.optionalServices = optional;
+    }
+  }
 }

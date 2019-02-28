@@ -7,10 +7,7 @@ export class ActionTypeCodec {
 
         if (array != null) {
             for (const v of array) {
-              const t = ActionType.valueOf(v);
-              if (t != null) {
-                  list.push(t);
-              }
+                list.push(new ActionType(v));
             }
         }
   

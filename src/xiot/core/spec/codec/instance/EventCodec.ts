@@ -2,31 +2,25 @@ import {Event} from '../../typedef/instance/Event';
 import {Spec} from '../../typedef/constant/Spec';
 import {EventType} from '../../typedef/definition/urn/EventType';
 import {ArgumentCodec} from './ArgumentCodec';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class EventCodec {
 
-    static decode(array: Array<any>): Array<Event> {
-        const list = [];
+    static decode(array: any[]): Event[] {
+        const list: Event[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const a = new Event();
-                a.iid = o[Spec.IID];
-                a.type = EventType.valueOf(o[Spec.TYPE]);
-                a.description = o[Spec.DESCRIPTION];
-                a.setArguments(ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]));
+                let iid = o[Spec.IID];
+                let type = new EventType(o[Spec.TYPE]);
+                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                let a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
-                if (a.type != null) {
-                    if (o[Spec.X_NAME] != null) {
-                        a.type._name = o[Spec.X_NAME];
-                    }
-
-                    if (o[Spec.X_OPTIONAL] != null) {
-                        a.type._optional = o[Spec.X_OPTIONAL];
-                    }
+                if (o[Spec.X_OPTIONAL] != null) {
+                    type._optional = o[Spec.X_OPTIONAL];
                 }
 
-                list.push(a);
+                list.push(new Event(iid, type, description, a));
             }
         }
 
@@ -36,22 +30,16 @@ export class EventCodec {
     static encode(event: Event): any {
         const o: any = {
             iid: event.iid,
-            type: event.type != null ? event.type.toString() : '',
-            description: event.description
+            type: event.type.toString(),
+            description: DescriptionCodec.encode(event.type.description),
         };
 
         if (event.arguments.size > 0) {
             o[Spec.ARGUMENTS] = ArgumentCodec.encodeArray(event.getArguments());
         }
 
-        if (event.type != null) {
-            if (event.type._name != null) {
-                o[Spec.X_NAME] = event.type._name;
-            }
-
-            if (event.type._optional) {
-                o[Spec.X_OPTIONAL] = true;
-            }
+        if (event.type._optional) {
+            o[Spec.X_OPTIONAL] = true;
         }
 
         return o;

@@ -1,8 +1,9 @@
 export class Argument {
-    public piid: number;
-    public minRepeat: number = 1;
-    public maxRepeat: number = 1;
-    public values: any[] = [];
+    
+    piid: number;
+    minRepeat: number = 1;
+    maxRepeat: number = 1;
+    values: any[] = [];
 
     constructor(piid: number) {
         this.piid = piid;

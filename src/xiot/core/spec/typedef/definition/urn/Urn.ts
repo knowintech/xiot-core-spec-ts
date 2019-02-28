@@ -18,9 +18,12 @@ export class Urn extends Extendable {
     public version: number = 0;
 
     public style: UrnStyle = UrnStyle.SPEC;
+    public description: Map<String, String> = new Map<String, String>();
+    public valid: boolean = false;
 
-    constructor() {
+    constructor(string: string) {
         super();
+        this.valid = this.parseString(string);
     }
 
     parseString(string: string): boolean {
@@ -117,14 +120,6 @@ export class Urn extends Extendable {
         }
     
         return prefix + uuid;
-    }
-
-    displayName(): string {
-        if (this._name != null) {
-            return this._name;
-        }
-
-        return this.name;
     }
 
     toString(): string {

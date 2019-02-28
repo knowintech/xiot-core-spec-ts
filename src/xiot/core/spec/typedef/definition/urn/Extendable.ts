@@ -1,7 +1,6 @@
 
 export class Extendable {
 
-    public _name: string | null = null;
     public _optional: boolean = false;
     public _property_addable: boolean = false;
     public _action_addable: boolean = false;

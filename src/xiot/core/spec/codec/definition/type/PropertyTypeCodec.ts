@@ -7,10 +7,7 @@ export class PropertyTypeCodec {
 
         if (array != null) {
             for (const v of array) {
-              const t = PropertyType.valueOf(v);
-              if (t != null) {
-                  list.push(t);
-              }
+                list.push(new PropertyType(v));
             }
         }
   

@@ -2,6 +2,7 @@ import {ActionDefinition} from '../../typedef/definition/ActionDefinition';
 import {Spec} from '../../typedef/constant/Spec';
 import {ActionType} from '../../typedef/definition/urn/ActionType';
 import {ArgumentDefinitionCodec} from './ArgumentDefinitionCodec';
+import {DescriptionCodec} from './DescriptionCodec';
 
 export class ActionDefinitionCodec {
 
@@ -16,25 +17,17 @@ export class ActionDefinitionCodec {
     }
 
     static decode(o: any): ActionDefinition {
-        const def = new ActionDefinition();
-        def.type = ActionType.valueOf(o[Spec.TYPE]);
-        def.description = o[Spec.DESCRIPTION];
-        def.in = ArgumentDefinitionCodec.decodeArray(o[Spec.IN]);
-        def.out = ArgumentDefinitionCodec.decodeArray(o[Spec.OUT]);
-
-        if (def.type != null) {
-            if (o[Spec.X_NAME] != null) {
-                def.type._name = o[Spec.X_NAME];
-            }
-        }
-
-        return def;
+        let type = new ActionType(o[Spec.TYPE]);
+        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        let argumentsIn = ArgumentDefinitionCodec.decodeArray(o[Spec.IN]);
+        let argumentsOut = ArgumentDefinitionCodec.decodeArray(o[Spec.OUT]);
+        return new ActionDefinition(type, description, argumentsIn, argumentsOut);
     }
 
     static encode(def: ActionDefinition): any {
         const o: any = {
-            type: (def.type != null) ? def.type.toString() : '',
-            description: def.description,
+            type: def.type.toString(),
+            description: DescriptionCodec.encode(def.type.description),
         };
 
         if (def.in.length > 0) {
@@ -43,12 +36,6 @@ export class ActionDefinitionCodec {
 
         if (def.out.length > 0) {
             o[Spec.OUT] = ArgumentDefinitionCodec.encodeArray(def.out);
-        }
-
-        if (def.type != null) {
-            if (def.type._name != null) {
-                o[Spec.X_NAME] = def.type._name;
-            }
         }
 
         return o;

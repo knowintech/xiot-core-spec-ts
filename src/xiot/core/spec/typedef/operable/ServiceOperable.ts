@@ -4,8 +4,21 @@ import {ActionOperation} from '../operation/ActionOperation';
 import {PropertyOperable} from './PropertyOperable';
 import {OperationStatus} from '../status/OperationStatus';
 import {ActionOperable} from './ActionOperable';
+import {ServiceType} from '../definition/urn/ServiceType';
+import {Property} from '../instance/Property';
+import {Action} from '../instance/Action';
+import {Event} from '../instance/Event';
 
 export class ServiceOperable extends Service {
+
+  constructor(iid: number,
+              type: ServiceType,
+              description: Map<String, String>,
+              properties: Property[],
+              actions: Action[],
+              events: Event[]) {
+    super(iid, type, description, properties, actions, events);
+  }
 
   tryRead(o: PropertyOperation) {
     if (o.pid == null) {

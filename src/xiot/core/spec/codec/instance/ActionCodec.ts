@@ -3,32 +3,26 @@ import {Spec} from '../../typedef/constant/Spec';
 import {ActionOperable} from '../../typedef/operable/ActionOperable';
 import {ActionType} from '../../typedef/definition/urn/ActionType';
 import {ArgumentCodec} from './ArgumentCodec';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class ActionCodec {
 
     static decode(array: any[]): Action[] {
-        const list = [];
+        const list: Action[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const a = new Action();
-                a.iid = o[Spec.IID];
-                a.type = ActionType.valueOf(o[Spec.TYPE]);
-                a.description = o[Spec.DESCRIPTION];
-                a.setArgumentsIn(ArgumentCodec.decodeArray(o[Spec.IN]));
-                a.setArgumentsOut(ArgumentCodec.decodeArray(o[Spec.OUT]));
+                let iid = o[Spec.IID];
+                let type = new ActionType(o[Spec.TYPE]);
+                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                let argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
+                let argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
 
-                if (a.type != null) {
-                    if (o[Spec.X_NAME] != null) {
-                        a.type._name = o[Spec.X_NAME];
-                    }
-
-                    if (o[Spec.X_OPTIONAL] != null) {
-                        a.type._optional = o[Spec.X_OPTIONAL];
-                    }
+                if (o[Spec.X_OPTIONAL] != null) {
+                    type._optional = o[Spec.X_OPTIONAL];
                 }
 
-                list.push(a);
+                list.push(new Action(iid, type, description, argumentsIn, argumentsOut));
             }
         }
 
@@ -36,17 +30,16 @@ export class ActionCodec {
     }
 
     static decodeOperable(array: any[]): ActionOperable[] {
-        const list = [];
+        const list: ActionOperable[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const a = new ActionOperable();
-                a.iid = o[Spec.IID];
-                a.type = ActionType.valueOf(o[Spec.TYPE]);
-                a.description = o[Spec.DESCRIPTION];
-                a.setArgumentsIn(ArgumentCodec.decodeArray(o[Spec.IN]));
-                a.setArgumentsOut(ArgumentCodec.decodeArray(o[Spec.OUT]));
-                list.push(a);
+                let iid = o[Spec.IID];
+                let type = new ActionType(o[Spec.TYPE]);
+                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                let argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
+                let argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
+                list.push(new ActionOperable(iid, type, description, argumentsIn, argumentsOut));
             }
         }
 
@@ -56,18 +49,12 @@ export class ActionCodec {
     static encode(action: Action): any {
         const o: any = {
             iid: action.iid,
-            type: action.type != null ? action.type.toString() : '',
-            description: action.description
+            type: action.type.toString(),
+            description: DescriptionCodec.encode(action.type.description),
         };
 
-        if (action.type != null) {
-            if (action.type._name != null) {
-                o[Spec.X_NAME] = action.type._name;
-            }
-
-            if (action.type._optional) {
-                o[Spec.X_OPTIONAL] = true;
-            }
+        if (action.type._optional) {
+            o[Spec.X_OPTIONAL] = true;
         }
 
         if (action.in.size > 0) {

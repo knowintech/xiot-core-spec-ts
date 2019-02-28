@@ -6,24 +6,19 @@ import {DataFormatToString} from '../../typedef/definition/property/data/DataFor
 import {ValueList} from '../../typedef/definition/property/ValueList';
 import {ValueRange} from '../../typedef/definition/property/ValueRange';
 import {Unit, UnitToString} from '../../typedef/definition/property/Unit';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class PropertyCodec {
 
-    static decode(array: any[]): Array<Property> {
-        const list = [];
+    static decode(array: any[]): Property[] {
+        const list: Property[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const p = new Property(PropertyDefinitionCodec.decode(o), o[Spec.IID] || 0);
+                const p = new Property(o[Spec.IID], PropertyDefinitionCodec.decode(o));
 
-                if (p.type != null) {
-                    if (o[Spec.X_NAME] != null) {
-                        p.type._name = o[Spec.X_NAME];
-                    }
-
-                    if (o[Spec.X_OPTIONAL] != null) {
-                        p.type._optional = o[Spec.X_OPTIONAL];
-                    }
+                if (o[Spec.X_OPTIONAL] != null) {
+                    p.type._optional = o[Spec.X_OPTIONAL];
                 }
 
                 list.push(p);
@@ -33,12 +28,12 @@ export class PropertyCodec {
         return list;
     }
 
-    static decodeOperable(array: any[]): Array<PropertyOperable> {
-        const list = [];
+    static decodeOperable(array: any[]): PropertyOperable[] {
+        const list: PropertyOperable[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const p = new PropertyOperable(PropertyDefinitionCodec.decode(o), o[Spec.IID] || 0);
+                const p = new PropertyOperable(o[Spec.IID], PropertyDefinitionCodec.decode(o));
 
                 list.push(p);
             }
@@ -50,8 +45,8 @@ export class PropertyCodec {
     static encode(property: Property): Object {
         const object: any = {
             iid: property.iid,
-            type:  property.type != null ? property.type.toString() : '',
-            description: property.description,
+            type:  property.type.toString(),
+            description: DescriptionCodec.encode(property.type.description),
             format: DataFormatToString(property.format),
             access: property.access.toList()
         };
@@ -70,14 +65,8 @@ export class PropertyCodec {
             object[Spec.UNIT] = UnitToString(property.unit);
         }
 
-        if (property.type != null) {
-            if (property.type._name != null) {
-                object[Spec.X_NAME] = property.type._name;
-            }
-
-            if (property.type._optional) {
-                object[Spec.X_OPTIONAL] = true;
-            }
+        if (property.type._optional) {
+            object[Spec.X_OPTIONAL] = true;
         }
 
         return object;

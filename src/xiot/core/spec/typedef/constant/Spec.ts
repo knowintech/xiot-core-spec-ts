@@ -38,7 +38,9 @@ export class Spec {
     public static EID = 'eid';
     public static STATUS = 'status';
 
-    public static X_NAME = 'x-name';
+    public static ZH_CN = "zh-CN";
+    public static ZH_TW = "zh-TW";
+    public static EN_US = "en-US";
     public static X_OPTIONAL = 'x-optional';
     public static X_PROPERTY_ADDABLE = "x-property-addable";
     public static X_ACTION_ADDABLE = "x-action-addable";

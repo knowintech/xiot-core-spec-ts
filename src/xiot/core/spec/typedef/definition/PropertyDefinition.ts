@@ -1,4 +1,4 @@
-import {ServiceType} from './urn/ServiceType';
+import {PropertyType} from './urn/PropertyType';
 import {DataFormat, DataFormatToString} from './property/data/DataFormat';
 import {Access} from './property/Access';
 import {Unit, UnitToString} from './property/Unit';
@@ -8,13 +8,21 @@ import {ValueList} from './property/ValueList';
 import {ValueRange} from './property/ValueRange';
 
 export class PropertyDefinition {
-  public type: ServiceType | null = null;
-  public description: string = '';
-  public format: DataFormat = DataFormat.BOOL;
-  public access: Access = new Access();
-  public constraintValue: ConstraintValue | null = null;
-  public unit: Unit = Unit.NONE;
 
+  type: PropertyType;
+  format: DataFormat = DataFormat.BOOL;
+  access: Access = new Access();
+  constraintValue: ConstraintValue | null = null;
+  unit: Unit = Unit.NONE;
+
+  constructor(type: PropertyType, description: Map<String, String>) {
+    this.type = type;
+
+    if (description != null) {
+      this.type.description = description;
+    }
+  }
+  
   validate(value: DataValue<any>): boolean {
     if (value == null) {
       return false;

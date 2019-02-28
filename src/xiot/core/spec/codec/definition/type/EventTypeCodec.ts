@@ -7,10 +7,7 @@ export class EventTypeCodec {
 
         if (array != null) {
             for (const v of array) {
-              const t = EventType.valueOf(v);
-              if (t != null) {
-                  list.push(t);
-              }
+                list.push(new EventType(v));
             }
         }
   

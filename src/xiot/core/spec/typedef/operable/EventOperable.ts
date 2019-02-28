@@ -2,8 +2,17 @@ import {Event} from '../instance/Event';
 import {Property} from '../instance/Property';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
+import {EventType} from '../definition/urn/EventType';
+import {Argument} from '../instance/Argument';
 
 export class EventOperable extends Event {
+  
+  constructor(iid: number,
+              type: EventType,
+              description: Map<String, String>,
+              list: Argument[]) {
+      super(iid, type, description, list);
+  }
 
   tryInvoke(o: ActionOperation, properties: Map<Number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);

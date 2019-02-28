@@ -2,8 +2,18 @@ import {Action} from '../instance/Action';
 import {Property} from '../instance/Property';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
+import {ActionType} from '../definition/urn/ActionType';
+import {Argument} from '../instance/Argument';
 
 export class ActionOperable extends Action {
+
+  constructor(iid: number,
+              type: ActionType,
+              description: Map<String, String>,
+              argumentsIn: Argument[],
+              argumentsOut: Argument[]) {
+      super(iid, type, description, argumentsIn, argumentsOut);
+  }
 
   tryInvoke(o: ActionOperation, properties: Map<Number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);

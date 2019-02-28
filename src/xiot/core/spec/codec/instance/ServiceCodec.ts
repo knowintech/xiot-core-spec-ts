@@ -5,57 +5,39 @@ import {PropertyCodec} from './PropertyCodec';
 import {ActionCodec} from './ActionCodec';
 import {EventCodec} from './EventCodec';
 import {ServiceOperable} from '../../typedef/operable/ServiceOperable';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class ServiceCodec {
 
     static decode(array: any[]): Service[] {
-        const list = [];
+        const list: Service[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const a = new Service();
-                a.iid = o[Spec.IID];
-                a.type = ServiceType.valueOf(o[Spec.TYPE]);
-                a.description = o[Spec.DESCRIPTION];
+                let iid = o[Spec.IID];
+                let type = new ServiceType(o[Spec.TYPE]);
+                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                let properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
+                let actions = ActionCodec.decode(o[Spec.ACTIONS]);
+                let events = EventCodec.decode(o[Spec.EVENTS]);
 
-                if (a.type != null) {
-                    if (o[Spec.X_NAME] != null) {
-                        a.type._name = o[Spec.X_NAME];
-                    }
-
-                    if (o[Spec.X_OPTIONAL] != null) {
-                        a.type._optional = o[Spec.X_OPTIONAL];
-                    }
-
-                    if (o[Spec.X_PROPERTY_ADDABLE] != null) {
-                        a.type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
-                    }
-
-                    if (o[Spec.X_ACTION_ADDABLE] != null) {
-                        a.type._action_addable = o[Spec.X_ACTION_ADDABLE];
-                    }
-
-                    if (o[Spec.X_EVENT_ADDABLE] != null) {
-                        a.type._event_addable = o[Spec.X_EVENT_ADDABLE];
-                    }
+                if (o[Spec.X_OPTIONAL] != null) {
+                    type._optional = o[Spec.X_OPTIONAL];
                 }
 
-                const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
-                for (const property of properties) {
-                    a.properties.set(property.iid, property);
+                if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+                    type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
                 }
 
-                const actions = ActionCodec.decode(o[Spec.ACTIONS]);
-                for (const action of actions) {
-                    a.actions.set(action.iid, action);
+                if (o[Spec.X_ACTION_ADDABLE] != null) {
+                    type._action_addable = o[Spec.X_ACTION_ADDABLE];
                 }
 
-                const events = EventCodec.decode(o[Spec.EVENTS]);
-                for (const event of events) {
-                    a.events.set(event.iid, event);
+                if (o[Spec.X_EVENT_ADDABLE] != null) {
+                    type._event_addable = o[Spec.X_EVENT_ADDABLE];
                 }
 
-                list.push(a);
+                list.push(new Service(iid, type, description, properties, actions, events));
             }
         }
 
@@ -63,31 +45,34 @@ export class ServiceCodec {
     }
 
     static decodeOperable(array: any[]): ServiceOperable[] {
-        const list = [];
+        const list: ServiceOperable[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const a = new ServiceOperable();
-                a.iid = o[Spec.IID];
-                a.type = ServiceType.valueOf(o[Spec.TYPE]);
-                a.description = o[Spec.DESCRIPTION];
+                let iid = o[Spec.IID];
+                let type = new ServiceType(o[Spec.TYPE]);
+                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                let properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
+                let actions = ActionCodec.decode(o[Spec.ACTIONS]);
+                let events = EventCodec.decode(o[Spec.EVENTS]);
 
-                const properties = PropertyCodec.decodeOperable(o[Spec.PROPERTIES]);
-                for (const property of properties) {
-                    a.properties.set(property.iid, property);
+                if (o[Spec.X_OPTIONAL] != null) {
+                    type._optional = o[Spec.X_OPTIONAL];
                 }
 
-                const actions = ActionCodec.decodeOperable(o[Spec.ACTIONS]);
-                for (const action of actions) {
-                    a.actions.set(action.iid, action);
+                if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+                    type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
                 }
 
-                const events = EventCodec.decode(o[Spec.EVENTS]);
-                for (const event of events) {
-                    a.events.set(event.iid, event);
+                if (o[Spec.X_ACTION_ADDABLE] != null) {
+                    type._action_addable = o[Spec.X_ACTION_ADDABLE];
                 }
 
-                list.push(a);
+                if (o[Spec.X_EVENT_ADDABLE] != null) {
+                    type._event_addable = o[Spec.X_EVENT_ADDABLE];
+                }
+
+                list.push(new ServiceOperable(iid, type, description, properties, actions, events));
             }
         }
 
@@ -97,8 +82,8 @@ export class ServiceCodec {
     static encode(service: Service): any {
         const o: any = {
             iid: service.iid,
-            type: service.type != null ? service.type.toString() : '',
-            description: service.description,
+            type: service.type.toString(),
+            description: DescriptionCodec.encode(service.type.description),
         };
 
         if (service.properties.size > 0) {
@@ -113,26 +98,20 @@ export class ServiceCodec {
             o[Spec.EVENTS] = EventCodec.encodeArray(service.events);
         }
 
-        if (service.type != null) {
-            if (service.type._name != null) {
-                o[Spec.X_NAME] = service.type._name;
-            }
+        if (service.type._optional) {
+            o[Spec.X_OPTIONAL] = true;
+        }
 
-            if (service.type._optional) {
-                o[Spec.X_OPTIONAL] = true;
-            }
+        if (service.type._property_addable) {
+            o[Spec.X_PROPERTY_ADDABLE] = true;
+        }
 
-            if (service.type._property_addable) {
-                o[Spec.X_PROPERTY_ADDABLE] = true;
-            }
+        if (service.type._action_addable) {
+            o[Spec.X_ACTION_ADDABLE] = true;
+        }
 
-            if (service.type._action_addable) {
-                o[Spec.X_ACTION_ADDABLE] = true;
-            }
-
-            if (service.type._event_addable) {
-                o[Spec.X_EVENT_ADDABLE] = true;
-            }
+        if (service.type._event_addable) {
+            o[Spec.X_EVENT_ADDABLE] = true;
         }
 
         return o;

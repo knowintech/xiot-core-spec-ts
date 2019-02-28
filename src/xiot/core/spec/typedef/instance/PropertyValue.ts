@@ -4,10 +4,10 @@ import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 
 export class PropertyValue {
 
-  public format: DataFormat = DataFormat.BOOL;
-  public isChanged: boolean = false;
-  public oldValue: DataValue<any> | null = null;
-  public currentValue: DataValue<any>;
+  format: DataFormat = DataFormat.BOOL;
+  isChanged: boolean = false;
+  oldValue: DataValue<any> | null = null;
+  currentValue: DataValue<any>;
 
   constructor(format: DataFormat) {
     this.format = format;

@@ -4,20 +4,18 @@ import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 import {ValueDefinition} from '../definition/property/ValueDefinition';
 
 export class Property extends PropertyDefinition {
-  public iid: number = 0;
-  public value: PropertyValue;
-  public status: number = 0;
-  public description: string = '';
 
-  constructor(def: PropertyDefinition, iid: number) {
-    super();
-    this.type = def.type;
+  iid: number = 0;
+  value: PropertyValue;
+  status: number = 0;
+
+  constructor(iid: number, def: PropertyDefinition) {
+    super(def.type, def.type.description);
+    this.iid = iid;
     this.format = def.format;
-    this.description = def.description;
     this.access = def.access;
     this.constraintValue = def.constraintValue;
     this.unit = def.unit;
-    this.iid = iid;
     this.value = new PropertyValue(this.format);
     this.fixDefaultValue();
   }
@@ -48,7 +46,7 @@ export class Property extends PropertyDefinition {
 
     return this.setDataValue(value, false);
   }
-  
+
   trySetValues(values: any[]): boolean {
     for (let o of values) {
         if (! this.trySetValue(o)) {
