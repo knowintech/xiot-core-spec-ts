@@ -1,6 +1,6 @@
 {
     "type": "urn:homekit-spec:device:fan:00000000:geekcity:fff:1",
-    "description": { "zh-CN": "风扇", "zh-TW": "风扇", "en-US": "fan" },
+    "description": { "zh-CN": "风", "zh-TW": "扇", "en-US": "fan" },
     "services": [{
       "iid": 1,
       "type": "urn:homekit-spec:service:accessory-information:0000003E:geekcity:fff:1",
@@ -26,7 +26,7 @@
       }, {
         "iid": 5,
         "type": "urn:homekit-spec:property:name:00000023:geekcity:fff:1",
-        "description": { "zh-CN": "名称", "zh-TW": "名称", "en-US": "Name" },
+        "description": { "zh-CN": "名", "zh-TW": "称", "en-US": "Name" },
         "format": "string",
         "access": ["read"]
       }, {

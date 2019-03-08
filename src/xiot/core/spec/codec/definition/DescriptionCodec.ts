@@ -24,7 +24,7 @@ export class DescriptionCodec {
         }
 
         let o = Object.create(null);
-        description.forEach((v, k) => o[k.toString()] = v);
+        description.forEach((value, key) => o[key.toString()] = value);
         return o;
     }
 }

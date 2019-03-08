@@ -1,4 +1,5 @@
 import {ServiceType} from '../../../typedef/definition/urn/ServiceType';
+import { DescriptionCodec } from '../DescriptionCodec';
 
 export class ServiceTypeCodec {
 
@@ -7,7 +8,13 @@ export class ServiceTypeCodec {
 
         if (array != null) {
             for (const v of array) {
-                list.push(new ServiceType(v));
+                if (typeof v === 'string') {
+                    list.push(new ServiceType(v));
+                } else if (typeof v === 'object') {
+                    let type = new ServiceType(v['type']);
+                    type.description = DescriptionCodec.decode(v['description']);
+                    list.push(type);
+                }
             }
         }
   
@@ -18,7 +25,14 @@ export class ServiceTypeCodec {
         const array: any[] = [];
 
         actions.forEach((type) => {
-            array.push(type.toString());
+            if (type.description.size == 0) {
+                array.push(type.toString());
+            } else {
+                array.push({
+                    type: type.toString(),
+                    description: DescriptionCodec.encode(type.description)
+                });
+            }
         });
 
         return array;
