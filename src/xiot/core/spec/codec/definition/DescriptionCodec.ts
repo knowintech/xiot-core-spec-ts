@@ -2,8 +2,8 @@ import {Spec} from '../../typedef/constant/Spec';
 
 export class DescriptionCodec {
 
-    static decode(o: any): Map<String, String> {
-        let description: Map<String, String> = new Map<String, String>();
+    static decode(o: any): Map<string, string> {
+        let description: Map<string, string> = new Map<string, string>();
 
         if (typeof o === 'string') {
             description.set(Spec.EN_US, o);
@@ -14,7 +14,7 @@ export class DescriptionCodec {
         return description;
     }
 
-    static encode(description: Map<String, String>): any {      
+    static encode(description: Map<string, string>): any {      
         if (description.size == 0) {
             return '';
         }

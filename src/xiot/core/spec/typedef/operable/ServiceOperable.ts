@@ -13,7 +13,7 @@ export class ServiceOperable extends Service {
 
   constructor(iid: number,
               type: ServiceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               properties: Property[],
               actions: Action[],
               events: Event[]) {

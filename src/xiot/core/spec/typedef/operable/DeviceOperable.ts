@@ -12,7 +12,7 @@ export class DeviceOperable extends Device {
   public summary: DeviceSummary | null = null;
 
   constructor(type: DeviceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               services: Service[]) {
       super(type, description, services);
   }

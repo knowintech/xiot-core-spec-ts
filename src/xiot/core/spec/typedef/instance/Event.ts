@@ -5,11 +5,11 @@ export class Event {
 
   iid: number = 0;
   type: EventType;
-  arguments: Map<Number, Argument> = new Map<Number, Argument>();
+  arguments: Map<number, Argument> = new Map<number, Argument>();
 
   constructor(iid: number,
               type: EventType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               list: Argument[]) {
     this.iid = iid;
     this.type = type;

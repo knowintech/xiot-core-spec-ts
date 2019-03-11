@@ -15,7 +15,7 @@ export class PropertyDefinition {
   constraintValue: ConstraintValue | null = null;
   unit: Unit = Unit.NONE;
 
-  constructor(type: PropertyType, description: Map<String, String>) {
+  constructor(type: PropertyType, description: Map<string, string>) {
     this.type = type;
 
     if (description != null) {

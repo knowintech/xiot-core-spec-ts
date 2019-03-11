@@ -7,7 +7,7 @@ export class EventDefinition {
   arguments: ArgumentDefinition[] = [];
 
   constructor(type: EventType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               a: ArgumentDefinition[]) {
     this.type = type;
 

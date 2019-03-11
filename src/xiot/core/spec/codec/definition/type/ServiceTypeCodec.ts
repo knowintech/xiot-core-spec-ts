@@ -11,6 +11,7 @@ export class ServiceTypeCodec {
                 if (typeof v === 'string') {
                     list.push(new ServiceType(v));
                 } else if (typeof v === 'object') {
+                    console.log('ServiceType: ', v);
                     let type = new ServiceType(v['type']);
                     type.description = DescriptionCodec.decode(v['description']);
                     list.push(type);

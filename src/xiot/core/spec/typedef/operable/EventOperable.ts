@@ -9,12 +9,12 @@ export class EventOperable extends Event {
   
   constructor(iid: number,
               type: EventType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               list: Argument[]) {
       super(iid, type, description, list);
   }
 
-  tryInvoke(o: ActionOperation, properties: Map<Number, Property>) {
+  tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);
 
     for (let spec of this.getArguments()) {    

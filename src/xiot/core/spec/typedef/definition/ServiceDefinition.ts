@@ -14,7 +14,7 @@ export class ServiceDefinition {
   optionalEvents: EventType[] = [];
 
   constructor(type: ServiceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               requiredProperties: PropertyType[],
               optionalProperties: PropertyType[],
               requiredActions: ActionType[],

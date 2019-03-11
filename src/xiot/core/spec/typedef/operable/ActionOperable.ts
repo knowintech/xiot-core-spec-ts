@@ -9,13 +9,13 @@ export class ActionOperable extends Action {
 
   constructor(iid: number,
               type: ActionType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               argumentsIn: Argument[],
               argumentsOut: Argument[]) {
       super(iid, type, description, argumentsIn, argumentsOut);
   }
 
-  tryInvoke(o: ActionOperation, properties: Map<Number, Property>) {
+  tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);
 
     for (let spec of this.getArgumentsIn()) {    

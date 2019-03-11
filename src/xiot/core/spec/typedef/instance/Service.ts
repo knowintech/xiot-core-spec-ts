@@ -7,13 +7,13 @@ export class Service {
   
   iid: number = 0;
   type: ServiceType;
-  properties: Map<Number, Property> = new Map<Number, Property>();
-  actions: Map<Number, Action> = new Map<Number, Action>();
-  events: Map<Number, Event> = new Map<Number, Event>();
+  properties: Map<number, Property> = new Map<number, Property>();
+  actions: Map<number, Action> = new Map<number, Action>();
+  events: Map<number, Event> = new Map<number, Event>();
 
   constructor(iid: number,
               type: ServiceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               properties: Property[],
               actions: Action[],
               events: Event[]) {

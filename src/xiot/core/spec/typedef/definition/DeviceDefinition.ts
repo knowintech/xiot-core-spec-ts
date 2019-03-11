@@ -8,7 +8,7 @@ export class DeviceDefinition {
   optionalServices: ServiceType[] = [];
 
   constructor(type: DeviceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               required: ServiceType[],
               optional: ServiceType[]) {
     this.type = type;

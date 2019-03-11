@@ -8,7 +8,7 @@ export class ActionDefinition {
     out: ArgumentDefinition[] = [];
 
     constructor(type: ActionType,
-                description: Map<String, String>,
+                description: Map<string, string>,
                 argumentsIn: ArgumentDefinition[],
                 argumentsOut: ArgumentDefinition[]) {
         this.type = type;

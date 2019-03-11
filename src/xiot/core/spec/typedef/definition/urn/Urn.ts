@@ -18,7 +18,7 @@ export class Urn extends Extendable {
     public version: number = 0;
 
     public style: UrnStyle = UrnStyle.SPEC;
-    public description: Map<String, String> = new Map<String, String>();
+    public description: Map<string, string> = new Map<string, string>();
     public valid: boolean = false;
 
     constructor(string: string) {

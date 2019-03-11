@@ -5,12 +5,12 @@ export class Action {
 
   iid: number = 0;
   type: ActionType;
-  in: Map<Number, Argument> = new Map<Number, Argument>();
-  out: Map<Number, Argument> = new Map<Number, Argument>();
+  in: Map<number, Argument> = new Map<number, Argument>();
+  out: Map<number, Argument> = new Map<number, Argument>();
 
   constructor(iid: number,
               type: ActionType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               argumentsIn: Argument[],
               argumentsOut: Argument[]) {
     this.iid = iid;

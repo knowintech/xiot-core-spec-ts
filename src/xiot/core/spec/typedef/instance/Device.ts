@@ -4,10 +4,10 @@ import {Service} from './Service';
 export class Device {
 
   type: DeviceType;
-  services: Map<Number, Service> = new Map<Number, Service>();
+  services: Map<number, Service> = new Map<number, Service>();
 
   constructor(type: DeviceType,
-              description: Map<String, String>,
+              description: Map<string, string>,
               services: Service[]) {
     this.type = type;
     this.type.description = description;
