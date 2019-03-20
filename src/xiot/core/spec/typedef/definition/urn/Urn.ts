@@ -112,14 +112,7 @@ export class Urn extends Extendable {
     }
 
     shortUUID(): string {
-        const uuid = this.value.toString(16).toUpperCase();
-        const length = 8 - uuid.length;
-        let prefix = '';
-        for (let i = 0; i < length; ++i) {
-          prefix += '0';
-        }
-    
-        return prefix + uuid;
+        return Urn.getShortUUID(this.value);
     }
 
     toString(): string {
@@ -147,5 +140,16 @@ export class Urn extends Extendable {
         }
 
         return s;
+    }
+
+    static getShortUUID(value: number): string {
+        const uuid = value.toString(16).toUpperCase();
+        const length = 8 - uuid.length;
+        let prefix = '';
+        for (let i = 0; i < length; ++i) {
+          prefix += '0';
+        }
+
+        return prefix + uuid;
     }
 }
