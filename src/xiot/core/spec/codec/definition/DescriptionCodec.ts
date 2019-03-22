@@ -20,7 +20,7 @@ export class DescriptionCodec {
         }
 
         if (description.size == 1) {
-            return description.get(Spec.EN_US);
+            return Array.from(description.values())[0];
         }
 
         let o = Object.create(null);
