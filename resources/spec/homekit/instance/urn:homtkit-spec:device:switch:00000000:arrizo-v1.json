@@ -1,6 +1,6 @@
 {
     "type": "urn:homekit-spec:device:lightbulb:00010001:arrizo-v1",
-    "descirption": "Lightbulb",
+    "description": "Lightbulb",
     "services": [
         {
             "iid": 1,

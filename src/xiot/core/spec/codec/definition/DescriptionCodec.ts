@@ -8,7 +8,9 @@ export class DescriptionCodec {
         if (typeof o === 'string') {
             description.set(Spec.EN_US, o);
         } else if (typeof o === 'object') {
-            Object.keys(o).forEach(x => description.set(x.replace('-', '_'), o[x]));
+            Object.keys(o).forEach(x => {
+                description.set(x.toString().replace('_', '-'), o[x]);
+            });
         }
 
         return description;
@@ -24,7 +26,7 @@ export class DescriptionCodec {
         }
 
         let o = Object.create(null);
-        description.forEach((value, key) => o[key.toString().replace('_', '-')] = value);
+        description.forEach((value, key) => o[key.toString().replace('-', '_')] = value);
         return o;
     }
 }
