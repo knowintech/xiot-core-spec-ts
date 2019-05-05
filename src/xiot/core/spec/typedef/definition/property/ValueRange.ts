@@ -2,6 +2,7 @@ import {ConstraintValue} from './ConstraintValue';
 import {DataFormat} from './data/DataFormat';
 import {DataValue} from './data/DataValue';
 import {DataValueFactory} from './data/DataValueFactory';
+import {DataFormatToString} from './data/DataFormat';
 
 export class ValueRange implements ConstraintValue {
     public format: DataFormat | null = null;
@@ -37,7 +38,7 @@ export class ValueRange implements ConstraintValue {
         }
 
         if (!this.minValue.lessEquals(this.maxValue)) {
-            throw new Error('invalid value range: ' + min + ' <= ' + max);
+            throw new Error('invalid value range: ' + min + ' <= ' + max + ' format: ' + DataFormatToString(format));
         }
     }
 

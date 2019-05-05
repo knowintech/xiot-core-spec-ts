@@ -12,7 +12,7 @@ export class Vstring implements DataValue<string> {
         return v;
       }
 
-      throw new Error('invalid value: ' + value);
+      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
     }
 
     lessEquals(maxValue: DataValue<string>): boolean {

@@ -11,7 +11,7 @@ export class Vfloat implements DataValue<number> {
         return v;
       }
 
-      throw new Error('invalid value: ' + value);
+      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
     }
 
     static fromString(value: string): Vfloat {
@@ -37,7 +37,7 @@ export class Vfloat implements DataValue<number> {
         return false;
       }
 
-      return false;
+      return true;
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {

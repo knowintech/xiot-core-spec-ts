@@ -12,7 +12,7 @@ export class Vuint8 implements DataValue<number> {
         return v;
       }
 
-      throw new Error('invalid value: ' + value);
+      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
     }
 
     static fromString(value: string): Vuint8 {
@@ -26,7 +26,7 @@ export class Vuint8 implements DataValue<number> {
         return false;
       }
 
-      return this.value < (<Vuint8> max).value;
+      return this.value <= (<Vuint8> max).value;
     }
 
     validate(min: DataValue<number>, max: DataValue<number>): boolean {
@@ -38,7 +38,7 @@ export class Vuint8 implements DataValue<number> {
         return false;
       }
 
-      return false;
+      return true;
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {

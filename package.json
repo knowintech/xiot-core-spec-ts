@@ -1,6 +1,6 @@
 {
   "name": "xiot-core-spec-ts",
-  "version": "0.8.8",
+  "version": "0.8.13",
   "description": "XIOT Specification Codec",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

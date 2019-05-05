@@ -13,7 +13,7 @@ export class Vint64 implements DataValue<number> {
         return v;
       }
 
-      throw new Error('invalid value: ' + value);
+      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
     }
 
     static fromString(value: string): Vint64 {
@@ -27,7 +27,7 @@ export class Vint64 implements DataValue<number> {
         return false;
       }
 
-      return this.value < (<Vint64> max).value;
+      return this.value <= (<Vint64> max).value;
     }
 
     validate(min: DataValue<number>, max: DataValue<number>): boolean {
@@ -39,7 +39,7 @@ export class Vint64 implements DataValue<number> {
         return false;
       }
 
-      return false;
+      return true;
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
