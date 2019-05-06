@@ -20,7 +20,7 @@ export class ArgumentDefinitionCodec {
     }
 
     static decode(o: any): ArgumentDefinition | null {
-        let type = new PropertyType(o[Spec.PROPERTY]);
+        let type: PropertyType = (typeof o === 'string') ? new PropertyType(o) : new PropertyType(o[Spec.PROPERTY]);
         const def = new ArgumentDefinition(type);
 
         let repeat = o[Spec.REPEAT];
