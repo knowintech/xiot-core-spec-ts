@@ -1,8 +1,8 @@
 export class Argument {
-    
+
     piid: number;
-    minRepeat: number = 1;
-    maxRepeat: number = 1;
+    minRepeat = 1;
+    maxRepeat = 1;
     values: any[] = [];
 
     constructor(piid: number) {

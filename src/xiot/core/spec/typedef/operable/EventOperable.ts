@@ -6,7 +6,7 @@ import {EventType} from '../definition/urn/EventType';
 import {Argument} from '../instance/Argument';
 
 export class EventOperable extends Event {
-  
+
   constructor(iid: number,
               type: EventType,
               description: Map<string, string>,
@@ -17,8 +17,8 @@ export class EventOperable extends Event {
   tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);
 
-    for (let spec of this.getArguments()) {    
-        let v = o.in.get(spec.piid);
+    for (const spec of this.getArguments()) {
+        const v = o.in.get(spec.piid);
         if (v == null) {
           o.status = (<number>OperationStatus.EVENT_ARGUMENTS_ERROR);
           break;
@@ -29,7 +29,7 @@ export class EventOperable extends Event {
             break;
         }
 
-        let property = properties.get(spec.piid);
+        const property = properties.get(spec.piid);
         if (property == null) {
           o.status = (<number>OperationStatus.EVENT_ARGUMENTS_ERROR);
           break;

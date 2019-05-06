@@ -4,8 +4,8 @@ import {Argument} from '../instance/Argument';
 
 export class ActionOperation extends AbstractOperation {
   public aid: AID | null = null;
-  public in: Map<Number, Argument> = new Map<Number, Argument>();
-  public out: Map<Number, Argument> = new Map<Number, Argument>();
+  public in: Map<number, Argument> = new Map<number, Argument>();
+  public out: Map<number, Argument> = new Map<number, Argument>();
 
   getArgumentsIn(): Argument[] {
     return Array.from(this.in.values());

@@ -1,6 +1,6 @@
 
 export class AbstractOperation {
-  public status: number = 0;
-  public description: string = '';
-  public oid: string = '';
+  public status = 0;
+  public description = '';
+  public oid = '';
 }

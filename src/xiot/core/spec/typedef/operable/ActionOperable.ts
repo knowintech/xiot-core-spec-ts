@@ -18,8 +18,8 @@ export class ActionOperable extends Action {
   tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
     o.status = (<number>OperationStatus.COMPLETED);
 
-    for (let spec of this.getArgumentsIn()) {    
-        let v = o.in.get(spec.piid);
+    for (const spec of this.getArgumentsIn()) {
+        const v = o.in.get(spec.piid);
         if (v == null) {
           o.status = (<number>OperationStatus.ACTION_IN_ERROR);
           break;
@@ -30,7 +30,7 @@ export class ActionOperable extends Action {
             break;
         }
 
-        let property = properties.get(spec.piid);
+        const property = properties.get(spec.piid);
         if (property == null) {
           o.status = (<number>OperationStatus.ACTION_IN_VALUE_INVALID);
           break;

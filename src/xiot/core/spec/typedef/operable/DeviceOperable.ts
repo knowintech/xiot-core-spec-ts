@@ -53,7 +53,7 @@ export class DeviceOperable extends Device {
       if (o.pid == null) {
         continue;
       }
-      
+
       if (this.summary.did === o.pid.did) {
         const s = this.services.get(o.pid.siid);
         if (s != null) {
