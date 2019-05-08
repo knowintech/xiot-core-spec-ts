@@ -22,21 +22,28 @@ export class PropertyDefinition {
       this.type.description = description;
     }
   }
-  
+
   validate(value: DataValue<any>): boolean {
     if (value == null) {
+      console.log('validate failed, value is null');
       return false;
     }
 
-    if (this.format === value.getFormat()) {
+    if (this.format !== value.getFormat()) {
+      console.log('validate failed, format not matched: ' + this.format.toString() + ' != ' + value.getFormat().toString());
       return false;
     }
 
-    if (this.constraintValue != null) {
-      return this.constraintValue.validate(value);
+    if (this.constraintValue == null) {
+      return true;
     }
 
-    return true;
+    if (this.constraintValue.validate(value)) {
+      return true;
+    }
+
+    console.log('validate failed: ', this.constraintValue.toString() + ' invalid value: ' + value.getObjectValue());
+    return false;
   }
 
   getFormatString(): string {
@@ -105,7 +112,15 @@ export class PropertyDefinition {
   }
 
   formatString(): boolean {
-    return this.format === DataFormat.STRING;
+    switch (this.format) {
+      case DataFormat.STRING:
+      case DataFormat.TLV8:
+      case DataFormat.HEX:
+        return true;
+
+      default:
+        return false;
+    }
   }
 
   hasConstraintValue(): boolean {

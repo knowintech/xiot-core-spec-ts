@@ -3,7 +3,7 @@ import {DataFormat} from '../DataFormat';
 
 export class Vuint8 implements DataValue<number> {
 
-    private value: number = 0;
+    private value = 0;
 
     static create(value: Object): Vuint8 {
       if (typeof(value) === 'number') {

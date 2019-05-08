@@ -10,6 +10,8 @@ export enum DataFormat {
   INT64 = 'int64',
   FLOAT = 'float',
   STRING = 'string',
+  HEX = 'hex',
+  TLV8 = 'tlv8'
 }
 
 export function DataFormatToString(format: DataFormat): string {
@@ -39,6 +41,7 @@ export function getValueRangeEnabled(format: DataFormat): boolean {
     case DataFormat.INT32:
     case DataFormat.INT64:
     case DataFormat.FLOAT:
+    case DataFormat.HEX:
       return true;
 
     default:
@@ -55,6 +58,7 @@ export function getValueListEnabled(format: DataFormat): boolean {
     case DataFormat.INT16:
     case DataFormat.INT32:
     case DataFormat.INT64:
+    case DataFormat.HEX:
       return true;
 
     default:

@@ -4,22 +4,33 @@ import {UrnStyle} from './UrnStyle';
 
 export class Urn extends Extendable {
 
-    public ns: string = '';
+    public ns = '';
     public type: UrnType = UrnType.UNDEFINED;
-    public name: string = '';
-    public value: number = 0;
+    public name = '';
+    public value = 0;
 
-    public v1modified: string = '';
-    public v2modified: string = '';
-    public v2template: string = '';
+    public v1modified = '';
+    public v2modified = '';
+    public v2template = '';
 
-    public groupId: string = '';
-    public model: string = '';
-    public version: number = 0;
+    public groupId = '';
+    public model = '';
+    public version = 0;
 
     public style: UrnStyle = UrnStyle.SPEC;
     public description: Map<string, string> = new Map<string, string>();
-    public valid: boolean = false;
+    public valid = false;
+
+    static getShortUUID(value: number): string {
+        const uuid = value.toString(16).toUpperCase();
+        const length = 8 - uuid.length;
+        let prefix = '';
+        for (let i = 0; i < length; ++i) {
+            prefix += '0';
+        }
+
+        return prefix + uuid;
+    }
 
     constructor(string: string) {
         super();
@@ -27,7 +38,7 @@ export class Urn extends Extendable {
     }
 
     parseString(string: string): boolean {
-        let ret: boolean = true;
+        let ret = true;
 
         do {
             const a = string.split(':');
@@ -120,36 +131,25 @@ export class Urn extends Extendable {
 
         switch (this.style) {
             case UrnStyle.SPEC:
-                break; 
+                break;
 
             case UrnStyle.V1:
                 s = s + ':' + this.v1modified;
-                break; 
+                break;
 
             case UrnStyle.V2:
                 s = s + ':' + this.v2modified + ':' + this.version;
-                break; 
+                break;
 
             case UrnStyle.V2_TEMPLATE:
                 s = s + ':' + this.v2modified + ':' + this.version + ':' + this.v2template;
-                break; 
+                break;
 
             case UrnStyle.XIOT:
                 s = s + ':' + this.groupId + ':' + this.model + ':' + this.version;
-                break; 
+                break;
         }
 
         return s;
-    }
-
-    static getShortUUID(value: number): string {
-        const uuid = value.toString(16).toUpperCase();
-        const length = 8 - uuid.length;
-        let prefix = '';
-        for (let i = 0; i < length; ++i) {
-          prefix += '0';
-        }
-
-        return prefix + uuid;
     }
 }

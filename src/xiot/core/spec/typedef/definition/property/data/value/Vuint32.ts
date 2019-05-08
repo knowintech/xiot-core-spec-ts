@@ -1,10 +1,9 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
-import {Vuint16} from './Vuint16';
 
 export class Vuint32 implements DataValue<number> {
 
-    private value: number = 0;
+    private value = 0;
 
     static create(value: Object): Vuint32 {
       if (typeof(value) === 'number') {

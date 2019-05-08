@@ -9,7 +9,7 @@ export class ValueRange implements ConstraintValue {
     public minValue: DataValue<number> | null = null;
     public maxValue: DataValue<number> | null = null;
     public stepValue: DataValue<number> | null = null;
-    public hasStep: boolean = false;
+    public hasStep = false;
 
     constructor(format: DataFormat, list: any[]) {
         if (list.length === 2) {
@@ -67,15 +67,21 @@ export class ValueRange implements ConstraintValue {
     }
 
     validate(value: DataValue<number>): boolean {
-        if (this.minValue == null || this.maxValue == null) {
+        if (this.minValue == null) {
+            console.log('validate failed, minValue is null');
             return false;
         }
 
-        if (this.stepValue != null) {
-            return value.validateStep(this.minValue, this.maxValue, this.stepValue);
+        if (this.maxValue == null) {
+            console.log('validate failed, maxValue is null');
+            return false;
         }
 
-        return value.validate(this.minValue, this.maxValue);
+        if (this.stepValue == null) {
+            return value.validate(this.minValue, this.maxValue);
+        }
+
+        return value.validateStep(this.minValue, this.maxValue, this.stepValue);
     }
 
     toJsonArray(): any[] {
@@ -92,11 +98,11 @@ export class ValueRange implements ConstraintValue {
 
     toString(): string {
         const array = [];
-    
+
         if (this.minValue != null) {
             array.push(this.minValue.getObjectValue());
         }
-        
+
         if (this.maxValue != null) {
             array.push(this.maxValue.getObjectValue());
         }
@@ -104,7 +110,7 @@ export class ValueRange implements ConstraintValue {
         if (this.stepValue != null) {
           array.push(this.stepValue.getObjectValue());
         }
-    
+
         return JSON.stringify(array);
       }
 }

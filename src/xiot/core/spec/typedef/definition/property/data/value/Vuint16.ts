@@ -1,10 +1,9 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
-import {Vuint8} from './Vuint8';
 
 export class Vuint16 implements DataValue<number> {
 
-    private value: number = 0;
+    private value = 0;
 
     static create(value: Object): Vuint16 {
       if (typeof(value) === 'number') {
@@ -31,11 +30,18 @@ export class Vuint16 implements DataValue<number> {
     }
 
     validate(min: DataValue<number>, max: DataValue<number>): boolean {
-      if (!(min instanceof Vuint16) || !(max instanceof Vuint16)) {
+      // if (!(min instanceof Vuint16) || !(max instanceof Vuint16)) {
+      //   console.log('validate failed, minValue is null');
+      //   return false;
+      // }
+
+      if (this.value < (<Vuint16> min).value) {
+        console.log('validate failed, ' + this.value + ' < minValue(' + (<Vuint16> min).value + ')');
         return false;
       }
 
-      if (this.value < (<Vuint16> min).value || this.value > (<Vuint16> max).value) {
+      if (this.value > (<Vuint16> max).value) {
+        console.log('validate failed, ' + this.value + ' > maxValue(' + (<Vuint16> max).value + ')');
         return false;
       }
 
@@ -43,9 +49,9 @@ export class Vuint16 implements DataValue<number> {
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
-      if (!(min instanceof Vuint16) || !(max instanceof Vuint16) || !(step instanceof Vuint16)) {
-        return false;
-      }
+      // if (!(min instanceof Vuint16) || !(max instanceof Vuint16) || !(step instanceof Vuint16)) {
+      //   return false;
+      // }
 
       const minValue = (<Vuint16> min).value;
       const maxValue = (<Vuint16> max).value;

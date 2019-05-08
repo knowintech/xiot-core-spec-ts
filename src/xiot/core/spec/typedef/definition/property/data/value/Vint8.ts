@@ -1,10 +1,9 @@
 import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
-import {Vuint32} from './Vuint32';
 
 export class Vint8 implements DataValue<number> {
 
-    private value: number = 0;
+    private value = 0;
 
     static create(value: Object): Vint8 {
       if (typeof(value) === 'number') {

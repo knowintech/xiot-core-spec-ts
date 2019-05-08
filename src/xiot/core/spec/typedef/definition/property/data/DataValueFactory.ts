@@ -10,6 +10,8 @@ import {Vint8} from './value/Vint8';
 import {Vint16} from './value/Vint16';
 import {Vint32} from './value/Vint32';
 import {Vint64} from './value/Vint64';
+import {Vhex} from './value/Vhex';
+import {Vtlv8} from './value/Vtlv8';
 
 export class DataValueFactory {
 
@@ -44,9 +46,16 @@ export class DataValueFactory {
 
       case DataFormat.INT64:
         return new Vint64();
-    }
 
-    throw new Error('format invalid: ' + format);
+      case DataFormat.HEX:
+        return new Vhex();
+
+      case DataFormat.TLV8:
+        return new Vtlv8();
+
+      default:
+        throw new Error('format invalid: ' + format);
+    }
   }
 
   static create(format: DataFormat, value: Object): DataValue<any> {
@@ -80,9 +89,16 @@ export class DataValueFactory {
 
       case DataFormat.INT64:
         return Vint64.create(value);
-    }
 
-    throw new Error('format invalid: ' + format);
+      case DataFormat.HEX:
+        return Vhex.create(value);
+
+      case DataFormat.TLV8:
+        return Vtlv8.create(value);
+
+      default:
+        throw new Error('format invalid: ' + format);
+    }
   }
 
   static createFromString(format: DataFormat, value: string): DataValue<any> {
@@ -116,8 +132,15 @@ export class DataValueFactory {
 
       case DataFormat.INT64:
         return Vint64.fromString(value);
-    }
 
-    throw new Error('format invalid: ' + format);
+      case DataFormat.HEX:
+        return Vhex.fromString(value);
+
+      case DataFormat.TLV8:
+        return Vtlv8.fromString(value);
+
+      default:
+        throw new Error('format invalid: ' + format);
+    }
   }
 }

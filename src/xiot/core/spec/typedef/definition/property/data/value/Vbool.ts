@@ -3,7 +3,7 @@ import {DataFormat} from '../DataFormat';
 
 export class Vbool implements DataValue<Boolean> {
 
-  private value: boolean = false;
+  private value = false;
 
   static create(value: Object): Vbool {
     if (typeof(value) === 'boolean') {

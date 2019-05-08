@@ -2,7 +2,7 @@ import {EventType} from './urn/EventType';
 import {ArgumentDefinition} from './ArgumentDefinition';
 
 export class EventDefinition {
-  
+
   type: EventType;
   arguments: ArgumentDefinition[] = [];
 

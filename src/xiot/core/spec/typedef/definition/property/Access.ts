@@ -1,7 +1,7 @@
 export class Access {
-  public isReadable: boolean = false;
-  public isWritable: boolean = false;
-  public isNotifiable: boolean = false;
+  public isReadable = false;
+  public isWritable = false;
+  public isNotifiable = false;
 
   static create(access: Array<String>): Access {
     const thiz = new Access();

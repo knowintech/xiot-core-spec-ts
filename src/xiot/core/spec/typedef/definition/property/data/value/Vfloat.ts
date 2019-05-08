@@ -2,7 +2,7 @@ import {DataValue} from '../DataValue';
 import {DataFormat} from '../DataFormat';
 
 export class Vfloat implements DataValue<number> {
-    private value: number = 0;
+    private value = 0;
 
     static create(value: Object): Vfloat {
       if (typeof(value) === 'number') {
