@@ -14,12 +14,12 @@ export class ServiceCodec {
 
         if (array != null) {
             for (const o of array) {
-                let iid = o[Spec.IID];
-                let type = new ServiceType(o[Spec.TYPE]);
-                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                let properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
-                let actions = ActionCodec.decode(o[Spec.ACTIONS]);
-                let events = EventCodec.decode(o[Spec.EVENTS]);
+                const iid = o[Spec.IID];
+                const type = new ServiceType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
+                const actions = ActionCodec.decode(o[Spec.ACTIONS]);
+                const events = EventCodec.decode(o[Spec.EVENTS]);
 
                 if (o[Spec.X_OPTIONAL] != null) {
                     type._optional = o[Spec.X_OPTIONAL];
@@ -49,12 +49,12 @@ export class ServiceCodec {
 
         if (array != null) {
             for (const o of array) {
-                let iid = o[Spec.IID];
-                let type = new ServiceType(o[Spec.TYPE]);
-                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                let properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
-                let actions = ActionCodec.decode(o[Spec.ACTIONS]);
-                let events = EventCodec.decode(o[Spec.EVENTS]);
+                const iid = o[Spec.IID];
+                const type = new ServiceType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const properties = PropertyCodec.decodeOperable(o[Spec.PROPERTIES]);
+                const actions = ActionCodec.decodeOperable(o[Spec.ACTIONS]);
+                const events = EventCodec.decodeOperable(o[Spec.EVENTS]);
 
                 if (o[Spec.X_OPTIONAL] != null) {
                     type._optional = o[Spec.X_OPTIONAL];

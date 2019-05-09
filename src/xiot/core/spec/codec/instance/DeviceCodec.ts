@@ -8,16 +8,16 @@ import {DescriptionCodec} from '../definition/DescriptionCodec';
 export class DeviceCodec {
 
     static decode(o: any): Device {
-        let type = new DeviceType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let services = ServiceCodec.decode(o[Spec.SERVICES]);
+        const type = new DeviceType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const services = ServiceCodec.decode(o[Spec.SERVICES]);
         return new Device(type, description, services);
     }
 
     static decodeOperable(o: any): DeviceOperable {
-        let type = new DeviceType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let services = ServiceCodec.decodeOperable(o[Spec.SERVICES]);
+        const type = new DeviceType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const services = ServiceCodec.decodeOperable(o[Spec.SERVICES]);
         return new DeviceOperable(type, description, services);
     }
 

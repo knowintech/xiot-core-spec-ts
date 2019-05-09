@@ -6,13 +6,14 @@ export class Vhex implements DataValue<string> {
     private value = '00';
 
     static create(value: Object): Vhex {
-      if (typeof(value) === 'string') {
-        const v = new Vhex();
-        v.value = <string>value;
-        return v;
-      }
+        const type = typeof value;
+        if (type === 'string') {
+            const v = new Vhex();
+            v.value = <string>value;
+            return v;
+        }
 
-      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
+        throw new Error('invalid value: ' + value + ' typeof(value): ' + type);
     }
 
     static fromString(value: string): Vhex {
@@ -21,64 +22,70 @@ export class Vhex implements DataValue<string> {
         return v;
     }
 
-    lessEquals(max: DataValue<string>): boolean {
-      if (!(max instanceof Vhex)) {
-        return false;
-      }
+    equals(other: DataValue<string>): boolean {
+        const thisValue = Number.parseInt(this.value, 16);
+        const otherValue = Number.parseInt(other.getObjectValue(), 16);
+        return (thisValue === otherValue);
+    }
 
-      const thisValue = Number.parseInt(this.value, 16);
-      const maxValue = Number.parseInt(max.value, 16);
-      return thisValue <= maxValue;
+    lessEquals(max: DataValue<string>): boolean {
+        if (!(max instanceof Vhex)) {
+            return false;
+        }
+
+        const thisValue = Number.parseInt(this.value, 16);
+        const maxValue = Number.parseInt(max.value, 16);
+        return thisValue <= maxValue;
     }
 
     validate(min: DataValue<string>, max: DataValue<string>): boolean {
-      if (!(min instanceof Vhex) || !(max instanceof Vhex)) {
-        console.log('validate failed, min & max not instanceof Vhex');
-        return false;
-      }
+        if (!(min instanceof Vhex) || !(max instanceof Vhex)) {
+            console.log('validate failed, min & max not instanceof Vhex');
+            return false;
+        }
 
-      const thisValue = Number.parseInt(this.value, 16);
-      const minValue = Number.parseInt(min.value, 16);
-      const maxValue = Number.parseInt(max.value, 16);
+        const thisValue = Number.parseInt(this.value, 16);
+        const minValue = Number.parseInt(min.value, 16);
+        const maxValue = Number.parseInt(max.value, 16);
 
-      if (thisValue < minValue) {
-        console.log('this.Value(' + this.value + ') < minValue(' + min.value + ')');
-        return false;
-      }
+        if (thisValue < minValue) {
+            console.log('this.Value(' + this.value + ') < minValue(' + min.value + ')');
+            return false;
+        }
 
-      if (thisValue > maxValue) {
-        console.log('this.Value(' + this.value + ') > maxValue(' + max.value + ')');
-        return false;
-      }
+        if (thisValue > maxValue) {
+            console.log('this.Value(' + this.value + ') > maxValue(' + max.value + ')');
+            return false;
+        }
 
-      return true;
+        return true;
     }
 
     validateStep(min: DataValue<string>, max: DataValue<string>, step: DataValue<string> | null): boolean {
-      if (!(min instanceof Vhex) || !(max instanceof Vhex) || !(step instanceof Vhex)) {
-          console.log('validate failed, min & max & step not instanceof Vhex');
-          return false;
-      }
-
-      const thisValue = Number.parseInt(this.value, 16);
-      const minValue = Number.parseInt(min.value, 16);
-      const maxValue = Number.parseInt(max.value, 16);
-      const stepValue = Number.parseInt(step.value, 16);
-
-      for (let v = minValue; v < maxValue; v += stepValue) {
-        if (v === thisValue) {
-          return true;
+        if (!(min instanceof Vhex) || !(max instanceof Vhex) || !(step instanceof Vhex)) {
+            console.log('validate failed, min & max & step not instanceof Vhex');
+            return false;
         }
-      }
 
-      return false;
+        const thisValue = Number.parseInt(this.value, 16);
+        const minValue = Number.parseInt(min.value, 16);
+        const maxValue = Number.parseInt(max.value, 16);
+        const stepValue = Number.parseInt(step.value, 16);
+
+        for (let v = minValue; v < maxValue; v += stepValue) {
+            if (v === thisValue) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     getObjectValue(): string {
-      return this.value;
+        return this.value;
     }
 
     getFormat(): DataFormat {
-      return DataFormat.HEX;
+        return DataFormat.HEX;
     }
-  }
+}

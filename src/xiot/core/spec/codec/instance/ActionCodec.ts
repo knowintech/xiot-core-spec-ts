@@ -12,11 +12,11 @@ export class ActionCodec {
 
         if (array != null) {
             for (const o of array) {
-                let iid = o[Spec.IID];
-                let type = new ActionType(o[Spec.TYPE]);
-                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                let argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
-                let argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
+                const iid = o[Spec.IID];
+                const type = new ActionType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
+                const argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
 
                 if (o[Spec.X_OPTIONAL] != null) {
                     type._optional = o[Spec.X_OPTIONAL];
@@ -34,11 +34,11 @@ export class ActionCodec {
 
         if (array != null) {
             for (const o of array) {
-                let iid = o[Spec.IID];
-                let type = new ActionType(o[Spec.TYPE]);
-                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                let argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
-                let argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
+                const iid = o[Spec.IID];
+                const type = new ActionType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
+                const argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
                 list.push(new ActionOperable(iid, type, description, argumentsIn, argumentsOut));
             }
         }
@@ -60,7 +60,7 @@ export class ActionCodec {
         if (action.in.size > 0) {
             o[Spec.IN] = ArgumentCodec.encodeArray(action.getArgumentsIn());
         }
-        
+
         if (action.out.size > 0) {
             o[Spec.OUT] = ArgumentCodec.encodeArray(action.getArgumentsOut());
         }

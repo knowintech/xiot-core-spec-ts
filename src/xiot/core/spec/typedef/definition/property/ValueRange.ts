@@ -6,9 +6,9 @@ import {DataFormatToString} from './data/DataFormat';
 
 export class ValueRange implements ConstraintValue {
     public format: DataFormat | null = null;
-    public minValue: DataValue<number> | null = null;
-    public maxValue: DataValue<number> | null = null;
-    public stepValue: DataValue<number> | null = null;
+    public minValue: DataValue<any> | null = null;
+    public maxValue: DataValue<any> | null = null;
+    public stepValue: DataValue<any> | null = null;
     public hasStep = false;
 
     constructor(format: DataFormat, list: any[]) {
@@ -66,7 +66,7 @@ export class ValueRange implements ConstraintValue {
         this.stepValue = DataValueFactory.create(this.format, value);
     }
 
-    validate(value: DataValue<number>): boolean {
+    validate(value: DataValue<any>): boolean {
         if (this.minValue == null) {
             console.log('validate failed, minValue is null');
             return false;

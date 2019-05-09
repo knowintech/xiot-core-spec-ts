@@ -6,13 +6,14 @@ export class Vint64 implements DataValue<number> {
     private value = 0;
 
     static create(value: Object): Vint64 {
-      if (typeof(value) === 'number') {
-        const v = new Vint64();
-        v.value = <number>value;
-        return v;
-      }
+        const type = typeof value;
+        if (type === 'number') {
+            const v = new Vint64();
+            v.value = <number>value;
+            return v;
+        }
 
-      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
+        throw new Error('invalid value: ' + value + ' typeof(value): ' + type);
     }
 
     static fromString(value: string): Vint64 {
@@ -21,49 +22,53 @@ export class Vint64 implements DataValue<number> {
         return v;
     }
 
-    lessEquals(max: DataValue<number>): boolean {
-      if (!(max instanceof Vint64)) {
-        return false;
-      }
+    equals(other: DataValue<number>): boolean {
+        return (this.value === other.getObjectValue());
+    }
 
-      return this.value <= (<Vint64> max).value;
+    lessEquals(max: DataValue<number>): boolean {
+        if (!(max instanceof Vint64)) {
+            return false;
+        }
+
+        return this.value <= (<Vint64>max).value;
     }
 
     validate(min: DataValue<number>, max: DataValue<number>): boolean {
-      if (!(min instanceof Vint64) || !(max instanceof Vint64)) {
-        return false;
-      }
+        if (!(min instanceof Vint64) || !(max instanceof Vint64)) {
+            return false;
+        }
 
-      if (this.value < (<Vint64> min).value || this.value > (<Vint64> max).value) {
-        return false;
-      }
+        if (this.value < (<Vint64>min).value || this.value > (<Vint64>max).value) {
+            return false;
+        }
 
-      return true;
+        return true;
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
-      if (!(min instanceof Vint64) || !(max instanceof Vint64) || !(step instanceof Vint64)) {
-        return false;
-      }
-
-      const minValue = (<Vint64> min).value;
-      const maxValue = (<Vint64> max).value;
-      const stepValue = (<Vint64> step).value;
-
-      for (let v = minValue; v < maxValue; v += stepValue) {
-        if (v === this.value) {
-          return true;
+        if (!(min instanceof Vint64) || !(max instanceof Vint64) || !(step instanceof Vint64)) {
+            return false;
         }
-      }
 
-      return false;
+        const minValue = (<Vint64>min).value;
+        const maxValue = (<Vint64>max).value;
+        const stepValue = (<Vint64>step).value;
+
+        for (let v = minValue; v < maxValue; v += stepValue) {
+            if (v === this.value) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     getObjectValue(): number {
-      return this.value;
+        return this.value;
     }
 
     getFormat(): DataFormat {
-      return DataFormat.INT64;
+        return DataFormat.INT64;
     }
-  }
+}

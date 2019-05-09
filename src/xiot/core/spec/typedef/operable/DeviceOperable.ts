@@ -1,5 +1,4 @@
 import {Device} from '../instance/Device';
-import {DeviceSummary} from '../summary/DeviceSummary';
 import {PropertyOperation} from '../operation/PropertyOperation';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
@@ -9,98 +8,90 @@ import {Service} from '../instance/Service';
 
 export class DeviceOperable extends Device {
 
-  public summary: DeviceSummary | null = null;
-
   constructor(type: DeviceType,
               description: Map<string, string>,
               services: Service[]) {
-      super(type, description, services);
+    super(type, description, services);
   }
 
   tryRead(list: Array<PropertyOperation>) {
-    if (this.summary == null) {
-      return;
-    }
-
     for (const o of list) {
-      if (o.pid == null) {
-        continue;
-      }
-
-      if (this.summary.did === o.pid.did) {
-        const s = this.services.get(o.pid.siid);
-        if (s != null) {
-          if (s instanceof ServiceOperable) {
-            s.tryRead(o);
-          } else {
-            o.status = (<number>OperationStatus.UNDEFINED);
-          }
-        } else {
-          o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
-        }
-      } else {
-        o.status = (<number>OperationStatus.DEVICE_ID_NOT_EXIST);
-      }
+      this.tryReadProperty(o);
     }
   }
 
   tryWrite(list: Array<PropertyOperation>, save: boolean) {
-    if (this.summary == null) {
-      return;
-    }
-
     for (const o of list) {
-      if (o.pid == null) {
-        continue;
-      }
-
-      if (this.summary.did === o.pid.did) {
-        const s = this.services.get(o.pid.siid);
-        if (s != null) {
-          if (s instanceof ServiceOperable) {
-            s.tryWrite(o, save);
-          } else {
-            o.status = (<number>OperationStatus.UNDEFINED);
-          }
-        } else {
-          o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
-        }
-      } else {
-        o.status = (<number>OperationStatus.DEVICE_ID_NOT_EXIST);
-      }
+      this.tryWriteProperty(o, save);
     }
   }
 
   tryInvoke(o: ActionOperation) {
-    if (this.summary == null) {
-      return;
-    }
-
-    if (o.aid == null) {
-      return;
-    }
-
-    if (this.summary.did === o.aid.did) {
-      const s = this.services.get(o.aid.siid);
-      if (s != null) {
-        if (s instanceof ServiceOperable) {
-          s.tryInvoke(o);
-        } else {
-          o.status = (<number>OperationStatus.UNDEFINED);
-        }
-      } else {
-        o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
+    do {
+      if (o.aid == null) {
+        break;
       }
-    } else {
-      o.status = (<number>OperationStatus.DEVICE_ID_NOT_EXIST);
-    }
+
+      const s = this.services.get(o.aid.siid);
+      if (s == null) {
+        o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
+        o.description = 'service not found';
+        break;
+      }
+
+      if (s instanceof ServiceOperable) {
+        s.tryInvoke(o);
+      } else {
+        console.error('typeof s: ', typeof(s));
+        o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'service not instanceof ServiceOperable';
+      }
+    } while (false);
   }
 
-  // onGetProperties(list: Array<PropertyOperation>) {
-  //
-  // }
-  //
-  // onPropertiesChanged(list: Array<PropertyOperation>) {
-  //
-  // }
+  private tryReadProperty(o: PropertyOperation): void {
+    do {
+      if (o.pid == null) {
+        break;
+      }
+
+      const s = this.services.get(o.pid.siid);
+      if (s == null) {
+        o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
+        o.description = 'service not found';
+        break;
+      }
+
+      if (s instanceof ServiceOperable) {
+        s.tryRead(o);
+      } else {
+        console.error('typeof s: ', typeof(s));
+        o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'service not instanceof ServiceOperable';
+      }
+    } while (false);
+  }
+
+  private tryWriteProperty(o: PropertyOperation, save: boolean): void {
+    do {
+      if (o.pid == null) {
+        break;
+      }
+
+      const s = this.services.get(o.pid.siid);
+      if (s == null) {
+        o.status = (<number>OperationStatus.SERVICE_NOT_FOUND);
+        o.description = 'service not found';
+        break;
+      }
+
+      if (s instanceof ServiceOperable) {
+        s.tryWrite(o, save);
+      } else {
+        console.error('typeof s: ', typeof(s));
+        o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'service not instanceof ServiceOperable';
+      }
+    } while (false);
+  }
 }

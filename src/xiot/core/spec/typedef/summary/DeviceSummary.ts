@@ -1,9 +1,9 @@
 import {DeviceType} from '../definition/urn/DeviceType';
 
 export class DeviceSummary {
-  public did: string = '';
+  public did = '';
   public type: DeviceType | null = null;
-  public name: string = '';
-  public category: string = '';
+  public name = '';
+  public category = '';
 }
 

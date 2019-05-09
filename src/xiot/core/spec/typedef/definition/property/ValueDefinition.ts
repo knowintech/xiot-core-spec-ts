@@ -4,7 +4,7 @@ import {DataValueFactory} from './data/DataValueFactory';
 
 export class ValueDefinition {
 
-  public value: DataValue<number>;
+  public value: DataValue<any>;
   public description: string;
 
   constructor(format: DataFormat, value: Object, description: string) {

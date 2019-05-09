@@ -5,19 +5,24 @@ export class Vfloat implements DataValue<number> {
     private value = 0;
 
     static create(value: Object): Vfloat {
-      if (typeof(value) === 'number') {
-        const v = new Vfloat();
-        v.value = <number>value;
-        return v;
-      }
+        const type = typeof value;
+        if (type === 'number') {
+            const v = new Vfloat();
+            v.value = <number>value;
+            return v;
+        }
 
-      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
+        throw new Error('invalid value: ' + value + ' typeof(value): ' + type);
     }
 
     static fromString(value: string): Vfloat {
       const v = new Vfloat();
       v.value = Number.parseFloat(value);
       return v;
+    }
+
+    equals(other: DataValue<number>): boolean {
+        return (this.value === other.getObjectValue());
     }
 
     lessEquals(max: DataValue<number>): boolean {

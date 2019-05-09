@@ -3,6 +3,7 @@ import {Spec} from '../../typedef/constant/Spec';
 import {EventType} from '../../typedef/definition/urn/EventType';
 import {ArgumentCodec} from './ArgumentCodec';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {EventOperable} from '../../../../..';
 
 export class EventCodec {
 
@@ -11,16 +12,37 @@ export class EventCodec {
 
         if (array != null) {
             for (const o of array) {
-                let iid = o[Spec.IID];
-                let type = new EventType(o[Spec.TYPE]);
-                let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                let a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
+                const iid = o[Spec.IID];
+                const type = new EventType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
                 if (o[Spec.X_OPTIONAL] != null) {
                     type._optional = o[Spec.X_OPTIONAL];
                 }
 
                 list.push(new Event(iid, type, description, a));
+            }
+        }
+
+        return list;
+    }
+
+    static decodeOperable(array: any[]): EventOperable[] {
+        const list: EventOperable[] = [];
+
+        if (array != null) {
+            for (const o of array) {
+                const iid = o[Spec.IID];
+                const type = new EventType(o[Spec.TYPE]);
+                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                const a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
+
+                if (o[Spec.X_OPTIONAL] != null) {
+                    type._optional = o[Spec.X_OPTIONAL];
+                }
+
+                list.push(new EventOperable(iid, type, description, a));
             }
         }
 

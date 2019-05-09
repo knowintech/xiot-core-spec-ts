@@ -6,19 +6,24 @@ export class Vtlv8 implements DataValue<string> {
     private value = '';
 
     static create(value: Object): Vtlv8 {
-      if (typeof(value) === 'string') {
-        const v = new Vtlv8();
-        v.value = <string>value;
-        return v;
-      }
+        const type = typeof value;
+        if (type === 'string') {
+            const v = new Vtlv8();
+            v.value = <string>value;
+            return v;
+        }
 
-      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
+        throw new Error('invalid value: ' + value + ' typeof(value): ' + type);
     }
 
     static fromString(value: string): Vtlv8 {
         const v = new Vtlv8();
         v.value = value;
         return v;
+    }
+
+    equals(other: DataValue<string>): boolean {
+        return (this.value === other.getObjectValue());
     }
 
     lessEquals(maxValue: DataValue<string>): boolean {
@@ -38,6 +43,6 @@ export class Vtlv8 implements DataValue<string> {
     }
 
     getFormat(): DataFormat {
-      return DataFormat.TLV8;
+        return DataFormat.TLV8;
     }
-  }
+}

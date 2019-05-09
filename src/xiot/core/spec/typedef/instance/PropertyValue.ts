@@ -51,6 +51,7 @@ export class PropertyValue {
     switch (this.format) {
       case DataFormat.BOOL:
         this.currentBooleanValue = this.currentValue.getObjectValue();
+        this.currentStringValue = this.currentBooleanValue.toString();
         break;
 
       case DataFormat.FLOAT:
@@ -62,6 +63,7 @@ export class PropertyValue {
       case DataFormat.INT32:
       case DataFormat.INT64:
         this.currentNumberValue = this.currentValue.getObjectValue();
+        this.currentStringValue = this.currentNumberValue.toString();
         break;
 
       case DataFormat.STRING:

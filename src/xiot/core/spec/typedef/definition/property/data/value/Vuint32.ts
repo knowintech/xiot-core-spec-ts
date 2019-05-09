@@ -6,13 +6,14 @@ export class Vuint32 implements DataValue<number> {
     private value = 0;
 
     static create(value: Object): Vuint32 {
-      if (typeof(value) === 'number') {
-        const v = new Vuint32();
-        v.value = <number>value;
-        return v;
-      }
+        const type = typeof value;
+        if (type === 'number') {
+            const v = new Vuint32();
+            v.value = <number>value;
+            return v;
+        }
 
-      throw new Error('invalid value: ' + value + ' typeof(value): ' + typeof(value));
+        throw new Error('invalid value: ' + value + ' typeof(value): ' + type);
     }
 
     static fromString(value: string): Vuint32 {
@@ -21,49 +22,53 @@ export class Vuint32 implements DataValue<number> {
         return v;
     }
 
-    lessEquals(max: DataValue<number>): boolean {
-      if (!(max instanceof Vuint32)) {
-        return false;
-      }
+    equals(other: DataValue<number>): boolean {
+        return (this.value === other.getObjectValue());
+    }
 
-      return this.value <= (<Vuint32> max).value;
+    lessEquals(max: DataValue<number>): boolean {
+        if (!(max instanceof Vuint32)) {
+            return false;
+        }
+
+        return this.value <= (<Vuint32>max).value;
     }
 
     validate(min: DataValue<number>, max: DataValue<number>): boolean {
-      if (!(min instanceof Vuint32) || !(max instanceof Vuint32)) {
-        return false;
-      }
+        if (!(min instanceof Vuint32) || !(max instanceof Vuint32)) {
+            return false;
+        }
 
-      if (this.value < (<Vuint32> min).value || this.value > (<Vuint32> max).value) {
-        return false;
-      }
+        if (this.value < (<Vuint32>min).value || this.value > (<Vuint32>max).value) {
+            return false;
+        }
 
-      return true;
+        return true;
     }
 
     validateStep(min: DataValue<number>, max: DataValue<number>, step: DataValue<number> | null): boolean {
-      if (!(min instanceof Vuint32) || !(max instanceof Vuint32) || !(step instanceof Vuint32)) {
-        return false;
-      }
-
-      const minValue = (<Vuint32> min).value;
-      const maxValue = (<Vuint32> max).value;
-      const stepValue = (<Vuint32> step).value;
-
-      for (let v = minValue; v < maxValue; v += stepValue) {
-        if (v === this.value) {
-          return true;
+        if (!(min instanceof Vuint32) || !(max instanceof Vuint32) || !(step instanceof Vuint32)) {
+            return false;
         }
-      }
 
-      return false;
+        const minValue = (<Vuint32>min).value;
+        const maxValue = (<Vuint32>max).value;
+        const stepValue = (<Vuint32>step).value;
+
+        for (let v = minValue; v < maxValue; v += stepValue) {
+            if (v === this.value) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     getObjectValue(): number {
-      return this.value;
+        return this.value;
     }
 
     getFormat(): DataFormat {
-      return DataFormat.UINT32;
+        return DataFormat.UINT32;
     }
-  }
+}

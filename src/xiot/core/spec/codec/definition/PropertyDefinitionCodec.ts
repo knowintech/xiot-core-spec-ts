@@ -23,10 +23,10 @@ export class PropertyDefinitionCodec {
     }
 
     static decode(o: any): PropertyDefinition {
-        let type = new PropertyType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const type = new PropertyType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
 
-        let def: PropertyDefinition = new PropertyDefinition(type, description);
+        const def: PropertyDefinition = new PropertyDefinition(type, description);
 
         def.format = DataFormatFromString(o[Spec.FORMAT]);
         def.access = Access.create(o[Spec.ACCESS]);

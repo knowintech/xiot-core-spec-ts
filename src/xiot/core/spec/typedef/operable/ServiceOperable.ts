@@ -31,9 +31,11 @@ export class ServiceOperable extends Service {
          p.tryRead(o);
        } else {
          o.status = (<number>OperationStatus.UNDEFINED);
+         o.description = 'property not instanceof PropertyOperable';
        }
      } else {
        o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
+       o.description = 'property not found';
      }
   }
 
@@ -48,9 +50,11 @@ export class ServiceOperable extends Service {
         p.tryWrite(o, save);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'property not instanceof PropertyOperable';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
+      o.description = 'property not found';
     }
   }
 
@@ -65,9 +69,11 @@ export class ServiceOperable extends Service {
         a.tryInvoke(o, this.properties);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'action not instanceof ActionOperable';
       }
     } else {
       o.status = (<number>OperationStatus.ACTION_NOT_FOUND);
+      o.description = 'action not found';
     }
   }
 
@@ -82,9 +88,11 @@ export class ServiceOperable extends Service {
         p.update(o);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'property not instanceof PropertyOperable';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
+      o.description = 'property not found';
     }
   }
 
@@ -99,9 +107,11 @@ export class ServiceOperable extends Service {
         p.onPropertiesChanged(o);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
+        o.description = 'property not instanceof PropertyOperable';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
+      o.description = 'property not found';
     }
   }
 }
