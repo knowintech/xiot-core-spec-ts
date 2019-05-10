@@ -3,7 +3,7 @@ import {Argument} from './Argument';
 
 export class Action {
 
-  iid: number = 0;
+  iid = 0;
   type: ActionType;
   in: Map<number, Argument> = new Map<number, Argument>();
   out: Map<number, Argument> = new Map<number, Argument>();

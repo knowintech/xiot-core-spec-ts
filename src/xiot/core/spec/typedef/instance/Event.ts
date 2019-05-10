@@ -3,9 +3,12 @@ import {Argument} from './Argument';
 
 export class Event {
 
-  iid: number = 0;
+  iid = 0;
   type: EventType;
   arguments: Map<number, Argument> = new Map<number, Argument>();
+
+  status = 0;
+  description = '';
 
   constructor(iid: number,
               type: EventType,

@@ -4,8 +4,8 @@ import {Action} from './Action';
 import {Event} from './Event';
 
 export class Service {
-  
-  iid: number = 0;
+
+  iid = 0;
   type: ServiceType;
   properties: Map<number, Property> = new Map<number, Property>();
   actions: Map<number, Action> = new Map<number, Action>();

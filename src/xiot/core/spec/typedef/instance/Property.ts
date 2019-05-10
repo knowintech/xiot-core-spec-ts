@@ -7,7 +7,9 @@ export class Property extends PropertyDefinition {
 
   iid = 0;
   value: PropertyValue;
+
   status = 0;
+  description = '';
 
   constructor(iid: number, def: PropertyDefinition) {
     super(def.type, def.type.description);

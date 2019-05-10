@@ -46,7 +46,7 @@ export class PropertyOperationCodec {
               o.status = 0;
             }
 
-            if (o.status == 0) {
+            if (o.status === 0) {
               o.value = value[Spec.VALUE];
             } else {
               o.description = value[Spec.DESCRIPTION];
@@ -91,7 +91,7 @@ export class PropertyOperationCodec {
                 const o = new PropertyOperation();
                 o.pid = PID.parseString(value[Spec.PID]);
                 o.status = value[Spec.STATUS];
-                if (o.status != 0) {
+                if (o.status !== 0) {
                     o.description = value[Spec.DESCRIPTION];
                 }
 
@@ -136,7 +136,7 @@ export class PropertyOperationCodec {
                 status: p.status
             };
 
-            if (p.status == 0) {
+            if (p.status === 0) {
                 object[Spec.VALUE] = p.value;
             } else {
                 object[Spec.DESCRIPTION] = p.description;
@@ -150,8 +150,10 @@ export class PropertyOperationCodec {
         return {pid: property.pid != null ? property.pid.toString() : '', value: property.value};
     }
 
-    static encodeQuerySET(list: PropertyOperation[]): any {
-        return {properties: list.filter(p => p.status === 0).map(p => PropertyOperationCodec.encodeSetProperty(p))};
+    static encodeQuerySET(list: PropertyOperation[]): any[] {
+        return list
+            .filter(p => p.status === 0)
+            .map(p => PropertyOperationCodec.encodeSetProperty(p));
     }
 
     static encodeResultSET(list: PropertyOperation[]): any[] {
@@ -161,7 +163,7 @@ export class PropertyOperationCodec {
                 status: p.status
             };
 
-            if (p.status != 0) {
+            if (p.status !== 0) {
                 object[Spec.DESCRIPTION] = p.description;
             }
 
