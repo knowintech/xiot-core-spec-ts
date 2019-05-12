@@ -10,7 +10,7 @@ export class DeviceCodec {
     static decode(o: any): Device {
         const type = new DeviceType(o[Spec.TYPE]);
         const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        const services = ServiceCodec.decode(o[Spec.SERVICES]);
+        const services = ServiceCodec.decodeArray(o[Spec.SERVICES]);
         return new Device(type, description, services);
     }
 

@@ -9,35 +9,12 @@ import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class ServiceCodec {
 
-    static decode(array: any[]): Service[] {
+    static decodeArray(array: any[]): Service[] {
         const list: Service[] = [];
 
         if (array != null) {
             for (const o of array) {
-                const iid = o[Spec.IID];
-                const type = new ServiceType(o[Spec.TYPE]);
-                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
-                const actions = ActionCodec.decode(o[Spec.ACTIONS]);
-                const events = EventCodec.decode(o[Spec.EVENTS]);
-
-                if (o[Spec.X_OPTIONAL] != null) {
-                    type._optional = o[Spec.X_OPTIONAL];
-                }
-
-                if (o[Spec.X_PROPERTY_ADDABLE] != null) {
-                    type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
-                }
-
-                if (o[Spec.X_ACTION_ADDABLE] != null) {
-                    type._action_addable = o[Spec.X_ACTION_ADDABLE];
-                }
-
-                if (o[Spec.X_EVENT_ADDABLE] != null) {
-                    type._event_addable = o[Spec.X_EVENT_ADDABLE];
-                }
-
-                list.push(new Service(iid, type, description, properties, actions, events));
+               list.push(ServiceCodec.decode(o));
             }
         }
 
@@ -77,6 +54,33 @@ export class ServiceCodec {
         }
 
         return list;
+    }
+
+    static decode(o: any): Service {
+        const iid = o[Spec.IID];
+        const type = new ServiceType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
+        const actions = ActionCodec.decode(o[Spec.ACTIONS]);
+        const events = EventCodec.decode(o[Spec.EVENTS]);
+
+        if (o[Spec.X_OPTIONAL] != null) {
+            type._optional = o[Spec.X_OPTIONAL];
+        }
+
+        if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+            type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
+        }
+
+        if (o[Spec.X_ACTION_ADDABLE] != null) {
+            type._action_addable = o[Spec.X_ACTION_ADDABLE];
+        }
+
+        if (o[Spec.X_EVENT_ADDABLE] != null) {
+            type._event_addable = o[Spec.X_EVENT_ADDABLE];
+        }
+
+        return new Service(iid, type, description, properties, actions, events);
     }
 
     static encode(service: Service): any {
