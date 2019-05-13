@@ -11,13 +11,13 @@ export class PropertyTypeCodec {
                 if (typeof v === 'string') {
                     list.push(new PropertyType(v));
                 } else if (typeof v === 'object') {
-                    let type = new PropertyType(v['type']);
+                    const type = new PropertyType(v['type']);
                     type.description = DescriptionCodec.decode(v['description']);
                     list.push(type);
                 }
             }
         }
-  
+
       return list;
     }
 
@@ -25,7 +25,7 @@ export class PropertyTypeCodec {
         const array: any[] = [];
 
         types.forEach((type) => {
-            if (type.description.size == 0) {
+            if (type.description.size === 0) {
                 array.push(type.toString());
             } else {
                 array.push({

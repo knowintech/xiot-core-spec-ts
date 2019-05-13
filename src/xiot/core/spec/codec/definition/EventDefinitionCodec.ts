@@ -17,9 +17,9 @@ export class EventDefinitionCodec {
     }
 
     static decode(o: any): EventDefinition {
-        let type = new EventType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let list = ArgumentDefinitionCodec.decodeArray(o[Spec.ARGUMENTS]);
+        const type = new EventType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const list = ArgumentDefinitionCodec.decodeArray(o[Spec.ARGUMENTS]);
         return new EventDefinition(type, description, list);
     }
 

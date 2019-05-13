@@ -9,21 +9,21 @@ export class ArgumentDefinitionCodec {
 
         if (list != null) {
             list.forEach(o => {
-                let def = ArgumentDefinitionCodec.decode(o);
+                const def = ArgumentDefinitionCodec.decode(o);
                 if (def != null) {
                     array.push(def);
                 }
-            });    
+            });
         }
 
         return array;
     }
 
     static decode(o: any): ArgumentDefinition | null {
-        let type: PropertyType = (typeof o === 'string') ? new PropertyType(o) : new PropertyType(o[Spec.PROPERTY]);
+        const type: PropertyType = (typeof o === 'string') ? new PropertyType(o) : new PropertyType(o[Spec.PROPERTY]);
         const def = new ArgumentDefinition(type);
 
-        let repeat = o[Spec.REPEAT];
+        const repeat = o[Spec.REPEAT];
         if (repeat != null) {
             def.minRepeat = repeat[0];
             def.maxRepeat = repeat[1];

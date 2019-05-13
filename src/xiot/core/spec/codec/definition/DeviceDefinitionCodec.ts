@@ -17,10 +17,10 @@ export class DeviceDefinitionCodec {
     }
 
     static decode(o: any): DeviceDefinition {
-        let type = new DeviceType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let requiredServices = ServiceTypeCodec.decodeArray(o[Spec.REQUIRED_SERVICES]);
-        let optionalServices = ServiceTypeCodec.decodeArray(o[Spec.OPTIONAL_SERVICES]);
+        const type = new DeviceType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const requiredServices = ServiceTypeCodec.decodeArray(o[Spec.REQUIRED_SERVICES]);
+        const optionalServices = ServiceTypeCodec.decodeArray(o[Spec.OPTIONAL_SERVICES]);
         return new DeviceDefinition(type, description, requiredServices, optionalServices);
     }
 

@@ -1,14 +1,14 @@
 import { expect } from 'chai';
 import 'mocha';
-import {diff} from 'yajsondiff'
+import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {ActionDefinitionCodec} from "../../../../../../src/xiot/core/spec/codec/definition/ActionDefinitionCodec";
+import {ActionDefinitionCodec} from '../../../../../../src';
 
 describe('ActionDefinitionCodec', async () => {
 
-    let folder = './resources/spec/xiot/definition/actions/';
+    const folder = './resources/spec/xiot/definition/actions/';
 
-    let dir = await fs.readdir(folder);
+    const dir = await fs.readdir(folder);
 
     it('reading actions, folder: ' + folder, () => {
         expect(true).to.equal(true);

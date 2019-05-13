@@ -19,14 +19,14 @@ export class ServiceDefinitionCodec {
     }
 
     static decode(o: any): ServiceDefinition {
-        let type = new ServiceType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let requiredProperties = PropertyTypeCodec.decodeArray(o[Spec.REQUIRED_PROPERTIES]);
-        let optionalProperties = PropertyTypeCodec.decodeArray(o[Spec.OPTIONAL_PROPERTIES]);
-        let requiredActions = ActionTypeCodec.decodeArray(o[Spec.REQUIRED_ACTIONS]);
-        let optionalActions = ActionTypeCodec.decodeArray(o[Spec.OPTIONAL_ACTIONS]);
-        let requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
-        let optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
+        const type = new ServiceType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const requiredProperties = PropertyTypeCodec.decodeArray(o[Spec.REQUIRED_PROPERTIES]);
+        const optionalProperties = PropertyTypeCodec.decodeArray(o[Spec.OPTIONAL_PROPERTIES]);
+        const requiredActions = ActionTypeCodec.decodeArray(o[Spec.REQUIRED_ACTIONS]);
+        const optionalActions = ActionTypeCodec.decodeArray(o[Spec.OPTIONAL_ACTIONS]);
+        const requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
+        const optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
 
         if (o[Spec.X_PROPERTY_ADDABLE] != null) {
             type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
@@ -88,7 +88,7 @@ export class ServiceDefinitionCodec {
 
         return o;
     }
-    
+
     static encodeArray(list: ServiceDefinition[]): any[] {
         return list.map(x => ServiceDefinitionCodec.encode(x));
     }

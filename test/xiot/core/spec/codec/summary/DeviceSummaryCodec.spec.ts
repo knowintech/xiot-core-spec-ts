@@ -1,11 +1,10 @@
 import { expect } from 'chai';
 import 'mocha';
 import * as fs from 'async-file';
-import {DeviceSummaryCodec} from "../../../../../../src/xiot/core/spec/codec/summary/DeviceSummaryCodec";
 
 describe('DeviceSummaryCodec', async () => {
 
-    let folder = './resources/spec/xiot/summary/';
+    const folder = './resources/spec/xiot/summary/';
     // let dir = await fs.readdir(folder);
 
     // it('reading summaries, folder: ' + folder, () => {

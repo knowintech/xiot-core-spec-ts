@@ -1,13 +1,13 @@
 import { expect } from 'chai';
 import 'mocha';
-import {diff} from 'yajsondiff'
+import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {DeviceDefinitionCodec} from "../../../../../../src/xiot/core/spec/codec/definition/DeviceDefinitionCodec";
+import {DeviceDefinitionCodec} from '../../../../../../src';
 
 describe('DeviceDefinitionCodec', async () => {
 
-    let folder = './resources/spec/xiot/definition/devices/';
-    let dir = await fs.readdir(folder);
+    const folder = './resources/spec/xiot/definition/devices/';
+    const dir = await fs.readdir(folder);
 
     it('reading devices, folder: ' + folder, () => {
         expect(true).to.equal(true);

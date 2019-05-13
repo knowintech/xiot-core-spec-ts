@@ -17,10 +17,10 @@ export class ActionDefinitionCodec {
     }
 
     static decode(o: any): ActionDefinition {
-        let type = new ActionType(o[Spec.TYPE]);
-        let description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        let argumentsIn = ArgumentDefinitionCodec.decodeArray(o[Spec.IN]);
-        let argumentsOut = ArgumentDefinitionCodec.decodeArray(o[Spec.OUT]);
+        const type = new ActionType(o[Spec.TYPE]);
+        const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+        const argumentsIn = ArgumentDefinitionCodec.decodeArray(o[Spec.IN]);
+        const argumentsOut = ArgumentDefinitionCodec.decodeArray(o[Spec.OUT]);
         return new ActionDefinition(type, description, argumentsIn, argumentsOut);
     }
 

@@ -4,7 +4,6 @@ import {ServiceType} from '../../typedef/definition/urn/ServiceType';
 import {PropertyCodec} from './PropertyCodec';
 import {ActionCodec} from './ActionCodec';
 import {EventCodec} from './EventCodec';
-import {ServiceOperable} from '../../typedef/operable/ServiceOperable';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class ServiceCodec {
@@ -21,48 +20,13 @@ export class ServiceCodec {
         return list;
     }
 
-    static decodeOperable(array: any[]): ServiceOperable[] {
-        const list: ServiceOperable[] = [];
-
-        if (array != null) {
-            for (const o of array) {
-                const iid = o[Spec.IID];
-                const type = new ServiceType(o[Spec.TYPE]);
-                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                const properties = PropertyCodec.decodeOperable(o[Spec.PROPERTIES]);
-                const actions = ActionCodec.decodeOperable(o[Spec.ACTIONS]);
-                const events = EventCodec.decodeOperable(o[Spec.EVENTS]);
-
-                if (o[Spec.X_OPTIONAL] != null) {
-                    type._optional = o[Spec.X_OPTIONAL];
-                }
-
-                if (o[Spec.X_PROPERTY_ADDABLE] != null) {
-                    type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
-                }
-
-                if (o[Spec.X_ACTION_ADDABLE] != null) {
-                    type._action_addable = o[Spec.X_ACTION_ADDABLE];
-                }
-
-                if (o[Spec.X_EVENT_ADDABLE] != null) {
-                    type._event_addable = o[Spec.X_EVENT_ADDABLE];
-                }
-
-                list.push(new ServiceOperable(iid, type, description, properties, actions, events));
-            }
-        }
-
-        return list;
-    }
-
     static decode(o: any): Service {
         const iid = o[Spec.IID];
         const type = new ServiceType(o[Spec.TYPE]);
         const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-        const properties = PropertyCodec.decode(o[Spec.PROPERTIES]);
-        const actions = ActionCodec.decode(o[Spec.ACTIONS]);
-        const events = EventCodec.decode(o[Spec.EVENTS]);
+        const properties = PropertyCodec.decodeArray(o[Spec.PROPERTIES]);
+        const actions = ActionCodec.decodeArray(o[Spec.ACTIONS]);
+        const events = EventCodec.decodeArray(o[Spec.EVENTS]);
 
         if (o[Spec.X_OPTIONAL] != null) {
             type._optional = o[Spec.X_OPTIONAL];

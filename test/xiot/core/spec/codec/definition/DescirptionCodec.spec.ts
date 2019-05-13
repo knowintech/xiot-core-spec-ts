@@ -1,14 +1,14 @@
 import { expect } from 'chai';
 import 'mocha';
-import {diff} from 'yajsondiff'
+import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {DescriptionCodec} from "../../../../../../src/xiot/core/spec/codec/definition/DescriptionCodec";
+import {DescriptionCodec} from '../../../../../../src';
 
 describe('EventDefinitionCodec', async () => {
 
-    let folder = './resources/spec/xiot/description/';
+    const folder = './resources/spec/xiot/description/';
 
-    let dir = await fs.readdir(folder);
+    const dir = await fs.readdir(folder);
     
     it('reading descriptions, folder: ' + folder, () => {
         expect(true).to.equal(true);

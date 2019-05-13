@@ -1,13 +1,13 @@
 import { expect } from 'chai';
 import 'mocha';
-import {diff} from 'yajsondiff'
+import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {ServiceDefinitionCodec} from "../../../../../../src/xiot/core/spec/codec/definition/ServiceDefinitionCodec";
+import {ServiceDefinitionCodec} from '../../../../../../src';
 
 describe('ServiceDefinitionCodec', async () => {
 
-    let folder = './resources/spec/xiot/definition/services/';
-    let dir = await fs.readdir(folder);
+    const folder = './resources/spec/xiot/definition/services/';
+    const dir = await fs.readdir(folder);
 
     it('reading services, folder: ' + folder, () => {
         expect(true).to.equal(true);
@@ -15,7 +15,7 @@ describe('ServiceDefinitionCodec', async () => {
 
     for (const file of dir) {
         it('  check: ' + file, async () => {
-            let a = await fs.readFile(folder + file);
+            const a = await fs.readFile(folder + file);
             const json = JSON.parse(a.toString());
             const def = ServiceDefinitionCodec.decode(json);
 

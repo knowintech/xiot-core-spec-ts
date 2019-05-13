@@ -11,13 +11,13 @@ export class ActionTypeCodec {
                 if (typeof v === 'string') {
                     list.push(new ActionType(v));
                 } else if (typeof v === 'object') {
-                    let type = new ActionType(v['type']);
+                    const type = new ActionType(v['type']);
                     type.description = DescriptionCodec.decode(v['description']);
                     list.push(type);
                 }
             }
         }
-  
+
       return list;
     }
 
@@ -25,7 +25,7 @@ export class ActionTypeCodec {
         const array: any[] = [];
 
         actions.forEach((type) => {
-            if (type.description.size == 0) {
+            if (type.description.size === 0) {
                 array.push(type.toString());
             } else {
                 array.push({
