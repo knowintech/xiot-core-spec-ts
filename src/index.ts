@@ -92,6 +92,12 @@ export * from './xiot/core/spec/codec/instance/EventCodec';
 export * from './xiot/core/spec/codec/instance/PropertyCodec';
 export * from './xiot/core/spec/codec/instance/ServiceCodec';
 
+export * from './xiot/core/spec/codec/operable/ActionOperableCodec';
+export * from './xiot/core/spec/codec/operable/DeviceOperableCodec';
+export * from './xiot/core/spec/codec/operable/EventOperableCodec';
+export * from './xiot/core/spec/codec/operable/PropertyOperableCodec';
+export * from './xiot/core/spec/codec/operable/ServiceOperableCodec';
+
 export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
 
