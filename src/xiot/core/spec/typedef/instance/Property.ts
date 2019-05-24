@@ -8,10 +8,7 @@ export class Property extends PropertyDefinition {
 
   iid = 0;
   value: PropertyValue;
-
   result: Result = new Result();
-  // status = 0;
-  // description = '';
 
   constructor(iid: number, def: PropertyDefinition) {
     super(def.type, def.type.description);
@@ -84,7 +81,7 @@ export class Property extends PropertyDefinition {
     }
 
     if (write) {
-      return this.value.update(v);
+      this.value.update(v);
     }
 
     return true;

@@ -21,7 +21,7 @@ export class PropertyValue {
     this.updateCurrentValue();
   }
 
-  update(newValue: DataValue<any>): boolean {
+  update(newValue: DataValue<any>): void {
     if (newValue == null) {
       throw new Error('update failed: newValue is null');
     }
@@ -35,16 +35,10 @@ export class PropertyValue {
       this.isChanged = true;
     }
 
-    if (this.currentValue.getObjectValue() === newValue.getObjectValue()) {
-      console.log('update failed, currentValue equals newValue, not change');
-      return false;
-    }
-
     this.oldValue = this.currentValue;
     this.currentValue = newValue;
     this.isChanged = true;
     this.updateCurrentValue();
-    return true;
   }
 
   private updateCurrentValue(): void {
