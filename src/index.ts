@@ -59,7 +59,7 @@ export * from './xiot/core/spec/typedef/operation/PropertyOperation';
 
 export * from './xiot/core/spec/typedef/status/OperationStatus';
 
-export * from './xiot/core/spec/typedef/summary/DeviceDetail';
+export * from './xiot/core/spec/typedef/summary/DeviceCompact';
 export * from './xiot/core/spec/typedef/summary/DeviceSummary';
 
 export * from './xiot/core/spec/typedef/udid/XcpUniversalDID';
@@ -101,6 +101,6 @@ export * from './xiot/core/spec/codec/operable/ServiceOperableCodec';
 export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
 
-export * from './xiot/core/spec/codec/summary/DeviceDetailCodec';
+export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';
 export * from './xiot/core/spec/codec/summary/DeviceSummaryCodec';
 

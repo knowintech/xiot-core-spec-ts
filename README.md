@@ -1,2 +1,2 @@
-# xiot-spec-ts
+# xiot-core-spec-ts
 XIOT Specification Codec

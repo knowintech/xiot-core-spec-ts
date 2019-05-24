@@ -1,5 +1,6 @@
 import {ActionType} from '../definition/urn/ActionType';
 import {Argument} from './Argument';
+import {Result} from './Result';
 
 export class Action {
 
@@ -7,6 +8,7 @@ export class Action {
   type: ActionType;
   in: Map<number, Argument> = new Map<number, Argument>();
   out: Map<number, Argument> = new Map<number, Argument>();
+  result: Result = new Result();
 
   constructor(iid: number,
               type: ActionType,

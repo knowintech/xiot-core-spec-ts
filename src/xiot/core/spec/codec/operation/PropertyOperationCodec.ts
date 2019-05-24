@@ -38,19 +38,22 @@ export class PropertyOperationCodec {
       const properties = json['properties'];
       if (properties != null) {
         if (properties instanceof Array) {
-          properties.forEach(value => {
+          properties.forEach(property => {
             const o = new PropertyOperation();
-            o.pid = PID.parseString(value[Spec.PID]);
-            o.status = value[Spec.STATUS];
+            o.pid = PID.parseString(property[Spec.PID]);
+            o.status = property[Spec.STATUS];
+
             if (o.status == null) {
               o.status = 0;
             }
 
             if (o.status === 0) {
-              o.value = value[Spec.VALUE];
+              o.value = property[Spec.VALUE];
             } else {
-              o.description = value[Spec.DESCRIPTION];
+              o.description = property[Spec.DESCRIPTION];
             }
+
+            o.message = property;
 
             array.push(o);
           });

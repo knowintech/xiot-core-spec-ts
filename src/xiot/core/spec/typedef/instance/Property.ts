@@ -2,14 +2,16 @@ import {PropertyDefinition} from '../definition/PropertyDefinition';
 import {PropertyValue} from './PropertyValue';
 import {DataValueFactory} from '../definition/property/data/DataValueFactory';
 import {ValueDefinition} from '../definition/property/ValueDefinition';
+import {Result} from './Result';
 
 export class Property extends PropertyDefinition {
 
   iid = 0;
   value: PropertyValue;
 
-  status = 0;
-  description = '';
+  result: Result = new Result();
+  // status = 0;
+  // description = '';
 
   constructor(iid: number, def: PropertyDefinition) {
     super(def.type, def.type.description);
