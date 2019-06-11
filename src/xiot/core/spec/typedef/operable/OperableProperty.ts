@@ -3,7 +3,7 @@ import {PropertyOperation} from '../operation/PropertyOperation';
 import {OperationStatus} from '../status/OperationStatus';
 import {PropertyDefinition} from '../definition/PropertyDefinition';
 
-export class PropertyOperable extends Property {
+export class OperableProperty extends Property {
 
     constructor(iid: number, def: PropertyDefinition) {
         super(iid, def);

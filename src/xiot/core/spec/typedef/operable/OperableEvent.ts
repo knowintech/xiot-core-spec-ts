@@ -3,15 +3,21 @@ import {Property} from '../instance/Property';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
 import {EventType} from '../definition/urn/EventType';
-import {Argument} from '../instance/Argument';
+import {OperableArgument} from './OperableArgument';
 
-export class EventOperable extends Event {
+export class OperableEvent extends Event {
 
     constructor(iid: number,
                 type: EventType,
                 description: Map<string, string>,
-                list: Argument[]) {
+                list: OperableArgument[]) {
         super(iid, type, description, list);
+    }
+
+    getOperableArguments(): OperableArgument[] {
+        return super.getArguments()
+            .filter(x => x instanceof OperableArgument)
+            .map(x => <OperableArgument>x);
     }
 
     tryInvoke(o: ActionOperation, properties: Map<number, Property>) {

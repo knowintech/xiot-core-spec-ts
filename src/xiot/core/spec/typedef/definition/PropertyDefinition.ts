@@ -16,7 +16,7 @@ export class PropertyDefinition {
   unit: Unit = Unit.NONE;
 
   constructor(type: PropertyType, description: Map<string, string>) {
-    this.type = type;
+    this.type = new PropertyType(type.toString());
 
     if (description != null) {
       this.type.description = description;

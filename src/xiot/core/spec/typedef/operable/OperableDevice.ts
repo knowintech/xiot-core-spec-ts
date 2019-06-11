@@ -2,16 +2,21 @@ import {Device} from '../instance/Device';
 import {PropertyOperation} from '../operation/PropertyOperation';
 import {ActionOperation} from '../operation/ActionOperation';
 import {OperationStatus} from '../status/OperationStatus';
-import {ServiceOperable} from './ServiceOperable';
+import {OperableService} from './OperableService';
 import {DeviceType} from '../definition/urn/DeviceType';
-import {Service} from '../instance/Service';
 
-export class DeviceOperable extends Device {
+export class OperableDevice extends Device {
 
   constructor(type: DeviceType,
               description: Map<string, string>,
-              services: Service[]) {
+              services: OperableService[]) {
     super(type, description, services);
+  }
+
+  getOperableServices(): OperableService[] {
+    return super.getServices()
+        .filter(x => x instanceof OperableService)
+        .map(x => <OperableService>x);
   }
 
   tryRead(list: Array<PropertyOperation>) {
@@ -39,12 +44,12 @@ export class DeviceOperable extends Device {
         break;
       }
 
-      if (s instanceof ServiceOperable) {
+      if (s instanceof OperableService) {
         s.tryInvoke(o);
       } else {
         console.error('typeof s: ', typeof(s));
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'service not instanceof ServiceOperable';
+        o.description = 'service not instanceof OperableService';
       }
     } while (false);
   }
@@ -62,12 +67,12 @@ export class DeviceOperable extends Device {
         break;
       }
 
-      if (s instanceof ServiceOperable) {
+      if (s instanceof OperableService) {
         s.tryRead(o);
       } else {
         console.error('typeof s: ', typeof(s));
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'service not instanceof ServiceOperable';
+        o.description = 'service not instanceof OperableService';
       }
     } while (false);
   }
@@ -85,12 +90,12 @@ export class DeviceOperable extends Device {
         break;
       }
 
-      if (s instanceof ServiceOperable) {
+      if (s instanceof OperableService) {
         s.tryWrite(o, save);
       } else {
         console.error('typeof s: ', typeof(s));
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'service not instanceof ServiceOperable';
+        o.description = 'service not instanceof OperableService';
       }
     } while (false);
   }

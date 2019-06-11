@@ -46,11 +46,12 @@ export * from './xiot/core/spec/typedef/instance/Property';
 export * from './xiot/core/spec/typedef/instance/PropertyValue';
 export * from './xiot/core/spec/typedef/instance/Service';
 
-export * from './xiot/core/spec/typedef/operable/ActionOperable';
-export * from './xiot/core/spec/typedef/operable/DeviceOperable';
-export * from './xiot/core/spec/typedef/operable/EventOperable';
-export * from './xiot/core/spec/typedef/operable/PropertyOperable';
-export * from './xiot/core/spec/typedef/operable/ServiceOperable';
+export * from './xiot/core/spec/typedef/operable/OperableAction';
+export * from './xiot/core/spec/typedef/operable/OperableArgument';
+export * from './xiot/core/spec/typedef/operable/OperableDevice';
+export * from './xiot/core/spec/typedef/operable/OperableEvent';
+export * from './xiot/core/spec/typedef/operable/OperableProperty';
+export * from './xiot/core/spec/typedef/operable/OperableService';
 
 export * from './xiot/core/spec/typedef/operation/AbstractOperation';
 export * from './xiot/core/spec/typedef/operation/ActionOperation';
@@ -92,11 +93,12 @@ export * from './xiot/core/spec/codec/instance/EventCodec';
 export * from './xiot/core/spec/codec/instance/PropertyCodec';
 export * from './xiot/core/spec/codec/instance/ServiceCodec';
 
-export * from './xiot/core/spec/codec/operable/ActionOperableCodec';
-export * from './xiot/core/spec/codec/operable/DeviceOperableCodec';
-export * from './xiot/core/spec/codec/operable/EventOperableCodec';
-export * from './xiot/core/spec/codec/operable/PropertyOperableCodec';
-export * from './xiot/core/spec/codec/operable/ServiceOperableCodec';
+export * from './xiot/core/spec/codec/operable/OperableActionCodec';
+export * from './xiot/core/spec/codec/operable/OperableArgumentCodec';
+export * from './xiot/core/spec/codec/operable/OperableDeviceCodec';
+export * from './xiot/core/spec/codec/operable/OperableEventCodec';
+export * from './xiot/core/spec/codec/operable/OperablePropertyCodec';
+export * from './xiot/core/spec/codec/operable/OperableServiceCodec';
 
 export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';

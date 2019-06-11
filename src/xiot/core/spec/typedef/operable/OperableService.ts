@@ -1,23 +1,39 @@
 import {Service} from '../instance/Service';
 import {PropertyOperation} from '../operation/PropertyOperation';
 import {ActionOperation} from '../operation/ActionOperation';
-import {PropertyOperable} from './PropertyOperable';
+import {OperableProperty} from './OperableProperty';
 import {OperationStatus} from '../status/OperationStatus';
-import {ActionOperable} from './ActionOperable';
+import {OperableAction} from './OperableAction';
 import {ServiceType} from '../definition/urn/ServiceType';
-import {Property} from '../instance/Property';
-import {Action} from '../instance/Action';
-import {Event} from '../instance/Event';
+import {OperableEvent} from './OperableEvent';
 
-export class ServiceOperable extends Service {
+export class OperableService extends Service {
 
   constructor(iid: number,
               type: ServiceType,
               description: Map<string, string>,
-              properties: Property[],
-              actions: Action[],
-              events: Event[]) {
+              properties: OperableProperty[],
+              actions: OperableAction[],
+              events: OperableEvent[]) {
     super(iid, type, description, properties, actions, events);
+  }
+
+  getOperablePropertys(): OperableProperty[] {
+    return super.getProperties()
+        .filter(x => x instanceof OperableProperty)
+        .map(x => <OperableProperty>x);
+  }
+
+  getOperableActions(): OperableAction[] {
+    return super.getActions()
+        .filter(x => x instanceof OperableAction)
+        .map(x => <OperableAction>x);
+  }
+
+  getOperableEvents(): OperableEvent[] {
+    return super.getEvents()
+        .filter(x => x instanceof OperableEvent)
+        .map(x => <OperableEvent>x);
   }
 
   tryRead(o: PropertyOperation) {
@@ -27,11 +43,11 @@ export class ServiceOperable extends Service {
 
      const p = this.properties.get(o.pid.iid);
      if (p != null) {
-       if (p instanceof PropertyOperable) {
+       if (p instanceof OperableProperty) {
          p.tryRead(o);
        } else {
          o.status = (<number>OperationStatus.UNDEFINED);
-         o.description = 'property not instanceof PropertyOperable';
+         o.description = 'property not instanceof OperableProperty';
        }
      } else {
        o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
@@ -46,11 +62,11 @@ export class ServiceOperable extends Service {
 
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
-      if (p instanceof PropertyOperable) {
+      if (p instanceof OperableProperty) {
         p.tryWrite(o, save);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'property not instanceof PropertyOperable';
+        o.description = 'property not instanceof OperableProperty';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
@@ -65,11 +81,11 @@ export class ServiceOperable extends Service {
 
     const a = this.actions.get(o.aid.iid);
     if (a != null) {
-      if (a instanceof ActionOperable) {
+      if (a instanceof OperableAction) {
         a.tryInvoke(o, this.properties);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'action not instanceof ActionOperable';
+        o.description = 'action not instanceof OperableAction';
       }
     } else {
       o.status = (<number>OperationStatus.ACTION_NOT_FOUND);
@@ -84,11 +100,11 @@ export class ServiceOperable extends Service {
 
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
-      if (p instanceof PropertyOperable) {
+      if (p instanceof OperableProperty) {
         p.update(o);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'property not instanceof PropertyOperable';
+        o.description = 'property not instanceof OperableProperty';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
@@ -103,11 +119,11 @@ export class ServiceOperable extends Service {
 
     const p = this.properties.get(o.pid.iid);
     if (p != null) {
-      if (p instanceof PropertyOperable) {
+      if (p instanceof OperableProperty) {
         p.onPropertiesChanged(o);
       } else {
         o.status = (<number>OperationStatus.UNDEFINED);
-        o.description = 'property not instanceof PropertyOperable';
+        o.description = 'property not instanceof OperableProperty';
       }
     } else {
       o.status = (<number>OperationStatus.PROPERTY_NOT_FOUND);
