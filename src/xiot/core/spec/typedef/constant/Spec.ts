@@ -19,6 +19,7 @@ export class Spec {
     public static UNIT = 'unit';
     public static PROPERTY = 'property';
     public static REPEAT = 'repeat';
+    public static VALUES = 'values';
 
     public static REQUIRED_SERVICES = 'required-services';
     public static OPTIONAL_SERVICES = 'optional-services';
