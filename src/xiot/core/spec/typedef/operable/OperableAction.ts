@@ -29,6 +29,8 @@ export class OperableAction extends Action {
     }
 
     tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
+        console.log('tryInvoke');
+
         o.status = (<number>OperationStatus.COMPLETED);
 
         for (const argument of this.getOperableArgumentsIn()) {

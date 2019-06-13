@@ -101,6 +101,8 @@ export * from './xiot/core/spec/codec/operable/OperablePropertyCodec';
 export * from './xiot/core/spec/codec/operable/OperableServiceCodec';
 
 export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
+export * from './xiot/core/spec/codec/operation/ArgumentOperationCodec';
+export * from './xiot/core/spec/codec/operation/EventOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
 
 export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';

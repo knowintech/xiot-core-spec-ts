@@ -1,10 +1,8 @@
 {
   "actions": [
     {
-      "aid": "111.2.1",
-      "status": 0,
-      "oid": "abcdefg",
-      "out": [
+      "aid": "a.1.1",
+      "in": [
         {
           "piid": 1,
           "values": ["a"]
