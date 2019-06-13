@@ -37,27 +37,25 @@ export class OperableAction extends Action {
             const iid: number = argument.piid;
             const v = o.in.get(iid);
             if (v == null) {
-                o.status = (<number>OperationStatus.ACTION_IN_ERROR);
-                o.description = 'action argument in error';
-                break;
-            }
+                if (argument.minRepeat > 0) {
+                    o.status = (<number>OperationStatus.ACTION_IN_ERROR);
+                    o.description = 'action argument in error, piid(' + iid + ') min repeat > 0';
+                    break;
+                }
 
-            if (argument.minRepeat > 0) {
-                o.status = (<number>OperationStatus.ACTION_IN_ERROR);
-                o.description = 'action argument in error, min repeat > 0';
-                break;
+                continue;
             }
 
             const property = properties.get(iid);
             if (property == null) {
                 o.status = (<number>OperationStatus.ACTION_IN_VALUE_INVALID);
-                o.description = 'action argument in error, value invalid';
+                o.description = 'action argument in error, piid(' + iid + ') value invalid';
                 break;
             }
 
             if (!property.trySetValues(v.values)) {
                 o.status = (<number>OperationStatus.ACTION_IN_VALUE_INVALID);
-                o.description = 'action argument in error, set value failed';
+                o.description = 'action argument in error, piid(' + iid + ') set value failed';
                 break;
             }
 
