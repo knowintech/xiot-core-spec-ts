@@ -1,5 +1,7 @@
 export * from './xiot/core/spec/typedef/constant/Spec';
 
+export * from './xiot/core/spec/typedef/children/DeviceChild';
+
 export * from './xiot/core/spec/typedef/definition/ActionDefinition';
 export * from './xiot/core/spec/typedef/definition/ArgumentDefinition';
 export * from './xiot/core/spec/typedef/definition/DeviceDefinition';
@@ -70,6 +72,8 @@ export * from './xiot/core/spec/typedef/utils/DeviceHelper';
 export * from './xiot/core/spec/typedef/xid/AID';
 export * from './xiot/core/spec/typedef/xid/EID';
 export * from './xiot/core/spec/typedef/xid/PID';
+
+export * from './xiot/core/spec/codec/children/DeviceChildCodec';
 
 export * from './xiot/core/spec/codec/definition/type/ActionTypeCodec';
 export * from './xiot/core/spec/codec/definition/type/EventTypeCodec';
