@@ -98,6 +98,8 @@ export class PropertyOperationCodec {
                     o.description = value[Spec.DESCRIPTION];
                 }
 
+                o.message = value;
+
                 array.push(o);
             });
         }
