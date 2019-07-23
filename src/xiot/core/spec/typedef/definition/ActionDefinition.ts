@@ -3,7 +3,7 @@ import {ArgumentDefinition} from './ArgumentDefinition';
 
 export class ActionDefinition {
 
-    type : ActionType;
+    type: ActionType;
     in: ArgumentDefinition[] = [];
     out: ArgumentDefinition[] = [];
 
@@ -20,7 +20,7 @@ export class ActionDefinition {
         if (argumentsIn != null) {
             this.in = argumentsIn;
         }
-        
+
         if (argumentsOut != null) {
             this.out = argumentsOut;
         }
