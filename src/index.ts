@@ -60,6 +60,9 @@ export * from './xiot/core/spec/typedef/operation/ActionOperation';
 export * from './xiot/core/spec/typedef/operation/EventOperation';
 export * from './xiot/core/spec/typedef/operation/PropertyOperation';
 
+export * from './xiot/core/spec/typedef/shortcut/Shortcut';
+export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
+
 export * from './xiot/core/spec/typedef/status/OperationStatus';
 
 export * from './xiot/core/spec/typedef/summary/DeviceCompact';
@@ -108,6 +111,9 @@ export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
 export * from './xiot/core/spec/codec/operation/ArgumentOperationCodec';
 export * from './xiot/core/spec/codec/operation/EventOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
+
+export * from './xiot/core/spec/codec/shortcut/ShortcutCodec';
+export * from './xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 
 export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';
 export * from './xiot/core/spec/codec/summary/DeviceSummaryCodec';

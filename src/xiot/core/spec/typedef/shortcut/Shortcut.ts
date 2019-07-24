@@ -1,5 +1,5 @@
 
-export class Manipulate {
+export class Shortcut {
 
     index: number;
     siid: number;

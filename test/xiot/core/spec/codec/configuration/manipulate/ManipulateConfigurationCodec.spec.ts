@@ -2,15 +2,15 @@ import { expect } from 'chai';
 import 'mocha';
 import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {ManipulateConfigurationCodec} from '../../../../../../../src/xiot/core/spec/codec/configuration/manipulate/ManipulateConfigurationCodec';
+import {ShortcutConfigurationCodec} from '../../../../../../../src/xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 
 describe('ManipulateConfigurationCodec', async () => {
 
-    const folder = './resources/configuration/manipulate/';
+    const folder = './resources/configuration/shortcut/';
 
     const dir = await fs.readdir(folder);
 
-    it('reading manipulate configuration, folder: ' + folder, () => {
+    it('reading shortcut configuration, folder: ' + folder, () => {
         expect(true).to.equal(true);
     });
 
@@ -18,13 +18,13 @@ describe('ManipulateConfigurationCodec', async () => {
         it('  check: ' + file, async () => {
             const a = await fs.readFile(folder + file);
             const json = JSON.parse(a.toString());
-            const def = ManipulateConfigurationCodec.decode(json);
+            const def = ShortcutConfigurationCodec.decode(json);
 
-            const differences = diff(json, ManipulateConfigurationCodec.encode(def));
+            const differences = diff(json, ShortcutConfigurationCodec.encode(def));
             if (differences == null) {
                 expect(true).to.equal(true);
             } else {
-                expect(JSON.stringify(json)).to.equal(JSON.stringify(ManipulateConfigurationCodec.encode(def)));
+                expect(JSON.stringify(json)).to.equal(JSON.stringify(ShortcutConfigurationCodec.encode(def)));
             }
         });
     }
