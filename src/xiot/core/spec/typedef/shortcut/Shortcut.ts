@@ -1,3 +1,4 @@
+import {ShortcutIcon} from './ShortcutIcon';
 
 export class Shortcut {
 
@@ -5,14 +6,14 @@ export class Shortcut {
     siid: number;
     piid: number;
     value: any;
-    icon: string;
+    icon: ShortcutIcon;
     description: Map<string, string>;
 
     constructor(index: number,
                 siid: number,
                 piid: number,
                 value: any,
-                icon: string,
+                icon: ShortcutIcon,
                 description: Map<string, string>) {
         this.index = index;
         this.siid = siid;

@@ -7,7 +7,10 @@
             "siid": 2,
             "piid": 1,
             "value": 1,
-            "icon": "aaaaaaaaaaa",
+            "icon": {
+                "name": "aaaaaaaaaaa",
+                "url": "xxx"
+            },
             "description": {
                 "zh_CN": "自动模式",
                 "en_US": "auto"
@@ -18,7 +21,10 @@
             "siid": 2,
             "piid": 1,
             "value": 2,
-            "icon": "aaaaaaaaaaa",
+            "icon": {
+                "name": "aaaaaaaaaaa",
+                "url": "xxx"
+            },
             "description": {
                 "zh_CN": "制冷",
                 "en_US": "closed"
@@ -29,7 +35,10 @@
             "siid": 2,
             "piid": 1,
             "value": 2,
-            "icon": "aaaaaaaaaaa",
+            "icon": {
+                "name": "aaaaaaaaaaa",
+                "url": "xxx"
+            },
             "description": {
                 "zh_CN": "制热",
                 "en_US": "closed"

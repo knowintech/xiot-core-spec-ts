@@ -7,7 +7,10 @@
             "siid": 2,
             "piid": 1,
             "value": true,
-            "icon": "aaaaaaaaaaa",
+            "icon": {
+              "name": "aaaaaaaaaaa",
+              "url": "xxx"
+            },
             "description": {
                 "zh_CN": "开",
                 "en_US": "opened"
@@ -18,7 +21,10 @@
             "siid": 2,
             "piid": 1,
             "value": false,
-            "icon": "aaaaaaaaaaa",
+            "icon": {
+                "name": "aaaaaaaaaaa",
+                "url": "xxx"
+            },
             "description": {
                 "zh_CN": "关",
                 "en_US": "closed"

@@ -113,6 +113,7 @@ export * from './xiot/core/spec/codec/operation/EventOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
 
 export * from './xiot/core/spec/codec/shortcut/ShortcutCodec';
+export * from './xiot/core/spec/codec/shortcut/ShortcutIconCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 
 export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';
