@@ -1,6 +1,5 @@
 {
     "type": "urn:homekit-spec:device:lightbulb:00000000:aaa:bbb:1",
-    "version": 1,
     "shortcuts": [
         {
             "index": 0,

@@ -16,15 +16,13 @@ export class ShortcutConfigurationCodec {
 
     static decode(o: any): ShortcutConfiguration {
         const type = o.type;
-        const version: number = o.version;
-        const manipulates: Shortcut[] = ShortcutCodec.decodeArray(o.shortcuts);
-        return new ShortcutConfiguration(type, version, manipulates);
+        const shortcuts: Shortcut[] = ShortcutCodec.decodeArray(o.shortcuts);
+        return new ShortcutConfiguration(type, shortcuts);
     }
 
     static encode(def: ShortcutConfiguration): any {
         return {
             type: def.type.toString(),
-            version: def.version,
             shortcuts: ShortcutCodec.encodeArray(def.shortcuts),
         };
     }

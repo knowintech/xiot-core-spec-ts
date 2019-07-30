@@ -61,6 +61,7 @@ export * from './xiot/core/spec/typedef/operation/EventOperation';
 export * from './xiot/core/spec/typedef/operation/PropertyOperation';
 
 export * from './xiot/core/spec/typedef/shortcut/Shortcut';
+export * from './xiot/core/spec/typedef/shortcut/ShortcutIcon';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
 
 export * from './xiot/core/spec/typedef/status/OperationStatus';
