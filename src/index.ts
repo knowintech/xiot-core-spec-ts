@@ -40,6 +40,30 @@ export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint8';
 export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint16';
 export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint32';
 
+export * from './xiot/core/spec/typedef/event/device/XiotBridgeInitialized';
+export * from './xiot/core/spec/typedef/event/device/XiotChild';
+export * from './xiot/core/spec/typedef/event/device/XiotChildrenAdded';
+export * from './xiot/core/spec/typedef/event/device/XiotChildrenRemoved';
+export * from './xiot/core/spec/typedef/event/device/XiotDeviceOffline';
+export * from './xiot/core/spec/typedef/event/device/XiotDeviceOnline';
+export * from './xiot/core/spec/typedef/event/device/XiotEventOccurred';
+export * from './xiot/core/spec/typedef/event/device/XiotPropertiesChanged';
+export * from './xiot/core/spec/typedef/event/user/XiotDeviceAdded';
+export * from './xiot/core/spec/typedef/event/user/XiotDeviceChanged';
+export * from './xiot/core/spec/typedef/event/user/XiotDeviceRemoved';
+export * from './xiot/core/spec/typedef/event/user/XiotHomeAdded';
+export * from './xiot/core/spec/typedef/event/user/XiotHomeChanged';
+export * from './xiot/core/spec/typedef/event/user/XiotHomeRemoved';
+export * from './xiot/core/spec/typedef/event/user/XiotRoomAdded';
+export * from './xiot/core/spec/typedef/event/user/XiotRoomChanged';
+export * from './xiot/core/spec/typedef/event/user/XiotRoomRemoved';
+export * from './xiot/core/spec/typedef/event/XiotEvent';
+export * from './xiot/core/spec/typedef/event/XiotEventType';
+
+export * from './xiot/core/spec/typedef/home/Home';
+export * from './xiot/core/spec/typedef/home/Room';
+export * from './xiot/core/spec/typedef/home/HomeGraph';
+
 export * from './xiot/core/spec/typedef/instance/Action';
 export * from './xiot/core/spec/typedef/instance/Argument';
 export * from './xiot/core/spec/typedef/instance/Device';

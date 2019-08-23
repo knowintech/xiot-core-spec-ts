@@ -3,24 +3,28 @@ import {DeviceSummary} from '../../typedef/summary/DeviceSummary';
 
 export class DeviceSummaryCodec {
 
-  static decode(json: any): DeviceSummary[] {
+  static decodeArray(json: any): DeviceSummary[] {
     const array = [];
 
     const devices = json['devices'];
     if (devices != null) {
       if (devices instanceof Array) {
         for (const device of devices) {
-          const summary = new DeviceSummary();
-          summary.did = device['did'];
-          summary.category = device['category'];
-          summary.name = device['name'];
-          summary.type = new DeviceType(device['type']);
-          array.push(summary);
+          array.push(DeviceSummaryCodec.decodeObject(device));
         }
       }
     }
 
     return array;
+  }
+
+  static decodeObject(o: any): DeviceSummary {
+    const summary = new DeviceSummary();
+    summary.did = o['did'];
+    summary.category = o['category'];
+    summary.name = o['name'];
+    summary.type = new DeviceType(o['type']);
+    return summary;
   }
 
   static encode(summary: DeviceSummary): any {
