@@ -18,7 +18,7 @@ export class Urn extends Extendable {
     public version = 0;
 
     public style: UrnStyle = UrnStyle.SPEC;
-    public description: Map<string, string> = new Map<string, string>();
+    // public description: Map<string, string> = new Map<string, string>();
     public valid = false;
 
     static getShortUUID(value: number): string {

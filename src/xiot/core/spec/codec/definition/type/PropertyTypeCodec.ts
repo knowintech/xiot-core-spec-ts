@@ -1,5 +1,4 @@
 import {PropertyType} from '../../../typedef/definition/urn/PropertyType';
-import { DescriptionCodec } from '../DescriptionCodec';
 
 export class PropertyTypeCodec {
 
@@ -11,9 +10,7 @@ export class PropertyTypeCodec {
                 if (typeof v === 'string') {
                     list.push(new PropertyType(v));
                 } else if (typeof v === 'object') {
-                    const type = new PropertyType(v['type']);
-                    type.description = DescriptionCodec.decode(v['description']);
-                    list.push(type);
+                    list.push(new PropertyType(v['type']));
                 }
             }
         }
@@ -25,14 +22,7 @@ export class PropertyTypeCodec {
         const array: any[] = [];
 
         types.forEach((type) => {
-            if (type.description.size === 0) {
-                array.push(type.toString());
-            } else {
-                array.push({
-                    type: type.toString(),
-                    description: DescriptionCodec.encode(type.description)
-                });
-            }
+            array.push(type.toString());
         });
 
         return array;

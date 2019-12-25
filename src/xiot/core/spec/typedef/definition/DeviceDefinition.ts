@@ -4,6 +4,7 @@ import {ServiceType} from './urn/ServiceType';
 export class DeviceDefinition {
 
   type: DeviceType;
+  description: Map<string, string> = new Map<string, string>();
   requiredServices: ServiceType[] = [];
   optionalServices: ServiceType[] = [];
 
@@ -14,13 +15,13 @@ export class DeviceDefinition {
     this.type = type;
 
     if (description != null) {
-      this.type.description = description;
+      this.description = description;
     }
 
     if (required != null) {
       this.requiredServices = required;
     }
-    
+
     if (optional != null) {
       this.optionalServices = optional;
     }

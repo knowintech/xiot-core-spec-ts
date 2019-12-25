@@ -50,7 +50,7 @@ export class PropertyDefinitionCodec {
     static encode(def: PropertyDefinition): any {
         const o: any = {
             type: def.type.toString(),
-            description: DescriptionCodec.encode(def.type.description),
+            description: DescriptionCodec.encode(def.description),
             format: DataFormatToString(def.format),
             access: def.access.toList(),
         };

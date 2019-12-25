@@ -6,6 +6,7 @@ import {EventType} from './urn/EventType';
 export class ServiceDefinition {
 
   type: ServiceType;
+  description: Map<string, string> = new Map<string, string>();
   requiredProperties: PropertyType[] = [];
   optionalProperties: PropertyType[] = [];
   requiredActions: ActionType[] = [];
@@ -24,13 +25,13 @@ export class ServiceDefinition {
     this.type = type;
 
     if (description != null) {
-      this.type.description = description;
+      this.description = description;
     }
 
     if (requiredProperties != null) {
       this.requiredProperties = requiredProperties;
     }
-    
+
     if (optionalProperties != null) {
       this.optionalProperties = optionalProperties;
     }
@@ -38,7 +39,7 @@ export class ServiceDefinition {
     if (requiredActions != null) {
       this.requiredActions = requiredActions;
     }
-    
+
     if (optionalActions != null) {
       this.optionalActions = optionalActions;
     }
@@ -46,7 +47,7 @@ export class ServiceDefinition {
     if (requiredEvents != null) {
       this.requiredEvents = requiredEvents;
     }
-    
+
     if (optionalEvents != null) {
       this.optionalEvents = optionalEvents;
     }

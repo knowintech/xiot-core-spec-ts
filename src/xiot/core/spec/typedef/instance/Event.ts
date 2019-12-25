@@ -5,10 +5,10 @@ export class Event {
 
   iid = 0;
   type: EventType;
+  description: Map<string, string> = new Map<string, string>();
   arguments: Map<number, Argument> = new Map<number, Argument>();
 
-  status = 0;
-  description = '';
+  // status = 0;
 
   constructor(iid: number,
               type: EventType,
@@ -16,7 +16,7 @@ export class Event {
               list: Argument[]) {
     this.iid = iid;
     this.type = type;
-    this.type.description = description;
+    this.description = description;
     list.forEach(x => this.arguments.set(x.piid, x));
   }
 

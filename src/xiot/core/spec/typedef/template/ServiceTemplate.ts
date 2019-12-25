@@ -1,0 +1,45 @@
+import {ServiceType} from '../../../../..';
+import {Optional} from './Optional';
+import {PropertyTemplate} from './PropertyTemplate';
+import {ActionTemplate} from './ActionTemplate';
+import {EventTemplate} from './EventTemplate';
+
+/**
+ * ouyang
+ */
+export class ServiceTemplate extends Optional {
+
+    type: ServiceType;
+    description: Map<string, string> = new Map<string, string>();
+    properties: Map<number, PropertyTemplate> = new Map<number, PropertyTemplate>();
+    actions: Map<number, ActionTemplate> = new Map<number, ActionTemplate>();
+    events: Map<number, EventTemplate> = new Map<number, EventTemplate>();
+    propertyAddable = false;
+    actionAddable = false;
+    eventAddable = false;
+
+    constructor(iid: number,
+                required: boolean,
+                type: ServiceType,
+                description: Map<string, string>,
+                properties: PropertyTemplate[],
+                actions: ActionTemplate[],
+                events: EventTemplate[],
+                propertyAddable: boolean,
+                actionAddable: boolean,
+                eventAddable: boolean) {
+        super(iid, required);
+        this.type = type;
+        this.propertyAddable = propertyAddable;
+        this.actionAddable = actionAddable;
+        this.eventAddable = eventAddable;
+
+        if (description != null) {
+            this.description = description;
+        }
+
+        properties.forEach(x => this.properties.set(x.iid, x));
+        actions.forEach(x => this.actions.set(x.iid, x));
+        events.forEach(x => this.events.set(x.iid, x));
+    }
+}

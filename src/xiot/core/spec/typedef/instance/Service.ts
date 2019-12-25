@@ -7,6 +7,7 @@ export class Service {
 
   iid = 0;
   type: ServiceType;
+  description: Map<string, string> = new Map<string, string>();
   properties: Map<number, Property> = new Map<number, Property>();
   actions: Map<number, Action> = new Map<number, Action>();
   events: Map<number, Event> = new Map<number, Event>();
@@ -22,7 +23,7 @@ export class Service {
               events: Event[]) {
     this.iid = iid;
     this.type = type;
-    this.type.description = description;
+    this.description = description;
 
     properties.forEach(x => this.properties.set(x.iid, x));
     actions.forEach(x => this.actions.set(x.iid, x));

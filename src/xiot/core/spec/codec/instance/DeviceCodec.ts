@@ -16,7 +16,7 @@ export class DeviceCodec {
     static encode(device: Device): any {
         return {
             type: device.type.toString(),
-            description: DescriptionCodec.encode(device.type.description),
+            description: DescriptionCodec.encode(device.description),
             services: ServiceCodec.encodeArray(device.services)
         };
     }

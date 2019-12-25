@@ -6,6 +6,7 @@ export class Action {
 
   iid = 0;
   type: ActionType;
+  description: Map<string, string> = new Map<string, string>();
   in: Map<number, Argument> = new Map<number, Argument>();
   out: Map<number, Argument> = new Map<number, Argument>();
   result: Result = new Result();
@@ -17,7 +18,7 @@ export class Action {
               argumentsOut: Argument[]) {
     this.iid = iid;
     this.type = type;
-    this.type.description = description;
+    this.description = description;
     argumentsIn.forEach(x => this.in.set(x.piid, x));
     argumentsOut.forEach(x => this.out.set(x.piid, x));
   }

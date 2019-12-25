@@ -42,7 +42,7 @@ export class Spec {
     public static ZH_CN = 'zh-CN';
     public static ZH_TW = 'zh-TW';
     public static EN_US = 'en-US';
-    public static X_OPTIONAL = 'x-optional';
+    public static X_REQUIRED = 'x-required';
     public static X_PROPERTY_ADDABLE = 'x-property-addable';
     public static X_ACTION_ADDABLE = 'x-action-addable';
     public static X_EVENT_ADDABLE = 'x-event-addable';

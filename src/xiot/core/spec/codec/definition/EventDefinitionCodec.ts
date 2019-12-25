@@ -26,7 +26,7 @@ export class EventDefinitionCodec {
     static encode(def: EventDefinition): any {
         const o: any = {
             type: def.type.toString(),
-            description: DescriptionCodec.encode(def.type.description),
+            description: DescriptionCodec.encode(def.description),
         };
 
         if (def.arguments.length > 0) {

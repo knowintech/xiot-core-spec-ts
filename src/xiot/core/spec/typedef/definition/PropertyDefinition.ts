@@ -10,16 +10,18 @@ import {ValueRange} from './property/ValueRange';
 export class PropertyDefinition {
 
   type: PropertyType;
+  description: Map<string, string> = new Map<string, string>();
   format: DataFormat = DataFormat.BOOL;
   access: Access = new Access();
   constraintValue: ConstraintValue | null = null;
   unit: Unit = Unit.NONE;
 
   constructor(type: PropertyType, description: Map<string, string>) {
-    this.type = new PropertyType(type.toString());
+    // this.type = new PropertyType(type.toString());
 
+    this.type = type;
     if (description != null) {
-      this.type.description = description;
+      this.description = description;
     }
   }
 

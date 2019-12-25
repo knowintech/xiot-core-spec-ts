@@ -11,16 +11,18 @@ export class EventCodec {
 
         if (array != null) {
             for (const o of array) {
-                const iid = o[Spec.IID];
-                const type = new EventType(o[Spec.TYPE]);
-                const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                const a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
+                // const iid = o[Spec.IID];
+                // const type = new EventType(o[Spec.TYPE]);
+                // const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
+                // const a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
-                if (o[Spec.X_OPTIONAL] != null) {
-                    type._optional = o[Spec.X_OPTIONAL];
-                }
+                // if (o[Spec.X_OPTIONAL] != null) {
+                //     type._optional = o[Spec.X_OPTIONAL];
+                // }
 
-                list.push(new Event(iid, type, description, a));
+                // list.push(new Event(iid, type, description, a));
+
+                list.push(EventCodec.decode(o));
             }
         }
 
@@ -33,9 +35,9 @@ export class EventCodec {
         const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
         const a = ArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
-        if (o[Spec.X_OPTIONAL] != null) {
-            type._optional = o[Spec.X_OPTIONAL];
-        }
+        // if (o[Spec.X_OPTIONAL] != null) {
+        //     type._optional = o[Spec.X_OPTIONAL];
+        // }
 
         return new Event(iid, type, description, a);
     }
@@ -44,16 +46,16 @@ export class EventCodec {
         const o: any = {
             iid: event.iid,
             type: event.type.toString(),
-            description: DescriptionCodec.encode(event.type.description),
+            description: DescriptionCodec.encode(event.description),
         };
 
         if (event.arguments.size > 0) {
             o[Spec.ARGUMENTS] = ArgumentCodec.encodeArray(event.getArguments());
         }
 
-        if (event.type._optional) {
-            o[Spec.X_OPTIONAL] = true;
-        }
+        // if (event.type._optional) {
+        //     o[Spec.X_OPTIONAL] = true;
+        // }
 
         return o;
     }

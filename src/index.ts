@@ -40,6 +40,15 @@ export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint8';
 export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint16';
 export * from './xiot/core/spec/typedef/definition/property/data/value/Vuint32';
 
+export * from './xiot/core/spec/typedef/dto/ActionTypeDTO';
+export * from './xiot/core/spec/typedef/dto/DeviceDTO';
+export * from './xiot/core/spec/typedef/dto/DeviceTypeDTO';
+export * from './xiot/core/spec/typedef/dto/EventTypeDTO';
+export * from './xiot/core/spec/typedef/dto/FormatDTO';
+export * from './xiot/core/spec/typedef/dto/PropertyTypeDTO';
+export * from './xiot/core/spec/typedef/dto/ServiceTypeDTO';
+export * from './xiot/core/spec/typedef/dto/UnitDTO';
+
 export * from './xiot/core/spec/typedef/event/device/XiotBridgeInitialized';
 export * from './xiot/core/spec/typedef/event/device/XiotChild';
 export * from './xiot/core/spec/typedef/event/device/XiotChildrenAdded';
@@ -93,6 +102,12 @@ export * from './xiot/core/spec/typedef/status/OperationStatus';
 export * from './xiot/core/spec/typedef/summary/DeviceCompact';
 export * from './xiot/core/spec/typedef/summary/DeviceSummary';
 
+export * from './xiot/core/spec/typedef/template/ActionTemplate';
+export * from './xiot/core/spec/typedef/template/DeviceTemplate';
+export * from './xiot/core/spec/typedef/template/EventTemplate';
+export * from './xiot/core/spec/typedef/template/PropertyTemplate';
+export * from './xiot/core/spec/typedef/template/ServiceTemplate';
+
 export * from './xiot/core/spec/typedef/udid/XcpUniversalDID';
 
 export * from './xiot/core/spec/typedef/utils/DeviceHelper';
@@ -117,6 +132,15 @@ export * from './xiot/core/spec/codec/definition/PropertyDefinitionCodec';
 export * from './xiot/core/spec/codec/definition/ServiceDefinitionCodec';
 export * from './xiot/core/spec/codec/definition/ValueListCodec';
 export * from './xiot/core/spec/codec/definition/ValueRangeCodec';
+
+export * from './xiot/core/spec/codec/dto/ActionTypeDTOCodec';
+export * from './xiot/core/spec/codec/dto/DeviceDTOCodec';
+export * from './xiot/core/spec/codec/dto/DeviceTypeDTOCodec';
+export * from './xiot/core/spec/codec/dto/EventTypeDTOCodec';
+export * from './xiot/core/spec/codec/dto/FormatDTOCodec';
+export * from './xiot/core/spec/codec/dto/PropertyTypeDTOCodec';
+export * from './xiot/core/spec/codec/dto/ServiceTypeDTOCodec';
+export * from './xiot/core/spec/codec/dto/UnitDTOCodec';
 
 export * from './xiot/core/spec/codec/instance/ActionCodec';
 export * from './xiot/core/spec/codec/instance/ArgumentCodec';
@@ -144,3 +168,8 @@ export * from './xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';
 export * from './xiot/core/spec/codec/summary/DeviceSummaryCodec';
 
+export * from './xiot/core/spec/codec/template/ActionTemplateCodec';
+export * from './xiot/core/spec/codec/template/DeviceTemplateCodec';
+export * from './xiot/core/spec/codec/template/ServiceTemplateCodec';
+export * from './xiot/core/spec/codec/template/EventTemplateCodec';
+export * from './xiot/core/spec/codec/template/PropertyTemplateCodec';

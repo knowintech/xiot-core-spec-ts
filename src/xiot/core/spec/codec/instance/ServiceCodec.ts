@@ -28,21 +28,21 @@ export class ServiceCodec {
         const actions = ActionCodec.decodeArray(o[Spec.ACTIONS]);
         const events = EventCodec.decodeArray(o[Spec.EVENTS]);
 
-        if (o[Spec.X_OPTIONAL] != null) {
-            type._optional = o[Spec.X_OPTIONAL];
-        }
-
-        if (o[Spec.X_PROPERTY_ADDABLE] != null) {
-            type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
-        }
-
-        if (o[Spec.X_ACTION_ADDABLE] != null) {
-            type._action_addable = o[Spec.X_ACTION_ADDABLE];
-        }
-
-        if (o[Spec.X_EVENT_ADDABLE] != null) {
-            type._event_addable = o[Spec.X_EVENT_ADDABLE];
-        }
+        // if (o[Spec.X_OPTIONAL] != null) {
+        //     type._optional = o[Spec.X_OPTIONAL];
+        // }
+        //
+        // if (o[Spec.X_PROPERTY_ADDABLE] != null) {
+        //     type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
+        // }
+        //
+        // if (o[Spec.X_ACTION_ADDABLE] != null) {
+        //     type._action_addable = o[Spec.X_ACTION_ADDABLE];
+        // }
+        //
+        // if (o[Spec.X_EVENT_ADDABLE] != null) {
+        //     type._event_addable = o[Spec.X_EVENT_ADDABLE];
+        // }
 
         return new Service(iid, type, description, properties, actions, events);
     }
@@ -51,7 +51,7 @@ export class ServiceCodec {
         const o: any = {
             iid: service.iid,
             type: service.type.toString(),
-            description: DescriptionCodec.encode(service.type.description),
+            description: DescriptionCodec.encode(service.description),
         };
 
         if (service.properties.size > 0) {
@@ -66,21 +66,21 @@ export class ServiceCodec {
             o[Spec.EVENTS] = EventCodec.encodeArray(service.events);
         }
 
-        if (service.type._optional) {
-            o[Spec.X_OPTIONAL] = true;
-        }
-
-        if (service.type._property_addable) {
-            o[Spec.X_PROPERTY_ADDABLE] = true;
-        }
-
-        if (service.type._action_addable) {
-            o[Spec.X_ACTION_ADDABLE] = true;
-        }
-
-        if (service.type._event_addable) {
-            o[Spec.X_EVENT_ADDABLE] = true;
-        }
+        // if (service.type._optional) {
+        //     o[Spec.X_OPTIONAL] = true;
+        // }
+        //
+        // if (service.type._property_addable) {
+        //     o[Spec.X_PROPERTY_ADDABLE] = true;
+        // }
+        //
+        // if (service.type._action_addable) {
+        //     o[Spec.X_ACTION_ADDABLE] = true;
+        // }
+        //
+        // if (service.type._event_addable) {
+        //     o[Spec.X_EVENT_ADDABLE] = true;
+        // }
 
         return o;
     }

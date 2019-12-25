@@ -24,24 +24,24 @@ export class ActionCodec {
         const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
         const argumentsIn = ArgumentCodec.decodeArray(o[Spec.IN]);
         const argumentsOut = ArgumentCodec.decodeArray(o[Spec.OUT]);
+        //
+        // if (o[Spec.X_OPTIONAL] != null) {
+        //     type._optional = o[Spec.X_OPTIONAL];
+        // }
 
-        if (o[Spec.X_OPTIONAL] != null) {
-            type._optional = o[Spec.X_OPTIONAL];
-        }
-
-        return new Action(iid, type, description, argumentsIn, argumentsOut)
+        return new Action(iid, type, description, argumentsIn, argumentsOut);
     }
 
     static encode(action: Action): any {
         const o: any = {
             iid: action.iid,
             type: action.type.toString(),
-            description: DescriptionCodec.encode(action.type.description),
+            description: DescriptionCodec.encode(action.description),
         };
-
-        if (action.type._optional) {
-            o[Spec.X_OPTIONAL] = true;
-        }
+        //
+        // if (action.type._optional) {
+        //     o[Spec.X_OPTIONAL] = true;
+        // }
 
         if (action.in.size > 0) {
             o[Spec.IN] = ArgumentCodec.encodeArray(action.getArgumentsIn());
