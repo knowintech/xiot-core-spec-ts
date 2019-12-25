@@ -1,13 +1,9 @@
-import {Device} from '../instance/Device';
-import {Service} from '../instance/Service';
-import {Property} from '../instance/Property';
-import {Action} from '../instance/Action';
-import {Event} from '../instance/Event';
 import {UrnStyle} from '../definition/urn/UrnStyle';
+import {ActionTemplate, DeviceTemplate, EventTemplate, PropertyTemplate, ServiceTemplate} from '../../../../..';
 
 export class DeviceHelper {
 
-    static updateService(service: Service, groupId: string, model: string, version: number): void  {
+    static updateService(service: ServiceTemplate, groupId: string, model: string, version: number): void  {
       if (service.type != null) {
         service.type.groupId = groupId;
         service.type.model = model;
@@ -19,16 +15,16 @@ export class DeviceHelper {
       }
     }
 
-    static updateProperty(p: Property, groupId: string, model: string, version: number): void  {
-      if (p.type != null) {
-        p.type.groupId = groupId;
-        p.type.model = model;
-        p.type.version = version;
-        p.type.style = UrnStyle.XIOT;
+    static updateProperty(p: PropertyTemplate, groupId: string, model: string, version: number): void  {
+      if (p.definition.type != null) {
+        p.definition.type.groupId = groupId;
+        p.definition.type.model = model;
+        p.definition.type.version = version;
+        p.definition.type.style = UrnStyle.XIOT;
       }
     }
 
-    static updateAction(a: Action, groupId: string, model: string, version: number): void  {
+    static updateAction(a: ActionTemplate, groupId: string, model: string, version: number): void  {
       if (a.type != null) {
         a.type.groupId = groupId;
         a.type.model = model;
@@ -37,7 +33,7 @@ export class DeviceHelper {
       }
     }
 
-    static updateEvent(a: Event, groupId: string, model: string, version: number): void  {
+    static updateEvent(a: EventTemplate, groupId: string, model: string, version: number): void  {
       if (a.type != null) {
         a.type.groupId = groupId;
         a.type.model = model;
@@ -46,7 +42,7 @@ export class DeviceHelper {
       }
     }
 
-    static alreadyAddedItems(device: Device): boolean  {
+    static alreadyAddedItems(device: DeviceTemplate): boolean  {
       for (const s of device.getServices()) {
         if (s.type != null) {
           if (s.type._just_added) {
@@ -57,8 +53,8 @@ export class DeviceHelper {
 
       for (const s of device.getServices()) {
         for (const p of s.getProperties()) {
-          if (p.type != null) {
-            if (p.type._just_added) {
+          if (p.definition.type != null) {
+            if (p.definition.type._just_added) {
               return true;
             }
           }
@@ -84,7 +80,7 @@ export class DeviceHelper {
       return false;
     }
 
-    static alreadyChanged(device: Device): boolean  {
+    static alreadyChanged(device: DeviceTemplate): boolean  {
       for (const s of device.getServices()) {
         if (s.type != null) {
           if (s.type._just_added || s.type._changed) {
@@ -95,8 +91,8 @@ export class DeviceHelper {
 
       for (const s of device.getServices()) {
         for (const p of s.getProperties()) {
-          if (p.type != null) {
-            if (p.type._just_added || p.type._changed) {
+          if (p.definition.type != null) {
+            if (p.definition.type._just_added || p.definition.type._changed) {
               return true;
             }
           }
@@ -122,11 +118,11 @@ export class DeviceHelper {
       return false;
     }
 
-    static addServices(device: Device, services: Service[]): void {
+    static addServices(device: DeviceTemplate, services: ServiceTemplate[]): void {
       services.forEach(s => DeviceHelper.addService(device, s));
     }
 
-    static addService(device: Device, service: Service): void {
+    static addService(device: DeviceTemplate, service: ServiceTemplate): void {
       DeviceHelper.reconstructService(device, service);
 
         if (service.type != null) {
@@ -137,16 +133,16 @@ export class DeviceHelper {
         device.services.set(service.iid, service);
     }
 
-    static addProperties(device: Device, siid: number, properties: Property[]): void {
+    static addProperties(device: DeviceTemplate, siid: number, properties: PropertyTemplate[]): void {
       properties.forEach(p => DeviceHelper.addProperty(device, siid, p));
     }
 
-    static addProperty(device: Device, siid: number, property: Property): void {
+    static addProperty(device: DeviceTemplate, siid: number, property: PropertyTemplate): void {
       DeviceHelper.reconstructProperty(device, siid, property);
 
-      if (property.type != null) {
-        property.type._just_added = true;
-        property.type._optional = true;
+      if (property.definition.type != null) {
+        property.definition.type._just_added = true;
+        property.definition.type._optional = true;
       }
 
       const s = device.services.get(siid);
@@ -155,11 +151,11 @@ export class DeviceHelper {
       }
     }
 
-    static addActions(device: Device, siid: number, actions: Action[]): void {
+    static addActions(device: DeviceTemplate, siid: number, actions: ActionTemplate[]): void {
       actions.forEach(a => DeviceHelper.addAction(device, siid, a));
     }
 
-    static addAction(device: Device, siid: number, action: Action): void {
+    static addAction(device: DeviceTemplate, siid: number, action: ActionTemplate): void {
       DeviceHelper.reconstructAction(device, siid, action);
 
       if (action.type != null) {
@@ -173,11 +169,11 @@ export class DeviceHelper {
       }
     }
 
-    static addEvents(device: Device, siid: number, events: Event[]): void {
+    static addEvents(device: DeviceTemplate, siid: number, events: EventTemplate[]): void {
       events.forEach(e => DeviceHelper.addEvent(device, siid, e));
     }
 
-    static addEvent(device: Device, siid: number, event: Event): void {
+    static addEvent(device: DeviceTemplate, siid: number, event: EventTemplate): void {
       DeviceHelper.reconstructEvent(device, siid, event);
 
       if (event.type != null) {
@@ -191,7 +187,7 @@ export class DeviceHelper {
       }
     }
 
-    private static reconstructProperty(device: Device, siid: number, property: Property) {
+    private static reconstructProperty(device: DeviceTemplate, siid: number, property: PropertyTemplate) {
       if (device.type == null) {
         return;
       }
@@ -203,7 +199,7 @@ export class DeviceHelper {
       }
     }
 
-    private static reconstructAction(device: Device, siid: number, action: Action) {
+    private static reconstructAction(device: DeviceTemplate, siid: number, action: ActionTemplate) {
       if (device.type == null) {
         return;
       }
@@ -211,7 +207,7 @@ export class DeviceHelper {
       action.iid = DeviceHelper.newActionIID(device, siid);
     }
 
-    private static reconstructEvent(device: Device, siid: number, event: Event) {
+    private static reconstructEvent(device: DeviceTemplate, siid: number, event: EventTemplate) {
       if (device.type == null) {
         return;
       }
@@ -219,7 +215,7 @@ export class DeviceHelper {
       event.iid = DeviceHelper.newEventIID(device, siid);
     }
 
-    private static reconstructService(device: Device, service: Service): void {
+    private static reconstructService(device: DeviceTemplate, service: ServiceTemplate): void {
         let piid = 0;
 
         if (device.type == null) {
@@ -235,8 +231,8 @@ export class DeviceHelper {
         }
 
         service.getProperties().forEach(p => {
-          if (p.type != null) {
-            p.type._just_added = true;
+          if (p.definition.type != null) {
+            p.definition.type._just_added = true;
           }
 
           p.iid = piid ++;
@@ -247,7 +243,7 @@ export class DeviceHelper {
         properties.forEach(p => service.properties.set(p.iid, p));
     }
 
-    private static newHomeKitIID(device: Device): number {
+    private static newHomeKitIID(device: DeviceTemplate): number {
         let iid = 0;
 
         device.getServices().forEach(s => {
@@ -265,7 +261,7 @@ export class DeviceHelper {
         return iid + 1;
     }
 
-    private static newServiceIID(device: Device): number {
+    private static newServiceIID(device: DeviceTemplate): number {
         let iid = 0;
 
         device.getServices().forEach(s => {
@@ -277,7 +273,7 @@ export class DeviceHelper {
         return iid + 1;
       }
 
-    private static newPropertyIID(device: Device, siid: number): number {
+    private static newPropertyIID(device: DeviceTemplate, siid: number): number {
         let iid = 0;
 
         const s = device.services.get(siid);
@@ -292,7 +288,7 @@ export class DeviceHelper {
         return iid + 1;
     }
 
-    private static newActionIID(device: Device, siid: number): number {
+    private static newActionIID(device: DeviceTemplate, siid: number): number {
       let iid = 0;
 
       const s = device.services.get(siid);
@@ -307,7 +303,7 @@ export class DeviceHelper {
       return iid + 1;
   }
 
-  private static newEventIID(device: Device, siid: number): number {
+  private static newEventIID(device: DeviceTemplate, siid: number): number {
     let iid = 0;
 
     const s = device.services.get(siid);

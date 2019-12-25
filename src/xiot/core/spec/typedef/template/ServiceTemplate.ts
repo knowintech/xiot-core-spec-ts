@@ -42,4 +42,16 @@ export class ServiceTemplate extends Optional {
         actions.forEach(x => this.actions.set(x.iid, x));
         events.forEach(x => this.events.set(x.iid, x));
     }
+
+    getProperties(): PropertyTemplate[] {
+        return Array.from(this.properties.values());
+    }
+
+    getActions(): ActionTemplate[] {
+        return Array.from(this.actions.values());
+    }
+
+    getEvents(): EventTemplate[] {
+        return Array.from(this.events.values());
+    }
 }

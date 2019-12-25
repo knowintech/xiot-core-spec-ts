@@ -1,4 +1,4 @@
-import {DeviceType} from '../../../../..';
+import {DeviceType, Service} from '../../../../..';
 import {ServiceTemplate} from './ServiceTemplate';
 
 /**
@@ -20,5 +20,9 @@ export class DeviceTemplate {
         }
 
         services.forEach(x => this.services.set(x.iid, x));
+    }
+
+    getServices(): ServiceTemplate[] {
+        return Array.from(this.services.values());
     }
 }

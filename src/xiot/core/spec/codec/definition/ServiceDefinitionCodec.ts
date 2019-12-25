@@ -28,6 +28,16 @@ export class ServiceDefinitionCodec {
         const requiredEvents = EventTypeCodec.decodeArray(o[Spec.REQUIRED_EVENTS]);
         const optionalEvents = EventTypeCodec.decodeArray(o[Spec.OPTIONAL_EVENTS]);
 
+        if (type.ns === 'homekit-spec') {
+            type._property_addable = true;
+            type._action_addable = false;
+            type._event_addable = false;
+        } else {
+            type._property_addable = true;
+            type._action_addable = true;
+            type._event_addable = true;
+        }
+
         // if (o[Spec.X_PROPERTY_ADDABLE] != null) {
         //     type._property_addable = o[Spec.X_PROPERTY_ADDABLE];
         // }
