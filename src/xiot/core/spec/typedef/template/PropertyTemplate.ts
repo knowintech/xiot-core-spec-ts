@@ -1,17 +1,20 @@
-import {PropertyDefinition} from '../../../../..';
-import {Optional} from './Optional';
+import {PropertyDefinition, PropertyValue} from '../../../../..';
 
 /**
  * ouyang
  */
-export class PropertyTemplate extends Optional {
+export class PropertyTemplate extends PropertyDefinition {
 
-    definition: PropertyDefinition;
+    iid: number;
+    required: boolean;
 
-    constructor(iid: number,
-                required: boolean,
-                definition: PropertyDefinition) {
-        super(iid, required);
-        this.definition = definition;
+    constructor(iid: number, required: boolean, def: PropertyDefinition) {
+        super(def.type, def.description);
+        this.iid = iid;
+        this.required = required;
+        this.format = def.format;
+        this.access = def.access;
+        this.constraintValue = def.constraintValue;
+        this.unit = def.unit;
     }
 }

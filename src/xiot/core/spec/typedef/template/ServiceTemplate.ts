@@ -1,5 +1,4 @@
 import {ServiceType} from '../../../../..';
-import {Optional} from './Optional';
 import {PropertyTemplate} from './PropertyTemplate';
 import {ActionTemplate} from './ActionTemplate';
 import {EventTemplate} from './EventTemplate';
@@ -7,8 +6,10 @@ import {EventTemplate} from './EventTemplate';
 /**
  * ouyang
  */
-export class ServiceTemplate extends Optional {
+export class ServiceTemplate {
 
+    iid: number;
+    required: boolean;
     type: ServiceType;
     description: Map<string, string> = new Map<string, string>();
     properties: Map<number, PropertyTemplate> = new Map<number, PropertyTemplate>();
@@ -28,7 +29,8 @@ export class ServiceTemplate extends Optional {
                 propertyAddable: boolean,
                 actionAddable: boolean,
                 eventAddable: boolean) {
-        super(iid, required);
+        this.iid = iid;
+        this.required = required;
         this.type = type;
         this.propertyAddable = propertyAddable;
         this.actionAddable = actionAddable;

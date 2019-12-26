@@ -1,11 +1,12 @@
 import {ActionType, Argument} from '../../../../..';
-import {Optional} from './Optional';
 
 /**
  * ouyang
  */
-export class ActionTemplate extends Optional {
+export class ActionTemplate {
 
+    iid: number;
+    required: boolean;
     type: ActionType;
     description: Map<string, string> = new Map<string, string>();
     in: Map<number, Argument> = new Map<number, Argument>();
@@ -17,7 +18,8 @@ export class ActionTemplate extends Optional {
                 description: Map<string, string>,
                 argumentsIn: Argument[],
                 argumentsOut: Argument[]) {
-        super(iid, required);
+        this.iid = iid;
+        this.required = required;
         this.type = type;
 
         if (description != null) {

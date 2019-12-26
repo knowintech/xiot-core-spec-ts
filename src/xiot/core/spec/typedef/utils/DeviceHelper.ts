@@ -16,11 +16,11 @@ export class DeviceHelper {
     }
 
     static updateProperty(p: PropertyTemplate, groupId: string, model: string, version: number): void  {
-      if (p.definition.type != null) {
-        p.definition.type.groupId = groupId;
-        p.definition.type.model = model;
-        p.definition.type.version = version;
-        p.definition.type.style = UrnStyle.XIOT;
+      if (p.type != null) {
+        p.type.groupId = groupId;
+        p.type.model = model;
+        p.type.version = version;
+        p.type.style = UrnStyle.XIOT;
       }
     }
 
@@ -53,8 +53,8 @@ export class DeviceHelper {
 
       for (const s of device.getServices()) {
         for (const p of s.getProperties()) {
-          if (p.definition.type != null) {
-            if (p.definition.type._just_added) {
+          if (p.type != null) {
+            if (p.type._just_added) {
               return true;
             }
           }
@@ -91,8 +91,8 @@ export class DeviceHelper {
 
       for (const s of device.getServices()) {
         for (const p of s.getProperties()) {
-          if (p.definition.type != null) {
-            if (p.definition.type._just_added || p.definition.type._changed) {
+          if (p.type != null) {
+            if (p.type._just_added || p.type._changed) {
               return true;
             }
           }
@@ -140,9 +140,9 @@ export class DeviceHelper {
     static addProperty(device: DeviceTemplate, siid: number, property: PropertyTemplate): void {
       DeviceHelper.reconstructProperty(device, siid, property);
 
-      if (property.definition.type != null) {
-        property.definition.type._just_added = true;
-        property.definition.type._optional = true;
+      if (property.type != null) {
+        property.type._just_added = true;
+        property.type._optional = true;
       }
 
       const s = device.services.get(siid);
@@ -231,8 +231,8 @@ export class DeviceHelper {
         }
 
         service.getProperties().forEach(p => {
-          if (p.definition.type != null) {
-            p.definition.type._just_added = true;
+          if (p.type != null) {
+            p.type._just_added = true;
           }
 
           p.iid = piid ++;

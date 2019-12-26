@@ -24,7 +24,7 @@ export class PropertyTemplateCodec {
     }
 
     static encode(property: PropertyTemplate): Object {
-        const o: any = PropertyDefinitionCodec.encode(property.definition);
+        const o: any = PropertyDefinitionCodec.encode(property);
         o[Spec.IID] = property.iid;
         o[Spec.X_REQUIRED] = property.required;
         return o;
