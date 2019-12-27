@@ -150,6 +150,6 @@ export class Urn extends Extendable {
                 break;
         }
 
-        return s;
+        return s.toLowerCase();
     }
 }
