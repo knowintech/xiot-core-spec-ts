@@ -55,7 +55,7 @@ export class Vuint32 implements DataValue<number> {
         const maxValue = (<Vuint32>max).value;
         const stepValue = (<Vuint32>step).value;
 
-        for (let v = minValue; v < maxValue; v += stepValue) {
+        for (let v = minValue; v <= maxValue; v += stepValue) {
             if (v === this.value) {
                 return true;
             }

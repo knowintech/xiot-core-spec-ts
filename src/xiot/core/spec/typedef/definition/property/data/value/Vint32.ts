@@ -55,7 +55,7 @@ export class Vint32 implements DataValue<number> {
         const maxValue = (<Vint32>max).value;
         const stepValue = (<Vint32>step).value;
 
-        for (let v = minValue; v < maxValue; v += stepValue) {
+        for (let v = minValue; v <= maxValue; v += stepValue) {
             if (v === this.value) {
                 return true;
             }

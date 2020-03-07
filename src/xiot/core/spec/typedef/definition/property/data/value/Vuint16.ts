@@ -62,7 +62,7 @@ export class Vuint16 implements DataValue<number> {
         const maxValue = (<Vuint16>max).value;
         const stepValue = (<Vuint16>step).value;
 
-        for (let v = minValue; v < maxValue; v += stepValue) {
+        for (let v = minValue; v <= maxValue; v += stepValue) {
             if (v === this.value) {
                 return true;
             }
