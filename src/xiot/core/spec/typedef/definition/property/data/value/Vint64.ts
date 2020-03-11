@@ -55,7 +55,7 @@ export class Vint64 implements DataValue<number> {
         const maxValue = (<Vint64>max).value;
         const stepValue = (<Vint64>step).value;
 
-        for (let v = minValue; v < maxValue; v += stepValue) {
+        for (let v = minValue; v <= maxValue; v += stepValue) {
             if (v === this.value) {
                 return true;
             }

@@ -16,9 +16,9 @@ export class OperableEventCodec {
                 const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
                 const a = OperableArgumentCodec.decodeArray(o[Spec.ARGUMENTS]);
 
-                if (o[Spec.X_OPTIONAL] != null) {
-                    type._optional = o[Spec.X_OPTIONAL];
-                }
+                // if (o[Spec.X_OPTIONAL] != null) {
+                //     type._optional = o[Spec.X_OPTIONAL];
+                // }
 
                 list.push(new OperableEvent(iid, type, description, a));
             }

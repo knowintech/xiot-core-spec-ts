@@ -27,7 +27,7 @@ export class DeviceDefinitionCodec {
     static encode(def: DeviceDefinition): any {
         const o: any = {
             type: def.type.toString(),
-            description: DescriptionCodec.encode(def.type.description),
+            description: DescriptionCodec.encode(def.description),
         };
 
         if (def.requiredServices.length > 0) {

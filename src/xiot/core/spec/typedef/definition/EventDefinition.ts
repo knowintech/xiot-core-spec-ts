@@ -4,6 +4,7 @@ import {ArgumentDefinition} from './ArgumentDefinition';
 export class EventDefinition {
 
   type: EventType;
+  description: Map<string, string> = new Map<string, string>();
   arguments: ArgumentDefinition[] = [];
 
   constructor(type: EventType,
@@ -12,7 +13,7 @@ export class EventDefinition {
     this.type = type;
 
     if (description != null) {
-      this.type.description = description;
+      this.description = description;
     }
 
     if (arguments != null) {

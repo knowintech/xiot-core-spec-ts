@@ -18,7 +18,7 @@ export class Urn extends Extendable {
     public version = 0;
 
     public style: UrnStyle = UrnStyle.SPEC;
-    public description: Map<string, string> = new Map<string, string>();
+    // public description: Map<string, string> = new Map<string, string>();
     public valid = false;
 
     static getShortUUID(value: number): string {
@@ -134,19 +134,19 @@ export class Urn extends Extendable {
                 break;
 
             case UrnStyle.V1:
-                s = s + ':' + this.v1modified;
+                s = s + ':' + this.v1modified.toLowerCase();
                 break;
 
             case UrnStyle.V2:
-                s = s + ':' + this.v2modified + ':' + this.version;
+                s = s + ':' + this.v2modified.toLowerCase() + ':' + this.version;
                 break;
 
             case UrnStyle.V2_TEMPLATE:
-                s = s + ':' + this.v2modified + ':' + this.version + ':' + this.v2template;
+                s = s + ':' + this.v2modified.toLowerCase() + ':' + this.version + ':' + this.v2template;
                 break;
 
             case UrnStyle.XIOT:
-                s = s + ':' + this.groupId + ':' + this.model + ':' + this.version;
+                s = s + ':' + this.groupId.toLowerCase() + ':' + this.model.toLowerCase() + ':' + this.version;
                 break;
         }
 

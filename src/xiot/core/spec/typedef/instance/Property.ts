@@ -11,7 +11,7 @@ export class Property extends PropertyDefinition {
   result: Result = new Result();
 
   constructor(iid: number, def: PropertyDefinition) {
-    super(def.type, def.type.description);
+    super(def.type, def.description);
     this.iid = iid;
     this.format = def.format;
     this.access = def.access;

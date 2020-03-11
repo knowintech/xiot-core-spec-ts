@@ -1,5 +1,4 @@
 import {EventType} from '../../../typedef/definition/urn/EventType';
-import { DescriptionCodec } from '../DescriptionCodec';
 
 export class EventTypeCodec {
 
@@ -11,9 +10,7 @@ export class EventTypeCodec {
                 if (typeof v === 'string') {
                     list.push(new EventType(v));
                 } else if (typeof v === 'object') {
-                    const type = new EventType(v['type']);
-                    type.description = DescriptionCodec.decode(v['description']);
-                    list.push(type);
+                    list.push(new EventType(v['type']));
                 }
             }
         }
@@ -25,14 +22,7 @@ export class EventTypeCodec {
         const array: any[] = [];
 
         actions.forEach((type) => {
-            if (type.description.size === 0) {
-                array.push(type.toString());
-            } else {
-                array.push({
-                    type: type.toString(),
-                    description: DescriptionCodec.encode(type.description)
-                });
-            }
+            array.push(type.toString());
         });
 
         return array;

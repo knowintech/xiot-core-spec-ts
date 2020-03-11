@@ -22,20 +22,21 @@ export class PropertyCodec {
     }
 
     static decode(o: any): Property {
-        const p = new Property(o[Spec.IID], PropertyDefinitionCodec.decode(o));
-
-        if (o[Spec.X_OPTIONAL] != null) {
-            p.type._optional = o[Spec.X_OPTIONAL];
-        }
-
-        return p;
+        return new Property(o[Spec.IID], PropertyDefinitionCodec.decode(o));
+        // const p = new Property(o[Spec.IID], PropertyDefinitionCodec.decode(o));
+        //
+        // if (o[Spec.X_OPTIONAL] != null) {
+        //     p.type._optional = o[Spec.X_OPTIONAL];
+        // }
+        //
+        // return p;
     }
 
     static encode(property: Property): Object {
         const object: any = {
             iid: property.iid,
             type:  property.type.toString(),
-            description: DescriptionCodec.encode(property.type.description),
+            description: DescriptionCodec.encode(property.description),
             format: DataFormatToString(property.format),
             access: property.access.toList()
         };
@@ -54,9 +55,9 @@ export class PropertyCodec {
             object[Spec.UNIT] = UnitToString(property.unit);
         }
 
-        if (property.type._optional) {
-            object[Spec.X_OPTIONAL] = true;
-        }
+        // if (property.type._optional) {
+        //     object[Spec.X_OPTIONAL] = true;
+        // }
 
         return object;
     }

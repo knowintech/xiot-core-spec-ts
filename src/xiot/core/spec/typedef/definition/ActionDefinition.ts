@@ -4,6 +4,7 @@ import {ArgumentDefinition} from './ArgumentDefinition';
 export class ActionDefinition {
 
     type: ActionType;
+    description: Map<string, string> = new Map<string, string>();
     in: ArgumentDefinition[] = [];
     out: ArgumentDefinition[] = [];
 
@@ -14,7 +15,7 @@ export class ActionDefinition {
         this.type = type;
 
         if (description != null) {
-            this.type.description = description;
+            this.description = description;
         }
 
         if (argumentsIn != null) {

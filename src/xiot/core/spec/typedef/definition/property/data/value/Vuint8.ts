@@ -55,7 +55,7 @@ export class Vuint8 implements DataValue<number> {
         const maxValue = (<Vuint8>max).value;
         const stepValue = (<Vuint8>step).value;
 
-        for (let v = minValue; v < maxValue; v += stepValue) {
+        for (let v = minValue; v <= maxValue; v += stepValue) {
             if (v === this.value) {
                 return true;
             }
