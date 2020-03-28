@@ -108,8 +108,6 @@ export * from './xiot/core/spec/typedef/template/EventTemplate';
 export * from './xiot/core/spec/typedef/template/PropertyTemplate';
 export * from './xiot/core/spec/typedef/template/ServiceTemplate';
 
-export * from './xiot/core/spec/typedef/udid/XcpUniversalDID';
-
 export * from './xiot/core/spec/typedef/utils/DeviceHelper';
 
 export * from './xiot/core/spec/typedef/xid/AID';
