@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:keep-warm-temperature:0000002E",
+  "type" : "urn:xiot-spec:property:keep-warm-temperature:0000002e",
   "description" : "Keep Warm Temperature",
   "format" : "float",
   "access" : [ "read", "write", "notify" ],

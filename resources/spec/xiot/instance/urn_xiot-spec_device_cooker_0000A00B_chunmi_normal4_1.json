@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:cooker:0000A00B:chunmi:normal4:1",
+  "type" : "urn:xiot-spec:device:cooker:0000a00b:chunmi:normal4:1",
   "description" : "Cooker",
   "services" : [ {
     "iid" : 1,

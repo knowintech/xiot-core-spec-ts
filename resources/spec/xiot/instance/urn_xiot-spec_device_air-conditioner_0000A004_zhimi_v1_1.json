@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:zhimi:v1:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:zhimi:v1:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 1,
@@ -38,7 +38,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:zhimi:v1:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:zhimi:v1:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 1,
@@ -111,7 +111,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:zhimi:v1:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:zhimi:v1:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -119,7 +119,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:environment:0000780A:zhimi:v1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:zhimi:v1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
@@ -139,7 +139,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:zhimi:v1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:zhimi:v1:1",
       "description" : "Indoor Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -147,7 +147,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:zhimi:v1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:zhimi:v1:1",
       "description" : "Outdoor Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

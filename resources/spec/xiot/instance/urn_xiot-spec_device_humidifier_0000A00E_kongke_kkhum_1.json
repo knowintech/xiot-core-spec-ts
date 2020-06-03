@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:humidifier:0000A00E:kongke:kkhum:1",
+  "type" : "urn:xiot-spec:device:humidifier:0000a00e:kongke:kkhum:1",
   "description" : "Humidifier",
   "services" : [ {
     "iid" : 1,
@@ -74,18 +74,18 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:kongke:kkhum:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:kongke:kkhum:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:kongke:kkhum:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:kongke:kkhum:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -106,7 +106,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:kongke:kkhum:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -127,7 +127,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:kongke:kkhum:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -151,7 +151,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:kongke:kkhum:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:kongke:kkhum:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 1,
@@ -162,14 +162,14 @@
       "value-range" : [ 0, 1000, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:filter-left-time:0000001F:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:filter-left-time:0000001f:kongke:kkhum:1",
       "description" : "Filter Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 1000, 1 ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:kongke:kkhum:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -177,7 +177,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:filter-used-flow:0000004A:kongke:kkhum:1",
+      "type" : "urn:xiot-spec:property:filter-used-flow:0000004a:kongke:kkhum:1",
       "description" : "Filter Used Flow",
       "format" : "uint16",
       "access" : [ "read", "notify" ],

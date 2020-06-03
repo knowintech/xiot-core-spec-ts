@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:water-purifier:0000A013:yunmi:lx2:1",
+  "type" : "urn:xiot-spec:device:water-purifier:0000a013:yunmi:lx2:1",
   "description" : "Water Purifier",
   "services" : [ {
     "iid" : 1,
@@ -50,18 +50,18 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:tds-sensor:0000780D:yunmi:lx2:1",
+    "type" : "urn:xiot-spec:service:tds-sensor:0000780d:yunmi:lx2:1",
     "description" : "Total Dissolved Solids Sensor",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:tds-in:0000002C:yunmi:lx2:1",
+      "type" : "urn:xiot-spec:property:tds-in:0000002c:yunmi:lx2:1",
       "description" : "Total Dissolved Solids for Input Water",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 10000, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:tds-out:0000002D:yunmi:lx2:1",
+      "type" : "urn:xiot-spec:property:tds-out:0000002d:yunmi:lx2:1",
       "description" : "Total Dissolved Solids for Output Water",
       "format" : "uint16",
       "access" : [ "read", "notify" ],

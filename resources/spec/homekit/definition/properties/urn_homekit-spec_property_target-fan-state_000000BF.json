@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:target-fan-state:000000BF",
+    "type": "urn:homekit-spec:property:target-fan-state:000000bf",
     "description": "Target Fan State",
     "format": "uint8",
     "access": ["read", "write", "notify"],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:ave:ha2wadb1201:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:ave:ha2wadb1201:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 1,
@@ -52,7 +52,7 @@
       "description" : "Channel Up"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ave:ha2wadb1201:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ave:ha2wadb1201:1",
       "description" : "Mute Off"
     }, {
       "iid" : 4,
@@ -125,7 +125,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:ave:ha2wadb1201:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:ave:ha2wadb1201:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:ozone-density:000000C3",
+    "type": "urn:homekit-spec:property:ozone-density:000000c3",
     "description": "Ozone Density",
     "format": "float",
     "access": ["read", "notify"],

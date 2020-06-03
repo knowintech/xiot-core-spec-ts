@@ -3,6 +3,6 @@
     "description": "Target Temperature",
     "format": "float",
     "access": ["read", "write", "notify"],
-    "value-range": [10, 38, 0.1],
+    "value-range": [10, 38, 1],
     "unit": "celsius"
 }

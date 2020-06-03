@@ -2,6 +2,6 @@
     "type": "urn:homekit-spec:device:other:00000000",
     "description": "Other",
     "required-services": [
-        "urn:homekit-spec:service:accessory-information:0000003E"
+        "urn:homekit-spec:service:accessory-information:0000003e"
     ]
 }

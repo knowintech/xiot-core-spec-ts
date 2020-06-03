@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:clock:0000A026:zimi:myk01:1",
+  "type" : "urn:xiot-spec:device:clock:0000a026:zimi:myk01:1",
   "description" : "Clock",
   "services" : [ {
     "iid" : 1,

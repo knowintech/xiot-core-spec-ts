@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:color:0000000E",
+  "type" : "urn:xiot-spec:property:color:0000000e",
   "description" : "Color",
   "format" : "uint32",
   "access" : [ "read", "write", "notify" ],

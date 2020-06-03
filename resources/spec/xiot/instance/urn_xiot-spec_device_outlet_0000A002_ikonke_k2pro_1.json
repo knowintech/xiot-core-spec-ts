@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:ikonke:k2pro:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:ikonke:k2pro:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 368,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 377,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ikonke:k2pro:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ikonke:k2pro:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 329,

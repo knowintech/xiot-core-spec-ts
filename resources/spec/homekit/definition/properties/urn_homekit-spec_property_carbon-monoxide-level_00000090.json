@@ -3,5 +3,5 @@
     "description": "Carbon Monoxide Level",
     "format": "float",
     "access": ["read", "notify"],
-    "value-range": [0, 100, 0.1]
+    "value-range": [0, 100, 1]
 }

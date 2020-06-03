@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:fridge:0000A00F:scmkcz:cair:1",
+  "type" : "urn:xiot-spec:device:fridge:0000a00f:scmkcz:cair:1",
   "description" : "Fridge",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:fridge-chamber:0000781A:scmkcz:cair:1",
+    "type" : "urn:xiot-spec:service:fridge-chamber:0000781a:scmkcz:cair:1",
     "description" : "Fridge Chamber",
     "properties" : [ {
       "iid" : 1,
@@ -123,7 +123,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:scmkcz:cair:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:scmkcz:cair:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]

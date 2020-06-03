@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:zhimi:v1:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:zhimi:v1:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 1,
@@ -38,7 +38,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:environment:0000780A:zhimi:v1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:zhimi:v1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,

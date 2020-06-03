@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:tuya02:tvty:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:tuya02:tvty:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 355,
@@ -7,14 +7,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -56,7 +56,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -69,14 +69,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -118,7 +118,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -131,14 +131,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -180,7 +180,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -193,14 +193,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -242,7 +242,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -255,14 +255,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -304,7 +304,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -317,14 +317,14 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 706,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tvty:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 403,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tvty:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -366,7 +366,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -375,7 +375,7 @@
     } ]
   }, {
     "iid" : 297,
-    "type" : "urn:xiot-spec:service:television:0000781B:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:television:0000781b:tuya02:tvty:1",
     "description" : "Television",
     "properties" : [ {
       "iid" : 273,
@@ -392,7 +392,7 @@
       } ]
     }, {
       "iid" : 210,
-      "type" : "urn:xiot-spec:property:channel-control:0000003F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:channel-control:0000003f:tuya02:tvty:1",
       "description" : "Channel Control",
       "format" : "uint16",
       "access" : [ "write" ],
@@ -425,7 +425,7 @@
       } ]
     }, {
       "iid" : 351,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tvty:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -433,7 +433,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 415,
-      "type" : "urn:xiot-spec:property:input-control:0000003E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:input-control:0000003e:tuya02:tvty:1",
       "description" : "TV Input Control",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -520,7 +520,7 @@
       } ]
     }, {
       "iid" : 143,
-      "type" : "urn:xiot-spec:property:water-level:0000003D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:water-level:0000003d:tuya02:tvty:1",
       "description" : "Water Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -593,7 +593,7 @@
       } ]
     }, {
       "iid" : 143,
-      "type" : "urn:xiot-spec:property:water-level:0000003D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:water-level:0000003d:tuya02:tvty:1",
       "description" : "Water Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -602,7 +602,7 @@
     } ]
   }, {
     "iid" : 270,
-    "type" : "urn:xiot-spec:service:play-control:0000781D:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:play-control:0000781d:tuya02:tvty:1",
     "description" : "Play Control",
     "properties" : [ {
       "iid" : 419,
@@ -624,19 +624,19 @@
     } ],
     "actions" : [ {
       "iid" : 256,
-      "type" : "urn:xiot-spec:action:previous:0000280E:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:previous:0000280e:tuya02:tvty:1",
       "description" : "Previous"
     }, {
       "iid" : 149,
-      "type" : "urn:xiot-spec:action:play:0000280B:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:play:0000280b:tuya02:tvty:1",
       "description" : "Play"
     }, {
       "iid" : 567,
-      "type" : "urn:xiot-spec:action:pause:0000280C:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:pause:0000280c:tuya02:tvty:1",
       "description" : "Pause"
     }, {
       "iid" : 203,
-      "type" : "urn:xiot-spec:action:seek:0000280A:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:seek:0000280a:tuya02:tvty:1",
       "description" : "Seek",
       "in" : [ {
         "piid" : 275,
@@ -648,11 +648,11 @@
       } ]
     }, {
       "iid" : 158,
-      "type" : "urn:xiot-spec:action:stop:0000280D:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:stop:0000280d:tuya02:tvty:1",
       "description" : "Stop"
     }, {
       "iid" : 319,
-      "type" : "urn:xiot-spec:action:next:0000280F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:action:next:0000280f:tuya02:tvty:1",
       "description" : "Next"
     } ]
   }, {
@@ -693,7 +693,7 @@
       } ]
     }, {
       "iid" : 289,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:tuya02:tvty:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -759,7 +759,7 @@
     } ]
   }, {
     "iid" : 881,
-    "type" : "urn:xiot-spec:service:message-router:0000781E:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:message-router:0000781e:tuya02:tvty:1",
     "description" : "Message Router",
     "properties" : [ {
       "iid" : 466,
@@ -806,7 +806,7 @@
       } ]
     }, {
       "iid" : 289,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:tuya02:tvty:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -872,7 +872,7 @@
     } ]
   }, {
     "iid" : 562,
-    "type" : "urn:xiot-spec:service:switch:0000780C:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:tuya02:tvty:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 273,
@@ -930,7 +930,7 @@
     } ]
   }, {
     "iid" : 563,
-    "type" : "urn:xiot-spec:service:switch:0000780C:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:tuya02:tvty:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 273,
@@ -1046,7 +1046,7 @@
     } ]
   }, {
     "iid" : 249,
-    "type" : "urn:xiot-spec:service:power-consumption:0000780E:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:power-consumption:0000780e:tuya02:tvty:1",
     "description" : "Power Consumption",
     "properties" : [ {
       "iid" : 375,
@@ -1064,7 +1064,7 @@
       "value-range" : [ 0, 65535, 1 ]
     }, {
       "iid" : 552,
-      "type" : "urn:xiot-spec:property:power-consumption:0000002F:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:power-consumption:0000002f:tuya02:tvty:1",
       "description" : "Power Consumption",
       "format" : "uint16",
       "access" : [ "read" ],
@@ -1086,7 +1086,7 @@
     } ]
   }, {
     "iid" : 828,
-    "type" : "urn:xiot-spec:service:speaker:0000781C:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:speaker:0000781c:tuya02:tvty:1",
     "description" : "Speaker",
     "properties" : [ {
       "iid" : 370,
@@ -1105,7 +1105,7 @@
     } ]
   }, {
     "iid" : 350,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:tuya02:tvty:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 273,
@@ -1195,7 +1195,7 @@
     } ]
   }, {
     "iid" : 318,
-    "type" : "urn:xiot-spec:service:environment:0000780A:tuya02:tvty:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:tuya02:tvty:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 464,
@@ -1207,7 +1207,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 263,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:tuya02:tvty:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -1227,7 +1227,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 361,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:tuya02:tvty:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -1241,14 +1241,14 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 107,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:tuya02:tvty:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 363,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:tuya02:tvty:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:tuya02:tvty:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

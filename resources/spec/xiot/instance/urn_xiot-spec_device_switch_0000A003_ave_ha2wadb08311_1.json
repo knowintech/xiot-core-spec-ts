@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:ave:ha2wadb08311:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:ave:ha2wadb08311:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ave:ha2wadb08311:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ave:ha2wadb08311:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -90,7 +90,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ave:ha2wadb08311:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ave:ha2wadb08311:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -158,7 +158,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:ave:ha2wadb08311:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:ave:ha2wadb08311:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -166,7 +166,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:ave:ha2wadb08311:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:ave:ha2wadb08311:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -174,7 +174,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:ave:ha2wadb08311:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:ave:ha2wadb08311:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

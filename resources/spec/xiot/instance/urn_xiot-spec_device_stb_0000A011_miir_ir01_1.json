@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:miir:ir01:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:miir:ir01:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 1,
@@ -102,7 +102,7 @@
       "description" : "Mute On"
     }, {
       "iid" : 10,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:miir:ir01:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:miir:ir01:1",
       "description" : "Mute Off"
     } ]
   } ]

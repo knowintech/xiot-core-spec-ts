@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:uiot:ai12:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:uiot:ai12:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 355,
@@ -53,7 +53,7 @@
     } ]
   }, {
     "iid" : 136,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:uiot:ai12:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:uiot:ai12:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 146,

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:charging-state:0000008F",
+    "type": "urn:homekit-spec:property:charging-state:0000008f",
     "description": "Charging State",
     "format": "uint8",
     "access": ["read", "notify"],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:miot:test01:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:miot:test01:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:miot:test01:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:miot:test01:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -50,7 +50,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:miot:test01:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:miot:test01:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -58,7 +58,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:miot:test01:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:miot:test01:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -177,7 +177,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:drying-level:0000003B:miot:test01:1",
+      "type" : "urn:xiot-spec:property:drying-level:0000003b:miot:test01:1",
       "description" : "Drying Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -187,7 +187,7 @@
       } ]
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:property:left-time:0000003C:miot:test01:1",
+      "type" : "urn:xiot-spec:property:left-time:0000003c:miot:test01:1",
       "description" : "Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -223,7 +223,7 @@
       } ]
     }, {
       "iid" : 10,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:miot:test01:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:miot:test01:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -232,7 +232,7 @@
     } ]
   }, {
     "iid" : 6,
-    "type" : "urn:xiot-spec:service:switch:0000780C:miot:test01:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:miot:test01:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,

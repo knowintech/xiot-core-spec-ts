@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:target-slat-state:000000BE",
+    "type": "urn:homekit-spec:property:target-slat-state:000000be",
     "description": "Target Slat State",
     "format": "uint8",
     "access": ["read", "write", "notify"],

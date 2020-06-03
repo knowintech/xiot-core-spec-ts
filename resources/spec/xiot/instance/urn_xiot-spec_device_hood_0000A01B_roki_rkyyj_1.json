@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:hood:0000A01B:roki:rkyyj:1",
+  "type" : "urn:xiot-spec:device:hood:0000a01b:roki:rkyyj:1",
   "description" : "Hood",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:hood:0000782B:roki:rkyyj:1",
+    "type" : "urn:xiot-spec:service:hood:0000782b:roki:rkyyj:1",
     "description" : "Hood",
     "properties" : [ {
       "iid" : 1,

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:ayzn:f1:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:ayzn:f1:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 1,
@@ -90,7 +90,7 @@
       "description" : "Channel Up"
     }, {
       "iid" : 237,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ayzn:f1:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ayzn:f1:1",
       "description" : "Mute Off"
     }, {
       "iid" : 783,

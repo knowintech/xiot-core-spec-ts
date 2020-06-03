@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:coolki:uiid2:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:coolki:uiid2:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:coolki:uiid2:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:coolki:uiid2:1",
     "description" : "Left Switch Service",
     "properties" : [ {
       "iid" : 1,
@@ -49,7 +49,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:coolki:uiid2:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:coolki:uiid2:1",
     "description" : "Right Switch Service",
     "properties" : [ {
       "iid" : 1,

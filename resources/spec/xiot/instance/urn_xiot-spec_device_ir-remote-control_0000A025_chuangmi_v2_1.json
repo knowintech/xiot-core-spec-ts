@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:ir-remote-control:0000A025:chuangmi:v2:1",
+  "type" : "urn:xiot-spec:device:ir-remote-control:0000a025:chuangmi:v2:1",
   "description" : "IR Remote Control",
   "services" : [ {
     "iid" : 1,

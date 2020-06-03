@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:fridge:0000A00F:viomi:w1:1",
+  "type" : "urn:xiot-spec:device:fridge:0000a00f:viomi:w1:1",
   "description" : "Fridge",
   "services" : [ {
     "iid" : 1,
@@ -53,7 +53,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:fridge-chamber:0000781A:viomi:w1:1",
+    "type" : "urn:xiot-spec:service:fridge-chamber:0000781a:viomi:w1:1",
     "description" : "Refrigerating Chamber",
     "properties" : [ {
       "iid" : 1,
@@ -80,7 +80,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:fridge-chamber:0000781A:viomi:w1:1",
+    "type" : "urn:xiot-spec:service:fridge-chamber:0000781a:viomi:w1:1",
     "description" : "Freezing Chamber",
     "properties" : [ {
       "iid" : 1,
@@ -101,7 +101,7 @@
     } ]
   }, {
     "iid" : 5,
-    "type" : "urn:xiot-spec:service:fridge-chamber:0000781A:viomi:w1:1",
+    "type" : "urn:xiot-spec:service:fridge-chamber:0000781a:viomi:w1:1",
     "description" : "Change Chamber",
     "properties" : [ {
       "iid" : 1,

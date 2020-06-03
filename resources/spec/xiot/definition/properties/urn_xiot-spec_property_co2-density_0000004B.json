@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:co2-density:0000004B",
+  "type" : "urn:xiot-spec:property:co2-density:0000004b",
   "description" : "CO2 Density",
   "format" : "float",
   "access" : [ "read", "notify" ],

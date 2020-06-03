@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:tds-in:0000002C",
+  "type" : "urn:xiot-spec:property:tds-in:0000002c",
   "description" : "Total Dissolved Solids for Input Water",
   "format" : "uint16",
   "access" : [ "read", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:ave:hazbcdb0831:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:ave:hazbcdb0831:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 1,
@@ -47,7 +47,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:ave:hazbcdb0831:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:ave:hazbcdb0831:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -129,7 +129,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:ave:hazbcdb0831:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:ave:hazbcdb0831:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

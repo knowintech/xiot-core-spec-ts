@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:tuya02:tytv01:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:tuya02:tytv01:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 1,
@@ -32,11 +32,11 @@
     } ]
   }, {
     "iid" : 5,
-    "type" : "urn:xiot-spec:service:television:0000781B:tuya02:tytv01:1",
+    "type" : "urn:xiot-spec:service:television:0000781b:tuya02:tytv01:1",
     "description" : "Television",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tytv01:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tytv01:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -44,7 +44,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:channel-control:0000003F:tuya02:tytv01:1",
+      "type" : "urn:xiot-spec:property:channel-control:0000003f:tuya02:tytv01:1",
       "description" : "Channel Control",
       "format" : "uint16",
       "access" : [ "write" ],
@@ -67,7 +67,7 @@
       } ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:input-control:0000003E:tuya02:tytv01:1",
+      "type" : "urn:xiot-spec:property:input-control:0000003e:tuya02:tytv01:1",
       "description" : "TV Input Control",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

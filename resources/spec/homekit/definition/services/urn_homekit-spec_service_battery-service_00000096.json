@@ -3,7 +3,7 @@
     "description": "Battery Service",
     "required-properties": [
         "urn:homekit-spec:property:battery-level:00000068",
-        "urn:homekit-spec:property:charging-state:0000008F",
+        "urn:homekit-spec:property:charging-state:0000008f",
         "urn:homekit-spec:property:status-low-battery:00000079"
     ],
     "optional-properties": [

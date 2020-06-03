@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:lock-current-state:0000001D",
+    "type": "urn:homekit-spec:property:lock-current-state:0000001d",
     "description": "Lock Current State",
     "format": "uint8",
     "access": ["read", "notify"],

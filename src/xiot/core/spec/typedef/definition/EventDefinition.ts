@@ -3,21 +3,21 @@ import {ArgumentDefinition} from './ArgumentDefinition';
 
 export class EventDefinition {
 
-  type: EventType;
-  description: Map<string, string> = new Map<string, string>();
-  arguments: ArgumentDefinition[] = [];
+    type: EventType;
+    description: Map<string, string> = new Map<string, string>();
+    arguments: ArgumentDefinition[] = [];
 
-  constructor(type: EventType,
-              description: Map<string, string>,
-              a: ArgumentDefinition[]) {
-    this.type = type;
+    constructor(type: EventType,
+                description: Map<string, string>,
+                a: ArgumentDefinition[]) {
+        this.type = type;
 
-    if (description != null) {
-      this.description = description;
+        if (description != null) {
+            this.description = description;
+        }
+
+        if (arguments != null) {
+            this.arguments = a;
+        }
     }
-
-    if (arguments != null) {
-      this.arguments = a;
-    }
-  }
 }

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:tuya:tycur01:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:tuya:tycur01:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 1,
@@ -70,7 +70,7 @@
       } ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:tuya:tycur01:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:tuya:tycur01:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

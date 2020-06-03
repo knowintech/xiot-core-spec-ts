@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:xiaomi:dev:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:xiaomi:dev:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -42,14 +42,14 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:xiaomi:dev:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:xiaomi:dev:1",
       "description" : "Brightness",
       "format" : "uint16",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 1, 65535, 1 ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:xiaomi:dev:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:xiaomi:dev:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

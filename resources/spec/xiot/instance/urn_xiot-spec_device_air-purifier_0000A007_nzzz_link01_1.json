@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:nzzz:link01:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:nzzz:link01:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 1,
@@ -82,11 +82,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:nzzz:link01:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:nzzz:link01:1",
     "description" : "Environment"
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:nzzz:link01:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:nzzz:link01:1",
     "description" : "Filter"
   } ]
 }

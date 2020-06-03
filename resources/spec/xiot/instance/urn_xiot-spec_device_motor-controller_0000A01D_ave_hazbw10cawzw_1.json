@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:motor-controller:0000A01D:ave:hazbw10cawzw:1",
+  "type" : "urn:xiot-spec:device:motor-controller:0000a01d:ave:hazbw10cawzw:1",
   "description" : "Motor Controller",
   "services" : [ {
     "iid" : 1,
@@ -76,7 +76,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:ave:hazbw10cawzw:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:ave:hazbw10cawzw:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -85,7 +85,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ave:hazbw10cawzw:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ave:hazbw10cawzw:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,

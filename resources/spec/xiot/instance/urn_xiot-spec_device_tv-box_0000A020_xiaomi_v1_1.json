@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:tv-box:0000A020:xiaomi:v1:1",
+  "type" : "urn:xiot-spec:device:tv-box:0000a020:xiaomi:v1:1",
   "description" : "TV Box",
   "services" : [ {
     "iid" : 1,
@@ -45,20 +45,20 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:play-control:0000781D:xiaomi:v1:1",
+    "type" : "urn:xiot-spec:service:play-control:0000781d:xiaomi:v1:1",
     "description" : "Play Control",
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:play:0000280B:xiaomi:v1:1",
+      "type" : "urn:xiot-spec:action:play:0000280b:xiaomi:v1:1",
       "description" : "Play"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:action:pause:0000280C:xiaomi:v1:1",
+      "type" : "urn:xiot-spec:action:pause:0000280c:xiaomi:v1:1",
       "description" : "Pause"
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:speaker:0000781C:xiaomi:v1:1",
+    "type" : "urn:xiot-spec:service:speaker:0000781c:xiaomi:v1:1",
     "description" : "Speaker",
     "properties" : [ {
       "iid" : 1,
@@ -77,7 +77,7 @@
     } ]
   }, {
     "iid" : 5,
-    "type" : "urn:xiot-spec:service:message-router:0000781E:xiaomi:v1:1",
+    "type" : "urn:xiot-spec:service:message-router:0000781e:xiaomi:v1:1",
     "description" : "Message Router",
     "properties" : [ {
       "iid" : 1,

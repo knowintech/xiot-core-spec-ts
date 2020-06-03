@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:vacuum:0000A006:girt:robot:1",
+  "type" : "urn:xiot-spec:device:vacuum:0000a006:girt:robot:1",
   "description" : "Robot Cleaner",
   "services" : [ {
     "iid" : 1,
@@ -176,7 +176,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:girt:robot:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:girt:robot:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:current-door-state:0000000E",
+    "type": "urn:homekit-spec:property:current-door-state:0000000e",
     "description": "Current Door State",
     "format": "uint8",
     "access": ["read", "notify"],

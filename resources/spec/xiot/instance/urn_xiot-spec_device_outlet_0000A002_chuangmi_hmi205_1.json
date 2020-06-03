@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:chuangmi:hmi205:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:chuangmi:hmi205:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -38,7 +38,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:chuangmi:hmi205:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:chuangmi:hmi205:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:fan:0000A005:orvibo:irfanv1:1",
+  "type" : "urn:xiot-spec:device:fan:0000a005:orvibo:irfanv1:1",
   "description" : "Fan",
   "services" : [ {
     "iid" : 1,
@@ -77,7 +77,7 @@
       "value-range" : [ 0, 360, 1 ]
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:orvibo:irfanv1:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:orvibo:irfanv1:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

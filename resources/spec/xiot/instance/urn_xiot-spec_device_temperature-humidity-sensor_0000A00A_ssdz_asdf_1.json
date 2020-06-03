@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000A00A:ssdz:asdf:1",
+  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000a00a:ssdz:asdf:1",
   "description" : "Temperature Humidity Sensor",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
     "description" : "Temperature Humidity Sensor",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:ssdz:asdf:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:ssdz:asdf:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:rinsh-time:0000006E",
+  "type" : "urn:xiot-spec:property:rinsh-time:0000006e",
   "description" : "Rinsh Time",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

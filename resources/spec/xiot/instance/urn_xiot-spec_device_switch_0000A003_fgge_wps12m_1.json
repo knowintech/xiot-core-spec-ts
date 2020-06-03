@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:fgge:wps12m:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:fgge:wps12m:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 327,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 172,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps12m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps12m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 316,
@@ -49,7 +49,7 @@
     } ]
   }, {
     "iid" : 173,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps12m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps12m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 316,

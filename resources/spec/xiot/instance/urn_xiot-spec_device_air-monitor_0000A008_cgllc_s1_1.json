@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:cgllc:s1:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:cgllc:s1:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 1,
@@ -32,11 +32,11 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:environment:0000780A:cgllc:s1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:cgllc:s1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:cgllc:s1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:cgllc:s1:1",
       "description" : "Relative Humidity",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -59,7 +59,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:cgllc:s1:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:cgllc:s1:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],

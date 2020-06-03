@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:target-heater-cooler-state:000000B2",
+    "type": "urn:homekit-spec:property:target-heater-cooler-state:000000b2",
     "description": "Target Heater Cooler State",
     "format": "uint8",
     "access": ["read", "write", "notify"],

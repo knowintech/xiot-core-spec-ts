@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:chuangmi:v3:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:chuangmi:v3:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -38,7 +38,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:chuangmi:v3:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:chuangmi:v3:1",
     "description" : "Power Switch Status",
     "properties" : [ {
       "iid" : 1,
@@ -57,7 +57,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:chuangmi:v3:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:chuangmi:v3:1",
     "description" : "USB Switch Status",
     "properties" : [ {
       "iid" : 1,

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:illumination:0000004E",
+  "type" : "urn:xiot-spec:property:illumination:0000004e",
   "description" : "Illumination",
   "format" : "float",
   "access" : [ "read", "notify" ],

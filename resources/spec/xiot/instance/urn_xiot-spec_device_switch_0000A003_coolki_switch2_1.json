@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:coolki:switch2:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:coolki:switch2:1",
   "description" : "One Key Switch With Power Consumption",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:coolki:switch2:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:coolki:switch2:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -43,11 +43,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:power-consumption:0000780E:coolki:switch2:1",
+    "type" : "urn:xiot-spec:service:power-consumption:0000780e:coolki:switch2:1",
     "description" : "Power Consumption",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:power-consumption:0000002F:coolki:switch2:1",
+      "type" : "urn:xiot-spec:property:power-consumption:0000002f:coolki:switch2:1",
       "description" : "Power Consumption",
       "format" : "uint32",
       "access" : [ "read", "notify" ],
@@ -63,7 +63,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:switch:0000780C:coolki:switch2:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:coolki:switch2:1",
     "description" : "switch_one",
     "properties" : [ {
       "iid" : 1,

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:massage:0000A018:ogawa:a629:1",
+  "type" : "urn:xiot-spec:device:massage:0000a018:ogawa:a629:1",
   "description" : "Massage",
   "services" : [ {
     "iid" : 1,
@@ -75,14 +75,14 @@
       } ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:left-time:0000003C:ogawa:a629:1",
+      "type" : "urn:xiot-spec:property:left-time:0000003c:ogawa:a629:1",
       "description" : "Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 1440, 1 ]
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:property:massage-manipulation:0000004F:ogawa:a629:1",
+      "type" : "urn:xiot-spec:property:massage-manipulation:0000004f:ogawa:a629:1",
       "description" : "Massage Manipulation",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -113,7 +113,7 @@
     } ],
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:stop-massage:0000281F:ogawa:a629:1",
+      "type" : "urn:xiot-spec:action:stop-massage:0000281f:ogawa:a629:1",
       "description" : "Stop Massage"
     } ]
   }, {

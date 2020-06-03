@@ -15,7 +15,7 @@ describe('DeviceCodec', async () => {
 
     for (const file of dir) {
         it('  check: ' + file, async () => {
-            let a = await fs.readFile(folder + file);
+            const a = await fs.readFile(folder + file);
             const json = JSON.parse(a.toString());
             const device = DeviceCodec.decode(json);
 

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:swing-mode:000000B6",
+    "type": "urn:homekit-spec:property:swing-mode:000000b6",
     "description": "Swing Mode",
     "format": "uint8",
     "access": ["read", "write", "notify"],

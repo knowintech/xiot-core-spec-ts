@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:lock-physical-controls:000000A7",
+    "type": "urn:homekit-spec:property:lock-physical-controls:000000a7",
     "description": "Lock Physical Controls",
     "format": "uint8",
     "access": ["read", "write", "notify"],

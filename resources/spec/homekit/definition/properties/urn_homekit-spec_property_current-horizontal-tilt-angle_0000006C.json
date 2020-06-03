@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:current-horizontal-tilt-angle:0000006C",
+    "type": "urn:homekit-spec:property:current-horizontal-tilt-angle:0000006c",
     "description": "Current Horizontal Tilt Angle",
     "format": "int32",
     "access": ["read", "notify"],

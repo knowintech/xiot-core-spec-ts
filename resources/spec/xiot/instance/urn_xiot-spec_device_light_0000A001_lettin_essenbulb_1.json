@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:lettin:essenbulb:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:lettin:essenbulb:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:lettin:essenbulb:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:lettin:essenbulb:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -50,7 +50,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:lettin:essenbulb:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:lettin:essenbulb:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:zhimi:ma2:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:zhimi:ma2:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 1,
@@ -65,11 +65,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:zhimi:ma2:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:zhimi:ma2:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:zhimi:ma2:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:zhimi:ma2:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -93,11 +93,11 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:zhimi:ma2:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:zhimi:ma2:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:zhimi:ma2:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:zhimi:ma2:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -105,7 +105,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:filter-left-time:0000001F:zhimi:ma2:1",
+      "type" : "urn:xiot-spec:property:filter-left-time:0000001f:zhimi:ma2:1",
       "description" : "Filter Left Time",
       "format" : "uint16",
       "access" : [ "read" ]
@@ -143,7 +143,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:zhimi:ma2:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:zhimi:ma2:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]

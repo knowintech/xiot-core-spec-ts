@@ -1,4 +1,4 @@
 {
-  "type" : "urn:xiot-spec:action:stop:0000280D",
+  "type" : "urn:xiot-spec:action:stop:0000280d",
   "description" : "Stop"
 }

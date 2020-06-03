@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:fgge:wps13m:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:fgge:wps13m:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 195,
@@ -37,7 +37,7 @@
     } ]
   }, {
     "iid" : 351,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps13m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps13m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 402,

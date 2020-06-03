@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:wyze:smartbulb01:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:wyze:smartbulb01:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 216,
@@ -36,7 +36,7 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 324,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:wyze:smartbulb01:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:wyze:smartbulb01:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -44,7 +44,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 167,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:wyze:smartbulb01:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:wyze:smartbulb01:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

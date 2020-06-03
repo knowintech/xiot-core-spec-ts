@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:netviv:v1:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:netviv:v1:1",
   "description" : "Lightness Light",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:netviv:v1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:netviv:v1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

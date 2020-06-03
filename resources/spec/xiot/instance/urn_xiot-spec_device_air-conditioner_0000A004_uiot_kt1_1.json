@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:uiot:kt1:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:uiot:kt1:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 323,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:uiot:kt1:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:uiot:kt1:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 400,
@@ -110,7 +110,7 @@
       } ]
     }, {
       "iid" : 378,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:uiot:kt1:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -162,11 +162,11 @@
     } ]
   }, {
     "iid" : 106,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:kt1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:kt1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 276,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:uiot:kt1:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -209,14 +209,14 @@
       "unit" : "pascal"
     }, {
       "iid" : 345,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:uiot:kt1:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 953,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:kt1:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -224,7 +224,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 283,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:uiot:kt1:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -270,7 +270,7 @@
     "description" : "Indicator Light",
     "properties" : [ {
       "iid" : 660,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:uiot:kt1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -278,7 +278,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 100,
-      "type" : "urn:xiot-spec:property:color:0000000E:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:uiot:kt1:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -303,7 +303,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 379,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:uiot:kt1:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:uiot:kt1:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

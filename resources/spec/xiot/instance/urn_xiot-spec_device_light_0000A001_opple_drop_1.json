@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:opple:drop:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:opple:drop:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -63,7 +63,7 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:opple:drop:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:opple:drop:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -71,14 +71,14 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:opple:drop:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:opple:drop:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:opple:drop:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:opple:drop:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

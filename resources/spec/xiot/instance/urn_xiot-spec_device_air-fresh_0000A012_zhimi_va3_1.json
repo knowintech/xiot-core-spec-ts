@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-fresh:0000A012:zhimi:va3:1",
+  "type" : "urn:xiot-spec:device:air-fresh:0000a012:zhimi:va3:1",
   "description" : "Fresh Air System",
   "services" : [ {
     "iid" : 1,
@@ -72,11 +72,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:zhimi:va3:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:zhimi:va3:1",
     "description" : "Environment"
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:zhimi:va3:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:zhimi:va3:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 5,
@@ -116,7 +116,7 @@
     "description" : "Indicator Light",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:zhimi:va3:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:zhimi:va3:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -129,7 +129,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:zhimi:va3:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:zhimi:va3:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]
@@ -188,14 +188,14 @@
       "value-range" : [ 0, 2147483600, 1 ]
     }, {
       "iid" : 8,
-      "type" : "urn:xiot-spec:property:toggle-power:0000000A:zhimi:va3:1",
+      "type" : "urn:xiot-spec:property:toggle-power:0000000a:zhimi:va3:1",
       "description" : "toggle power on/off",
       "format" : "int32",
       "access" : [ "write" ],
       "value-range" : [ 0, 9, 1 ]
     }, {
       "iid" : 9,
-      "type" : "urn:xiot-spec:property:toggle-fan-level:0000000B:zhimi:va3:1",
+      "type" : "urn:xiot-spec:property:toggle-fan-level:0000000b:zhimi:va3:1",
       "description" : "toggle fan level",
       "format" : "int32",
       "access" : [ "write" ],

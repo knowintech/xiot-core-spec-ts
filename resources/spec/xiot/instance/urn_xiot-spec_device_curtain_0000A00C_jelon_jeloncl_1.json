@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:jelon:jeloncl:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:jelon:jeloncl:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 1,
@@ -104,7 +104,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:jelon:jeloncl:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:jelon:jeloncl:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

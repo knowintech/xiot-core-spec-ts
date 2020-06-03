@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:motion-sensor:0000A014:lumi:v2:1",
+  "type" : "urn:xiot-spec:device:motion-sensor:0000a014:lumi:v2:1",
   "description" : "Motion Sensor",
   "services" : [ {
     "iid" : 1,

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:lumi:b1nacn01:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:lumi:b1nacn01:1",
   "description" : "One Key Switch With Power Consumption",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:lumi:b1nacn01:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:lumi:b1nacn01:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -43,11 +43,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:power-consumption:0000780E:lumi:b1nacn01:1",
+    "type" : "urn:xiot-spec:service:power-consumption:0000780e:lumi:b1nacn01:1",
     "description" : "Power Consumption",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:power-consumption:0000002F:lumi:b1nacn01:1",
+      "type" : "urn:xiot-spec:property:power-consumption:0000002f:lumi:b1nacn01:1",
       "description" : "Power Consumption",
       "format" : "uint32",
       "access" : [ "read", "notify" ],

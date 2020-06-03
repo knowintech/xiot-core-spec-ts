@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:miot:plugv1:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:miot:plugv1:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:miot:plugv1:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:miot:plugv1:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -123,7 +123,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 8,
-      "type" : "urn:xiot-spec:property:wet:0000002A:miot:plugv1:1",
+      "type" : "urn:xiot-spec:property:wet:0000002a:miot:plugv1:1",
       "description" : "Wet",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]

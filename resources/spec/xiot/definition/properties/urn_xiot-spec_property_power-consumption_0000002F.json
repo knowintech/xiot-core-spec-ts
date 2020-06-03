@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:power-consumption:0000002F",
+  "type" : "urn:xiot-spec:property:power-consumption:0000002f",
   "description" : "Power Consumption",
   "format" : "uint16",
   "access" : [ "read" ],

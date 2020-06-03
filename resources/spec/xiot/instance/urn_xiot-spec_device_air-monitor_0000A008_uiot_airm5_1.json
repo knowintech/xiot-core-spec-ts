@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:uiot:airm5:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:uiot:airm5:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 154,
@@ -43,11 +43,11 @@
     } ]
   }, {
     "iid" : 414,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:airm5:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:airm5:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 164,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:airm5:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:airm5:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -63,7 +63,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 149,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:uiot:airm5:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:uiot:airm5:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -77,7 +77,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 104,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:uiot:airm5:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:uiot:airm5:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -90,7 +90,7 @@
       } ]
     }, {
       "iid" : 169,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:uiot:airm5:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:uiot:airm5:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:smoke-sensor:0000A023:lumi:v1:1",
+  "type" : "urn:xiot-spec:device:smoke-sensor:0000a023:lumi:v1:1",
   "description" : "Smoke Sensor",
   "services" : [ {
     "iid" : 1,

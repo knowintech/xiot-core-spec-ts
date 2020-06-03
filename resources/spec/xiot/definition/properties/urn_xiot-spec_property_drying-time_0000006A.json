@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:drying-time:0000006A",
+  "type" : "urn:xiot-spec:property:drying-time:0000006a",
   "description" : "Drying Time",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

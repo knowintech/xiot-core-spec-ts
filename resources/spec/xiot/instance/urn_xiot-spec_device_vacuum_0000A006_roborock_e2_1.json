@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:vacuum:0000A006:roborock:e2:1",
+  "type" : "urn:xiot-spec:device:vacuum:0000a006:roborock:e2:1",
   "description" : "Robot Cleaner",
   "services" : [ {
     "iid" : 1,

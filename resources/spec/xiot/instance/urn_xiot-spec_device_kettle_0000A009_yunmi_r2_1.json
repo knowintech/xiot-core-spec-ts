@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:kettle:0000A009:yunmi:r2:1",
+  "type" : "urn:xiot-spec:device:kettle:0000a009:yunmi:r2:1",
   "description" : "Kettle",
   "services" : [ {
     "iid" : 1,
@@ -59,11 +59,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:tds-sensor:0000780D:yunmi:r2:1",
+    "type" : "urn:xiot-spec:service:tds-sensor:0000780d:yunmi:r2:1",
     "description" : "Total Dissolved Solids Sensor",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:tds-out:0000002D:yunmi:r2:1",
+      "type" : "urn:xiot-spec:property:tds-out:0000002d:yunmi:r2:1",
       "description" : "Total Dissolved Solids for Output Water",
       "format" : "uint16",
       "access" : [ "read", "notify" ],

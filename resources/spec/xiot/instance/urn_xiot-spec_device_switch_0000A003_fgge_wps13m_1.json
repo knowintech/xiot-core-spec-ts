@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:fgge:wps13m:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:fgge:wps13m:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 352,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps13m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps13m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 402,
@@ -20,7 +20,7 @@
     } ]
   }, {
     "iid" : 353,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps13m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps13m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 402,
@@ -66,7 +66,7 @@
     } ]
   }, {
     "iid" : 351,
-    "type" : "urn:xiot-spec:service:switch:0000780C:fgge:wps13m:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:fgge:wps13m:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 402,

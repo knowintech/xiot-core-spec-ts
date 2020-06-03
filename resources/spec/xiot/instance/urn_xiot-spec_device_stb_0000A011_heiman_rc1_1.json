@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:heiman:rc1:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:heiman:rc1:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 1,

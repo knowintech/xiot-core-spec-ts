@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-fresh:0000A012:zhimi:va2:1",
+  "type" : "urn:xiot-spec:device:air-fresh:0000a012:zhimi:va2:1",
   "description" : "Fresh Air System",
   "services" : [ {
     "iid" : 1,
@@ -68,11 +68,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:zhimi:va2:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:zhimi:va2:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:zhimi:va2:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:zhimi:va2:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -95,7 +95,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:zhimi:va2:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:zhimi:va2:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -103,7 +103,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:zhimi:va2:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:zhimi:va2:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 1,
@@ -119,7 +119,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:zhimi:va2:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:zhimi:va2:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]

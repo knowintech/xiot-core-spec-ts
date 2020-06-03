@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:humidifier:0000A00E:yoctop:hu01:1",
+  "type" : "urn:xiot-spec:device:humidifier:0000a00e:yoctop:hu01:1",
   "description" : "Humidifier",
   "services" : [ {
     "iid" : 192,
@@ -15,7 +15,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 342,
-      "type" : "urn:xiot-spec:property:water-level:0000003D:yoctop:hu01:1",
+      "type" : "urn:xiot-spec:property:water-level:0000003d:yoctop:hu01:1",
       "description" : "Water Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -76,7 +76,7 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 121,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:yoctop:hu01:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:yoctop:hu01:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -98,7 +98,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 301,
-      "type" : "urn:xiot-spec:property:color:0000000E:yoctop:hu01:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:yoctop:hu01:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

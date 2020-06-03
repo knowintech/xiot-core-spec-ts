@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:remote-control:0000A021:lumi:aq3:1",
+  "type" : "urn:xiot-spec:device:remote-control:0000a021:lumi:aq3:1",
   "description" : "Remote Control",
   "services" : [ {
     "iid" : 1,

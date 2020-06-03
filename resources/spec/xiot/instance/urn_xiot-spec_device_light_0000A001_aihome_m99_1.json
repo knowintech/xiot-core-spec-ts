@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:aihome:m99:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:aihome:m99:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:aihome:m99:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:aihome:m99:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -50,7 +50,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:aihome:m99:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:aihome:m99:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -58,7 +58,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:aihome:m99:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:aihome:m99:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -202,7 +202,7 @@
       } ]
     }, {
       "iid" : 8,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:aihome:m99:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:aihome:m99:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -252,7 +252,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:aihome:m99:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:aihome:m99:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

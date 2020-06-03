@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:tuya02:tywl1:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:tuya02:tywl1:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -47,7 +47,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:tuya02:tywl1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:tuya02:tywl1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -55,14 +55,14 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color:0000000E:tuya02:tywl1:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:tuya02:tywl1:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ -1677215, 16777215, 1 ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:tuya02:tywl1:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:tuya02:tywl1:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

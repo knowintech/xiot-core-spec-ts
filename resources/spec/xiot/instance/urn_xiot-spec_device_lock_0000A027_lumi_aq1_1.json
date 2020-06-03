@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:lock:0000A027:lumi:aq1:1",
+  "type" : "urn:xiot-spec:device:lock:0000a027:lumi:aq1:1",
   "description" : "Lock",
   "services" : [ {
     "iid" : 1,

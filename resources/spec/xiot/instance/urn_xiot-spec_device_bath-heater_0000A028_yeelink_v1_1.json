@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:bath-heater:0000A028:yeelink:v1:1",
+  "type" : "urn:xiot-spec:device:bath-heater:0000a028:yeelink:v1:1",
   "description" : "Bath Heater",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:yeelink:v1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:yeelink:v1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -50,7 +50,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:yeelink:v1:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:yeelink:v1:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -59,7 +59,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:ptc-bath-heater:0000783B:yeelink:v1:1",
+    "type" : "urn:xiot-spec:service:ptc-bath-heater:0000783b:yeelink:v1:1",
     "description" : "PTC Bath Heater",
     "properties" : [ {
       "iid" : 1,
@@ -133,7 +133,7 @@
     } ]
   }, {
     "iid" : 5,
-    "type" : "urn:xiot-spec:service:environment:0000780A:yeelink:v1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:yeelink:v1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
@@ -145,7 +145,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:yeelink:v1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:yeelink:v1:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

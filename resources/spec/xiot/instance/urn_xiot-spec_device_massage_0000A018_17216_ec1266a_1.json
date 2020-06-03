@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:massage:0000A018:17216:ec1266a:1",
+  "type" : "urn:xiot-spec:device:massage:0000a018:17216:ec1266a:1",
   "description" : "Massage",
   "services" : [ {
     "iid" : 1,
@@ -62,12 +62,12 @@
     } ],
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:stop-massage:0000281F:17216:ec1266a:1",
+      "type" : "urn:xiot-spec:action:stop-massage:0000281f:17216:ec1266a:1",
       "description" : "Stop Massage"
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:backrest-control:0000782A:17216:ec1266a:1",
+    "type" : "urn:xiot-spec:service:backrest-control:0000782a:17216:ec1266a:1",
     "description" : "Backrest Control",
     "properties" : [ {
       "iid" : 1,

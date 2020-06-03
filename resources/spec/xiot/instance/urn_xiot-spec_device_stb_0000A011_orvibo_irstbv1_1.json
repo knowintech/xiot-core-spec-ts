@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:orvibo:irstbv1:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:orvibo:irstbv1:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 1,
@@ -110,7 +110,7 @@
       "description" : "Mute On"
     }, {
       "iid" : 12,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:orvibo:irstbv1:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:orvibo:irstbv1:1",
       "description" : "Mute Off"
     } ]
   } ]

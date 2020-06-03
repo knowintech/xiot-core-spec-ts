@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:uiot:curtain6:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:uiot:curtain6:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 217,
@@ -41,7 +41,7 @@
       } ]
     }, {
       "iid" : 777,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:uiot:curtain6:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:uiot:curtain6:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

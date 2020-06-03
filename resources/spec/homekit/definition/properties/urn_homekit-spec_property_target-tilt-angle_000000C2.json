@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:target-tilt-angle:000000C2",
+    "type": "urn:homekit-spec:property:target-tilt-angle:000000c2",
     "description": "Target Tilt Angle",
     "format": "int32",
     "access": ["read", "write", "notify"],

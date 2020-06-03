@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:uiot:ai8:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:uiot:ai8:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 290,
@@ -51,7 +51,7 @@
     } ]
   }, {
     "iid" : 227,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:ai8:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:ai8:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 272,
@@ -63,7 +63,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 483,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:uiot:ai8:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -83,21 +83,21 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 198,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:uiot:ai8:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 278,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:uiot:ai8:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 215,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:ai8:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -135,7 +135,7 @@
       } ]
     }, {
       "iid" : 151,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:uiot:ai8:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -167,7 +167,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 267,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:uiot:ai8:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -175,7 +175,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 220,
-      "type" : "urn:xiot-spec:property:color:0000000E:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:uiot:ai8:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -183,7 +183,7 @@
     } ]
   }, {
     "iid" : 136,
-    "type" : "urn:xiot-spec:service:countdown:0000782D:uiot:ai8:1",
+    "type" : "urn:xiot-spec:service:countdown:0000782d:uiot:ai8:1",
     "description" : "Countdown",
     "properties" : [ {
       "iid" : 304,
@@ -195,7 +195,7 @@
     } ]
   }, {
     "iid" : 202,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:uiot:ai8:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:uiot:ai8:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 400,
@@ -295,7 +295,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 149,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:uiot:ai8:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:uiot:ai8:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

@@ -1,4 +1,4 @@
 {
-  "type" : "urn:xiot-spec:event:wash-end:0000500B",
+  "type" : "urn:xiot-spec:event:wash-end:0000500b",
   "description" : "Washing End"
 }

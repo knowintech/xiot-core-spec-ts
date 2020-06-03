@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:input-control:0000003E",
+  "type" : "urn:xiot-spec:property:input-control:0000003e",
   "description" : "TV Input Control",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

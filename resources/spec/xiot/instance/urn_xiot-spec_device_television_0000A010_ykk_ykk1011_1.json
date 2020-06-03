@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:ykk:ykk1011:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:ykk:ykk1011:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 369,
-    "type" : "urn:xiot-spec:service:ir-tv-control:0000781F:ykk:ykk1011:1",
+    "type" : "urn:xiot-spec:service:ir-tv-control:0000781f:ykk:ykk1011:1",
     "description" : "IR TV Control",
     "actions" : [ {
       "iid" : 373,
@@ -23,7 +23,7 @@
       "description" : "Volume Down"
     }, {
       "iid" : 140,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ykk:ykk1011:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ykk:ykk1011:1",
       "description" : "Mute Off"
     }, {
       "iid" : 766,

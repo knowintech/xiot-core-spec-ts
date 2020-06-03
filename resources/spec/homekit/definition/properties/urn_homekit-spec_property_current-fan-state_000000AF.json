@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:current-fan-state:000000AF",
+    "type": "urn:homekit-spec:property:current-fan-state:000000af",
     "description": "Current Fan State",
     "format": "uint8",
     "access": ["read", "notify"],

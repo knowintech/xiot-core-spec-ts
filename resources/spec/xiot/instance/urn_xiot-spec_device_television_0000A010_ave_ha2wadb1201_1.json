@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:ave:ha2wadb1201:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:ave:ha2wadb1201:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 1,
@@ -32,11 +32,11 @@
     } ]
   }, {
     "iid" : 6,
-    "type" : "urn:xiot-spec:service:ir-tv-control:0000781F:ave:ha2wadb1201:1",
+    "type" : "urn:xiot-spec:service:ir-tv-control:0000781f:ave:ha2wadb1201:1",
     "description" : "IR TV Control",
     "actions" : [ {
       "iid" : 3,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ave:ha2wadb1201:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ave:ha2wadb1201:1",
       "description" : "Mute Off"
     }, {
       "iid" : 4,
@@ -81,7 +81,7 @@
       "description" : "Channel Up"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ave:ha2wadb1201:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ave:ha2wadb1201:1",
       "description" : "Mute Off"
     }, {
       "iid" : 4,

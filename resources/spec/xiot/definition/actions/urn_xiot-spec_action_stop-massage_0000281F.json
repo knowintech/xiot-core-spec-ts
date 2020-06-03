@@ -1,4 +1,4 @@
 {
-  "type" : "urn:xiot-spec:action:stop-massage:0000281F",
+  "type" : "urn:xiot-spec:action:stop-massage:0000281f",
   "description" : "Stop Massage"
 }

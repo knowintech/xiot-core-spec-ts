@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:kongke:dooya:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:kongke:dooya:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 1,
@@ -33,7 +33,7 @@
       } ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:kongke:dooya:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:kongke:dooya:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

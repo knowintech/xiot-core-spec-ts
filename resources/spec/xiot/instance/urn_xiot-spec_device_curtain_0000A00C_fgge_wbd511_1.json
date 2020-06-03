@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:fgge:wbd511:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:fgge:wbd511:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 356,

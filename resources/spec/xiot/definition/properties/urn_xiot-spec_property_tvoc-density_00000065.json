@@ -1,7 +1,7 @@
 {
   "type" : "urn:xiot-spec:property:tvoc-density:00000065",
   "description" : "TVOC Density",
-  "format" : "float",
+  "format" : "uint8",
   "access" : [ "read", "notify" ],
-  "value-range" : [ 0.0, 1.0, 0.1 ]
+  "value-range" : [ 0, 10, 1 ]
 }

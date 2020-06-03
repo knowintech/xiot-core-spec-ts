@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:philips:candle:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:philips:candle:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -48,7 +48,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:philips:candle:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:philips:candle:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

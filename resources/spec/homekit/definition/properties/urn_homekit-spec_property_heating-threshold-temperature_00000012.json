@@ -3,6 +3,6 @@
     "description": "Heating Threshold Temperature",
     "format": "float",
     "access": ["read", "write", "notify"],
-    "value-range": [0, 25, 0.1],
+    "value-range": [0, 25, 1],
     "unit": "celsius"
 }

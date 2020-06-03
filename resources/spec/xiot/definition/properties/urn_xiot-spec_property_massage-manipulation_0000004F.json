@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:massage-manipulation:0000004F",
+  "type" : "urn:xiot-spec:property:massage-manipulation:0000004f",
   "description" : "Massage Manipulation",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:indoor-temperature:0000000A",
+  "type" : "urn:xiot-spec:property:indoor-temperature:0000000a",
   "description" : "Indoor Temperature",
   "format" : "float",
   "access" : [ "read", "notify" ],

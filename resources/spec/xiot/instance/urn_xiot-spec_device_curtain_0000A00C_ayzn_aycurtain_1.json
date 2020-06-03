@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:ayzn:aycurtain:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:ayzn:aycurtain:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 903,

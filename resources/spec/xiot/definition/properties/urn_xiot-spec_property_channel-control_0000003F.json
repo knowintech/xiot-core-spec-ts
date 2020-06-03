@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:channel-control:0000003F",
+  "type" : "urn:xiot-spec:property:channel-control:0000003f",
   "description" : "Channel Control",
   "format" : "uint16",
   "access" : [ "write" ],

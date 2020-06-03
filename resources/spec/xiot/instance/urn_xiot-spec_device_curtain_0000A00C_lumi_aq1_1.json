@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:lumi:aq1:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:lumi:aq1:1",
   "description" : "Basic Function Curtain",
   "services" : [ {
     "iid" : 1,

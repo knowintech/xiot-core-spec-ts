@@ -1,8 +1,8 @@
 {
-  "type" : "urn:xiot-spec:property:ir-temperature:0000004D",
+  "type" : "urn:xiot-spec:property:ir-temperature:0000004d",
   "description" : "Temperature for IR",
-  "format" : "float",
+  "format" : "uint32",
   "access" : [ "write" ],
-  "value-range" : [ 16.0, 30.0, 1.0 ],
+  "value-range" : [ 16, 30, 1 ],
   "unit" : "celsius"
 }

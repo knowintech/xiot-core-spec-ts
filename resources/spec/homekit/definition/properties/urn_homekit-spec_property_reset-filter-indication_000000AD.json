@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:reset-filter-indication:000000AD",
+    "type": "urn:homekit-spec:property:reset-filter-indication:000000ad",
     "description": "Reset Filter Indication",
     "format": "uint8",
     "access": ["write"],

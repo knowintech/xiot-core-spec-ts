@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:target-air-quality:000000AE",
+    "type": "urn:homekit-spec:property:target-air-quality:000000ae",
     "description": "Target Air Quality",
     "format": "uint8",
     "access": ["read", "write", "notify"],

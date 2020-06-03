@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:ave:mt07ssw:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:ave:mt07ssw:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 1,
@@ -56,7 +56,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:ave:mt07ssw:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:ave:mt07ssw:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 6,
@@ -67,7 +67,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:ave:mt07ssw:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:ave:mt07ssw:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

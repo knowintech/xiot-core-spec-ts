@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000A00A:cleargrass:dk1:1",
+  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000a00a:cleargrass:dk1:1",
   "description" : "Temperature Humidity Sensor",
   "services" : [ {
     "iid" : 1,
@@ -44,7 +44,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:cleargrass:dk1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:cleargrass:dk1:1",
       "description" : "Relative Humidity",
       "format" : "float",
       "access" : [ "read", "notify" ],

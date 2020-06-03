@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:speaker:0000A015:yeelink:v1:1",
+  "type" : "urn:xiot-spec:device:speaker:0000a015:yeelink:v1:1",
   "description" : "Speaker",
   "services" : [ {
     "iid" : 122,
-    "type" : "urn:xiot-spec:service:speaker:0000781C:yeelink:v1:1",
+    "type" : "urn:xiot-spec:service:speaker:0000781c:yeelink:v1:1",
     "description" : "Speaker",
     "properties" : [ {
       "iid" : 149,
@@ -62,7 +62,7 @@
     } ]
   }, {
     "iid" : 158,
-    "type" : "urn:xiot-spec:service:play-control:0000781D:yeelink:v1:1",
+    "type" : "urn:xiot-spec:service:play-control:0000781d:yeelink:v1:1",
     "description" : "Play Control",
     "properties" : [ {
       "iid" : 373,
@@ -84,19 +84,19 @@
     } ],
     "actions" : [ {
       "iid" : 880,
-      "type" : "urn:xiot-spec:action:previous:0000280E:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:previous:0000280e:yeelink:v1:1",
       "description" : "Previous"
     }, {
       "iid" : 199,
-      "type" : "urn:xiot-spec:action:pause:0000280C:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:pause:0000280c:yeelink:v1:1",
       "description" : "Pause"
     }, {
       "iid" : 391,
-      "type" : "urn:xiot-spec:action:stop:0000280D:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:stop:0000280d:yeelink:v1:1",
       "description" : "Stop"
     }, {
       "iid" : 188,
-      "type" : "urn:xiot-spec:action:seek:0000280A:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:seek:0000280a:yeelink:v1:1",
       "description" : "Seek",
       "in" : [ {
         "piid" : 373,
@@ -108,11 +108,11 @@
       } ]
     }, {
       "iid" : 717,
-      "type" : "urn:xiot-spec:action:play:0000280B:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:play:0000280b:yeelink:v1:1",
       "description" : "Play"
     }, {
       "iid" : 206,
-      "type" : "urn:xiot-spec:action:next:0000280F:yeelink:v1:1",
+      "type" : "urn:xiot-spec:action:next:0000280f:yeelink:v1:1",
       "description" : "Next"
     } ]
   } ]

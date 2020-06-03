@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:contact-sensor-state:0000006A",
+    "type": "urn:homekit-spec:property:contact-sensor-state:0000006a",
     "description": "Contact Sensor State",
     "format": "uint8",
     "access": ["read", "notify"],

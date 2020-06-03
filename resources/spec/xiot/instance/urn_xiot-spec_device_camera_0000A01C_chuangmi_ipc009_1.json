@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:camera:0000A01C:chuangmi:ipc009:1",
+  "type" : "urn:xiot-spec:device:camera:0000a01c:chuangmi:ipc009:1",
   "description" : "Camera",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:camera-control:0000782F:chuangmi:ipc009:1",
+    "type" : "urn:xiot-spec:service:camera-control:0000782f:chuangmi:ipc009:1",
     "description" : "Camera Control",
     "properties" : [ {
       "iid" : 1,
@@ -93,7 +93,7 @@
       } ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:video-codec-type:0000005A:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:video-codec-type:0000005a:chuangmi:ipc009:1",
       "description" : "Video Codec Type",
       "format" : "uint8",
       "access" : [ ],
@@ -103,7 +103,7 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:video-attribute:0000005B:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:video-attribute:0000005b:chuangmi:ipc009:1",
       "description" : "Video Attribute",
       "format" : "uint8",
       "access" : [ ],
@@ -119,7 +119,7 @@
       } ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:audio-codec-type:0000005C:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:audio-codec-type:0000005c:chuangmi:ipc009:1",
       "description" : "Audio Codec Type",
       "format" : "uint8",
       "access" : [ ],
@@ -129,7 +129,7 @@
       } ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:audio-attribute:0000005D:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:audio-attribute:0000005d:chuangmi:ipc009:1",
       "description" : "Audio Attribute",
       "format" : "uint8",
       "access" : [ ],
@@ -149,7 +149,7 @@
       } ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:stream-address:0000005E:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:stream-address:0000005e:chuangmi:ipc009:1",
       "description" : "Stream URL",
       "format" : "string",
       "access" : [ ]
@@ -193,7 +193,7 @@
     "description" : "Camera Stream Management for Google Home",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:video-codec-type:0000005A:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:video-codec-type:0000005a:chuangmi:ipc009:1",
       "description" : "Video Codec Type",
       "format" : "uint8",
       "access" : [ ],
@@ -203,7 +203,7 @@
       } ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:video-attribute:0000005B:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:video-attribute:0000005b:chuangmi:ipc009:1",
       "description" : "Video Attribute",
       "format" : "uint8",
       "access" : [ ],
@@ -219,7 +219,7 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:audio-codec-type:0000005C:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:audio-codec-type:0000005c:chuangmi:ipc009:1",
       "description" : "Audio Codec Type",
       "format" : "uint8",
       "access" : [ ],
@@ -229,7 +229,7 @@
       } ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:audio-attribute:0000005D:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:audio-attribute:0000005d:chuangmi:ipc009:1",
       "description" : "Audio Attribute",
       "format" : "uint8",
       "access" : [ ],
@@ -239,7 +239,7 @@
       } ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:stream-address:0000005E:chuangmi:ipc009:1",
+      "type" : "urn:xiot-spec:property:stream-address:0000005e:chuangmi:ipc009:1",
       "description" : "Stream URL",
       "format" : "string",
       "access" : [ ]

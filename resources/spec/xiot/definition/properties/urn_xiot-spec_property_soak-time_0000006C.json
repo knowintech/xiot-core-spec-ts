@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:soak-time:0000006C",
+  "type" : "urn:xiot-spec:property:soak-time:0000006c",
   "description" : "Soak Time",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

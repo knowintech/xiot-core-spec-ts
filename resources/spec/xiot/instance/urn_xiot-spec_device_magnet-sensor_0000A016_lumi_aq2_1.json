@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:magnet-sensor:0000A016:lumi:aq2:1",
+  "type" : "urn:xiot-spec:device:magnet-sensor:0000a016:lumi:aq2:1",
   "description" : "Magnet Sensor",
   "services" : [ {
     "iid" : 1,

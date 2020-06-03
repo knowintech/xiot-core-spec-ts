@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:gakato:w2:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:gakato:w2:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:gakato:w2:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:gakato:w2:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -104,7 +104,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:gakato:w2:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:gakato:w2:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

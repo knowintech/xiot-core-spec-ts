@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:washer:0000A01F:whp:wgf80870bi:1",
+  "type" : "urn:xiot-spec:device:washer:0000a01f:whp:wgf80870bi:1",
   "description" : "Washer",
   "services" : [ {
     "iid" : 1,
@@ -75,7 +75,7 @@
       } ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:door-state:0000006B:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:door-state:0000006b:whp:wgf80870bi:1",
       "description" : "Door State",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -94,7 +94,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:drying-level:0000003B:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:drying-level:0000003b:whp:wgf80870bi:1",
       "description" : "Drying Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -104,35 +104,35 @@
       } ]
     }, {
       "iid" : 8,
-      "type" : "urn:xiot-spec:property:drying-time:0000006A:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:drying-time:0000006a:whp:wgf80870bi:1",
       "description" : "Drying Time",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 120, 30 ]
     }, {
       "iid" : 9,
-      "type" : "urn:xiot-spec:property:left-time:0000003C:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:left-time:0000003c:whp:wgf80870bi:1",
       "description" : "Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 1440, 1 ]
     }, {
       "iid" : 10,
-      "type" : "urn:xiot-spec:property:rinsh-time:0000006E:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:rinsh-time:0000006e:whp:wgf80870bi:1",
       "description" : "Rinsh Time",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 120, 1 ]
     }, {
       "iid" : 11,
-      "type" : "urn:xiot-spec:property:rinsh-times:0000006F:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:rinsh-times:0000006f:whp:wgf80870bi:1",
       "description" : "Rinsh Times",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 3, 1 ]
     }, {
       "iid" : 12,
-      "type" : "urn:xiot-spec:property:soak-time:0000006C:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:soak-time:0000006c:whp:wgf80870bi:1",
       "description" : "Soak Time",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -182,7 +182,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 18,
-      "type" : "urn:xiot-spec:property:wash-time:0000006D:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:wash-time:0000006d:whp:wgf80870bi:1",
       "description" : "Wash Time",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -190,7 +190,7 @@
     } ],
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:pause:0000280C:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:action:pause:0000280c:whp:wgf80870bi:1",
       "description" : "Pause"
     }, {
       "iid" : 2,
@@ -199,7 +199,7 @@
     } ],
     "events" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:event:wash-end:0000500B:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:event:wash-end:0000500b:whp:wgf80870bi:1",
       "description" : "Washing End"
     } ]
   }, {
@@ -223,7 +223,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:countdown:0000782D:whp:wgf80870bi:1",
+    "type" : "urn:xiot-spec:service:countdown:0000782d:whp:wgf80870bi:1",
     "description" : "Countdown",
     "properties" : [ {
       "iid" : 1,
@@ -239,7 +239,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:whp:wgf80870bi:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]
@@ -250,7 +250,7 @@
     "description" : "Screen",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:whp:wgf80870bi:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:whp:wgf80870bi:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

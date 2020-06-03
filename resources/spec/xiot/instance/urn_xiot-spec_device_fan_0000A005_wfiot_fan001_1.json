@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:fan:0000A005:wfiot:fan001:1",
+  "type" : "urn:xiot-spec:device:fan:0000a005:wfiot:fan001:1",
   "description" : "Fan",
   "services" : [ {
     "iid" : 1,

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:image-rotation:0000011E",
+    "type": "urn:homekit-spec:property:image-rotation:0000011e",
     "description": "Image Rotation",
     "format": "float",
     "access": ["read", "write", "notify"],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:xiaomi:ma3:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:xiaomi:ma3:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:xiaomi:ma3:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:xiaomi:ma3:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 1,
@@ -127,7 +127,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:environment:0000780A:xiaomi:ma3:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:xiaomi:ma3:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,

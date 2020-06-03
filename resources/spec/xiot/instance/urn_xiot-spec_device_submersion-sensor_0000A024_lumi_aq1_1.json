@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:submersion-sensor:0000A024:lumi:aq1:1",
+  "type" : "urn:xiot-spec:device:submersion-sensor:0000a024:lumi:aq1:1",
   "description" : "Submersion Sensor",
   "services" : [ {
     "iid" : 1,
@@ -36,11 +36,11 @@
     "description" : "Submersion Sensor",
     "events" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:event:submersion-detected:0000500C:lumi:aq1:1",
+      "type" : "urn:xiot-spec:event:submersion-detected:0000500c:lumi:aq1:1",
       "description" : "Submersion Detected"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:event:no-submersion:0000500D:lumi:aq1:1",
+      "type" : "urn:xiot-spec:event:no-submersion:0000500d:lumi:aq1:1",
       "description" : "No Submersion"
     } ]
   } ]

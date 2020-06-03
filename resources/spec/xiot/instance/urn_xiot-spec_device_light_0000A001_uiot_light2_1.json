@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:uiot:light2:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:uiot:light2:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 357,
@@ -36,7 +36,7 @@
     "description" : "Light",
     "properties" : [ {
       "iid" : 273,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:uiot:light2:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:uiot:light2:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

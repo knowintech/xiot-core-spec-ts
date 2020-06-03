@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:cdmj:xda2018:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:cdmj:xda2018:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 1,
@@ -43,7 +43,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:cdmj:xda2018:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:cdmj:xda2018:1",
     "description" : "Environment"
   }, {
     "iid" : 4,

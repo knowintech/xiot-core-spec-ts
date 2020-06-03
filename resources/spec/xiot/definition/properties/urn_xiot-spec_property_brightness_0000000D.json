@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:brightness:0000000D",
+  "type" : "urn:xiot-spec:property:brightness:0000000d",
   "description" : "Brightness",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:status-tampered:0000007A",
+    "type": "urn:homekit-spec:property:status-tampered:0000007a",
     "description": "Status Tampered",
     "format": "uint8",
     "access": ["read", "notify"],

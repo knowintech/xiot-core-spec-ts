@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-fresh:0000A012:dmaker:dm2018:1",
+  "type" : "urn:xiot-spec:device:air-fresh:0000a012:dmaker:dm2018:1",
   "description" : "Fresh Air System",
   "services" : [ {
     "iid" : 1,
@@ -85,11 +85,11 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:dmaker:dm2018:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:dmaker:dm2018:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:dmaker:dm2018:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:dmaker:dm2018:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -103,7 +103,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:dmaker:dm2018:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:dmaker:dm2018:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -120,11 +120,11 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:dmaker:dm2018:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:dmaker:dm2018:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:dmaker:dm2018:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:dmaker:dm2018:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:ir-mode:0000004C",
+  "type" : "urn:xiot-spec:property:ir-mode:0000004c",
   "description" : "Mode for IR",
   "format" : "uint8",
   "access" : [ "write" ],

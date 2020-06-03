@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:uiot:switch4:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:uiot:switch4:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 598,
-    "type" : "urn:xiot-spec:service:switch:0000780C:uiot:switch4:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:uiot:switch4:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 652,

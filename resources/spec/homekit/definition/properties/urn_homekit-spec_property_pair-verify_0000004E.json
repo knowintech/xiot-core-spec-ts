@@ -1,5 +1,5 @@
 {
-    "type": "urn:homekit-spec:property:pair-verify:0000004E",
+    "type": "urn:homekit-spec:property:pair-verify:0000004e",
     "description": "Pair Verify",
     "format": "tlv8",
     "access": ["read", "write"]

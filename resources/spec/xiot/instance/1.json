@@ -1,0 +1,157 @@
+{
+    "type": "urn:homekit-spec:device:lightbulb:00000005:yingtuo:baimini:1",
+    "description": {
+        "zh_CN": "可调亮度的灯泡",
+        "en_US": "brightness"
+    },
+    "services": [
+        {
+            "iid": 1,
+            "type": "urn:homekit-spec:service:accessory-information:0000003e:yingtuo:baimini:1",
+            "description": {
+                "en_US": "Accessory Information",
+                "zh_CN": "配件信息",
+                "zh_TW": "Accessory Information"
+            },
+            "properties": [
+                {
+                    "iid": 2,
+                    "type": "urn:homekit-spec:property:identify:00000014:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Identify",
+                        "zh_CN": "鉴定",
+                        "zh_TW": "Identify"
+                    },
+                    "format": "bool",
+                    "access": [
+                        "write"
+                    ]
+                },
+                {
+                    "iid": 3,
+                    "type": "urn:homekit-spec:property:manufacturer:00000020:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Manufacturer",
+                        "zh_CN": "生产厂家",
+                        "zh_TW": "Manufacturer"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                },
+                {
+                    "iid": 4,
+                    "type": "urn:homekit-spec:property:model:00000021:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Model",
+                        "zh_CN": "型号",
+                        "zh_TW": "Model"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                },
+                {
+                    "iid": 5,
+                    "type": "urn:homekit-spec:property:name:00000023:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Name",
+                        "zh_CN": "名称",
+                        "zh_TW": "Name"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                },
+                {
+                    "iid": 6,
+                    "type": "urn:homekit-spec:property:serial-number:00000030:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Serial Number",
+                        "zh_CN": "序列号",
+                        "zh_TW": "Serial Number"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                },
+                {
+                    "iid": 7,
+                    "type": "urn:homekit-spec:property:firmware-revision:00000052:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Firmware Revision",
+                        "zh_CN": "固件修订版本",
+                        "zh_TW": "Firmware Revision"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                }
+            ]
+        },
+        {
+            "iid": 8,
+            "type": "urn:homekit-spec:service:lightbulb:00000043:yingtuo:baimini:1",
+            "description": {
+                "en_US": "Lightbulb",
+                "zh_CN": "灯泡",
+                "zh_TW": "Lightbulb"
+            },
+            "properties": [
+                {
+                    "iid": 10,
+                    "type": "urn:homekit-spec:property:on:00000025:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "On",
+                        "zh_CN": "开关",
+                        "zh_TW": "On"
+                    },
+                    "format": "bool",
+                    "access": [
+                        "read",
+                        "write",
+                        "notify"
+                    ]
+                },
+                {
+                    "iid": 11,
+                    "type": "urn:homekit-spec:property:brightness:00000008:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Brightness",
+                        "zh_CN": "亮度",
+                        "zh_TW": "Brightness"
+                    },
+                    "format": "int32",
+                    "access": [
+                        "read",
+                        "write",
+                        "notify"
+                    ],
+                    "value-range": [
+                        0,
+                        100,
+                        1
+                    ]
+                },
+                {
+                    "iid": 9,
+                    "type": "urn:homekit-spec:property:name:00000023:yingtuo:baimini:1",
+                    "description": {
+                        "en_US": "Name",
+                        "zh_CN": "名称",
+                        "zh_TW": "Name"
+                    },
+                    "format": "string",
+                    "access": [
+                        "read"
+                    ]
+                }
+            ]
+        }
+    ]
+}

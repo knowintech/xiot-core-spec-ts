@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:lfsmt:ls024:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:lfsmt:ls024:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -66,7 +66,7 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:lfsmt:ls024:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:lfsmt:ls024:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -74,7 +74,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:lfsmt:ls024:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:lfsmt:ls024:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:uiot:arim8:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:uiot:arim8:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 305,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:arim8:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:arim8:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 205,
@@ -15,7 +15,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 590,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:arim8:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:arim8:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

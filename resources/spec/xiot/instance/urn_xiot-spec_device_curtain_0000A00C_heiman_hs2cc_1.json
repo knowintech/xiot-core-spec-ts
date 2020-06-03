@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:curtain:0000A00C:heiman:hs2cc:1",
+  "type" : "urn:xiot-spec:device:curtain:0000a00c:heiman:hs2cc:1",
   "description" : "Curtain",
   "services" : [ {
     "iid" : 1,
@@ -70,7 +70,7 @@
       } ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:heiman:hs2cc:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:heiman:hs2cc:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

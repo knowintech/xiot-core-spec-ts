@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:maxway:mx101:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:maxway:mx101:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 400,

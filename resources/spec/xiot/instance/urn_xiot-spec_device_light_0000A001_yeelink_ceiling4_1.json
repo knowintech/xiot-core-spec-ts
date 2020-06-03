@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:yeelink:ceiling4:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:yeelink:ceiling4:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -48,7 +48,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:yeelink:ceiling4:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:yeelink:ceiling4:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -69,7 +69,7 @@
       } ]
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:yeelink:ceiling4:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:yeelink:ceiling4:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

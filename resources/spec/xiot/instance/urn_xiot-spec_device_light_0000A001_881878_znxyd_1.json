@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:light:0000A001:881878:znxyd:1",
+  "type" : "urn:xiot-spec:device:light:0000a001:881878:znxyd:1",
   "description" : "Light",
   "services" : [ {
     "iid" : 1,
@@ -42,7 +42,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:color:0000000E:881878:znxyd:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:881878:znxyd:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

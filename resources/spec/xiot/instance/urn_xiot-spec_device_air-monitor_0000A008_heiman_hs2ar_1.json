@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-monitor:0000A008:heiman:hs2ar:1",
+  "type" : "urn:xiot-spec:device:air-monitor:0000a008:heiman:hs2ar:1",
   "description" : "Air Monitor",
   "services" : [ {
     "iid" : 1,
@@ -76,18 +76,18 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:heiman:hs2ar:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:heiman:hs2ar:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:heiman:hs2ar:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:heiman:hs2ar:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -108,7 +108,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:heiman:hs2ar:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -129,7 +129,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:heiman:hs2ar:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -215,7 +215,7 @@
     "description" : "Indicator Light",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:heiman:hs2ar:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -223,7 +223,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:heiman:hs2ar:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -231,7 +231,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color:0000000E:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:heiman:hs2ar:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -277,7 +277,7 @@
     "description" : "Screen",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:heiman:hs2ar:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:heiman:hs2ar:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

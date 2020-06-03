@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:miir:ir01:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:miir:ir01:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:ir-tv-control:0000781F:miir:ir01:1",
+    "type" : "urn:xiot-spec:service:ir-tv-control:0000781f:miir:ir01:1",
     "description" : "IR TV Control",
     "actions" : [ {
       "iid" : 1,
@@ -64,7 +64,7 @@
       "description" : "Mute On"
     }, {
       "iid" : 8,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:miir:ir01:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:miir:ir01:1",
       "description" : "Mute Off"
     } ]
   } ]

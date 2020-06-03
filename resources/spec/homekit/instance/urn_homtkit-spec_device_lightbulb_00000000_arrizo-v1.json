@@ -4,7 +4,7 @@
     "services": [
         {
             "iid": 1,
-            "type": "urn:homekit-spec:service:accessory-information:0000003E",
+            "type": "urn:homekit-spec:service:accessory-information:0000003e",
             "description": "Accessory Information",
             "properties": [
                 {

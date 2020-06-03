@@ -4,7 +4,8 @@ export enum UrnType {
   ACTION = 'action',
   EVENT = 'event',
   SERVICE = 'service',
-  DEVICE = 'device'
+  DEVICE = 'device',
+  GROUP = 'group'
 }
 
 export function UrnTypeToString(type: UrnType): string {

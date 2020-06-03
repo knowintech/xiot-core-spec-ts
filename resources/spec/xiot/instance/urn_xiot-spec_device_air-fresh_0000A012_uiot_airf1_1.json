@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-fresh:0000A012:uiot:airf1:1",
+  "type" : "urn:xiot-spec:device:air-fresh:0000a012:uiot:airf1:1",
   "description" : "Fresh Air System",
   "services" : [ {
     "iid" : 880,
@@ -76,7 +76,7 @@
     } ]
   }, {
     "iid" : 241,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:airf1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:airf1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 113,
@@ -88,7 +88,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 450,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:airf1:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -96,7 +96,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 118,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:uiot:airf1:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -109,7 +109,7 @@
       } ]
     }, {
       "iid" : 475,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:uiot:airf1:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -124,7 +124,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 541,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:uiot:airf1:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -146,11 +146,11 @@
     } ]
   }, {
     "iid" : 426,
-    "type" : "urn:xiot-spec:service:filter:0000780B:uiot:airf1:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:uiot:airf1:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 225,
-      "type" : "urn:xiot-spec:property:filter-used-flow:0000004A:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:filter-used-flow:0000004a:uiot:airf1:1",
       "description" : "Filter Used Flow",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -171,7 +171,7 @@
       "value-range" : [ 0, 10000, 1 ]
     }, {
       "iid" : 215,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:uiot:airf1:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -179,7 +179,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 395,
-      "type" : "urn:xiot-spec:property:filter-left-time:0000001F:uiot:airf1:1",
+      "type" : "urn:xiot-spec:property:filter-left-time:0000001f:uiot:airf1:1",
       "description" : "Filter Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],

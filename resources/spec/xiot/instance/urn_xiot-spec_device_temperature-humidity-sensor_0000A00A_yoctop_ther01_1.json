@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000A00A:yoctop:ther01:1",
+  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000a00a:yoctop:ther01:1",
   "description" : "Temperature Humidity Sensor",
   "services" : [ {
     "iid" : 130,
@@ -54,7 +54,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 197,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:yoctop:ther01:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:yoctop:ther01:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

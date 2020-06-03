@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000A00A:lfsmt:ls063wh:1",
+  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000a00a:lfsmt:ls063wh:1",
   "description" : "Temperature Humidity Sensor",
   "services" : [ {
     "iid" : 1,
@@ -44,7 +44,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:lfsmt:ls063wh:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:lfsmt:ls063wh:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

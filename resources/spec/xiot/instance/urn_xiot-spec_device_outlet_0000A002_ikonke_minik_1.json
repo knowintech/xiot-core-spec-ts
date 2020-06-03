@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:ikonke:minik:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:ikonke:minik:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 240,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 303,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ikonke:minik:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ikonke:minik:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 242,

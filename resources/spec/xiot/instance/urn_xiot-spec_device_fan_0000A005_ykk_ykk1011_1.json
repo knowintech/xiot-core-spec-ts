@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:fan:0000A005:ykk:ykk1011:1",
+  "type" : "urn:xiot-spec:device:fan:0000a005:ykk:ykk1011:1",
   "description" : "Fan",
   "services" : [ {
     "iid" : 322,
@@ -7,7 +7,7 @@
     "description" : "IR Fan Control",
     "actions" : [ {
       "iid" : 322,
-      "type" : "urn:xiot-spec:action:fan-speed-down:0000281C:ykk:ykk1011:1",
+      "type" : "urn:xiot-spec:action:fan-speed-down:0000281c:ykk:ykk1011:1",
       "description" : "Fan Speed Down"
     }, {
       "iid" : 199,
@@ -15,7 +15,7 @@
       "description" : "Turn On"
     }, {
       "iid" : 124,
-      "type" : "urn:xiot-spec:action:fan-speed-up:0000281B:ykk:ykk1011:1",
+      "type" : "urn:xiot-spec:action:fan-speed-up:0000281b:ykk:ykk1011:1",
       "description" : "Fan Speed Up"
     }, {
       "iid" : 766,

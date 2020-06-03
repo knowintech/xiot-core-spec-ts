@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:motion-sensor:0000A014:lumi:aq2:1",
+  "type" : "urn:xiot-spec:device:motion-sensor:0000a014:lumi:aq2:1",
   "description" : "Motion Sensor",
   "services" : [ {
     "iid" : 1,
@@ -36,7 +36,7 @@
     "description" : "Motion Sensor",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:illumination:0000004E:lumi:aq2:1",
+      "type" : "urn:xiot-spec:property:illumination:0000004e:lumi:aq2:1",
       "description" : "Illumination",
       "format" : "float",
       "access" : [ "read", "notify" ],

@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:baomi:bmi:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:baomi:bmi:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 146,
@@ -79,7 +79,7 @@
     } ]
   }, {
     "iid" : 426,
-    "type" : "urn:xiot-spec:service:environment:0000780A:baomi:bmi:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:baomi:bmi:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 516,
@@ -90,7 +90,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 340,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:baomi:bmi:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:baomi:bmi:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -107,7 +107,7 @@
     } ]
   }, {
     "iid" : 366,
-    "type" : "urn:xiot-spec:service:filter:0000780B:baomi:bmi:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:baomi:bmi:1",
     "description" : "Filter"
   } ]
 }

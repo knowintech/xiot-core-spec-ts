@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:vacuum:0000A006:dreame:mc1808:1",
+  "type" : "urn:xiot-spec:device:vacuum:0000a006:dreame:mc1808:1",
   "description" : "Robot Cleaner",
   "services" : [ {
     "iid" : 1,
@@ -156,7 +156,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:speaker:0000781C:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:speaker:0000781c:dreame:mc1808:1",
     "description" : "Speaker",
     "properties" : [ {
       "iid" : 1,
@@ -185,7 +185,7 @@
       "access" : [ "read", "write" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:time:0000000A:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:time:0000000a:dreame:mc1808:1",
       "description" : "time",
       "format" : "string",
       "access" : [ "read", "write" ]
@@ -241,7 +241,7 @@
       "value-range" : [ 0, 128, 1 ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:mop:0000001B:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:mop:0000001b:dreame:mc1808:1",
       "description" : "mop",
       "format" : "int32",
       "access" : [ "read", "write", "notify" ],
@@ -264,17 +264,17 @@
     } ]
   }, {
     "iid" : 7,
-    "type" : "urn:xiot-spec:service:firmware:0000000B:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:firmware:0000000b:dreame:mc1808:1",
     "description" : "firmware",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:version:0000000C:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:version:0000000c:dreame:mc1808:1",
       "description" : "firmware version",
       "format" : "string",
       "access" : [ "read", "notify" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:ota-status:0000000D:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:ota-status:0000000d:dreame:mc1808:1",
       "description" : "ota-status",
       "format" : "int32",
       "access" : [ "read", "notify" ],
@@ -305,18 +305,18 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:ota-control:0000000E:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:ota-control:0000000e:dreame:mc1808:1",
       "description" : "ota-start",
       "format" : "string",
       "access" : [ "write" ]
     } ]
   }, {
     "iid" : 8,
-    "type" : "urn:xiot-spec:service:network:0000000F:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:network:0000000f:dreame:mc1808:1",
     "description" : "network",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:network-info:0000003F:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:network-info:0000003f:dreame:mc1808:1",
       "description" : "network-info",
       "format" : "string",
       "access" : [ "read" ]
@@ -374,28 +374,28 @@
       "description" : "warn-sensor"
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:event:warn-duster:0000001A:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:warn-duster:0000001a:dreame:mc1808:1",
       "description" : "warn-duster"
     } ]
   }, {
     "iid" : 10,
-    "type" : "urn:xiot-spec:service:annoy:0000001C:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:annoy:0000001c:dreame:mc1808:1",
     "description" : "annoy",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:enable:0000001D:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:enable:0000001d:dreame:mc1808:1",
       "description" : "enable",
       "format" : "bool",
       "access" : [ "read", "write" ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:start-time:0000001E:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:start-time:0000001e:dreame:mc1808:1",
       "description" : "start-time",
       "format" : "string",
       "access" : [ "read", "write" ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:stop-time:0000001F:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:property:stop-time:0000001f:dreame:mc1808:1",
       "description" : "stop-time",
       "format" : "string",
       "access" : [ "read", "write" ]
@@ -419,7 +419,7 @@
     } ],
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:delete-device:0000003C:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:action:delete-device:0000003c:dreame:mc1808:1",
       "description" : "delete-device",
       "in" : [ {
         "piid" : 1,
@@ -465,27 +465,27 @@
       "description" : "machine-hang"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:event:wheel-abnormal:0000002A:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:wheel-abnormal:0000002a:dreame:mc1808:1",
       "description" : "wheel-error"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:event:machine-stuck:0000002B:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:machine-stuck:0000002b:dreame:mc1808:1",
       "description" : "machine-stuck"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:event:side-brush-abnormal:0000002C:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:side-brush-abnormal:0000002c:dreame:mc1808:1",
       "description" : "side-brush-abnormal"
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:event:main-brush-abnormal:0000002D:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:main-brush-abnormal:0000002d:dreame:mc1808:1",
       "description" : "main-brush-abnormal"
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:event:no-dust-box:0000002E:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:no-dust-box:0000002e:dreame:mc1808:1",
       "description" : "no-dust-box"
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:event:bump-stuck:0000002F:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:bump-stuck:0000002f:dreame:mc1808:1",
       "description" : "bump-stuck"
     }, {
       "iid" : 8,
@@ -529,27 +529,27 @@
       "description" : "abnormal"
     }, {
       "iid" : 18,
-      "type" : "urn:xiot-spec:event:camera-shield:0000004A:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:camera-shield:0000004a:dreame:mc1808:1",
       "description" : "camera-shield"
     }, {
       "iid" : 19,
-      "type" : "urn:xiot-spec:event:right-wheel-abnormal:0000004B:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:right-wheel-abnormal:0000004b:dreame:mc1808:1",
       "description" : "right-wheel-abnormal"
     }, {
       "iid" : 20,
-      "type" : "urn:xiot-spec:event:left-wheel-abnormal:0000004C:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:left-wheel-abnormal:0000004c:dreame:mc1808:1",
       "description" : "left-wheel-abnormal"
     }, {
       "iid" : 21,
-      "type" : "urn:xiot-spec:event:water-low:0000004D:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:water-low:0000004d:dreame:mc1808:1",
       "description" : "water-low"
     }, {
       "iid" : 22,
-      "type" : "urn:xiot-spec:event:move-to-clean-area:0000004E:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:move-to-clean-area:0000004e:dreame:mc1808:1",
       "description" : "move-to-clean-area"
     }, {
       "iid" : 23,
-      "type" : "urn:xiot-spec:event:poweroff-abnormal:0000004F:dreame:mc1808:1",
+      "type" : "urn:xiot-spec:event:poweroff-abnormal:0000004f:dreame:mc1808:1",
       "description" : "poweroff-abnormal"
     }, {
       "iid" : 24,
@@ -558,7 +558,7 @@
     } ]
   }, {
     "iid" : 14,
-    "type" : "urn:xiot-spec:service:map:0000003B:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:map:0000003b:dreame:mc1808:1",
     "description" : "map",
     "properties" : [ {
       "iid" : 1,
@@ -575,7 +575,7 @@
     } ]
   }, {
     "iid" : 15,
-    "type" : "urn:xiot-spec:service:message:0000003E:dreame:mc1808:1",
+    "type" : "urn:xiot-spec:service:message:0000003e:dreame:mc1808:1",
     "description" : "message"
   }, {
     "iid" : 16,

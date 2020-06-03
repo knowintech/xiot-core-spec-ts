@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:air-fresh:0000A012:dmaker:dm120v1:1",
+  "type" : "urn:xiot-spec:device:air-fresh:0000a012:dmaker:dm120v1:1",
   "description" : "Fresh Air System",
   "services" : [ {
     "iid" : 963,
-    "type" : "urn:xiot-spec:service:environment:0000780A:dmaker:dm120v1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:dmaker:dm120v1:1",
     "description" : "Environment"
   }, {
     "iid" : 857,
@@ -57,7 +57,7 @@
     } ]
   }, {
     "iid" : 143,
-    "type" : "urn:xiot-spec:service:filter:0000780B:dmaker:dm120v1:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:dmaker:dm120v1:1",
     "description" : "Filter"
   } ]
 }

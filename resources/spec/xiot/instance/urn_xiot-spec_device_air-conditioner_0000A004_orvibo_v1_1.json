@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-conditioner:0000A004:orvibo:v1:1",
+  "type" : "urn:xiot-spec:device:air-conditioner:0000a004:orvibo:v1:1",
   "description" : "Air Conditioner",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:orvibo:v1:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:orvibo:v1:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 1,
@@ -164,7 +164,7 @@
       "value-range" : [ 0, 360, 1 ]
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:property:vertical-angle:0000001A:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:vertical-angle:0000001a:orvibo:v1:1",
       "description" : "Vertical Angle",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -172,11 +172,11 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:environment:0000780A:orvibo:v1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:orvibo:v1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:orvibo:v1:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -184,14 +184,14 @@
       "unit" : "percentage"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:orvibo:v1:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:orvibo:v1:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -239,7 +239,7 @@
     "description" : "IR Aircondition Control",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:ir-mode:0000004C:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:ir-mode:0000004c:orvibo:v1:1",
       "description" : "Mode for IR",
       "format" : "uint8",
       "access" : [ "write" ],
@@ -261,7 +261,7 @@
       } ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:ir-temperature:0000004D:orvibo:v1:1",
+      "type" : "urn:xiot-spec:property:ir-temperature:0000004d:orvibo:v1:1",
       "description" : "Temperature for IR",
       "format" : "float",
       "access" : [ "write" ],
@@ -270,19 +270,19 @@
     } ],
     "actions" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:action:fan-speed-down:0000281C:orvibo:v1:1",
+      "type" : "urn:xiot-spec:action:fan-speed-down:0000281c:orvibo:v1:1",
       "description" : "Fan Speed Down"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:action:fan-speed-up:0000281B:orvibo:v1:1",
+      "type" : "urn:xiot-spec:action:fan-speed-up:0000281b:orvibo:v1:1",
       "description" : "Fan Speed Up"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:action:temperature-down:0000281E:orvibo:v1:1",
+      "type" : "urn:xiot-spec:action:temperature-down:0000281e:orvibo:v1:1",
       "description" : "Temperature Down"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:action:temperature-up:0000281D:orvibo:v1:1",
+      "type" : "urn:xiot-spec:action:temperature-up:0000281d:orvibo:v1:1",
       "description" : "Temperature Up"
     }, {
       "iid" : 5,

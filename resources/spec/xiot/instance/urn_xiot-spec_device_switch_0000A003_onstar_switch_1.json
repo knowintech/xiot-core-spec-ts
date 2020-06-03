@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:onstar:switch:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:onstar:switch:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 898,
-    "type" : "urn:xiot-spec:service:switch:0000780C:onstar:switch:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:onstar:switch:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 120,
@@ -138,7 +138,7 @@
       } ]
     }, {
       "iid" : 112,
-      "type" : "urn:xiot-spec:event:unlock:0000000A:onstar:switch:1",
+      "type" : "urn:xiot-spec:event:unlock:0000000a:onstar:switch:1",
       "description" : "unlock",
       "arguments" : [ {
         "piid" : 387,

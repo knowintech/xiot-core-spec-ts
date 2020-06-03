@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:airer:0000A00D:mrbond:m1super:1",
+  "type" : "urn:xiot-spec:device:airer:0000a00d:mrbond:m1super:1",
   "description" : "Airer",
   "services" : [ {
     "iid" : 1,
@@ -58,7 +58,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:drying-level:0000003B:mrbond:m1super:1",
+      "type" : "urn:xiot-spec:property:drying-level:0000003b:mrbond:m1super:1",
       "description" : "Drying Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

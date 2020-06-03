@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:target-position:0000003A",
+  "type" : "urn:xiot-spec:property:target-position:0000003a",
   "description" : "Target Position",
   "format" : "uint8",
   "access" : [ "read", "write", "notify" ],

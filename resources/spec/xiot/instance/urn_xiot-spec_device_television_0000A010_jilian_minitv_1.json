@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:television:0000A010:jilian:minitv:1",
+  "type" : "urn:xiot-spec:device:television:0000a010:jilian:minitv:1",
   "description" : "Television",
   "services" : [ {
     "iid" : 1,
@@ -37,7 +37,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:ir-tv-control:0000781F:jilian:minitv:1",
+    "type" : "urn:xiot-spec:service:ir-tv-control:0000781f:jilian:minitv:1",
     "description" : "IR TV Control",
     "actions" : [ {
       "iid" : 1,
@@ -65,7 +65,7 @@
       "description" : "Turn On"
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:jilian:minitv:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:jilian:minitv:1",
       "description" : "Mute Off"
     }, {
       "iid" : 8,

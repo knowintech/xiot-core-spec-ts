@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:stb:0000A011:ayzn:irstb:1",
+  "type" : "urn:xiot-spec:device:stb:0000a011:ayzn:irstb:1",
   "description" : "Set Top Box",
   "services" : [ {
     "iid" : 198,
@@ -31,7 +31,7 @@
       "description" : "Channel Down"
     }, {
       "iid" : 220,
-      "type" : "urn:xiot-spec:action:mute-off:0000281A:ayzn:irstb:1",
+      "type" : "urn:xiot-spec:action:mute-off:0000281a:ayzn:irstb:1",
       "description" : "Mute Off"
     }, {
       "iid" : 943,

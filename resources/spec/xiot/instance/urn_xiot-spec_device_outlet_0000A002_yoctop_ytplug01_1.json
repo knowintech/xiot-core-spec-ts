@@ -1,9 +1,9 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:yoctop:ytplug01:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:yoctop:ytplug01:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 228,
-    "type" : "urn:xiot-spec:service:switch:0000780C:yoctop:ytplug01:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:yoctop:ytplug01:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 301,

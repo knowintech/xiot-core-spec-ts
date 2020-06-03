@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:airer:0000A00D:mrbond:m1s:1",
+  "type" : "urn:xiot-spec:device:airer:0000a00d:mrbond:m1s:1",
   "description" : "Airer",
   "services" : [ {
     "iid" : 1,

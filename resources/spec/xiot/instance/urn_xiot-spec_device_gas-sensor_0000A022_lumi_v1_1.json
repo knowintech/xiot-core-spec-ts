@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:gas-sensor:0000A022:lumi:v1:1",
+  "type" : "urn:xiot-spec:device:gas-sensor:0000a022:lumi:v1:1",
   "description" : "Gas Sensor",
   "services" : [ {
     "iid" : 1,

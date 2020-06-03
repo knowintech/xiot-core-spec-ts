@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000A00A:heiman:hs2th:1",
+  "type" : "urn:xiot-spec:device:temperature-humidity-sensor:0000a00a:heiman:hs2th:1",
   "description" : "Temperature Humidity Sensor",
   "services" : [ {
     "iid" : 1,
@@ -36,7 +36,7 @@
     "description" : "Temperature Humidity Sensor",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:heiman:hs2th:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:heiman:hs2th:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],

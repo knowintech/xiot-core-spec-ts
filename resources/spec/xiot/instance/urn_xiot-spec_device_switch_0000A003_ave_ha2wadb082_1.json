@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:switch:0000A003:ave:ha2wadb082:1",
+  "type" : "urn:xiot-spec:device:switch:0000a003:ave:ha2wadb082:1",
   "description" : "Switch",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ave:ha2wadb082:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ave:ha2wadb082:1",
     "description" : "Left Switch Service",
     "properties" : [ {
       "iid" : 1,
@@ -49,7 +49,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:ave:ha2wadb082:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:ave:ha2wadb082:1",
     "description" : "Right Switch Service",
     "properties" : [ {
       "iid" : 1,

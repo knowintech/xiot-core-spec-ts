@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:girt:plug:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:girt:plug:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -32,7 +32,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:girt:plug:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:girt:plug:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,
@@ -43,7 +43,7 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:switch:0000780C:girt:plug:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:girt:plug:1",
     "description" : "Switch1",
     "properties" : [ {
       "iid" : 1,
@@ -54,7 +54,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:switch:0000780C:girt:plug:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:girt:plug:1",
     "description" : "Switch2",
     "properties" : [ {
       "iid" : 1,
@@ -65,7 +65,7 @@
     } ]
   }, {
     "iid" : 5,
-    "type" : "urn:xiot-spec:service:switch:0000780C:girt:plug:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:girt:plug:1",
     "description" : "Switch3",
     "properties" : [ {
       "iid" : 1,
@@ -76,7 +76,7 @@
     } ]
   }, {
     "iid" : 6,
-    "type" : "urn:xiot-spec:service:switch:0000780C:girt:plug:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:girt:plug:1",
     "description" : "Switch4",
     "properties" : [ {
       "iid" : 1,
@@ -87,7 +87,7 @@
     } ]
   }, {
     "iid" : 7,
-    "type" : "urn:xiot-spec:service:air-conditioner:0000780F:girt:plug:1",
+    "type" : "urn:xiot-spec:service:air-conditioner:0000780f:girt:plug:1",
     "description" : "Air Conditioner",
     "properties" : [ {
       "iid" : 1,

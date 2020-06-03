@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:kongke:kka:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:kongke:kka:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 1,
@@ -88,18 +88,18 @@
     } ]
   }, {
     "iid" : 3,
-    "type" : "urn:xiot-spec:service:environment:0000780A:kongke:kka:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:kongke:kka:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:kongke:kka:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 500, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:kongke:kka:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -120,7 +120,7 @@
       "unit" : "pascal"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:kongke:kka:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -141,7 +141,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 7,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:kongke:kka:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -165,7 +165,7 @@
     } ]
   }, {
     "iid" : 4,
-    "type" : "urn:xiot-spec:service:filter:0000780B:kongke:kka:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:kongke:kka:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 1,
@@ -176,14 +176,14 @@
       "value-range" : [ 0, 1000, 1 ]
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:filter-left-time:0000001F:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:filter-left-time:0000001f:kongke:kka:1",
       "description" : "Filter Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
       "value-range" : [ 0, 1000, 1 ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:kongke:kka:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -191,7 +191,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:filter-used-flow:0000004A:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:filter-used-flow:0000004a:kongke:kka:1",
       "description" : "Filter Used Flow",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -234,7 +234,7 @@
     "description" : "Indicator Light",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:kongke:kka:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -242,7 +242,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 2,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:kongke:kka:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -250,7 +250,7 @@
       "unit" : "kelvin"
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:color:0000000E:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:kongke:kka:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -296,7 +296,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:kongke:kka:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]
@@ -307,7 +307,7 @@
     "description" : "Screen",
     "properties" : [ {
       "iid" : 1,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:kongke:kka:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:kongke:kka:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],

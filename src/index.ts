@@ -11,6 +11,7 @@ export * from './xiot/core/spec/typedef/definition/ServiceDefinition';
 
 export * from './xiot/core/spec/typedef/definition/urn/ActionType';
 export * from './xiot/core/spec/typedef/definition/urn/DeviceType';
+export * from './xiot/core/spec/typedef/definition/urn/GroupType';
 export * from './xiot/core/spec/typedef/definition/urn/EventType';
 export * from './xiot/core/spec/typedef/definition/urn/Extendable';
 export * from './xiot/core/spec/typedef/definition/urn/PropertyType';
@@ -49,29 +50,15 @@ export * from './xiot/core/spec/typedef/dto/PropertyTypeDTO';
 export * from './xiot/core/spec/typedef/dto/ServiceTypeDTO';
 export * from './xiot/core/spec/typedef/dto/UnitDTO';
 
-export * from './xiot/core/spec/typedef/event/device/XiotBridgeInitialized';
-export * from './xiot/core/spec/typedef/event/device/XiotChild';
-export * from './xiot/core/spec/typedef/event/device/XiotChildrenAdded';
-export * from './xiot/core/spec/typedef/event/device/XiotChildrenRemoved';
-export * from './xiot/core/spec/typedef/event/device/XiotDeviceOffline';
-export * from './xiot/core/spec/typedef/event/device/XiotDeviceOnline';
-export * from './xiot/core/spec/typedef/event/device/XiotEventOccurred';
-export * from './xiot/core/spec/typedef/event/device/XiotPropertiesChanged';
-export * from './xiot/core/spec/typedef/event/user/XiotDeviceAdded';
-export * from './xiot/core/spec/typedef/event/user/XiotDeviceChanged';
-export * from './xiot/core/spec/typedef/event/user/XiotDeviceRemoved';
-export * from './xiot/core/spec/typedef/event/user/XiotHomeAdded';
-export * from './xiot/core/spec/typedef/event/user/XiotHomeChanged';
-export * from './xiot/core/spec/typedef/event/user/XiotHomeRemoved';
-export * from './xiot/core/spec/typedef/event/user/XiotRoomAdded';
-export * from './xiot/core/spec/typedef/event/user/XiotRoomChanged';
-export * from './xiot/core/spec/typedef/event/user/XiotRoomRemoved';
-export * from './xiot/core/spec/typedef/event/XiotEvent';
-export * from './xiot/core/spec/typedef/event/XiotEventType';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordChildrenAdded';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordChildrenRemoved';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordOffline';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordOnline';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordEventOccurred';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordPropertiesChanged';
+export * from './xiot/core/spec/typedef/record/XiotRecord';
 
-export * from './xiot/core/spec/typedef/home/Home';
-export * from './xiot/core/spec/typedef/home/Room';
-export * from './xiot/core/spec/typedef/home/HomeGraph';
+export * from './xiot/core/spec/typedef/group/Group';
 
 export * from './xiot/core/spec/typedef/instance/Action';
 export * from './xiot/core/spec/typedef/instance/Argument';
@@ -93,14 +80,16 @@ export * from './xiot/core/spec/typedef/operation/ActionOperation';
 export * from './xiot/core/spec/typedef/operation/EventOperation';
 export * from './xiot/core/spec/typedef/operation/PropertyOperation';
 
+export * from './xiot/core/spec/typedef/position/Position';
+export * from './xiot/core/spec/typedef/protocol/Protocol';
+
 export * from './xiot/core/spec/typedef/shortcut/Shortcut';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutIcon';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
 
 export * from './xiot/core/spec/typedef/status/OperationStatus';
 
-export * from './xiot/core/spec/typedef/summary/DeviceCompact';
-export * from './xiot/core/spec/typedef/summary/DeviceSummary';
+export * from './xiot/core/spec/typedef/summary/Summary';
 
 export * from './xiot/core/spec/typedef/template/ActionTemplate';
 export * from './xiot/core/spec/typedef/template/DeviceTemplate';
@@ -163,8 +152,7 @@ export * from './xiot/core/spec/codec/shortcut/ShortcutCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutIconCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 
-export * from './xiot/core/spec/codec/summary/DeviceCompactCodec';
-export * from './xiot/core/spec/codec/summary/DeviceSummaryCodec';
+export * from './xiot/core/spec/codec/summary/SummaryCodec';
 
 export * from './xiot/core/spec/codec/template/ActionTemplateCodec';
 export * from './xiot/core/spec/codec/template/DeviceTemplateCodec';

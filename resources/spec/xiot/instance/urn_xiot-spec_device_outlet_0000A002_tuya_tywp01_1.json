@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:outlet:0000A002:tuya:tywp01:1",
+  "type" : "urn:xiot-spec:device:outlet:0000a002:tuya:tywp01:1",
   "description" : "Outlet",
   "services" : [ {
     "iid" : 1,
@@ -37,7 +37,7 @@
     } ]
   }, {
     "iid" : 2,
-    "type" : "urn:xiot-spec:service:switch:0000780C:tuya:tywp01:1",
+    "type" : "urn:xiot-spec:service:switch:0000780c:tuya:tywp01:1",
     "description" : "Switch",
     "properties" : [ {
       "iid" : 1,

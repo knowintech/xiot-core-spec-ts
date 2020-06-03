@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:outdoor-temperature:0000000B",
+  "type" : "urn:xiot-spec:property:outdoor-temperature:0000000b",
   "description" : "Outdoor Temperature",
   "format" : "float",
   "access" : [ "read", "notify" ],

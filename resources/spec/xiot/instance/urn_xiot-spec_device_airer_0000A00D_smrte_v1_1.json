@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:airer:0000A00D:smrte:v1:1",
+  "type" : "urn:xiot-spec:device:airer:0000a00d:smrte:v1:1",
   "description" : "Airer",
   "services" : [ {
     "iid" : 1,
@@ -96,7 +96,7 @@
       } ]
     }, {
       "iid" : 6,
-      "type" : "urn:xiot-spec:property:target-position:0000003A:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:target-position:0000003a:smrte:v1:1",
       "description" : "Target Position",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -118,7 +118,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 9,
-      "type" : "urn:xiot-spec:property:drying-level:0000003B:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:drying-level:0000003b:smrte:v1:1",
       "description" : "Drying Level",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -128,7 +128,7 @@
       } ]
     }, {
       "iid" : 10,
-      "type" : "urn:xiot-spec:property:left-time:0000003C:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:left-time:0000003c:smrte:v1:1",
       "description" : "Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -156,7 +156,7 @@
       } ]
     }, {
       "iid" : 3,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:smrte:v1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -164,14 +164,14 @@
       "unit" : "percentage"
     }, {
       "iid" : 4,
-      "type" : "urn:xiot-spec:property:color:0000000E:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:smrte:v1:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 5,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:smrte:v1:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:smrte:v1:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],

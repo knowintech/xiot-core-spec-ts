@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:property:door-state:0000006B",
+  "type" : "urn:xiot-spec:property:door-state:0000006b",
   "description" : "Door State",
   "format" : "uint8",
   "access" : [ "read", "notify" ],

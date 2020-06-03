@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:uiot:airp2:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:uiot:airp2:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 275,
@@ -71,7 +71,7 @@
     } ]
   }, {
     "iid" : 150,
-    "type" : "urn:xiot-spec:service:filter:0000780B:uiot:airp2:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:uiot:airp2:1",
     "description" : "Filter"
   }, {
     "iid" : 663,
@@ -104,7 +104,7 @@
     } ]
   }, {
     "iid" : 203,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:airp2:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:airp2:1",
     "description" : "Environment"
   } ]
 }

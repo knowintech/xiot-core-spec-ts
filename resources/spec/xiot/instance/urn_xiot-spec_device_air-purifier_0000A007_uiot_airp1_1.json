@@ -1,5 +1,5 @@
 {
-  "type" : "urn:xiot-spec:device:air-purifier:0000A007:uiot:airp1:1",
+  "type" : "urn:xiot-spec:device:air-purifier:0000a007:uiot:airp1:1",
   "description" : "Air Purifier",
   "services" : [ {
     "iid" : 769,
@@ -65,7 +65,7 @@
       } ]
     }, {
       "iid" : 295,
-      "type" : "urn:xiot-spec:property:wet:0000002A:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:wet:0000002a:uiot:airp1:1",
       "description" : "Wet",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]
@@ -78,7 +78,7 @@
     } ]
   }, {
     "iid" : 403,
-    "type" : "urn:xiot-spec:service:environment:0000780A:uiot:airp1:1",
+    "type" : "urn:xiot-spec:service:environment:0000780a:uiot:airp1:1",
     "description" : "Environment",
     "properties" : [ {
       "iid" : 880,
@@ -98,7 +98,7 @@
       "unit" : "celsius"
     }, {
       "iid" : 166,
-      "type" : "urn:xiot-spec:property:air-quality-index:0000001B:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:air-quality-index:0000001b:uiot:airp1:1",
       "description" : "Air Quality Index",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -112,7 +112,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 170,
-      "type" : "urn:xiot-spec:property:relative-humidity:0000000C:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:relative-humidity:0000000c:uiot:airp1:1",
       "description" : "Relative Humidity",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -120,7 +120,7 @@
       "unit" : "percentage"
     }, {
       "iid" : 973,
-      "type" : "urn:xiot-spec:property:air-quality:0000001C:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:air-quality:0000001c:uiot:airp1:1",
       "description" : "Air Quality",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -140,7 +140,7 @@
       "value-range" : [ 0.0, 1000.0, 1.0 ]
     }, {
       "iid" : 159,
-      "type" : "urn:xiot-spec:property:co2-density:0000004B:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:co2-density:0000004b:uiot:airp1:1",
       "description" : "CO2 Density",
       "format" : "float",
       "access" : [ "read", "notify" ],
@@ -187,7 +187,7 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 718,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:uiot:airp1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -219,7 +219,7 @@
     "description" : "Indicator Light",
     "properties" : [ {
       "iid" : 115,
-      "type" : "urn:xiot-spec:property:color-temperature:0000000F:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:color-temperature:0000000f:uiot:airp1:1",
       "description" : "Color Temperature",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
@@ -251,14 +251,14 @@
       "access" : [ "read", "write", "notify" ]
     }, {
       "iid" : 187,
-      "type" : "urn:xiot-spec:property:color:0000000E:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:color:0000000e:uiot:airp1:1",
       "description" : "Color",
       "format" : "uint32",
       "access" : [ "read", "write", "notify" ],
       "value-range" : [ 0, 16777215, 1 ]
     }, {
       "iid" : 718,
-      "type" : "urn:xiot-spec:property:brightness:0000000D:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:brightness:0000000d:uiot:airp1:1",
       "description" : "Brightness",
       "format" : "uint8",
       "access" : [ "read", "write", "notify" ],
@@ -277,11 +277,11 @@
     } ]
   }, {
     "iid" : 216,
-    "type" : "urn:xiot-spec:service:filter:0000780B:uiot:airp1:1",
+    "type" : "urn:xiot-spec:service:filter:0000780b:uiot:airp1:1",
     "description" : "Filter",
     "properties" : [ {
       "iid" : 419,
-      "type" : "urn:xiot-spec:property:filter-used-flow:0000004A:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:filter-used-flow:0000004a:uiot:airp1:1",
       "description" : "Filter Used Flow",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -295,7 +295,7 @@
       "value-range" : [ 0, 1000, 1 ]
     }, {
       "iid" : 249,
-      "type" : "urn:xiot-spec:property:filter-left-time:0000001F:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:filter-left-time:0000001f:uiot:airp1:1",
       "description" : "Filter Left Time",
       "format" : "uint16",
       "access" : [ "read", "notify" ],
@@ -309,7 +309,7 @@
       "value-range" : [ 0, 10000, 1 ]
     }, {
       "iid" : 429,
-      "type" : "urn:xiot-spec:property:filter-life-level:0000001E:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:filter-life-level:0000001e:uiot:airp1:1",
       "description" : "Filter Life Level",
       "format" : "uint8",
       "access" : [ "read", "notify" ],
@@ -327,7 +327,7 @@
     "description" : "Physical Control Locked",
     "properties" : [ {
       "iid" : 522,
-      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001D:uiot:airp1:1",
+      "type" : "urn:xiot-spec:property:physical-controls-locked:0000001d:uiot:airp1:1",
       "description" : "Physical Control Locked",
       "format" : "bool",
       "access" : [ "read", "write", "notify" ]
