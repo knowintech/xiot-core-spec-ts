@@ -12,5 +12,5 @@ export abstract class DeviceRecord implements XiotRecord {
         return 'device';
     }
 
-    abstract subType(): string ;
+    abstract subType(): string;
 }

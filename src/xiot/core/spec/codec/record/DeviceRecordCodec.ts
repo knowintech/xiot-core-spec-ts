@@ -69,8 +69,8 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
         return o;
     }
 
-    decode(subType: string, o: any): DeviceRecord | null {
-        let record: DeviceRecord | null = null;
+    decode(subType: string, o: any): DeviceRecord {
+        let record: DeviceRecord;
 
         switch (subType) {
             case DeviceRecordType.ONLINE:
@@ -98,7 +98,7 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
                 break;
 
             default:
-                break;
+                throw new Error('invalid subType: ' + subType);
         }
 
         return record;

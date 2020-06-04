@@ -9,5 +9,6 @@ export class Summary {
   groups: string[] = [];
   dependencies: string[] = [];
   interoperations: string[] = [];
+  accesspoint = '';
 }
 

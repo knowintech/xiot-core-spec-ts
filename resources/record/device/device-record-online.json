@@ -8,7 +8,8 @@
             "protocol": "zigbee",
             "groups": [],
             "dependencies": ["aaa", "bbb", "ccc"],
-            "interoperations": ["fff"]
+            "interoperations": ["fff"],
+            "accesspoint": "xxx"
         }
     }
 }

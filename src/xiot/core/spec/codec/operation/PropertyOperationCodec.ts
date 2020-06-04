@@ -137,13 +137,13 @@ export class PropertyOperationCodec {
     static encodeResultGET(list: Array<PropertyOperation>): any[] {
         return list.map(p => {
             const object: any = {
-                pid: p.pid != null ? p.pid.toString() : '',
-                status: p.status
+                pid: p.pid != null ? p.pid.toString() : ''
             };
 
             if (p.status === 0) {
                 object[Spec.VALUE] = p.value;
             } else {
+                object[Spec.STATUS] = p.status;
                 object[Spec.DESCRIPTION] = p.description;
             }
 

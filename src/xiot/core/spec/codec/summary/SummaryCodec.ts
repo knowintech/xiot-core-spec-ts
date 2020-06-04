@@ -27,6 +27,7 @@ export class SummaryCodec {
     summary.groups = o['groups'];
     summary.dependencies = o['dependencies'];
     summary.interoperations = o['interoperations'];
+    summary.accesspoint = o['accesspoint'];
     return summary;
   }
 
@@ -38,6 +39,7 @@ export class SummaryCodec {
       groups: summary.groups,
       dependencies: summary.dependencies,
       interoperations: summary.interoperations,
+      accesspoint: summary.accesspoint,
     };
   }
 
