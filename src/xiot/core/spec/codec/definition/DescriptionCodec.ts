@@ -9,7 +9,7 @@ export class DescriptionCodec {
             description.set(Spec.EN_US, o);
         } else if (typeof o === 'object') {
             Object.keys(o).forEach(x => {
-                description.set(x.toString().replace('_', '-'), o[x]);
+                description.set(x.toString(), o[x]);
             });
         }
 
@@ -26,7 +26,7 @@ export class DescriptionCodec {
         }
 
         const o = Object.create(null);
-        description.forEach((value, key) => o[key.toString().replace('-', '_')] = value);
+        description.forEach((value, key) => o[key.toString()] = value);
         return o;
     }
 }
