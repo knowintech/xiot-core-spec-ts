@@ -4,10 +4,12 @@ import {DeviceRecordType} from '../DeviceRecordType';
 
 export class DeviceRecordChildrenRemoved extends DeviceRecord {
 
+    did: string;
     children: DeviceChild[] = [];
 
     constructor(did: string) {
-        super(did);
+        super();
+        this.did = did;
     }
 
     subType(): string {

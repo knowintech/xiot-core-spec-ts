@@ -4,10 +4,12 @@ import {Summary} from '../../../../../../..';
 
 export class DeviceRecordOnline extends DeviceRecord {
 
+    did: string;
     summary: Summary;
 
     constructor(did: string, summary: Summary) {
-        super(did);
+        super();
+        this.did = did;
         this.summary = summary;
     }
 

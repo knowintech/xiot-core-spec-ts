@@ -6,8 +6,8 @@ export class DeviceRecordEventOccurred extends DeviceRecord {
 
     operation: EventOperation;
 
-    constructor(did: string, operation: EventOperation) {
-        super(did);
+    constructor(operation: EventOperation) {
+        super();
         this.operation = operation;
     }
 

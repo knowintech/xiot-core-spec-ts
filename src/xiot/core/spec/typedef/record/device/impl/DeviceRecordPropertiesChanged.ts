@@ -6,8 +6,8 @@ export class DeviceRecordPropertiesChanged extends DeviceRecord {
 
     properties: PropertyOperation[] = [];
 
-    constructor(did: string, properties: PropertyOperation[]) {
-        super(did);
+    constructor(properties: PropertyOperation[]) {
+        super();
         this.properties = properties;
     }
 
