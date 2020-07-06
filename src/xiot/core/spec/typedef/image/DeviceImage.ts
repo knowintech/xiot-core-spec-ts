@@ -19,11 +19,10 @@ export class DeviceImage extends Device {
         super(type, description, services);
     }
 
-    getServicesImage():ServiceImage[]{
+    getServiceImages(): ServiceImage[] {
         return super.getServices()
-                .filter(x =>x instanceof ServiceImage)
-                .map(x =><ServiceImage>x);
-        
+            .filter(x => x instanceof ServiceImage)
+            .map(x => <ServiceImage>x);
     }
 
     online(value: boolean): void {
@@ -209,7 +208,7 @@ export class DeviceImage extends Device {
             }
         }
 
-        return nodes.filter(x => ! x.parentFound);
+        return nodes.filter(x => !x.parentFound);
     }
 
     public addNode(node: DeviceImage): boolean {
