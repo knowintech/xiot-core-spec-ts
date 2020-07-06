@@ -1,13 +1,13 @@
 import {Spec} from '../../typedef/constant/Spec';
 import {EventType} from '../../typedef/definition/urn/EventType';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
-import {OperableEvent} from '../../../../..';
-import {OperableArgumentCodec} from './OperableArgumentCodec';
+import {EventImage} from '../../../../..';
+import {OperableArgumentCodec} from './ArgumentImageCodec';
 
-export class OperableEventCodec {
+export class EventImageCodec {
 
-    static decodeArray(array: any[]): OperableEvent[] {
-        const list: OperableEvent[] = [];
+    static decodeArray(array: any[]): EventImage[] {
+        const list: EventImage[] = [];
 
         if (array != null) {
             for (const o of array) {
@@ -20,7 +20,7 @@ export class OperableEventCodec {
                 //     type._optional = o[Spec.X_OPTIONAL];
                 // }
 
-                list.push(new OperableEvent(iid, type, description, a));
+                list.push(new EventImage(iid, type, description, a));
             }
         }
 

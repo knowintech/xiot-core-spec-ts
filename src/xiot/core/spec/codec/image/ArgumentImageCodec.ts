@@ -1,11 +1,11 @@
 import {Spec} from '../../typedef/constant/Spec';
-import {OperableArgument} from '../../typedef/operable/OperableArgument';
+import {ArgumentImage} from '../../typedef/image/ArgumentImage';
 import {Argument} from '../../../../..';
 
 export class OperableArgumentCodec {
 
-    static decodeArray(list: any[]): OperableArgument[] {
-        const array: OperableArgument[] = [];
+    static decodeArray(list: any[]): ArgumentImage[] {
+        const array: ArgumentImage[] = [];
 
         if (list != null) {
             list.forEach(o => {
@@ -19,13 +19,13 @@ export class OperableArgumentCodec {
         return array;
     }
 
-    static decode(o: any): OperableArgument {
+    static decode(o: any): ArgumentImage {
         if (typeof o === 'number') {
-            return new OperableArgument(o);
+            return new ArgumentImage(o);
         }
 
         const piid: number = o[Spec.PIID];
-        const def = new OperableArgument(piid);
+        const def = new ArgumentImage(piid);
         const repeat = o[Spec.REPEAT];
         if (repeat != null) {
             def.minRepeat = repeat[0];

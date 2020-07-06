@@ -1,11 +1,11 @@
 import {DeviceRecord} from '../DeviceRecord';
-import {DeviceChild} from '../../../../../../..';
+import {Child} from '../../../../../../..';
 import {DeviceRecordType} from '../DeviceRecordType';
 
 export class DeviceRecordChildrenRemoved extends DeviceRecord {
 
     did: string;
-    children: DeviceChild[] = [];
+    children: Child[] = [];
 
     constructor(did: string) {
         super();

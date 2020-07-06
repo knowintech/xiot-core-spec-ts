@@ -1,24 +1,24 @@
 import {Spec} from '../../typedef/constant/Spec';
 import {ServiceType} from '../../typedef/definition/urn/ServiceType';
-import {OperableService} from '../../typedef/operable/OperableService';
+import {ServiceImage} from '../../typedef/image/ServiceImage';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
-import {OperablePropertyCodec} from './OperablePropertyCodec';
-import {OperableActionCodec} from './OperableActionCodec';
-import {OperableEventCodec} from './OperableEventCodec';
+import {PropertyImageCodec} from './PropertyImageCodec';
+import {ActionImageCodec} from './ActionImageCodec';
+import {EventImageCodec} from './EventImageCodec';
 
-export class OperableServiceCodec {
+export class ServiceImageCodec {
 
-    static decodeArray(array: any[]): OperableService[] {
-        const list: OperableService[] = [];
+    static decodeArray(array: any[]): ServiceImage[] {
+        const list: ServiceImage[] = [];
 
         if (array != null) {
             for (const o of array) {
                 const iid = o[Spec.IID];
                 const type = new ServiceType(o[Spec.TYPE]);
                 const description = DescriptionCodec.decode(o[Spec.DESCRIPTION]);
-                const properties = OperablePropertyCodec.decodeArray(o[Spec.PROPERTIES]);
-                const actions = OperableActionCodec.decodeArray(o[Spec.ACTIONS]);
-                const events = OperableEventCodec.decodeArray(o[Spec.EVENTS]);
+                const properties = PropertyImageCodec.decodeArray(o[Spec.PROPERTIES]);
+                const actions = ActionImageCodec.decodeArray(o[Spec.ACTIONS]);
+                const events = EventImageCodec.decodeArray(o[Spec.EVENTS]);
 
                 // if (o[Spec.X_OPTIONAL] != null) {
                 //     type._optional = o[Spec.X_OPTIONAL];
@@ -36,7 +36,7 @@ export class OperableServiceCodec {
                 //     type._event_addable = o[Spec.X_EVENT_ADDABLE];
                 // }
 
-                list.push(new OperableService(iid, type, description, properties, actions, events));
+                list.push(new ServiceImage(iid, type, description, properties, actions, events));
             }
         }
 

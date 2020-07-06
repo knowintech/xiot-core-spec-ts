@@ -5,11 +5,9 @@
         "summary": {
             "type": "urn:homekit-spec:group:lightbulb:00000005:yingtuo:zzz:1",
             "online": false,
-            "protocol": "zigbee",
-            "groups": [],
-            "dependencies": ["aaa", "bbb", "ccc"],
+            "parentId": "aaa",
             "interoperations": ["fff"],
-            "accesspoint": "xxx"
+            "accesspoint": "a"
         }
     }
 }

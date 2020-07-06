@@ -5,7 +5,7 @@ export class DeviceRecordOnlineCodec {
     static encode(record: DeviceRecordOnline): any {
         return {
             did: record.did,
-            summary: SummaryCodec.encode(record.summary),
+            summary: SummaryCodec.encodeObject(record.summary),
         };
     }
 

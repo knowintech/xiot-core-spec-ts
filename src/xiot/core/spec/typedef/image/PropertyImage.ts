@@ -1,9 +1,9 @@
 import {Property} from '../instance/Property';
 import {PropertyOperation} from '../operation/PropertyOperation';
-import {OperationStatus} from '../status/OperationStatus';
+import {Status} from '../status/Status';
 import {PropertyDefinition} from '../definition/PropertyDefinition';
 
-export class OperableProperty extends Property {
+export class PropertyImage extends Property {
 
     constructor(iid: number, def: PropertyDefinition) {
         super(iid, def);
@@ -11,13 +11,15 @@ export class OperableProperty extends Property {
 
     tryRead(o: PropertyOperation) {
         if (this.value == null) {
+            o.status = (<number>Status.INTERNAL_ERROR);
+            o.description = 'property value is null';
             return;
         }
 
         if (this.access.isReadable) {
             o.value = this.value.currentValue.getObjectValue();
         } else {
-            o.status = (<number>OperationStatus.PROPERTY_CANNOT_READ);
+            o.status = (<number>Status.PROPERTY_CANNOT_READ);
             o.description = 'property cannot read';
         }
     }
@@ -28,23 +30,23 @@ export class OperableProperty extends Property {
                 this.update(o);
             } else {
                 if (super.trySetValue(o.value)) {
-                    o.status = (<number>OperationStatus.COMPLETED);
+                    o.status = (<number>Status.COMPLETED);
                 } else {
-                    o.status = (<number>OperationStatus.PROPERTY_VALUE_INVALID);
+                    o.status = (<number>Status.PROPERTY_VALUE_INVALID);
                     o.description = 'property value invalid';
                 }
             }
         } else {
-            o.status = (<number>OperationStatus.PROPERTY_CANNOT_WRITE);
+            o.status = (<number>Status.PROPERTY_CANNOT_WRITE);
             o.description = 'property cannot write';
         }
     }
 
     update(o: PropertyOperation) {
         if (this.setValue(o.value)) {
-            o.status = (<number>OperationStatus.COMPLETED);
+            o.status = (<number>Status.COMPLETED);
         } else {
-            o.status = (<number>OperationStatus.PROPERTY_VALUE_INVALID);
+            o.status = (<number>Status.PROPERTY_VALUE_INVALID);
             o.description = 'property value invalid';
         }
     }
@@ -53,7 +55,7 @@ export class OperableProperty extends Property {
         if (this.access.isNotifiable) {
             this.update(o);
         } else {
-            o.status = (<number>OperationStatus.PROPERTY_CANNOT_NOTIFY);
+            o.status = (<number>Status.PROPERTY_CANNOT_NOTIFY);
             o.description = 'property cannot notify';
         }
     }

@@ -1,12 +1,11 @@
 import {DeviceRecordOffline, SummaryCodec} from '../../../../../..';
 
-
 export class DeviceRecordOfflineCodec {
 
     static encode(record: DeviceRecordOffline): any {
         return {
             did: record.did,
-            summary: SummaryCodec.encode(record.summary),
+            summary: SummaryCodec.encodeObject(record.summary),
         };
     }
 

@@ -1,17 +1,17 @@
-import {DeviceChildCodec, DeviceRecordChildrenAdded} from '../../../../../..';
+import {ChildCodec, DeviceRecordChildrenAdded} from '../../../../../..';
 
 export class DeviceRecordChildrenAddedCodec {
 
     static encode(record: DeviceRecordChildrenAdded): any {
         return {
             did: record.did,
-            children: DeviceChildCodec.encodeArray(record.children)
+            children: ChildCodec.encodeArray(record.children)
         };
     }
 
     static decode(o: any): DeviceRecordChildrenAdded {
         const e = new DeviceRecordChildrenAdded(o.did);
-        e.children = DeviceChildCodec.decodeArray(o.children);
+        e.children = ChildCodec.decodeArray(o.children);
         return e;
     }
 }

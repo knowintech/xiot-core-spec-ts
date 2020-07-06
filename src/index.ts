@@ -1,6 +1,6 @@
 export * from './xiot/core/spec/typedef/constant/Spec';
 
-export * from './xiot/core/spec/typedef/children/DeviceChild';
+export * from './xiot/core/spec/typedef/child/Child';
 
 export * from './xiot/core/spec/typedef/definition/ActionDefinition';
 export * from './xiot/core/spec/typedef/definition/ArgumentDefinition';
@@ -71,12 +71,12 @@ export * from './xiot/core/spec/typedef/instance/Property';
 export * from './xiot/core/spec/typedef/instance/PropertyValue';
 export * from './xiot/core/spec/typedef/instance/Service';
 
-export * from './xiot/core/spec/typedef/operable/OperableAction';
-export * from './xiot/core/spec/typedef/operable/OperableArgument';
-export * from './xiot/core/spec/typedef/operable/OperableDevice';
-export * from './xiot/core/spec/typedef/operable/OperableEvent';
-export * from './xiot/core/spec/typedef/operable/OperableProperty';
-export * from './xiot/core/spec/typedef/operable/OperableService';
+export * from './xiot/core/spec/typedef/image/ActionImage';
+export * from './xiot/core/spec/typedef/image/ArgumentImage';
+export * from './xiot/core/spec/typedef/image/DeviceImage';
+export * from './xiot/core/spec/typedef/image/EventImage';
+export * from './xiot/core/spec/typedef/image/PropertyImage';
+export * from './xiot/core/spec/typedef/image/ServiceImage';
 
 export * from './xiot/core/spec/typedef/operation/AbstractOperation';
 export * from './xiot/core/spec/typedef/operation/ActionOperation';
@@ -90,7 +90,7 @@ export * from './xiot/core/spec/typedef/shortcut/Shortcut';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutIcon';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
 
-export * from './xiot/core/spec/typedef/status/OperationStatus';
+export * from './xiot/core/spec/typedef/status/Status';
 
 export * from './xiot/core/spec/typedef/summary/Summary';
 
@@ -106,7 +106,7 @@ export * from './xiot/core/spec/typedef/xid/AID';
 export * from './xiot/core/spec/typedef/xid/EID';
 export * from './xiot/core/spec/typedef/xid/PID';
 
-export * from './xiot/core/spec/codec/children/DeviceChildCodec';
+export * from './xiot/core/spec/codec/child/ChildCodec';
 
 export * from './xiot/core/spec/codec/definition/type/ActionTypeCodec';
 export * from './xiot/core/spec/codec/definition/type/EventTypeCodec';
@@ -139,12 +139,12 @@ export * from './xiot/core/spec/codec/instance/EventCodec';
 export * from './xiot/core/spec/codec/instance/PropertyCodec';
 export * from './xiot/core/spec/codec/instance/ServiceCodec';
 
-export * from './xiot/core/spec/codec/operable/OperableActionCodec';
-export * from './xiot/core/spec/codec/operable/OperableArgumentCodec';
-export * from './xiot/core/spec/codec/operable/OperableDeviceCodec';
-export * from './xiot/core/spec/codec/operable/OperableEventCodec';
-export * from './xiot/core/spec/codec/operable/OperablePropertyCodec';
-export * from './xiot/core/spec/codec/operable/OperableServiceCodec';
+export * from './xiot/core/spec/codec/image/ActionImageCodec';
+export * from './xiot/core/spec/codec/image/ArgumentImageCodec';
+export * from './xiot/core/spec/codec/image/DeviceImageCodec';
+export * from './xiot/core/spec/codec/image/EventImageCodec';
+export * from './xiot/core/spec/codec/image/PropertyImageCodec';
+export * from './xiot/core/spec/codec/image/ServiceImageCodec';
 
 export * from './xiot/core/spec/codec/operation/ActionOperationCodec';
 export * from './xiot/core/spec/codec/operation/ArgumentOperationCodec';

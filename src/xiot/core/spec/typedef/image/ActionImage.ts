@@ -1,44 +1,44 @@
 import {Action} from '../instance/Action';
 import {Property} from '../instance/Property';
 import {ActionOperation} from '../operation/ActionOperation';
-import {OperationStatus} from '../status/OperationStatus';
+import {Status} from '../status/Status';
 import {ActionType} from '../definition/urn/ActionType';
-import {OperableArgument} from './OperableArgument';
-import {Argument} from '../../../../..';
+import {ArgumentImage} from './ArgumentImage';
+import {Argument} from '../../../../../index';
 
-export class OperableAction extends Action {
+export class ActionImage extends Action {
 
     constructor(iid: number,
                 type: ActionType,
                 description: Map<string, string>,
-                argumentsIn: OperableArgument[],
-                argumentsOut: OperableArgument[]) {
+                argumentsIn: ArgumentImage[],
+                argumentsOut: ArgumentImage[]) {
         super(iid, type, description, argumentsIn, argumentsOut);
     }
 
-    getOperableArgumentsIn(): OperableArgument[] {
+    getOperableArgumentsIn(): ArgumentImage[] {
         return super.getArgumentsIn()
-            .filter(x => x instanceof OperableArgument)
-            .map(x => <OperableArgument>x);
+            .filter(x => x instanceof ArgumentImage)
+            .map(x => <ArgumentImage>x);
     }
 
-    getOperableArgumentsOut(): OperableArgument[] {
+    getOperableArgumentsOut(): ArgumentImage[] {
         return super.getArgumentsOut()
-            .filter(x => x instanceof OperableArgument)
-            .map(x => <OperableArgument>x);
+            .filter(x => x instanceof ArgumentImage)
+            .map(x => <ArgumentImage>x);
     }
 
     tryInvoke(o: ActionOperation, properties: Map<number, Property>) {
         console.log('tryInvoke');
 
-        o.status = (<number>OperationStatus.COMPLETED);
+        o.status = (<number>Status.COMPLETED);
 
         for (const argument of this.getOperableArgumentsIn()) {
             const iid: number = argument.piid;
             const v = o.in.get(iid);
             if (v == null) {
                 if (argument.minRepeat > 0) {
-                    o.status = (<number>OperationStatus.ACTION_IN_ERROR);
+                    o.status = (<number>Status.ACTION_IN_ERROR);
                     o.description = 'action argument in error, piid(' + iid + ') min repeat > 0';
                     break;
                 }
@@ -48,13 +48,13 @@ export class OperableAction extends Action {
 
             const property = properties.get(iid);
             if (property == null) {
-                o.status = (<number>OperationStatus.ACTION_IN_VALUE_INVALID);
+                o.status = (<number>Status.ACTION_IN_VALUE_INVALID);
                 o.description = 'action argument in error, piid(' + iid + ') value invalid';
                 break;
             }
 
             if (!property.trySetValues(v.values)) {
-                o.status = (<number>OperationStatus.ACTION_IN_VALUE_INVALID);
+                o.status = (<number>Status.ACTION_IN_VALUE_INVALID);
                 o.description = 'action argument in error, piid(' + iid + ') set value failed';
                 break;
             }
@@ -62,7 +62,7 @@ export class OperableAction extends Action {
             this.addValues(argument, property, v.values);
         }
 
-        if (o.status !== (<number>OperationStatus.COMPLETED)) {
+        if (o.status !== (<number>Status.COMPLETED)) {
             return;
         }
 
@@ -75,7 +75,7 @@ export class OperableAction extends Action {
         o.setArgumentsOut(out);
     }
 
-    private addValues(argument: OperableArgument, property: Property, values: any[]) {
+    private addValues(argument: ArgumentImage, property: Property, values: any[]) {
         for (let i = 0; i < values.length; ++i) {
             const newProperty: Property = new Property(argument.piid, property);
             newProperty.type._index_of_added = i;
