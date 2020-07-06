@@ -19,6 +19,13 @@ export class DeviceImage extends Device {
         super(type, description, services);
     }
 
+    getServicesImage():ServiceImage[]{
+        return super.getServices()
+                .filter(x =>x instanceof ServiceImage)
+                .map(x =><ServiceImage>x);
+        
+    }
+
     online(value: boolean): void {
         if (this.summary != null) {
             this.summary.online = value;
