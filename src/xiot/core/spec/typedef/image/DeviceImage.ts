@@ -13,10 +13,12 @@ export class DeviceImage extends Device {
     public children: Map<string, DeviceImage> = new Map<string, DeviceImage>();
     public parentFound = false;
 
-    constructor(type: DeviceType,
+    constructor(did: string,
+                type: DeviceType,
                 description: Map<string, string>,
                 services: ServiceImage[]) {
         super(type, description, services);
+        this.did = did;
     }
 
     getServiceImages(): ServiceImage[] {
@@ -241,6 +243,10 @@ export class DeviceImage extends Device {
     getNode(did: string): DeviceImage | null {
         if (did == null) {
             return null;
+        }
+
+        if (this.did === did) {
+            return this;
         }
 
         const child = this.children.get(did);
