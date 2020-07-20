@@ -50,12 +50,14 @@ export * from './xiot/core/spec/typedef/dto/PropertyTypeDTO';
 export * from './xiot/core/spec/typedef/dto/ServiceTypeDTO';
 export * from './xiot/core/spec/typedef/dto/UnitDTO';
 
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordAccessKeyChanged';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordChildrenAdded';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordChildrenRemoved';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordOffline';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordOnline';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordEventOccurred';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordPropertiesChanged';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordRootActive';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecord';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecordType';
 
@@ -152,12 +154,14 @@ export * from './xiot/core/spec/codec/operation/EventOperationCodec';
 export * from './xiot/core/spec/codec/operation/PropertyOperationCodec';
 
 export * from './xiot/core/spec/codec/record/DeviceRecordCodec';
+export * from './xiot/core/spec/codec/record/device/DeviceRecordAccessKeyChangedCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordChildrenAddedCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordChildrenRemovedCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordEventOccurredCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordOfflineCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordOnlineCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordPropertiesChangedCodec';
+export * from './xiot/core/spec/codec/record/device/DeviceRecordRootActiveCodec';
 
 export * from './xiot/core/spec/codec/shortcut/ShortcutCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutIconCodec';

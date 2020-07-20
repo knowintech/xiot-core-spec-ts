@@ -15,6 +15,10 @@ import {DeviceRecordPropertiesChangedCodec} from './device/DeviceRecordPropertie
 import {DeviceRecordEventOccurredCodec} from './device/DeviceRecordEventOccurredCodec';
 import {DeviceRecordChildrenRemovedCodec} from './device/DeviceRecordChildrenRemovedCodec';
 import {DeviceRecordChildrenAddedCodec} from './device/DeviceRecordChildrenAddedCodec';
+import {DeviceRecordAccessKeyChanged} from '../../typedef/record/device/impl/DeviceRecordAccessKeyChanged';
+import {DeviceRecordAccessKeyChangedCodec} from './device/DeviceRecordAccessKeyChangedCodec';
+import {DeviceRecordRootActive} from '../../typedef/record/device/impl/DeviceRecordRootActive';
+import {DeviceRecordRootActiveCodec} from './device/DeviceRecordRootActiveCodec';
 
 export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
 
@@ -62,6 +66,18 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
                 }
                 break;
 
+            case DeviceRecordType.ACCESSKEY_CHANGED:
+                if (record instanceof DeviceRecordAccessKeyChanged) {
+                    o = DeviceRecordAccessKeyChangedCodec.encode(record);
+                }
+                break;
+
+            case DeviceRecordType.ROOT_ACTIVE:
+                if (record instanceof DeviceRecordRootActive) {
+                    o = DeviceRecordRootActiveCodec.encode(record);
+                }
+                break;
+
             default:
                 break;
         }
@@ -95,6 +111,14 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
 
             case DeviceRecordType.CHILDREN_ADDED:
                 record = DeviceRecordChildrenAddedCodec.decode(o);
+                break;
+
+            case DeviceRecordType.ACCESSKEY_CHANGED:
+                record = DeviceRecordAccessKeyChangedCodec.decode(o);
+                break;
+
+            case DeviceRecordType.ROOT_ACTIVE:
+                record = DeviceRecordRootActiveCodec.decode(o);
                 break;
 
             default:
