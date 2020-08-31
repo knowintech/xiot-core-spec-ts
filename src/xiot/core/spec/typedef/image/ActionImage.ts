@@ -80,6 +80,7 @@ export class ActionImage extends Action {
             const newProperty: Property = new Property(argument.piid, property);
             newProperty.type._index_of_added = i;
             newProperty.type._optional = false;
+            newProperty.value.currentStringValue = values[i];
             argument.properties.push(newProperty);
         }
     }
