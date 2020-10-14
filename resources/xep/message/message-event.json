@@ -1,0 +1,18 @@
+{
+    "type": "event",
+    "content": {
+        "class": "device-added",
+        "payload": {
+            "ownerId": "xxxx",
+            "did": "xxx",
+            "summary": {
+                "type": "urn:homekit-spec:device:other:00000001:yingtuo:fakebulb:1",
+                "online": false,
+                "parentId": "CC:22:3D:E3:CE:01@25",
+                "groups": ["aaa", "bbb"],
+                "interoperations": ["abc", "bbb"],
+                "accesspoint": "a"
+            }
+        }
+    }
+}
