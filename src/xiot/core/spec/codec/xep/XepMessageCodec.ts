@@ -7,7 +7,7 @@ import {XepMessageTypeFromString} from '../../typedef/xep/XepMessageType';
 export class XepMessageCodec {
 
     public static encodeObject(message: XepMessage): any {
-        let o: any = {};
+        const o: any = {};
         set(o, 'type', message.type.toString());
         if (message.record) {
             set(o, 'content', XepRecordCodec.encodeObject(message.record));
@@ -18,9 +18,9 @@ export class XepMessageCodec {
 
 
     public static decodeObject(o: any): XepMessage {
-        let type = XepMessageTypeFromString(o.type);
-        let record = o.content;
-        let xepRecord: XepRecord;
+        const type = XepMessageTypeFromString(o.type);
+        const record = o.content;
+        let xepRecord: XepRecord | null = null;
 
         if (record) {
             xepRecord = XepRecordCodec.decodeObject(record);

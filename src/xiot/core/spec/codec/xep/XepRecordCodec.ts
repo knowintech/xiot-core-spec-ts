@@ -57,8 +57,8 @@ export class XepRecordCodec {
     }
 
     public static decodeObject(o: any): XepRecord {
-        let payload = o.payload;
-        let record: XepRecord;
+        const payload = o.payload;
+        let record: XepRecord | null = null;
 
         switch (XepRecordTypeFromString(o.class)) {
             case XepRecordType.DEVICE_ADDED:
@@ -80,6 +80,6 @@ export class XepRecordCodec {
                 break;
         }
 
-        return record;
+        return <XepRecord>record;
     }
 }

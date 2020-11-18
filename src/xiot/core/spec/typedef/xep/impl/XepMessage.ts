@@ -4,9 +4,9 @@ import {XepRecord} from '../XepRecord';
 export class XepMessage {
 
     type: XepMessageType;
-    record: XepRecord;
+    record: XepRecord | null;
 
-    constructor(type: XepMessageType, record: XepRecord) {
+    constructor(type: XepMessageType, record: XepRecord | null) {
         this.type = type;
         this.record = record;
     }

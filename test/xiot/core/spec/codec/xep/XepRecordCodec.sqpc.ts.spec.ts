@@ -23,7 +23,7 @@ describe('XepRecordCodec', async () => {
                 return;
             }
 
-            let updated = XepRecordCodec.encodeObject(record);
+            const updated = XepRecordCodec.encodeObject(record);
             const differences = diff(json, updated);
             if (differences == null) {
                 expect(true).to.equal(true);
