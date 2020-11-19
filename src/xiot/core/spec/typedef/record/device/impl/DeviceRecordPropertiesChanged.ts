@@ -1,6 +1,6 @@
-import {PropertyOperation} from '../../../../../../..';
 import {DeviceRecord} from '../DeviceRecord';
 import {DeviceRecordType} from '../DeviceRecordType';
+import {PropertyOperation} from '../../../operation/PropertyOperation';
 
 export class DeviceRecordPropertiesChanged extends DeviceRecord {
 

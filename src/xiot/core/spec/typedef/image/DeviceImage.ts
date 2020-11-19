@@ -4,7 +4,7 @@ import {ActionOperation} from '../operation/ActionOperation';
 import {Status} from '../status/Status';
 import {ServiceImage} from './ServiceImage';
 import {DeviceType} from '../definition/urn/DeviceType';
-import {Summary} from '../../../../..';
+import {Summary} from '../summary/Summary';
 
 export class DeviceImage extends Device {
 

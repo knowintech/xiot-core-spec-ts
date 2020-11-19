@@ -1,6 +1,6 @@
 import {DeviceRecord} from '../DeviceRecord';
 import {DeviceRecordType} from '../DeviceRecordType';
-import {Summary} from '../../../../../../..';
+import {Summary} from '../../../summary/Summary';
 
 export class DeviceRecordOnline extends DeviceRecord {
 

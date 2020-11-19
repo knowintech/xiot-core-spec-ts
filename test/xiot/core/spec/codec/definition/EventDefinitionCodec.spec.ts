@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import 'mocha';
 import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {EventDefinitionCodec} from '../../../../../../src';
+import {EventDefinitionCodec} from '../../../../../../src/xiot/core/spec/codec/definition/EventDefinitionCodec';
 
 describe('EventDefinitionCodec', async () => {
 

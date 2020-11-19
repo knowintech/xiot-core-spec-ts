@@ -1,7 +1,7 @@
-import {ServiceType} from '../../../../..';
 import {PropertyTemplate} from './PropertyTemplate';
 import {ActionTemplate} from './ActionTemplate';
 import {EventTemplate} from './EventTemplate';
+import {ServiceType} from '../definition/urn/ServiceType';
 
 /**
  * ouyang

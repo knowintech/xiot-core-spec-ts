@@ -1,6 +1,6 @@
-import {EventOperation} from '../../../../../../..';
 import {DeviceRecord} from '../DeviceRecord';
 import {DeviceRecordType} from '../DeviceRecordType';
+import {EventOperation} from '../../../operation/EventOperation';
 
 export class DeviceRecordEventOccurred extends DeviceRecord {
 

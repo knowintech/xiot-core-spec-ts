@@ -1,6 +1,6 @@
 import { DeviceRecord } from '../DeviceRecord';
-import { Child } from '../../../../../../..';
 import { DeviceRecordType } from '../DeviceRecordType';
+import {Child} from '../../../child/Child';
 
 export class DeviceRecordRootActive extends DeviceRecord {
 

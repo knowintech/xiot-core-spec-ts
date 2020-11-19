@@ -1,5 +1,6 @@
 import {UnitDTO} from '../../typedef/dto/UnitDTO';
-import {DescriptionCodec, Spec} from '../../../../..';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class UnitDTOCodec {
 

@@ -1,4 +1,4 @@
-import {DeviceType} from '../../../../..';
+import {DeviceType} from '../definition/urn/DeviceType';
 
 export class DeviceTypeDTO {
 

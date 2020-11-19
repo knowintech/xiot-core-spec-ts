@@ -1,5 +1,5 @@
 import {Child} from '../../typedef/child/Child';
-import {SummaryCodec} from '../../codec/summary/SummaryCodec';
+import {SummaryCodec} from '../summary/SummaryCodec';
 
 export class ChildCodec {
 

@@ -1,5 +1,7 @@
 import {ServiceTypeDTO} from '../../typedef/dto/ServiceTypeDTO';
-import {ServiceType, DescriptionCodec, Spec} from '../../../../..';
+import {ServiceType} from '../../typedef/definition/urn/ServiceType';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class ServiceTypeDTOCodec {
 

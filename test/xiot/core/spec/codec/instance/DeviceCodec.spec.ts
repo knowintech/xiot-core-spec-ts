@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import {diff} from 'yajsondiff';
 import 'mocha';
 import * as fs from 'async-file';
-import {DeviceCodec} from '../../../../../../src';
+import {DeviceCodec} from '../../../../../../src/xiot/core/spec/codec/instance/DeviceCodec';
 
 describe('DeviceCodec', async () => {
 

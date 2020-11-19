@@ -2,14 +2,6 @@ import {XiotRecordCodec} from '../../typedef/record/XiotRecordCodec';
 import {DeviceRecord} from '../../typedef/record/device/DeviceRecord';
 import {DeviceRecordType, DeviceRecordTypeFromString} from '../../typedef/record/device/DeviceRecordType';
 import {DeviceRecordOnlineCodec} from './device/DeviceRecordOnlineCodec';
-import {
-    DeviceRecordChildrenAdded,
-    DeviceRecordChildrenRemoved,
-    DeviceRecordEventOccurred,
-    DeviceRecordOffline,
-    DeviceRecordOnline,
-    DeviceRecordPropertiesChanged
-} from '../../../../..';
 import {DeviceRecordOfflineCodec} from './device/DeviceRecordOfflineCodec';
 import {DeviceRecordPropertiesChangedCodec} from './device/DeviceRecordPropertiesChangedCodec';
 import {DeviceRecordEventOccurredCodec} from './device/DeviceRecordEventOccurredCodec';
@@ -19,6 +11,12 @@ import {DeviceRecordAccessKeyChanged} from '../../typedef/record/device/impl/Dev
 import {DeviceRecordAccessKeyChangedCodec} from './device/DeviceRecordAccessKeyChangedCodec';
 import {DeviceRecordRootActive} from '../../typedef/record/device/impl/DeviceRecordRootActive';
 import {DeviceRecordRootActiveCodec} from './device/DeviceRecordRootActiveCodec';
+import {DeviceRecordOffline} from '../../typedef/record/device/impl/DeviceRecordOffline';
+import {DeviceRecordPropertiesChanged} from '../../typedef/record/device/impl/DeviceRecordPropertiesChanged';
+import {DeviceRecordEventOccurred} from '../../typedef/record/device/impl/DeviceRecordEventOccurred';
+import {DeviceRecordChildrenRemoved} from '../../typedef/record/device/impl/DeviceRecordChildrenRemoved';
+import {DeviceRecordChildrenAdded} from '../../typedef/record/device/impl/DeviceRecordChildrenAdded';
+import {DeviceRecordOnline} from '../../typedef/record/device/impl/DeviceRecordOnline';
 
 export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
 

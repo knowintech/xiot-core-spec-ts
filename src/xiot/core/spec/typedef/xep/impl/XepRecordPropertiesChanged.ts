@@ -1,6 +1,6 @@
 import {XepRecord} from '../XepRecord';
 import {XepRecordType} from '../XepRecordType';
-import {EventOperation, PropertyOperation, Summary} from '../../../../../..';
+import {PropertyOperation} from '../../operation/PropertyOperation';
 
 export class XepRecordPropertiesChanged extends XepRecord {
 

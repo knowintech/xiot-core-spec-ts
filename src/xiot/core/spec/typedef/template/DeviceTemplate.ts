@@ -1,5 +1,5 @@
-import {DeviceType, Service} from '../../../../..';
 import {ServiceTemplate} from './ServiceTemplate';
+import {DeviceType} from '../definition/urn/DeviceType';
 
 /**
  * ouyang

@@ -1,5 +1,7 @@
 import {EventTypeDTO} from '../../typedef/dto/EventTypeDTO';
-import {EventType, DescriptionCodec, Spec} from '../../../../..';
+import {EventType} from '../../typedef/definition/urn/EventType';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class EventTypeDTOCodec {
 

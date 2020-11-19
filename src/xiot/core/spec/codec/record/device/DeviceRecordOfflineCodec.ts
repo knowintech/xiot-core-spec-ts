@@ -1,4 +1,5 @@
-import {DeviceRecordOffline, SummaryCodec} from '../../../../../..';
+import {DeviceRecordOffline} from '../../../typedef/record/device/impl/DeviceRecordOffline';
+import {SummaryCodec} from '../../summary/SummaryCodec';
 
 export class DeviceRecordOfflineCodec {
 

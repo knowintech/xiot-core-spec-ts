@@ -1,5 +1,7 @@
 import {PropertyTypeDTO} from '../../typedef/dto/PropertyTypeDTO';
-import {PropertyType, DescriptionCodec, Spec} from '../../../../..';
+import {PropertyType} from '../../typedef/definition/urn/PropertyType';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class PropertyTypeDTOCodec {
 

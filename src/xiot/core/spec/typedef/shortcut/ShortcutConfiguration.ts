@@ -1,5 +1,5 @@
-import {DeviceType} from '../../../../..';
 import {Shortcut} from './Shortcut';
+import {DeviceType} from '../definition/urn/DeviceType';
 
 export class ShortcutConfiguration {
 

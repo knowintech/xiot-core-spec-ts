@@ -2,7 +2,7 @@ import {Spec} from '../../typedef/constant/Spec';
 import {ActionType} from '../../typedef/definition/urn/ActionType';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
 import {ActionTemplate} from '../../typedef/template/ActionTemplate';
-import {ArgumentCodec} from '../../../../..';
+import {ArgumentCodec} from '../instance/ArgumentCodec';
 
 export class ActionTemplateCodec {
 

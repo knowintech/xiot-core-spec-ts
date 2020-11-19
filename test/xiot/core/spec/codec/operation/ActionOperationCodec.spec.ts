@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import {diff} from 'yajsondiff';
 import 'mocha';
 import * as fs from 'async-file';
-import {ActionOperationCodec} from '../../../../../../src';
+import {ActionOperationCodec} from '../../../../../../src/xiot/core/spec/codec/operation/ActionOperationCodec';
 
 describe('ActionOperationCodec.Request', async () => {
 

@@ -1,6 +1,7 @@
 import {Urn} from '../../typedef/definition/urn/Urn';
 import {Summary} from '../../typedef/summary/Summary';
-import {Protocol, ProtocolFromString, UrnType} from '../../../../..';
+import {UrnType} from '../../typedef/definition/urn/UrnType';
+import {Protocol, ProtocolFromString} from '../../typedef/protocol/Protocol';
 
 export class SummaryCodec {
 
@@ -55,7 +56,7 @@ export class SummaryCodec {
         }
 
         if (s.protocol != null) {
-            if (s.protocol != Protocol.UNDEFINED) {
+            if (s.protocol !== Protocol.UNDEFINED) {
                 o.protocol = s.protocol;
             }
         }

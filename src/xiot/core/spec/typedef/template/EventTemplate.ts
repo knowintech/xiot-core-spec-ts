@@ -1,8 +1,9 @@
-import {EventType, Argument} from '../../../../..';
-
 /**
  * ouyang
  */
+import {EventType} from '../definition/urn/EventType';
+import {Argument} from '../instance/Argument';
+
 export class EventTemplate {
 
     iid: number;

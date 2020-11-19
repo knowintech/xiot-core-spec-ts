@@ -1,5 +1,9 @@
 import {UrnStyle} from '../definition/urn/UrnStyle';
-import {ActionTemplate, DeviceTemplate, EventTemplate, PropertyTemplate, ServiceTemplate} from '../../../../..';
+import {ServiceTemplate} from '../template/ServiceTemplate';
+import {PropertyTemplate} from '../template/PropertyTemplate';
+import {ActionTemplate} from '../template/ActionTemplate';
+import {EventTemplate} from '../template/EventTemplate';
+import {DeviceTemplate} from '../template/DeviceTemplate';
 
 export class DeviceHelper {
 

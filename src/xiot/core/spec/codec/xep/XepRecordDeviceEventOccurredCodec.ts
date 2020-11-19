@@ -1,5 +1,5 @@
 import {XepRecordEventOccurred} from '../../typedef/xep/impl/XepRecordEventOccurred';
-import {EventOperationCodec} from '../../../../..';
+import {EventOperationCodec} from '../operation/EventOperationCodec';
 
 export class XepRecordDeviceEventOccurredCodec {
 

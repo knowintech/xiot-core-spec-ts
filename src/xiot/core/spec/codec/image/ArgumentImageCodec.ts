@@ -1,6 +1,6 @@
 import {Spec} from '../../typedef/constant/Spec';
 import {ArgumentImage} from '../../typedef/image/ArgumentImage';
-import {Argument} from '../../../../..';
+import {Argument} from '../../typedef/instance/Argument';
 
 export class OperableArgumentCodec {
 

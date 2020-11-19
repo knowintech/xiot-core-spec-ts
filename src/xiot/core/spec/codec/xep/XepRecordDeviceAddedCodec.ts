@@ -1,5 +1,5 @@
 import {XepRecordDeviceAdded} from '../../typedef/xep/impl/XepRecordDeviceAdded';
-import {SummaryCodec} from '../../../../..';
+import {SummaryCodec} from '../summary/SummaryCodec';
 
 export class XepRecordDeviceAddedCodec {
 

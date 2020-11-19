@@ -1,5 +1,6 @@
 import {FormatDTO} from '../../typedef/dto/FormatDTO';
-import {DescriptionCodec, Spec} from '../../../../..';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class FormatDTOCodec {
 

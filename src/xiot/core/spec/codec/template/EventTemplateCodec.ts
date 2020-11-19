@@ -1,8 +1,8 @@
 import {Spec} from '../../typedef/constant/Spec';
 import {EventType} from '../../typedef/definition/urn/EventType';
 import {DescriptionCodec} from '../definition/DescriptionCodec';
-import {ArgumentCodec} from '../../../../..';
 import {EventTemplate} from '../../typedef/template/EventTemplate';
+import {ArgumentCodec} from '../instance/ArgumentCodec';
 
 export class EventTemplateCodec {
 

@@ -1,7 +1,7 @@
 import {EID} from '../../typedef/xid/EID';
 import {Spec} from '../../typedef/constant/Spec';
 import {ArgumentOperationCodec} from './ArgumentOperationCodec';
-import {EventOperation} from '../../../../..';
+import {EventOperation} from '../../typedef/operation/EventOperation';
 
 export class EventOperationCodec {
 

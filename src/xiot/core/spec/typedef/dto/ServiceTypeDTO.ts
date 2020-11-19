@@ -1,4 +1,4 @@
-import {ServiceType} from '../../../../..';
+import {ServiceType} from '../definition/urn/ServiceType';
 
 export class ServiceTypeDTO {
 

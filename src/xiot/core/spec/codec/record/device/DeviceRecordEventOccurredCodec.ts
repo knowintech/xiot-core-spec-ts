@@ -1,4 +1,5 @@
-import {DeviceRecordEventOccurred, EventOperationCodec} from '../../../../../../';
+import {DeviceRecordEventOccurred} from '../../../typedef/record/device/impl/DeviceRecordEventOccurred';
+import {EventOperationCodec} from '../../operation/EventOperationCodec';
 
 export class DeviceRecordEventOccurredCodec {
 

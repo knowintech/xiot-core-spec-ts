@@ -4,7 +4,7 @@ import {ActionOperation} from '../operation/ActionOperation';
 import {Status} from '../status/Status';
 import {ActionType} from '../definition/urn/ActionType';
 import {ArgumentImage} from './ArgumentImage';
-import {Argument} from '../../../../../index';
+import {Argument} from '../instance/Argument';
 
 export class ActionImage extends Action {
 

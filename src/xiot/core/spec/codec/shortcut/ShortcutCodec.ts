@@ -1,7 +1,8 @@
-import {DescriptionCodec, Spec} from '../../../../../index';
 import {Shortcut} from '../../typedef/shortcut/Shortcut';
 import {ShortcutIcon} from '../../typedef/shortcut/ShortcutIcon';
 import {ShortcutIconCodec} from './ShortcutIconCodec';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class ShortcutCodec {
 

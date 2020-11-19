@@ -1,5 +1,7 @@
 import {ActionTypeDTO} from '../../typedef/dto/ActionTypeDTO';
-import {ActionType, DescriptionCodec, Spec} from '../../../../..';
+import {ActionType} from '../../typedef/definition/urn/ActionType';
+import {Spec} from '../../typedef/constant/Spec';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
 
 export class ActionTypeDTOCodec {
 

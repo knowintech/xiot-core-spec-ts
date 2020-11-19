@@ -1,5 +1,5 @@
 import {XepRecordPropertiesChanged} from '../../typedef/xep/impl/XepRecordPropertiesChanged';
-import {PropertyOperationCodec} from '../../../../..';
+import {PropertyOperationCodec} from '../operation/PropertyOperationCodec';
 
 export class XepRecordDevicePropertiesChangedCodec {
 

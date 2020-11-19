@@ -1,6 +1,6 @@
 import {XepRecord} from '../XepRecord';
 import {XepRecordType} from '../XepRecordType';
-import {EventOperation, Summary} from '../../../../../..';
+import {EventOperation} from '../../operation/EventOperation';
 
 export class XepRecordEventOccurred extends XepRecord {
 

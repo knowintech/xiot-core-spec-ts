@@ -1,4 +1,4 @@
-import {ChildCodec, DeviceRecordChildrenRemoved} from '../../../../../..';
+import {DeviceRecordChildrenRemoved} from '../../../typedef/record/device/impl/DeviceRecordChildrenRemoved';
 
 export class DeviceRecordChildrenRemovedCodec {
 

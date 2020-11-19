@@ -3,6 +3,7 @@ export enum Protocol {
   ZIGBEE = 'zigbee',
   BTMESH = 'btmesh',
   WIFI = 'wifi',
+  VIRTUAL = 'virtual',
 }
 
 export function ProtocolToString(protocol: Protocol): string {

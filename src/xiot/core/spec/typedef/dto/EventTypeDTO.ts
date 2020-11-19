@@ -1,4 +1,4 @@
-import {EventType} from '../../../../..';
+import {EventType} from '../definition/urn/EventType';
 
 export class EventTypeDTO {
 

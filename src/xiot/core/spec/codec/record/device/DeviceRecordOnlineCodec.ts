@@ -1,4 +1,5 @@
-import {DeviceRecordOnline, SummaryCodec} from '../../../../../..';
+import {DeviceRecordOnline} from '../../../typedef/record/device/impl/DeviceRecordOnline';
+import {SummaryCodec} from '../../summary/SummaryCodec';
 
 export class DeviceRecordOnlineCodec {
 

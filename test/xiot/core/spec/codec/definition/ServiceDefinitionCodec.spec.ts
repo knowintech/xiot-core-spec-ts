@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import 'mocha';
 import {diff} from 'yajsondiff';
 import * as fs from 'async-file';
-import {ServiceDefinitionCodec} from '../../../../../../src';
+import {ServiceDefinitionCodec} from '../../../../../../src/xiot/core/spec/codec/definition/ServiceDefinitionCodec';
 
 describe('ServiceDefinitionCodec', async () => {
 

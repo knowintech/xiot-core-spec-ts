@@ -1,4 +1,4 @@
-import {PropertyType} from '../../../../..';
+import {PropertyType} from '../definition/urn/PropertyType';
 
 export class PropertyTypeDTO {
 

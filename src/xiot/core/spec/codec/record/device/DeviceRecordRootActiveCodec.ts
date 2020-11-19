@@ -1,5 +1,5 @@
-import {ChildCodec} from '../../../../../..';
 import {DeviceRecordRootActive} from '../../../typedef/record/device/impl/DeviceRecordRootActive';
+import {ChildCodec} from '../../child/ChildCodec';
 
 export class DeviceRecordRootActiveCodec {
 

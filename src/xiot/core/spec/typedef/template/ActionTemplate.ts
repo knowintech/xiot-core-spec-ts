@@ -1,8 +1,9 @@
-import {ActionType, Argument} from '../../../../..';
-
 /**
  * ouyang
  */
+import {ActionType} from '../definition/urn/ActionType';
+import {Argument} from '../instance/Argument';
+
 export class ActionTemplate {
 
     iid: number;

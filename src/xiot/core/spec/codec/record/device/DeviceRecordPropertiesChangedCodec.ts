@@ -1,4 +1,5 @@
-import {PropertyOperationCodec, DeviceRecordPropertiesChanged} from '../../../../../..';
+import {DeviceRecordPropertiesChanged} from '../../../typedef/record/device/impl/DeviceRecordPropertiesChanged';
+import {PropertyOperationCodec} from '../../operation/PropertyOperationCodec';
 
 export class DeviceRecordPropertiesChangedCodec {
 

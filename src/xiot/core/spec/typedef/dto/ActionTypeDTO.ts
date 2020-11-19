@@ -1,4 +1,4 @@
-import {ActionType} from '../../../../..';
+import {ActionType} from '../definition/urn/ActionType';
 
 export class ActionTypeDTO {
 

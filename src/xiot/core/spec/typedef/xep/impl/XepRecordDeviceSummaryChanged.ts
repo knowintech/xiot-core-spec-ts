@@ -1,6 +1,6 @@
 import {XepRecord} from '../XepRecord';
 import {XepRecordType} from '../XepRecordType';
-import {Summary} from '../../../../../..';
+import {Summary} from '../../summary/Summary';
 
 export class XepRecordDeviceSummaryChanged extends XepRecord {
 

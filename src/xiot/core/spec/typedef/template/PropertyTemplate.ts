@@ -1,8 +1,8 @@
-import {PropertyDefinition, PropertyValue} from '../../../../..';
-
 /**
  * ouyang
  */
+import {PropertyDefinition} from '../definition/PropertyDefinition';
+
 export class PropertyTemplate extends PropertyDefinition {
 
     iid: number;

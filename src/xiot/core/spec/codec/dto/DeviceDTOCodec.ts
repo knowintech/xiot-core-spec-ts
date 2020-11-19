@@ -1,5 +1,6 @@
 import {DeviceDTO} from '../../typedef/dto/DeviceDTO';
-import {DescriptionCodec, Spec} from '../../../../..';
+import {DescriptionCodec} from '../definition/DescriptionCodec';
+import {Spec} from '../../typedef/constant/Spec';
 
 export class DeviceDTOCodec {
 

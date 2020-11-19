@@ -1,4 +1,6 @@
-import {Group, GroupType, Position, PositionFromString} from '../../../../..';
+import {Group} from '../../typedef/group/Group';
+import {GroupType} from '../../typedef/definition/urn/GroupType';
+import {Position, PositionFromString} from '../../typedef/position/Position';
 
 export class GroupCodec {
 
