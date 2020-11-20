@@ -174,3 +174,21 @@ export * from './xiot/core/spec/codec/template/DeviceTemplateCodec';
 export * from './xiot/core/spec/codec/template/ServiceTemplateCodec';
 export * from './xiot/core/spec/codec/template/EventTemplateCodec';
 export * from './xiot/core/spec/codec/template/PropertyTemplateCodec';
+
+export * from './xiot/core/spec/typedef/xep/XepRecordType';
+export * from './xiot/core/spec/typedef/xep/XepMessageType';
+export * from './xiot/core/spec/typedef/xep/XepRecord';
+export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceSummaryChanged';
+export * from './xiot/core/spec/typedef/xep/impl/XepRecordEventOccurred';
+export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceRemoved';
+export * from './xiot/core/spec/typedef/xep/impl/XepMessage';
+export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceAdded';
+export * from './xiot/core/spec/typedef/xep/impl/XepRecordPropertiesChanged';
+
+export * from './xiot/core/spec/codec/xep/XepMessageCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordDeviceAddedCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordDeviceRemovedCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordDeviceSummaryChangedCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordDeviceEventOccurredCodec';
+export * from './xiot/core/spec/codec/xep/XepRecordDevicePropertiesChangedCodec';
