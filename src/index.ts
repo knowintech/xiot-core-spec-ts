@@ -192,3 +192,9 @@ export * from './xiot/core/spec/codec/xep/XepRecordDeviceRemovedCodec';
 export * from './xiot/core/spec/codec/xep/XepRecordDeviceSummaryChangedCodec';
 export * from './xiot/core/spec/codec/xep/XepRecordDeviceEventOccurredCodec';
 export * from './xiot/core/spec/codec/xep/XepRecordDevicePropertiesChangedCodec';
+
+export * from './xiot/core/spec/typedef/agent/AgentMapping';
+export * from './xiot/core/spec/typedef/agent/AgentServer';
+export * from  './xiot/core/spec/typedef/agent/AgentStatus';
+export * from './xiot/core/spec/codec/agent/AgentMappingCodec';
+export * from './xiot/core/spec/codec/agent/AgentServerCodec';
