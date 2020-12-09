@@ -1,5 +1,4 @@
-
-export  class AgentServer {
+export class AgentServer {
 
     host: string;
     port: number;
