@@ -32,15 +32,22 @@ export class PropertyDefinitionCodec {
         def.access = Access.create(o[Spec.ACCESS]);
         def.unit = UnitFromString(o[Spec.UNIT]);
 
-        if (o.hasOwnProperty(Spec.VALUE_LIST) && o.hasOwnProperty(Spec.VALUE_RANGE)) {
-            throw new Error('value-list & value-range both exist!');
-        }
+        // if (o.hasOwnProperty(Spec.VALUE_LIST) && o.hasOwnProperty(Spec.VALUE_RANGE)) {
+        //     throw new Error('value-list & value-range both exist!');
+        // }
+        // if (o.hasOwnProperty(Spec.VALUE_LIST)) {
+        //     def.constraintValue = ValueListCodec.decode(def.format, o[Spec.VALUE_LIST]);
+        // }
+        //
+        // if (o.hasOwnProperty(Spec.VALUE_RANGE)) {
+        //     def.constraintValue = ValueRangeCodec.decode(def.format, o[Spec.VALUE_RANGE]);
+        // }
 
-        if (o.hasOwnProperty(Spec.VALUE_LIST)) {
+        if (PropertyDefinitionCodec.hasValueList(o)) {
             def.constraintValue = ValueListCodec.decode(def.format, o[Spec.VALUE_LIST]);
         }
 
-        if (o.hasOwnProperty(Spec.VALUE_RANGE)) {
+        if (PropertyDefinitionCodec.hasValueRange(o)) {
             def.constraintValue = ValueRangeCodec.decode(def.format, o[Spec.VALUE_RANGE]);
         }
 
@@ -74,5 +81,23 @@ export class PropertyDefinitionCodec {
 
     static encodeArray(list: PropertyDefinition[]): any[] {
         return list.map(x => PropertyDefinitionCodec.encode(x));
+    }
+
+    private static hasValueList(o: any): boolean {
+        const list: any[] = o[Spec.VALUE_LIST];
+        if (list == null) {
+            return false;
+        }
+
+        return list.length !== 0;
+    }
+
+    private static hasValueRange(o: any): boolean {
+        const list: any[] = o[Spec.VALUE_RANGE];
+        if (list == null) {
+            return false;
+        }
+
+        return list.length !== 0;
     }
 }
