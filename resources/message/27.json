@@ -1,0 +1,13 @@
+{
+  "iq": {
+    "type": "query",
+    "method": "urn:xiot:children-removed",
+    "id": "5012",
+    "content": {
+      "children": [
+        "1",
+        "2"
+      ]
+    }
+  }
+}

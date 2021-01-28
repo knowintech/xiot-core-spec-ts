@@ -1,0 +1,7 @@
+{
+  "iq": {
+    "type": "result",
+    "method": "urn:xiot:authentication",
+    "id": "5009"
+  }
+}

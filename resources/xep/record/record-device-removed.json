@@ -1,7 +1,0 @@
-{
-    "class": "device-removed",
-    "payload": {
-        "ownerId": "xxxx",
-        "did": "xxx"
-    }
-}

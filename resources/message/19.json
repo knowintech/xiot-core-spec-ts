@@ -1,0 +1,10 @@
+{
+  "iq": {
+    "type": "result",
+    "method": "urn:xiot:event-occurred",
+    "id": "5008",
+    "content": {
+      "eid": "a.1.1"
+    }
+  }
+}

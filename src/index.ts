@@ -4,6 +4,31 @@ export * from './xiot/core/spec/typedef/agent/AgentMapping';
 export * from './xiot/core/spec/typedef/agent/AgentServer';
 export * from './xiot/core/spec/typedef/agent/AgentStatus';
 
+export * from './xiot/core/spec/typedef/stanza/Stanza';
+export * from './xiot/core/spec/typedef/stanza/StanzaType';
+
+export * from './xiot/core/spec/typedef/stanza/iq/IQ';
+export * from './xiot/core/spec/typedef/stanza/iq/IQError';
+export * from './xiot/core/spec/typedef/stanza/iq/IQQuery';
+export * from './xiot/core/spec/typedef/stanza/iq/IQResult';
+export * from './xiot/core/spec/typedef/stanza/iq/IQType';
+export * from './xiot/core/spec/typedef/stanza/iq/basic/Byebye';
+export * from './xiot/core/spec/typedef/stanza/iq/basic/Ping';
+export * from './xiot/core/spec/typedef/stanza/iq/user/Authentication';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetChildren';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetProperties';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetSummaries';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/InvokeActions';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/SetProperties';
+export * from './xiot/core/spec/typedef/stanza/iq/device/key/GetAccessKey';
+export * from './xiot/core/spec/typedef/stanza/iq/device/key/GetAccessKey';
+export * from './xiot/core/spec/typedef/stanza/iq/device/verify/Initialize';
+export * from './xiot/core/spec/typedef/stanza/iq/device/verify/VerifyFinish';
+export * from './xiot/core/spec/typedef/stanza/iq/device/verify/VerifyStart';
+
+export * from './xiot/core/spec/typedef/stanza/message/Message';
+export * from './xiot/core/spec/typedef/stanza/message/device/DeviceMessage';
+
 export * from './xiot/core/spec/typedef/child/Child';
 
 export * from './xiot/core/spec/typedef/definition/ActionDefinition';
@@ -64,7 +89,6 @@ export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordPropertie
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordRootActive';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecord';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecordType';
-
 export * from './xiot/core/spec/typedef/record/XiotRecord';
 
 export * from './xiot/core/spec/typedef/group/Group';
@@ -97,7 +121,6 @@ export * from './xiot/core/spec/typedef/shortcut/ShortcutIcon';
 export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
 
 export * from './xiot/core/spec/typedef/status/Status';
-
 export * from './xiot/core/spec/typedef/summary/Summary';
 
 export * from './xiot/core/spec/typedef/template/ActionTemplate';
@@ -112,18 +135,28 @@ export * from './xiot/core/spec/typedef/xid/AID';
 export * from './xiot/core/spec/typedef/xid/EID';
 export * from './xiot/core/spec/typedef/xid/PID';
 
-export * from './xiot/core/spec/typedef/xep/XepRecordType';
-export * from './xiot/core/spec/typedef/xep/XepMessageType';
-export * from './xiot/core/spec/typedef/xep/XepRecord';
-export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceSummaryChanged';
-export * from './xiot/core/spec/typedef/xep/impl/XepRecordEventOccurred';
-export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceRemoved';
-export * from './xiot/core/spec/typedef/xep/impl/XepMessage';
-export * from './xiot/core/spec/typedef/xep/impl/XepRecordDeviceAdded';
-export * from './xiot/core/spec/typedef/xep/impl/XepRecordPropertiesChanged';
-
 export * from './xiot/core/spec/codec/agent/AgentMappingCodec';
 export * from './xiot/core/spec/codec/agent/AgentServerCodec';
+
+export * from './xiot/core/spec/typedef/stanza/Stanza';
+export * from './xiot/core/spec/typedef/stanza/StanzaType';
+
+export * from './xiot/core/spec/codec/stanza/IqCodec';
+export * from './xiot/core/spec/codec/stanza/iq/basic/ByebyeCodec';
+export * from './xiot/core/spec/codec/stanza/iq/basic/PingCodec';
+export * from './xiot/core/spec/codec/stanza/iq/user/AuthenticationCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/GetChildrenCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/GetPropertiesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/GetSummariesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/InvokeActionsCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/SetPropertiesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/key/GetAccessKeyCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/key/GetAccessKeyCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/verify/InitializeCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/verify/VerifyFinishCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/verify/VerifyStartCodec';
+
+export * from './xiot/core/spec/codec/stanza/message/device/DeviceMessageCodec';
 
 export * from './xiot/core/spec/codec/child/ChildCodec';
 
@@ -191,11 +224,3 @@ export * from './xiot/core/spec/codec/template/DeviceTemplateCodec';
 export * from './xiot/core/spec/codec/template/ServiceTemplateCodec';
 export * from './xiot/core/spec/codec/template/EventTemplateCodec';
 export * from './xiot/core/spec/codec/template/PropertyTemplateCodec';
-
-export * from './xiot/core/spec/codec/xep/XepMessageCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordDeviceAddedCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordDeviceRemovedCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordDeviceSummaryChangedCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordDeviceEventOccurredCodec';
-export * from './xiot/core/spec/codec/xep/XepRecordDevicePropertiesChangedCodec';
