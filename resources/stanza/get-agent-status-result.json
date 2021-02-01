@@ -1,0 +1,10 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:get-agent-status",
+        "id": "5009",
+        "content": {
+            "agent-status": "started"
+        }
+    }
+}

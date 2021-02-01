@@ -1,8 +1,7 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
-import {QueryGetSummaries, ResultGetSummaries} from '../../../../../typedef/stanza/iq/device/control/GetSummaries';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {Summary, SummaryCodec} from '../../../../../../../..';
+import {QueryGetSummaries, ResultGetSummaries, Summary, SummaryCodec} from '../../../../../../../..';
 
 export class GetSummariesCodec implements IqCodec {
 
@@ -12,21 +11,22 @@ export class GetSummariesCodec implements IqCodec {
                 devices: query.devices
             };
         }
+
+        return null;
     }
 
     encodeResultContent(result: IQResult): any | null {
         if (result instanceof ResultGetSummaries) {
-            const devices: any[] = [];
-
-            result.devices.forEach((s, did) => {
-                devices.push({
-                    did,
-                    summary: SummaryCodec.encodeObject(s)
+            const summaries: any = [];
+            result.summaries.forEach((value, key) => {
+                summaries.push({
+                    did: key,
+                    summary: SummaryCodec.encodeObject(value)
                 });
             });
 
             return {
-                devices: devices
+                devices: summaries
             };
         }
 
@@ -34,19 +34,21 @@ export class GetSummariesCodec implements IqCodec {
     }
 
     decodeQuery(id: string, content: any): IQQuery | null {
-        const devices = content.devices;
+        const devices: string[] = content['devices'];
         return new QueryGetSummaries(id, devices);
     }
 
     decodeResult(id: string, content: any): IQResult | null {
-        const devices: Map<String, Summary> = new Map<String, Summary>();
+        const devices: Map<string, Summary> = new Map();
+        const array: any[] = content['devices'];
 
-        const list: any[] = content.devices;
-        list.forEach(o => {
-            const did = o.did;
-            const summary = SummaryCodec.decodeObject(o.summary);
-            devices.set(did, summary);
-        });
+        if (array) {
+            array.forEach(value => {
+                const did = value['did'];
+                const summary = value['summary'];
+                devices.set(did, SummaryCodec.decodeObject(summary));
+            });
+        }
 
         return new ResultGetSummaries(id, devices);
     }

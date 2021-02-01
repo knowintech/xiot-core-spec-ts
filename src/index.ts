@@ -16,20 +16,31 @@ export * from './xiot/core/spec/typedef/stanza/iq/basic/Byebye';
 export * from './xiot/core/spec/typedef/stanza/iq/basic/Ping';
 export * from './xiot/core/spec/typedef/stanza/iq/user/Authentication';
 export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetChildren';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/RemoveChild';
 export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetProperties';
-export * from './xiot/core/spec/typedef/stanza/iq/device/control/GetSummaries';
 export * from './xiot/core/spec/typedef/stanza/iq/device/control/InvokeActions';
 export * from './xiot/core/spec/typedef/stanza/iq/device/control/SetProperties';
+export * from './xiot/core/spec/typedef/stanza/iq/device/control/Upgrade';
+export * from './xiot/core/spec/typedef/stanza/iq/device/manager/GetDevices';
+export * from './xiot/core/spec/typedef/stanza/iq/device/manager/GetShadows';
+export * from './xiot/core/spec/typedef/stanza/iq/device/manager/GetSummary';
+export * from './xiot/core/spec/typedef/stanza/iq/device/manager/GetSummaries';
+export * from './xiot/core/spec/typedef/stanza/iq/device/manager/Kickoff';
 export * from './xiot/core/spec/typedef/stanza/iq/device/key/GetAccessKey';
 export * from './xiot/core/spec/typedef/stanza/iq/device/key/GetAccessKey';
 export * from './xiot/core/spec/typedef/stanza/iq/device/verify/Initialize';
 export * from './xiot/core/spec/typedef/stanza/iq/device/verify/VerifyFinish';
 export * from './xiot/core/spec/typedef/stanza/iq/device/verify/VerifyStart';
+export * from './xiot/core/spec/typedef/stanza/iq/device/agent/GetAgentStatus';
+export * from './xiot/core/spec/typedef/stanza/iq/device/agent/StartAgent';
+export * from './xiot/core/spec/typedef/stanza/iq/device/agent/StopAgent';
 
 export * from './xiot/core/spec/typedef/stanza/message/Message';
 export * from './xiot/core/spec/typedef/stanza/message/device/DeviceMessage';
+export * from './xiot/core/spec/typedef/stanza/message/owner/OwnerMessage';
 
 export * from './xiot/core/spec/typedef/child/Child';
+export * from './xiot/core/spec/typedef/version/Version';
 
 export * from './xiot/core/spec/typedef/definition/ActionDefinition';
 export * from './xiot/core/spec/typedef/definition/ArgumentDefinition';
@@ -87,9 +98,21 @@ export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordOnline';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordEventOccurred';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordPropertiesChanged';
 export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordRootActive';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordDeviceTypeChanged';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordRootInactive';
+export * from './xiot/core/spec/typedef/record/device/impl/DeviceRecordUpgrade';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecord';
 export * from './xiot/core/spec/typedef/record/device/DeviceRecordType';
 export * from './xiot/core/spec/typedef/record/XiotRecord';
+export * from './xiot/core/spec/typedef/record/owner/OwnerRecord';
+export * from './xiot/core/spec/typedef/record/owner/OwnerRecordType';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordOwnershipDisclaimed';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordDeviceRemoved';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordDeviceAdded';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordDeviceSummaryChanged';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordPropertiesChanged';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordEventOccurred';
+export * from './xiot/core/spec/typedef/record/owner/impl/OwnerRecordOwnershipTaken';
 
 export * from './xiot/core/spec/typedef/group/Group';
 
@@ -122,6 +145,7 @@ export * from './xiot/core/spec/typedef/shortcut/ShortcutConfiguration';
 
 export * from './xiot/core/spec/typedef/status/Status';
 export * from './xiot/core/spec/typedef/summary/Summary';
+export * from './xiot/core/spec/typedef/shadow/Shadow';
 
 export * from './xiot/core/spec/typedef/template/ActionTemplate';
 export * from './xiot/core/spec/typedef/template/DeviceTemplate';
@@ -147,16 +171,26 @@ export * from './xiot/core/spec/codec/stanza/iq/basic/PingCodec';
 export * from './xiot/core/spec/codec/stanza/iq/user/AuthenticationCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/control/GetChildrenCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/control/GetPropertiesCodec';
-export * from './xiot/core/spec/codec/stanza/iq/device/control/GetSummariesCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/control/InvokeActionsCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/control/SetPropertiesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/UpgradeCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/control/RemoveChildCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/key/GetAccessKeyCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/key/GetAccessKeyCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/verify/InitializeCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/verify/VerifyFinishCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/verify/VerifyStartCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/manager/GetDevicesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/manager/GetShadowsCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/manager/GetSummaryCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/manager/GetSummariesCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/manager/KickoffCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/agent/StopAgentCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/agent/StartAgentCodec';
+export * from './xiot/core/spec/codec/stanza/iq/device/agent/GetAgentStatusCodec';
 
 export * from './xiot/core/spec/codec/stanza/message/device/DeviceMessageCodec';
+export * from './xiot/core/spec/codec/stanza/message/owner/OwnerMessageCodec';
 
 export * from './xiot/core/spec/codec/child/ChildCodec';
 
@@ -212,12 +246,24 @@ export * from './xiot/core/spec/codec/record/device/DeviceRecordOfflineCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordOnlineCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordPropertiesChangedCodec';
 export * from './xiot/core/spec/codec/record/device/DeviceRecordRootActiveCodec';
+export * from './xiot/core/spec/codec/record/device/DeviceRecordRootInactiveCodec';
+export * from './xiot/core/spec/codec/record/device/DeviceRecordUpgradeCodec';
+export * from './xiot/core/spec/codec/record/device/DeviceRecordDeviceTypeChangedCodec';
+export * from './xiot/core/spec/codec/record/OwnerRecordCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordPropertiesChangedCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordDeviceAddedCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordDeviceRemovedCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordDeviceSummaryChangedCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordEventOccurredCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordOwnershipDisclaimedCodec';
+export * from './xiot/core/spec/codec/record/owner/OwnerRecordOwnershipTakenCodec';
 
 export * from './xiot/core/spec/codec/shortcut/ShortcutCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutIconCodec';
 export * from './xiot/core/spec/codec/shortcut/ShortcutConfigurationCodec';
 
 export * from './xiot/core/spec/codec/summary/SummaryCodec';
+export * from './xiot/core/spec/codec/shadow/ShadowCodec';
 
 export * from './xiot/core/spec/codec/template/ActionTemplateCodec';
 export * from './xiot/core/spec/codec/template/DeviceTemplateCodec';

@@ -1,0 +1,8 @@
+{
+    "type": "ownership-disclaimed",
+    "payload": {
+        "appId": "xxxx",
+        "ownerId": "xxxx",
+        "did": "xxx"
+    }
+}

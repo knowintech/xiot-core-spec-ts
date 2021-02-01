@@ -1,0 +1,8 @@
+{
+    "type": "device-removed",
+    "payload": {
+        "appId": "xxxx",
+        "ownerId": "xxxx",
+        "did": "xxx"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "message": {
+        "id": "1",
+        "topic": "urn:xiot:owner",
+        "type": "ownership-taken",
+        "payload": {
+            "appId": "xxxx",
+            "ownerId": "xxxx",
+            "did": "xxx"
+        }
+    }
+}

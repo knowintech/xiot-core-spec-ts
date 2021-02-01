@@ -8,6 +8,9 @@ export enum DeviceRecordType {
     CHILDREN_ADDED = 'children-added',
     ACCESSKEY_CHANGED = 'accesskey-changed',
     ROOT_ACTIVE = 'root-active',
+    ROOT_INACTIVE = 'root-inactive',
+    UPGRADE = 'upgrade',
+    DEVICE_TYPE_CHANGED = 'device-type-changed'
 }
 
 export function DeviceRecordTypeToString(type: DeviceRecordType): string {

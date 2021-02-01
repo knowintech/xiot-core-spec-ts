@@ -1,0 +1,11 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:start-agent",
+        "id": "5009",
+        "content": {
+            "username": "xxx",
+            "password": "xxx"
+        }
+    }
+}

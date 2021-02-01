@@ -1,0 +1,8 @@
+{
+    "type": "ownership-taken",
+    "payload": {
+        "appId": "xxxx",
+        "ownerId": "xxxx",
+        "did": "xxx"
+    }
+}

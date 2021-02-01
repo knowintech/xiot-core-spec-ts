@@ -1,8 +1,8 @@
 {
     "iq": {
-        "id": "425",
         "type": "result",
-        "method": "urn:xiot:get-summaries",
+        "method": "urn:xiot:get-devices",
+        "id": "5013",
         "content": {
             "devices": [
                 {
@@ -25,7 +25,7 @@
                         "parentId": "ccc",
                         "groups": ["aaa"],
                         "interoperations": ["xxx", "yyy"],
-                        "protocol": "virtual",
+                        "protocol": "zigbee",
                         "accesspoint": "a"
                     }
                 }

@@ -13,17 +13,17 @@ export class QueryGetSummaries extends IQQuery {
         this.devices = devices;
     }
 
-    public result(devices: Map<String, Summary>): ResultGetSummaries {
-        return new ResultGetSummaries(this.id, devices);
+    public result(summaries: Map<string, Summary>): ResultGetSummaries {
+        return new ResultGetSummaries(this.id, summaries);
     }
 }
 
 export class ResultGetSummaries extends IQResult {
 
-    public devices: Map<String, Summary>;
+    public summaries: Map<string, Summary>;
 
-    constructor(id: string, devices: Map<String, Summary>) {
+    constructor(id: string, summaries: Map<string, Summary>) {
         super(id, GET_SUMMARIES_METHOD);
-        this.devices = devices;
+        this.summaries = summaries;
     }
 }

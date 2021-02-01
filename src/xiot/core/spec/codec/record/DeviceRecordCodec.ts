@@ -17,6 +17,12 @@ import {DeviceRecordEventOccurred} from '../../typedef/record/device/impl/Device
 import {DeviceRecordChildrenRemoved} from '../../typedef/record/device/impl/DeviceRecordChildrenRemoved';
 import {DeviceRecordChildrenAdded} from '../../typedef/record/device/impl/DeviceRecordChildrenAdded';
 import {DeviceRecordOnline} from '../../typedef/record/device/impl/DeviceRecordOnline';
+import {DeviceRecordRootInactiveCodec} from './device/DeviceRecordRootInactiveCodec';
+import {DeviceRecordUpgrade} from '../../typedef/record/device/impl/DeviceRecordUpgrade';
+import {DeviceRecordUpgradeCodec} from './device/DeviceRecordUpgradeCodec';
+import {DeviceRecordDeviceTypeChangedCodec} from './device/DeviceRecordDeviceTypeChangedCodec';
+import {DeviceRecordRootInactive} from '../../typedef/record/device/impl/DeviceRecordRootInactive';
+import {DeviceRecordDeviceTypeChanged} from '../../typedef/record/device/impl/DeviceRecordDeviceTypeChanged';
 
 export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
 
@@ -76,6 +82,24 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
                 }
                 break;
 
+            case DeviceRecordType.ROOT_INACTIVE:
+                if (record instanceof DeviceRecordRootInactive) {
+                    o = DeviceRecordRootInactiveCodec.encode(record);
+                }
+                break;
+
+            case DeviceRecordType.UPGRADE:
+                if (record instanceof DeviceRecordUpgrade) {
+                    o = DeviceRecordUpgradeCodec.encode(record);
+                }
+                break;
+
+            case DeviceRecordType.DEVICE_TYPE_CHANGED:
+                if (record instanceof DeviceRecordDeviceTypeChanged) {
+                    o = DeviceRecordDeviceTypeChangedCodec.encode(record);
+                }
+                break;
+
             default:
                 break;
         }
@@ -119,6 +143,17 @@ export class DeviceRecordCodec extends XiotRecordCodec<DeviceRecord, any> {
                 record = DeviceRecordRootActiveCodec.decode(o);
                 break;
 
+            case DeviceRecordType.ROOT_INACTIVE:
+                record = DeviceRecordRootInactiveCodec.decode(o);
+                break;
+
+            case DeviceRecordType.UPGRADE:
+                record = DeviceRecordUpgradeCodec.decode(o);
+                break;
+
+            case DeviceRecordType.DEVICE_TYPE_CHANGED:
+                record = DeviceRecordDeviceTypeChangedCodec.decode(o);
+                break;
             default:
                 throw new Error('invalid subType: ' + subType);
         }

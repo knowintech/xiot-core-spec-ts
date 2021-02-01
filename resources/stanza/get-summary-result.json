@@ -1,0 +1,18 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:get-summary",
+        "id": "5013",
+        "content": {
+            "summary": {
+                "type": "urn:k-spec:device:light:00001111:a:b:1",
+                "online": true,
+                "parentId": "ccc",
+                "groups": ["aaa"],
+                "interoperations": ["xxx", "yyy"],
+                "protocol": "zigbee",
+                "accesspoint": "a"
+            }
+        }
+    }
+}

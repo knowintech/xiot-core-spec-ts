@@ -1,0 +1,20 @@
+{
+    "iq": {
+        "type": "query",
+        "method": "urn:xiot:start-agent",
+        "id": "5010",
+        "content": {
+            "did": "11111",
+            "server": {
+                "host": "xxx",
+                "port": 1777,
+                "user": "xxx",
+                "password": "xxx"
+            },
+            "mapping": {
+                "local-port": 22,
+                "remote-port": 8888
+            }
+        }
+    }
+}

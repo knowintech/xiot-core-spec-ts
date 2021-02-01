@@ -1,0 +1,7 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:kickoff",
+        "id": "5013"
+    }
+}

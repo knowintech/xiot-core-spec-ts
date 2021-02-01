@@ -1,0 +1,7 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:stop-agent",
+        "id": "5009"
+    }
+}

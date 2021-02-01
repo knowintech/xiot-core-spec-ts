@@ -1,0 +1,7 @@
+{
+    "type": "device-type-changed",
+    "payload": {
+        "did": "xxx",
+        "type": "urn:homekit-spec:device:fan:00000000:a:b:1"
+    }
+}

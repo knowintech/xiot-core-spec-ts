@@ -12,13 +12,11 @@ import {ByebyeCodec} from './iq/basic/ByebyeCodec';
 import {PingCodec} from './iq/basic/PingCodec';
 import {GetChildrenCodec} from './iq/device/control/GetChildrenCodec';
 import {DeviceMessageCodec} from './message/device/DeviceMessageCodec';
-import {GetSummariesCodec} from './iq/device/control/GetSummariesCodec';
 import {BYEBYE_METHOD} from '../../typedef/stanza/iq/basic/Byebye';
 import {PING_METHOD} from '../../typedef/stanza/iq/basic/Ping';
 import {SET_PROPERTIES_METHOD} from '../../typedef/stanza/iq/device/control/SetProperties';
 import {INVOKE_ACTIONS_METHOD} from '../../typedef/stanza/iq/device/control/InvokeActions';
 import {GET_CHILDREN_METHOD} from '../../typedef/stanza/iq/device/control/GetChildren';
-import {GET_SUMMARIES_METHOD} from '../../typedef/stanza/iq/device/control/GetSummaries';
 import {GET_PROPERTIES_METHOD} from '../../typedef/stanza/iq/device/control/GetProperties';
 import {GET_ACCESS_KEY_METHOD} from '../../typedef/stanza/iq/device/key/GetAccessKey';
 import {SET_ACCESS_KEY_METHOD} from '../../typedef/stanza/iq/device/key/SetAccessKey';
@@ -35,6 +33,29 @@ import {IQType, IQTypeFromString, IQTypeToString} from '../../typedef/stanza/iq/
 import {IQError} from '../../typedef/stanza/iq/IQError';
 import {AUTHENTICATION_METHOD} from '../../typedef/stanza/iq/user/Authentication';
 import {AuthenticationCodec} from './iq/user/AuthenticationCodec';
+import {
+    GET_SUMMARIES_METHOD,
+    GET_SUMMARY_METHOD,
+    GetSummariesCodec,
+    GetSummaryCodec,
+    KICKOFF_METHOD, KickoffCodec,
+    REMOVE_CHILD_METHOD
+} from '../../../../..';
+import {RemoveChildCodec} from './iq/device/control/RemoveChildCodec';
+import {UPGRADE_METHOD} from '../../typedef/stanza/iq/device/control/Upgrade';
+import {UpgradeCodec} from './iq/device/control/UpgradeCodec';
+import {GET_DEVICES_METHOD} from '../../typedef/stanza/iq/device/manager/GetDevices';
+import {GetDevicesCodec} from './iq/device/manager/GetDevicesCodec';
+import {GET_SHADOWS_METHOD} from '../../typedef/stanza/iq/device/manager/GetShadows';
+import {GetShadowsCodec} from './iq/device/manager/GetShadowsCodec';
+import {START_AGENT_METHOD} from '../../typedef/stanza/iq/device/agent/StartAgent';
+import {StartAgentCodec} from './iq/device/agent/StartAgentCodec';
+import {STOP_AGENT_METHOD} from '../../typedef/stanza/iq/device/agent/StopAgent';
+import {StopAgentCodec} from './iq/device/agent/StopAgentCodec';
+import {GET_AGENT_STATUS_METHOD} from '../../typedef/stanza/iq/device/agent/GetAgentStatus';
+import {GetAgentStatusCodec} from './iq/device/agent/GetAgentStatusCodec';
+import {MESSAGE_OWNER_TOPID} from '../../typedef/stanza/message/owner/OwnerMessage';
+import {OwnerMessageCodec} from './message/owner/OwnerMessageCodec';
 
 export class StanzaCodec {
 
@@ -52,10 +73,20 @@ export class StanzaCodec {
         this.iqCodecs.set(GET_PROPERTIES_METHOD, new GetPropertiesCodec());
         this.iqCodecs.set(INVOKE_ACTIONS_METHOD, new InvokeActionsCodec());
         this.iqCodecs.set(GET_CHILDREN_METHOD, new GetChildrenCodec());
+        this.iqCodecs.set(REMOVE_CHILD_METHOD, new RemoveChildCodec());
+        this.iqCodecs.set(UPGRADE_METHOD, new UpgradeCodec());
+        this.iqCodecs.set(GET_DEVICES_METHOD, new GetDevicesCodec());
+        this.iqCodecs.set(GET_SHADOWS_METHOD, new GetShadowsCodec());
+        this.iqCodecs.set(GET_SUMMARY_METHOD, new GetSummaryCodec());
         this.iqCodecs.set(GET_SUMMARIES_METHOD, new GetSummariesCodec());
+        this.iqCodecs.set(KICKOFF_METHOD, new KickoffCodec());
 
         this.iqCodecs.set(GET_ACCESS_KEY_METHOD, new GetAccessKeyCodec());
         this.iqCodecs.set(SET_ACCESS_KEY_METHOD, new SetAccessKeyCodec());
+
+        this.iqCodecs.set(START_AGENT_METHOD, new StartAgentCodec());
+        this.iqCodecs.set(STOP_AGENT_METHOD, new StopAgentCodec());
+        this.iqCodecs.set(GET_AGENT_STATUS_METHOD, new GetAgentStatusCodec());
 
         this.iqCodecs.set(INITIALIZE_METHOD, new InitializeCodec());
         this.iqCodecs.set(VERIFY_START_METHOD, new VerifyStartCodec());
@@ -63,6 +94,7 @@ export class StanzaCodec {
         this.iqCodecs.set(AUTHENTICATION_METHOD, new AuthenticationCodec());
 
         this.messageCodecs.set(MESSAGE_DEVICE_TOPIC, new DeviceMessageCodec());
+        this.messageCodecs.set(MESSAGE_OWNER_TOPID, new OwnerMessageCodec());
     }
 
     public encode(m: Stanza): any | null {
@@ -179,17 +211,17 @@ export class StanzaCodec {
     }
 
     private decodeMessage(o: any): Message {
-      const id = o.id;
-      const topic = o.topic;
-      const type = o.type;
-      const payload = o.payload;
+        const id = o.id;
+        const topic = o.topic;
+        const type = o.type;
+        const payload = o.payload;
 
-      const codec = this.messageCodecs.get(topic);
-      if (codec == null) {
-        throw new Error('invalid message: ' + topic);
-      }
+        const codec = this.messageCodecs.get(topic);
+        if (codec == null) {
+            throw new Error('invalid message: ' + topic);
+        }
 
-      return codec.decode(id, type, payload);
+        return codec.decode(id, type, payload);
     }
 
     private decodeIQ(o: any): IQ | null {

@@ -52,5 +52,5 @@ export enum Status {
     /**
      * FOR C2C
      */
-    CLOUD_ERROR = -500,
+    CLOUD_ERROR = -600,
 }

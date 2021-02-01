@@ -1,0 +1,10 @@
+{
+    "iq": {
+        "type": "query",
+        "method": "urn:xiot:stop-agent",
+        "id": "5010",
+        "content": {
+            "did": "11111"
+        }
+    }
+}

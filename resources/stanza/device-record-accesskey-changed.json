@@ -1,0 +1,11 @@
+{
+    "message": {
+        "id": "1",
+        "topic": "urn:xiot:device",
+        "type": "accesskey-changed",
+        "payload": {
+            "did": "xxx",
+            "key": "abc"
+        }
+    }
+}

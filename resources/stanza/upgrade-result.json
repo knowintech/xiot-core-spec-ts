@@ -1,0 +1,7 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:upgrade",
+        "id": "5009"
+    }
+}
