@@ -1,8 +1,9 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {Shadow, ShadowCodec} from '../../../../../../../..';
 import {QueryGetShadows, ResultGetShadows} from '../../../../../typedef/stanza/iq/device/manager/GetShadows';
+import {ShadowCodec} from '../../../../shadow/ShadowCodec';
+import {Shadow} from '../../../../../typedef/shadow/Shadow';
 
 export class GetShadowsCodec implements IqCodec {
 

@@ -1,0 +1,7 @@
+{
+    "iq": {
+        "id": "3001",
+        "type": "result",
+        "method": "urn:xiot:verify-finish"
+    }
+}

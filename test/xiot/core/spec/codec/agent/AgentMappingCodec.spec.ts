@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 import * as fs from 'async-file';
-import {AgentMappingCodec, AgentServerCodec} from '../../../../../../src';
+import {AgentMappingCodec} from '../../../../../../src/xiot/core/spec/codec/agent/AgentMappingCodec';
 
 describe('AgentMappingCodec', async () => {
 

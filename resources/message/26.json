@@ -1,7 +1,0 @@
-{
-  "iq": {
-    "type": "result",
-    "method": "urn:xiot:children-added",
-    "id": "5011"
-  }
-}

@@ -1,5 +1,5 @@
-import {EventOperationCodec} from '../../../../../..';
 import {OwnerRecordEventOccurred} from '../../../typedef/record/owner/impl/OwnerRecordEventOccurred';
+import {EventOperationCodec} from '../../operation/EventOperationCodec';
 
 export class OwnerRecordEventOccurredCodec {
 

@@ -1,5 +1,6 @@
 import {Message} from '../Message';
-import {DeviceRecord, DeviceRecordType, DeviceRecordTypeFromString, DeviceRecordTypeToString} from '../../../../../../..';
+import {DeviceRecord} from '../../../record/device/DeviceRecord';
+import {DeviceRecordType, DeviceRecordTypeFromString, DeviceRecordTypeToString} from '../../../record/device/DeviceRecordType';
 
 export const MESSAGE_DEVICE_TOPIC = 'urn:xiot:device';
 

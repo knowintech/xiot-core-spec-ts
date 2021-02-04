@@ -33,14 +33,6 @@ import {IQType, IQTypeFromString, IQTypeToString} from '../../typedef/stanza/iq/
 import {IQError} from '../../typedef/stanza/iq/IQError';
 import {AUTHENTICATION_METHOD} from '../../typedef/stanza/iq/user/Authentication';
 import {AuthenticationCodec} from './iq/user/AuthenticationCodec';
-import {
-    GET_SUMMARIES_METHOD,
-    GET_SUMMARY_METHOD,
-    GetSummariesCodec,
-    GetSummaryCodec,
-    KICKOFF_METHOD, KickoffCodec,
-    REMOVE_CHILD_METHOD
-} from '../../../../..';
 import {RemoveChildCodec} from './iq/device/control/RemoveChildCodec';
 import {UPGRADE_METHOD} from '../../typedef/stanza/iq/device/control/Upgrade';
 import {UpgradeCodec} from './iq/device/control/UpgradeCodec';
@@ -56,6 +48,15 @@ import {GET_AGENT_STATUS_METHOD} from '../../typedef/stanza/iq/device/agent/GetA
 import {GetAgentStatusCodec} from './iq/device/agent/GetAgentStatusCodec';
 import {MESSAGE_OWNER_TOPID} from '../../typedef/stanza/message/owner/OwnerMessage';
 import {OwnerMessageCodec} from './message/owner/OwnerMessageCodec';
+import {REMOVE_CHILD_METHOD} from '../../typedef/stanza/iq/device/control/RemoveChild';
+import {GET_SUMMARIES_METHOD} from '../../typedef/stanza/iq/device/manager/GetSummaries';
+import {GET_SUMMARY_METHOD} from '../../typedef/stanza/iq/device/manager/GetSummary';
+import {GetSummariesCodec} from './iq/device/manager/GetSummariesCodec';
+import {GetSummaryCodec} from './iq/device/manager/GetSummaryCodec';
+import {KickoffCodec} from './iq/device/manager/KickoffCodec';
+import {KICKOFF_METHOD} from '../../typedef/stanza/iq/device/manager/Kickoff';
+import {TakeOwnershipCodec} from './iq/ownership/TakeOwnershipCodec';
+import {TAKE_OWNERSHIP_METHOD} from '../../typedef/stanza/iq/ownership/TakeOwnership';
 
 export class StanzaCodec {
 
@@ -80,6 +81,8 @@ export class StanzaCodec {
         this.iqCodecs.set(GET_SUMMARY_METHOD, new GetSummaryCodec());
         this.iqCodecs.set(GET_SUMMARIES_METHOD, new GetSummariesCodec());
         this.iqCodecs.set(KICKOFF_METHOD, new KickoffCodec());
+
+        this.iqCodecs.set(TAKE_OWNERSHIP_METHOD, new TakeOwnershipCodec());
 
         this.iqCodecs.set(GET_ACCESS_KEY_METHOD, new GetAccessKeyCodec());
         this.iqCodecs.set(SET_ACCESS_KEY_METHOD, new SetAccessKeyCodec());

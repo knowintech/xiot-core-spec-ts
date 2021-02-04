@@ -1,8 +1,8 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {QueryInvokeActions, ResultInvokeActions} from '../../../../../typedef/stanza/iq/device/control/InvokeActions';
-import {ActionOperationCodec} from '../../../../../../../..';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
+import {ActionOperationCodec} from '../../../../operation/ActionOperationCodec';
 
 export class InvokeActionsCodec implements IqCodec {
 

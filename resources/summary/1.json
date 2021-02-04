@@ -1,0 +1,73 @@
+{
+    "summaries": [
+        {
+            "type": "urn:homekit-spec:device:bridge:00000002:yingtuo:hhh:1",
+            "online": false,
+            "parentId": "fff",
+            "cloudId": "xxx",
+            "accesspoint": "a"
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:yingtuo:fakebulb:1",
+            "online": false,
+            "accesspoint": "b",
+            "extra": {
+                "name": "1"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:applefans:fakebulb:1",
+            "online": false,
+            "cloudId": "xxx",
+            "accesspoint": "c",
+            "extra": {
+                "name": "1",
+                "realDid": "xxxx"
+            }
+
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:yingtuo:fakebulb:1",
+            "online": false,
+            "parentId": "CC:22:3D:E3:CE:01@25",
+            "cloudId": "xxx",
+            "groups": [
+                "aaa",
+                "bbb"
+            ],
+            "interoperations": [
+                "abc",
+                "bbb"
+            ],
+            "accesspoint": "d"
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:applefans:fakebulb:1",
+            "online": false,
+            "cloudId": "xxx",
+            "groups": [
+                "abc"
+            ]
+        },
+        {
+            "type": "urn:homekit-spec:device:lightbulb:00000005:yingtuo:zzz:1",
+            "online": false,
+            "parentId": "CC:22:3D:E3:CE:01@25",
+            "cloudId": "xxx",
+            "protocol": "virtual",
+            "interoperations": [
+                "aaa"
+            ]
+        },
+        {
+            "type": "urn:homekit-spec:group:lightbulb:00000005:yingtuo:zzz:1",
+            "online": false,
+            "parentId": "aaa",
+            "cloudId": "xxx",
+            "protocol": "zigbee",
+            "interoperations": [
+                "fff"
+            ]
+        }
+    ]
+}

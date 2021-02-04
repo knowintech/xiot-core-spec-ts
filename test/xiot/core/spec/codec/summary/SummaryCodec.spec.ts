@@ -4,12 +4,11 @@ import * as fs from 'async-file';
 
 describe('SummaryCodec', async () => {
 
-    const folder = './resources/spec/xiot/summary/';
-    // let dir = await fs.readdir(folder);
+    const folder = './resources/summary/';
+    // const dir = await fs.readdir(folder);
 
-    // it('reading summaries, folder: ' + folder, () => {
-    //     expect(true).to.equal(true);
-    // });
+    it('reading summaries, folder: ' + folder,  () => {
+    });
 
     // for (const file of dir) {
     //     it('decode: ' + file, async () => {

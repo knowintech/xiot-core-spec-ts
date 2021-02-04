@@ -34,6 +34,7 @@ export * from './xiot/core/spec/typedef/stanza/iq/device/verify/VerifyStart';
 export * from './xiot/core/spec/typedef/stanza/iq/device/agent/GetAgentStatus';
 export * from './xiot/core/spec/typedef/stanza/iq/device/agent/StartAgent';
 export * from './xiot/core/spec/typedef/stanza/iq/device/agent/StopAgent';
+export * from './xiot/core/spec/typedef/stanza/iq/ownership/TakeOwnership';
 
 export * from './xiot/core/spec/typedef/stanza/message/Message';
 export * from './xiot/core/spec/typedef/stanza/message/device/DeviceMessage';
@@ -188,6 +189,7 @@ export * from './xiot/core/spec/codec/stanza/iq/device/manager/KickoffCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/agent/StopAgentCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/agent/StartAgentCodec';
 export * from './xiot/core/spec/codec/stanza/iq/device/agent/GetAgentStatusCodec';
+export * from './xiot/core/spec/codec/stanza/iq/ownership/TakeOwnershipCodec';
 
 export * from './xiot/core/spec/codec/stanza/message/device/DeviceMessageCodec';
 export * from './xiot/core/spec/codec/stanza/message/owner/OwnerMessageCodec';

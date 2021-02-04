@@ -1,7 +1,0 @@
-{
-  "iq": {
-    "type": "result",
-    "method": "urn:xiot:initialize",
-    "id": "1"
-  }
-}

@@ -1,9 +1,6 @@
 import {Message} from '../Message';
-import {
-    OwnerRecord,
-    OwnerRecordType, OwnerRecordTypeFromString,
-    OwnerRecordTypeToString
-} from '../../../../../../..';
+import {OwnerRecord} from '../../../record/owner/OwnerRecord';
+import {OwnerRecordType, OwnerRecordTypeFromString, OwnerRecordTypeToString} from '../../../record/owner/OwnerRecordType';
 
 export const MESSAGE_OWNER_TOPID = 'urn:xiot:owner';
 

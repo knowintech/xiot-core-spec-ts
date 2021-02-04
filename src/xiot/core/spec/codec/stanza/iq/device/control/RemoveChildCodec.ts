@@ -1,7 +1,7 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {QueryRemoveChild, ResultRemoveChild} from '../../../../../../../..';
+import {QueryRemoveChild, ResultRemoveChild} from '../../../../../typedef/stanza/iq/device/control/RemoveChild';
 
 export class RemoveChildCodec implements IqCodec {
 

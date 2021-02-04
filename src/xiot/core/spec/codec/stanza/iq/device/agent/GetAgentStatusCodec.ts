@@ -2,7 +2,7 @@ import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
 import {QueryGetAgentStatus, ResultGetAgentStatus} from '../../../../../typedef/stanza/iq/device/agent/GetAgentStatus';
-import {AgentStatusFromString} from '../../../../../../../..';
+import {AgentStatusFromString} from '../../../../../typedef/agent/AgentStatus';
 
 export class GetAgentStatusCodec implements IqCodec {
 

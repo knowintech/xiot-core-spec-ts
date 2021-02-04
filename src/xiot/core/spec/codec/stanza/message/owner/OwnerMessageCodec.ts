@@ -1,7 +1,8 @@
 import {MessageCodec} from '../../MessageCodec';
-import {OwnerRecordCodec, OwnerRecordTypeFromString} from '../../../../../../..';
 import {Message} from '../../../../typedef/stanza/message/Message';
 import {OwnerMessage} from '../../../../typedef/stanza/message/owner/OwnerMessage';
+import {OwnerRecordCodec} from '../../../record/OwnerRecordCodec';
+import {OwnerRecordTypeFromString} from '../../../../typedef/record/owner/OwnerRecordType';
 
 export class OwnerMessageCodec implements MessageCodec {
 

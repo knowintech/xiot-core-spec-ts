@@ -1,9 +1,9 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {QueryGetAgentStatus, ResultGetAgentStatus} from '../../../../../typedef/stanza/iq/device/agent/GetAgentStatus';
-import {AgentMappingCodec, AgentServerCodec, AgentStatusFromString} from '../../../../../../../..';
 import {QueryStartAgent, ResultStartAgent} from '../../../../../typedef/stanza/iq/device/agent/StartAgent';
+import {AgentMappingCodec} from '../../../../agent/AgentMappingCodec';
+import {AgentServerCodec} from '../../../../agent/AgentServerCodec';
 
 export class StartAgentCodec implements IqCodec {
 

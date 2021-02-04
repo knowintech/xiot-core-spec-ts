@@ -1,6 +1,6 @@
 import {OwnerRecord} from '../OwnerRecord';
 import {OwnerRecordType} from '../OwnerRecordType';
-import {PropertyOperation} from '../../../../../../..';
+import {PropertyOperation} from '../../../operation/PropertyOperation';
 
 export class OwnerRecordPropertiesChanged extends OwnerRecord {
 

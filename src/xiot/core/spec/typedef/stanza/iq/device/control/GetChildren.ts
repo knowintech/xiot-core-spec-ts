@@ -1,6 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {Child} from '../../../../../../../..';
+import {Child} from '../../../../child/Child';
 
 export const GET_CHILDREN_METHOD = 'urn:xiot:get-children';
 

@@ -1,5 +1,5 @@
-import {SummaryCodec} from '../../../../../..';
 import {OwnerRecordDeviceSummaryChanged} from '../../../typedef/record/owner/impl/OwnerRecordDeviceSummaryChanged';
+import {SummaryCodec} from '../../summary/SummaryCodec';
 
 export class OwnerRecordDeviceSummaryChangedCodec {
 

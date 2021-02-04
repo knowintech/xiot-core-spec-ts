@@ -27,18 +27,19 @@ export class EventOperationCodec {
     static decodeOneQuery(query: any): EventOperation {
         const o = new EventOperation();
         o.eid = EID.parseString(query[Spec.EID]);
+        o.oid = query[Spec.OID];
         o.setArguments(ArgumentOperationCodec.decodeArray(query[Spec.ARGUMENTS]));
         return o;
     }
 
-    static encodeQuery(actions: EventOperation[]): any {
+    static encodeQuery(events: EventOperation[]): any {
         return {
-            actions: EventOperationCodec.encodeQueryArray(actions)
+            events: EventOperationCodec.encodeQueryArray(events)
         };
     }
 
-    static encodeQueryArray(actions: EventOperation[]): any[] {
-     return actions.map(x => EventOperationCodec.encodeOneQuery(x));
+    static encodeQueryArray(events: EventOperation[]): any[] {
+     return events.map(x => EventOperationCodec.encodeOneQuery(x));
     }
 
     static encodeOneQuery(o: EventOperation): any {
@@ -89,14 +90,14 @@ export class EventOperationCodec {
         return o;
     }
 
-    static encodeResult(actions: EventOperation[]): any {
+    static encodeResult(events: EventOperation[]): any {
         return {
-            actions: EventOperationCodec.encodeResultArray(actions)
+            events: EventOperationCodec.encodeResultArray(events)
         };
     }
 
-    static encodeResultArray(actions: EventOperation[]): any[] {
-        return actions.map(x => EventOperationCodec.encodeOneResult(x));
+    static encodeResultArray(events: EventOperation[]): any[] {
+        return events.map(x => EventOperationCodec.encodeOneResult(x));
     }
 
     static encodeOneResult(o: EventOperation): any {

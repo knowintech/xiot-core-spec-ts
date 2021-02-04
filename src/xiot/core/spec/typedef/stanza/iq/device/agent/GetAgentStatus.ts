@@ -1,6 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {AgentStatus} from '../../../../../../../..';
+import {AgentStatus} from '../../../../agent/AgentStatus';
 
 export const GET_AGENT_STATUS_METHOD = 'urn:xiot:get-agent-status';
 

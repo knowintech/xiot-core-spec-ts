@@ -1,6 +1,6 @@
 import {DeviceRecord} from '../DeviceRecord';
 import {DeviceRecordType} from '../DeviceRecordType';
-import {DeviceType} from '../../../../../../..';
+import {DeviceType} from '../../../definition/urn/DeviceType';
 
 export class DeviceRecordDeviceTypeChanged extends DeviceRecord {
 

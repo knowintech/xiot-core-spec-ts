@@ -1,6 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {PropertyOperation} from '../../../../../../../..';
+import {PropertyOperation} from '../../../../operation/PropertyOperation';
 
 export const GET_PROPERTIES_METHOD = 'urn:xiot:get-properties';
 

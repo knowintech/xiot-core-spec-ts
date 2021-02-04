@@ -1,6 +1,7 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {AgentMapping, AgentServer} from '../../../../../../../..';
+import {AgentServer} from '../../../../agent/AgentServer';
+import {AgentMapping} from '../../../../agent/AgentMapping';
 
 export const START_AGENT_METHOD = 'urn:xiot:start-agent';
 

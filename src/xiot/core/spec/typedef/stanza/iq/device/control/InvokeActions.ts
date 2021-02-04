@@ -1,6 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {ActionOperation} from '../../../../../../../..';
+import {ActionOperation} from '../../../../operation/ActionOperation';
 
 export const INVOKE_ACTIONS_METHOD = 'urn:xiot:invoke-actions';
 

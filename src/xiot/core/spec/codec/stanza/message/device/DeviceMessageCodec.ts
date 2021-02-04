@@ -1,7 +1,8 @@
 import {MessageCodec} from '../../MessageCodec';
-import {DeviceRecordCodec, DeviceRecordTypeFromString} from '../../../../../../..';
 import {Message} from '../../../../typedef/stanza/message/Message';
 import {DeviceMessage} from '../../../../typedef/stanza/message/device/DeviceMessage';
+import {DeviceRecordCodec} from '../../../record/DeviceRecordCodec';
+import {DeviceRecordTypeFromString} from '../../../../typedef/record/device/DeviceRecordType';
 
 export class DeviceMessageCodec implements MessageCodec {
 

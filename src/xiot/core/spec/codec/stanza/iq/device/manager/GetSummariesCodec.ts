@@ -1,7 +1,9 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {QueryGetSummaries, ResultGetSummaries, Summary, SummaryCodec} from '../../../../../../../..';
+import {QueryGetSummaries, ResultGetSummaries} from '../../../../../typedef/stanza/iq/device/manager/GetSummaries';
+import {SummaryCodec} from '../../../../summary/SummaryCodec';
+import {Summary} from '../../../../../typedef/summary/Summary';
 
 export class GetSummariesCodec implements IqCodec {
 

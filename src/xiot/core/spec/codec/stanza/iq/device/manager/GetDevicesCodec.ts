@@ -2,7 +2,7 @@ import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
 import {QueryGetDevice, ResultGetDevice} from '../../../../../typedef/stanza/iq/device/manager/GetDevices';
-import {ChildCodec} from '../../../../../../../..';
+import {ChildCodec} from '../../../../child/ChildCodec';
 
 export class GetDevicesCodec implements IqCodec {
 

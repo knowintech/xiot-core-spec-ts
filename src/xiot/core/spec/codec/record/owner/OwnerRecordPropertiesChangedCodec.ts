@@ -1,5 +1,5 @@
-import {PropertyOperationCodec} from '../../../../../..';
 import {OwnerRecordPropertiesChanged} from '../../../typedef/record/owner/impl/OwnerRecordPropertiesChanged';
+import {PropertyOperationCodec} from '../../operation/PropertyOperationCodec';
 
 export class OwnerRecordPropertiesChangedCodec {
 

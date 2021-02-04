@@ -1,6 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
-import {Summary} from '../../../../../../../..';
+import {Summary} from '../../../../summary/Summary';
 
 export const GET_SUMMARY_METHOD = 'urn:xiot:get-summary';
 

@@ -1,6 +1,6 @@
 import {OwnerRecord} from '../OwnerRecord';
 import {OwnerRecordType} from '../OwnerRecordType';
-import {Summary} from '../../../../../../..';
+import {Summary} from '../../../summary/Summary';
 
 export class OwnerRecordDeviceSummaryChanged extends OwnerRecord {
 

@@ -1,5 +1,6 @@
 import {IQQuery} from '../../IQQuery';
 import {IQResult} from '../../IQResult';
+import {SummaryPrivate} from '../../../../summary/SummaryPrivate';
 
 export const VERIFY_FINISH_METHOD = 'urn:xiot:verify-finish';
 
@@ -9,6 +10,7 @@ export class QueryVerifyFinish extends IQQuery {
     public deviceType: string;
     public signature: string;
     public codec: number;
+    public _private: SummaryPrivate | null = null;
 
     constructor(id: string, deviceId: string, deviceType: string, signature: string, codec: number) {
         super(id, VERIFY_FINISH_METHOD);

@@ -1,8 +1,8 @@
 import {IqCodec} from '../../../IqCodec';
 import {QueryGetProperties, ResultGetProperties} from '../../../../../typedef/stanza/iq/device/control/GetProperties';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
-import {PropertyOperationCodec} from '../../../../../../../..';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
+import {PropertyOperationCodec} from '../../../../operation/PropertyOperationCodec';
 
 export class GetPropertiesCodec implements IqCodec {
 

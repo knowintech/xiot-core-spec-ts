@@ -1,0 +1,93 @@
+{
+    "summaries": [
+        {
+            "type": "urn:homekit-spec:device:bridge:00000002:yingtuo:hhh:1",
+            "online": false,
+            "parentId": "fff",
+            "cloudId": "xxx",
+            "accesspoint": "a"
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:yingtuo:fakebulb:1",
+            "online": false,
+            "accesspoint": "b",
+            "extra": {
+                "name": "1"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:applefans:fakebulb:1",
+            "online": false,
+            "cloudId": "xxx",
+            "accesspoint": "c",
+            "extra": {
+                "name": "1"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:yingtuo:fakebulb:1",
+            "online": false,
+            "parentId": "CC:22:3D:E3:CE:01@25",
+            "cloudId": "xxx",
+            "groups": [
+                "aaa",
+                "bbb"
+            ],
+            "interoperations": [
+                "abc",
+                "bbb"
+            ],
+            "accesspoint": "d",
+            "_private": {
+                "routerMac": "00:11:22:aa:bb:cc",
+                "localIp": "192.158.1.1"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:device:other:00000001:applefans:fakebulb:1",
+            "online": false,
+            "cloudId": "xxx",
+            "groups": [
+                "abc"
+            ],
+            "_private": {
+                "routerMac": "00:11:22:aa:bb:cc",
+                "remoteIp": "12.13.14.15",
+                "localIp": "192.158.1.1"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:device:lightbulb:00000005:yingtuo:zzz:1",
+            "online": false,
+            "parentId": "CC:22:3D:E3:CE:01@25",
+            "cloudId": "xxx",
+            "interoperations": [
+                "aaa"
+            ],
+            "_private": {
+                "routerMac": "00:11:22:aa:bb:cc",
+                "remoteIp": "12.13.14.15",
+                "localIp": "192.158.1.1",
+                "location": "",
+                "os": "Android/9.0",
+                "sdk": "0.90.23-SNAPSHOT"
+            }
+        },
+        {
+            "type": "urn:homekit-spec:group:lightbulb:00000005:yingtuo:zzz:1",
+            "online": false,
+            "parentId": "aaa",
+            "cloudId": "xxx",
+            "interoperations": [
+                "fff"
+            ],
+            "_private": {
+                "routerMac": "00:11:22:aa:bb:cc",
+                "localIp": "192.158.1.1",
+                "location": "",
+                "os": "Android/9.0",
+                "sdk": "0.90.23-SNAPSHOT"
+            }
+        }
+    ]
+}

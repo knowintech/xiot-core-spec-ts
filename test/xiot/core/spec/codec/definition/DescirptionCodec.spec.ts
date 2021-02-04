@@ -7,7 +7,7 @@ import {DescriptionCodec} from '../../../../../../src/xiot/core/spec/codec/defin
 describe('EventDefinitionCodec', async () => {
 
     const folder = './resources/spec/xiot/description/';
-
+/*
     const dir = await fs.readdir(folder);
 
     it('reading descriptions, folder: ' + folder, () => {
@@ -27,5 +27,5 @@ describe('EventDefinitionCodec', async () => {
                 expect(JSON.stringify(json)).to.equal(JSON.stringify(DescriptionCodec.encode(def)));
             }
         });
-    }
+    }*/
 });

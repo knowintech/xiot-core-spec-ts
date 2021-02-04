@@ -1,0 +1,7 @@
+{
+    "iq": {
+        "type": "result",
+        "method": "urn:xiot:take-ownership",
+        "id": "5013"
+    }
+}

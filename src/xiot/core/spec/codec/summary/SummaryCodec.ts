@@ -2,6 +2,9 @@ import {Urn} from '../../typedef/definition/urn/Urn';
 import {Summary} from '../../typedef/summary/Summary';
 import {UrnType} from '../../typedef/definition/urn/UrnType';
 import {Protocol, ProtocolFromString} from '../../typedef/protocol/Protocol';
+import {SummaryExtraCodec} from './SummaryExtraCodec';
+import {SummaryPrivate} from '../../typedef/summary/SummaryPrivate';
+import {SummaryPrivateCodec} from './SummaryPrivateCodec';
 
 export class SummaryCodec {
 
@@ -30,6 +33,16 @@ export class SummaryCodec {
         summary.parentId = o['parentId'];
         summary.interoperations = o['interoperations'];
         summary.accesspoint = o['accesspoint'];
+        const extra = o['extra'];
+        const _private = o['_private'];
+        if (extra) {
+            summary._extra = SummaryExtraCodec.decodeObject(extra);
+        }
+
+        if (_private) {
+            summary._private = SummaryPrivateCodec.decodeObject(_private);
+        }
+
         return summary;
     }
 
@@ -63,6 +76,14 @@ export class SummaryCodec {
 
         if (s.accesspoint != null) {
             o.accesspoint = s.accesspoint;
+        }
+
+        if (s._private != null) {
+            o._private = SummaryPrivateCodec.encodeObject(s._private);
+        }
+
+        if (s._extra != null) {
+            o.extra = SummaryExtraCodec.encodeObject(s._extra);
         }
 
         return o;

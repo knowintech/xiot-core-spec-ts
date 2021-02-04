@@ -1,5 +1,7 @@
 import {Urn} from '../definition/urn/Urn';
 import {Protocol} from '../protocol/Protocol';
+import {SummaryPrivate} from './SummaryPrivate';
+import {SummaryExtra} from './SummaryExtra';
 
 export class Summary {
 
@@ -11,4 +13,6 @@ export class Summary {
     interoperations: string[] = [];
     protocol: Protocol = Protocol.UNDEFINED;
     accesspoint = '';
+    _private: SummaryPrivate | null = null;
+    _extra: SummaryExtra | null = null;
 }

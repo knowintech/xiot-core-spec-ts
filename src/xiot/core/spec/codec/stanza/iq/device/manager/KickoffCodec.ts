@@ -1,8 +1,7 @@
 import {IqCodec} from '../../../IqCodec';
 import {IQQuery} from '../../../../../typedef/stanza/iq/IQQuery';
 import {IQResult} from '../../../../../typedef/stanza/iq/IQResult';
-import {QueryGetSummaries, QueryKickoff, ResultGetKickoff, ResultGetSummaries, SummaryCodec} from '../../../../../../../..';
-import {QueryGetSummary, ResultGetSummary} from '../../../../../typedef/stanza/iq/device/manager/GetSummary';
+import {QueryKickoff, ResultGetKickoff} from '../../../../../typedef/stanza/iq/device/manager/Kickoff';
 
 export class KickoffCodec implements IqCodec {
 
